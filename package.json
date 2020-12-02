@@ -2,6 +2,7 @@
   "name": "afonsojramos",
   "description": "A personal npm card for afonsojramos (@afonsojramos)",
   "main": "./src/index.js",
+  "version": "1.0.0",
   "bin": {
     "afonsojramos": "./bin/index.js"
   },
@@ -37,14 +38,10 @@
     "@babel/cli": "^7.12.8",
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "^7.12.7",
-    "@semantic-release/exec": "^5.0.0",
-    "@semantic-release/github": "^7.2.0",
-    "@semantic-release/npm": "^7.0.8",
     "@types/clear": "^0.1.0",
     "@types/inquirer": "^7.3.1",
     "core-js": "^3.8.0",
-    "rimraf": "^3.0.2",
-    "semantic-release": "^17.3.0"
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "boxen": "^4.2.0",
