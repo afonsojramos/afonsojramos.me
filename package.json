@@ -2,7 +2,7 @@
   "name": "afonsojramos",
   "description": "A personal npm card for afonsojramos (@afonsojramos)",
   "main": "./src/index.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "bin": {
     "afonsojramos": "./bin/index.js"
   },
