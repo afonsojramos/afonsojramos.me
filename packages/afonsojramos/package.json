@@ -1,0 +1,45 @@
+{
+  "name": "afonsojramos",
+  "version": "1.0.4",
+  "description": "A personal command-line business card.",
+  "keywords": [
+    "business",
+    "card",
+    "npx card",
+    "business card"
+  ],
+  "author": "Afonso Ramos <afonsojorgeramos@gmail.com>",
+  "homepage": "https://github.com/afonsojramos/afonsojramos/tree/master/packages/business-card#readme",
+  "license": "ISC",
+  "main": "src/index.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__",
+    "src": "src"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afonsojramos/afonsojramos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/afonsojramos/afonsojramos/issues"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf ./dist",
+    "compile": "tsc -p tsconfig.json",
+    "dev": "tsc-watch -p tsconfig.json --onSuccess 'node ./dist/index.js'",
+    "test": "mocha",
+    "prepublishOnly": "npm run build"
+  },
+  "mocha": {
+    "extension": [
+      "ts"
+    ],
+    "spec": "src/**/*.spec.ts",
+    "require": "ts-node/register"
+  }
+}
