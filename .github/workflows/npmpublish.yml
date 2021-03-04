@@ -1,4 +1,4 @@
-name: Build, Bump & Publish
+name: Bump & Publish
 
 on:
   push:
@@ -8,16 +8,6 @@ on:
     types: [created]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - run: npm ci
-      - run: npm build
-
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
@@ -28,6 +18,7 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: npm ci
+      - run: cd packages/afonsojramos
       - name: "Automated Version Bump"
         id: version-bump
         uses: "phips28/gh-action-bump-version@master"
