@@ -8,6 +8,7 @@
   },
   "plugins": ["@typescript-eslint", "prettier", "mocha"],
   "rules": {
-    "mocha/no-mocha-arrows": true
+    "mocha/no-mocha-arrows": 0,
+    "import/extensions": "off"
   }
 }
