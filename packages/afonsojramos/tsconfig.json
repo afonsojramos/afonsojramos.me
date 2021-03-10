@@ -4,5 +4,10 @@
   "exclude": ["./__tests__/**/*", "node_modules"],
   "compilerOptions": {
     "outDir": "./dist"
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
   }
 }
