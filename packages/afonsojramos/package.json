@@ -39,7 +39,7 @@
     "extension": [
       "ts"
     ],
-    "spec": "src/**/*.spec.ts",
+    "spec": "__tests__/*.spec.ts",
     "require": "ts-node/register"
   }
 }
