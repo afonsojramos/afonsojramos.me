@@ -9,13 +9,14 @@
     "@typescript-eslint/parser": "^4.18.0",
     "eslint": "^7.22.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-mocha": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-react": "^7.22.0",
     "husky": "^5.1.3",
     "lerna": "^4.0.0",
     "mocha": "^8.3.2",
@@ -36,7 +37,8 @@
     "build": "lerna run build",
     "lint": "eslint --ext .js,.ts packages/*/src",
     "dev": "lerna exec npm run dev",
-    "test": "lerna exec npm run test"
+    "start": "lerna exec --scope=afonsojramos.me npm run start",
+    "test": "lerna exec --scope=afonsojramos npm run test"
   },
   "repository": {
     "type": "git",
