@@ -1,28 +1,39 @@
-### Heyo, I'm Afonso, nice to meet you! 👋
+<p align="center">
+  <a href="https://afonsojramos.me">
+    <img alt="AJ" src="images/icon.png" />
+  </a>
+</p>
+<h1 align="center">
+Afonso Jorge Ramos - <a href="https://afonsojramos.me">Personal Website</a>
+</h1>
 
-### 📍 Currently working as an Junior Software Enginner at <a href="https://www.hostelworld.com/pt/" style="color: #f25621">Hostelworld</a>
+<p align="center">
+  <a href="https://github.com/afonsojramos/afonsojramos">
+    <img src="https://img.shields.io/badge/license-MIT-%23373737.svg" alt="This website is released under the MIT license." />
+  </a>
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
+  <a href="https://lerna.js.org/">
+    <img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="Follow @lekoarts_de" />
+  </a>
+  <img src="https://github.com/afonsojramos/afonsojramos/actions/workflows/npmpublish.yml/badge.svg?branch=main" alt="PRs welcome!" />
+</p>
 
-> Open-Source & competitive programming enthusiast, music lover & concerts front-liner, beer afficionado, peripatetic by nature.
+[**Check out the Website**](https://afonsojramos.me)
 
----
+## ✨ Tech-Stack
 
-A little more about me... with npm installed, just type
+1. [Gatsby](https://www.gatsbyjs.org/)
 
+- Static
+
+2. TODO:
+
+## 🚀 Getting Started
+
+Navigate into the site's directory and start it up.
+
+```sh
+npm run dev
 ```
-npx afonsojramos
-```
 
-<!--
-**afonsojramos/afonsojramos** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Your site is now running at `http://localhost:8000`!
