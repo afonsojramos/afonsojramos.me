@@ -62,6 +62,7 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-plugin-offline',
     'gatsby-plugin-use-dark-mode',
+    'gatsby-plugin-webpack-bundle-analyser-v2',
     {
       resolve: 'gatsby-plugin-postcss',
       options: {
