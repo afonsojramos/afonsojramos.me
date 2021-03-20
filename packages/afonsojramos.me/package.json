@@ -1,25 +1,61 @@
 {
-  "name": "afonsojorgeramos.me",
-  "version": "1.0.0",
-  "private": true,
+  "name": "afonsojramos.me",
+  "version": "1.2.20",
+  "author": "Afonso Jorge Ramos <afonsojorgeramos@gmail.com>",
+  "description": "Personal Gatsby-based website.",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "test": "mocha"
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "start": "gatsby serve",
+    "clean": "gatsby clean"
   },
   "dependencies": {
-    "date-fns": "^2.11.1",
-    "gray-matter": "^4.0.2",
-    "next": "^10.0.0",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "remark": "^12.0.0",
-    "remark-html": "^12.0.0"
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "autoprefixer": "^10.2.5",
+    "gatsby": "^3.1.0",
+    "gatsby-plugin-manifest": "^3.1.0",
+    "gatsby-plugin-offline": "^4.1.0",
+    "gatsby-plugin-postcss": "^4.1.0",
+    "gatsby-plugin-react-helmet": "^4.1.0",
+    "gatsby-plugin-smoothscroll": "^1.2.0",
+    "gatsby-plugin-use-dark-mode": "^1.3.0",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-source-filesystem": "^3.1.0",
+    "gatsby-transformer-remark": "^3.1.0",
+    "react": "^17.0.1",
+    "react-animate-on-scroll": "^2.1.5",
+    "react-device-detect": "^1.17.0",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-spring": "^8.0.27",
+    "tailwindcss": "^2.0.4",
+    "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
-    "@types/node": "^14.14.31",
-    "@types/react": "^17.0.2",
-    "typescript": "^4.2.2"
+    "@types/react": "^17.0.3",
+    "@types/react-helmet": "^6.1.0",
+    "@types/styled-components": "^5.1.9"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-themed",
+    "gatsby-plugin",
+    "afonsojramos"
+  ],
+  "bugs": {
+    "url": "https://github.com/afonsojramos/afonsojramos/issues"
+  },
+  "homepage": "https://afonsojramos.me",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/afonsojramos/afonsojramos.git",
+    "directory": "packages/afonsojramos.me"
   }
 }
