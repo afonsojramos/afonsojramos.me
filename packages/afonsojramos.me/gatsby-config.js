@@ -82,6 +82,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: '@sentry/gatsby',
+      options: {
+        dsn: 'https://cd48b9c3c8bc4c99b732853b5a7bb195@o555207.ingest.sentry.io/5684803',
+        sampleRate: 0.7,
+      },
+    },
     /* {
       resolve: 'gatsby-plugin-react-svg',
       options: {
