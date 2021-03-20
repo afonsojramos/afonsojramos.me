@@ -98,15 +98,15 @@ module.exports = {
       },
     }, */
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `Afonso Ramos | Software Engineer`,
-        short_name: `Afonso Ramos`,
-        description: `Afonso is a Software Engineer based in the planet Earth.`,
-        start_url: `/`,
+        name: 'Afonso Ramos | Software Engineer',
+        short_name: 'Afonso Ramos',
+        description: 'Afonso is a Software Engineer based in the planet Earth.',
+        start_url: '/',
         background_color: theme.colors.white,
         theme_color: theme.colors.blue,
-        display: `standalone`,
+        display: 'standalone',
         icon: 'src/images/icon.png',
       },
     },
