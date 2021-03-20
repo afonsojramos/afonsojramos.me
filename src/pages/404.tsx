@@ -1,6 +1,12 @@
 import React from 'react';
+// This ensures that the icon CSS is loaded immediately before attempting to render icons
+import '@fortawesome/fontawesome-svg-core/styles.css';
+// Prevent fontawesome from adding its CSS since we did it manually above:
+import { config } from '@fortawesome/fontawesome-svg-core';
 import { Link } from 'gatsby';
 import Layout from '../components/layout';
+
+config.autoAddCss = false;
 
 const NotFound = () => (
   <Layout isNotFound>
