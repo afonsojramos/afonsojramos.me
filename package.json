@@ -1,42 +1,84 @@
 {
-  "name": "afonsojramos",
-  "version": "1.0.2",
-  "description": "All in one package for all things me.",
-  "devDependencies": {
-    "@types/mocha": "^8.2.1",
-    "@types/node": "^14.14.31",
-    "@typescript-eslint/eslint-plugin": "^4.16.1",
-    "@typescript-eslint/parser": "^4.16.1",
-    "eslint": "^7.21.0",
-    "eslint-config-airbnb-typescript": "^12.3.1",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-mocha": "^8.0.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "lerna": "^3.22.1",
-    "mocha": "^8.3.0",
-    "prettier": "^2.2.1",
-    "ts-node": "^9.1.1",
-    "tsc-watch": "^4.2.9",
-    "typescript": "^4.2.2"
+  "name": "afonsojramos.me",
+  "version": "1.0.0",
+  "author": "Afonso Jorge Ramos <afonsojorgeramos@gmail.com>",
+  "description": "Personal Gatsby-based website.",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
-    "postinstall": "npm run bootstrap",
-    "bootstrap": "lerna bootstrap",
-    "clean": "lerna run clean",
-    "build": "lerna run build",
-    "lint": "eslint --ext .js,.ts packages/*/src",
-    "dev": "lerna exec npm run dev",
-    "test": "lerna exec npm run test"
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "start": "gatsby serve",
+    "clean": "gatsby clean"
   },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@sentry/gatsby": "^6.2.3",
+    "autoprefixer": "^10.2.5",
+    "gatsby": "^3.1.0",
+    "gatsby-plugin-manifest": "^3.1.0",
+    "gatsby-plugin-offline": "^4.1.0",
+    "gatsby-plugin-postcss": "^4.1.0",
+    "gatsby-plugin-react-helmet": "^4.1.0",
+    "gatsby-plugin-smoothscroll": "^1.2.0",
+    "gatsby-plugin-use-dark-mode": "^1.3.0",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-source-filesystem": "^3.1.0",
+    "gatsby-transformer-remark": "^3.1.0",
+    "react": "^17.0.1",
+    "react-animate-on-scroll": "^2.1.5",
+    "react-device-detect": "^1.17.0",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-spring": "^8.0.27",
+    "tailwindcss": "^2.0.4",
+    "use-dark-mode": "^2.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "@types/react-helmet": "^6.1.0",
+    "@types/styled-components": "^5.1.9",
+    "@types/mocha": "^8.2.1",
+    "@types/node": "^14.14.35",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-mocha": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-react": "^7.22.0",
+    "husky": "^5.1.3",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-themed",
+    "gatsby-plugin",
+    "afonsojramos"
+  ],
+  "bugs": {
+    "url": "https://github.com/afonsojramos/afonsojramos.me/issues"
+  },
+  "homepage": "https://afonsojramos.me",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/afonsojramos/afonsojramos.git"
-  },
-  "author": "Afonso Ramos",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/afonsojramos/afonsojramos/issues"
-  },
-  "homepage": "https://github.com/afonsojramos/afonsojramos#readme"
+    "url": "https://github.com/afonsojramos/afonsojramos.me.git",
+    "directory": "packages/afonsojramos.me"
+  }
 }
