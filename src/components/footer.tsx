@@ -38,7 +38,9 @@ const Footer = () => {
         <span role="img" aria-label="Heart">
           ❤️
         </span>{' '}
-        © {currentYear()} {name}
+        By {name}
+        <br />
+        {currentYear()}
       </span>
     </footer>
   );
