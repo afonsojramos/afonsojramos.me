@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Footer from './footer';
-import Header from './header';
+import Header from './nav/header';
 import SEO from './seo';
 
-const Layout = ({ isNotFound, children }: { isNotFound: boolean; children: unknown }) => {
+const Layout = ({ isNotFound, children }: { isNotFound: boolean; children: ReactNode }) => {
   return (
-    <div id="root">
+    <div id="root" className="bg-primary dark:bg-primary">
       <SEO />
-      <div className="flex flex-col min-h-screen bg-gray-200">
-        <Header />
+      <Header />
+      <div className="flex flex-col min-h-screen">
         <div id="content">
           {children}
           {!isNotFound && <Footer />}
