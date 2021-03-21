@@ -84,14 +84,6 @@ module.exports = {
         },
       },
     },
-    /* {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: /assets/,
-        },
-      },
-    }, */
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -99,8 +91,8 @@ module.exports = {
         short_name: 'Afonso Ramos',
         description: 'Afonso is a Software Engineer based in the planet Earth.',
         start_url: '/',
-        background_color: theme.colors.white,
-        theme_color: theme.colors.blue,
+        background_color: theme.colors.background,
+        theme_color: theme.colors.theme,
         display: 'standalone',
         icon: 'src/images/icon.png',
       },
