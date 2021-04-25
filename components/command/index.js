@@ -152,6 +152,7 @@ const CommandMenu = memo(() => {
             className={cn(styles.command, {
               [styles.show]: rendered,
             })}
+            ordering={false}
           >
             <div className={styles.top}>
               <CommandInput
