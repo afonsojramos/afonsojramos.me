@@ -19,7 +19,6 @@ import {
   Sparkles,
   Pencil,
   Search,
-  RSS,
   Design,
   M6,
   Book,
@@ -77,7 +76,7 @@ const CommandMenu = memo(() => {
       b: () => router.push('/blog'),
       // Navigation
       h: () => router.push('/'),
-      c: () => router.push('/contact'),
+      c: () => router.push('/contacts'),
       // Collections
       r: () => router.push('/reading'),
       d: () => router.push('/design'),
@@ -97,6 +96,8 @@ const CommandMenu = memo(() => {
     const unsubs = [
       tinykeys(window, keymap, { ignoreFocus: true }),
       tinykeys(window, { '$mod+m': () => setOpen((o) => !o) }),
+      tinykeys(window, { 'Shift+m': () => setOpen((o) => !o) }),
+      tinykeys(window, { 'Alt+m': () => setOpen((o) => !o) }),
     ]
     return () => {
       unsubs.forEach((unsub) => unsub())
@@ -129,7 +130,7 @@ const CommandMenu = memo(() => {
     <>
       <button
         className={headerStyles.command}
-        title="⌘M"
+        title="Shift+M / Control+M / ⌘+M"
         onClick={() => setOpen(true)}
       >
         <CommandIcon />
@@ -249,7 +250,7 @@ const DefaultItems = () => {
       <Group title="Navigation">
         <Item value="Home" icon={<ArrowRight />} keybind="h" />
         <Item value="Go Back" icon={<ArrowLeft />} keybind="backspace" />
-        <Item value="Contact" icon={<ArrowRight />} keybind="c" />
+        <Item value="Contacts" icon={<ArrowRight />} keybind="c" />
         <Item
           value="Themes"
           icon={<Sparkles />}
