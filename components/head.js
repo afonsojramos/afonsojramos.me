@@ -14,15 +14,6 @@ const Head = ({
 
   return (
     <NextHead>
-      {/* Preload font */}
-      <link
-        rel="preload"
-        href="inter-var-latin.woff2"
-        as="font"
-        type="font/woff2"
-        crossOrigin="anonymous"
-      />
-
       {/* Title */}
       <title>{title}</title>
       <meta name="og:title" content={title} />
