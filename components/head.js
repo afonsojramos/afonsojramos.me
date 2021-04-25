@@ -46,7 +46,7 @@ const Head = ({
       />
 
       {/* Favicons */}
-      <link rel="manifest" href="/favicons/manifest.json" />
+      <link rel="manifest" href="/favicons/manifest.webmanifest" />
       <meta name="theme-color" content="#000000" />
       <link rel="mask-icon" href="/favicons/pinned.svg" color="#000000" />
       <link
