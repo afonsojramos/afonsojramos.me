@@ -1,5 +1,6 @@
 # Custom
 /public/feed.xml
+*.Identifier
 
 # Logs
 logs
