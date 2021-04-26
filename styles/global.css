@@ -215,6 +215,10 @@ details {
   border-radius: var(--radius);
 }
 
+.contacts > .social {
+  text-align: center;
+}
+
 @media print {
   :root {
     --bg: #fff;
