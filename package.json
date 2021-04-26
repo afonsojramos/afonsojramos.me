@@ -1,6 +1,7 @@
 {
   "name": "afonsojramos.me",
   "version": "1.0.0",
+  "author": "Afonso Jorge Ramos <afonsojorgeramos@gmail.com>",
   "scripts": {
     "lint": "eslint . && prettier --write '**/*.js' --loglevel warn",
     "dev": "next -p 3003",

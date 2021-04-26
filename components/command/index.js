@@ -39,6 +39,7 @@ import {
   GitHub,
   LinkedIn,
   ArrowLeft,
+  Afonso,
 } from '@components/icons'
 import styles from './command.module.css'
 import headerStyles from '@components/header/header.module.css'
@@ -303,6 +304,13 @@ const DefaultItems = () => {
           icon={<LinkedIn />}
           callback={() =>
             window.open('https://linkedin.com/in/afonsojramos', '_blank')
+          }
+        />
+        <Item
+          value="Status"
+          icon={<Afonso width="24" />}
+          callback={() =>
+            window.open('https://status.afonsojramos.me', '_blank')
           }
         />
       </Group>
