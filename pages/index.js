@@ -11,7 +11,7 @@ const About = () => {
         <p>
           Backend developer,{' '}
           <Link underline href="https://github.com/afonsojramos" external>
-            open-Source
+            open-source
           </Link>{' '}
           &{' '}
           <Link
