@@ -1,19 +1,40 @@
+import { GitHub, LinkedIn, Mail } from '@components/icons'
 import Page from '@components/page'
+
+import linkStyles from '../components/link/link.module.css'
 
 const Contacts = () => {
   return (
     <Page title="Contacts" footer={false} description="Get in touch.">
-      <article>
-        <p>Get in touch.</p>
+      <article className="contacts">
+        <p>Get in touch!</p>
 
-        <blockquote>
+        <div className="social">
           <a
             href="mailto:afonsojorgeramos@gmail.com?subject=Hello"
-            className="reset"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkStyles.gray}
           >
-            afonsojorgeramos@gmail.com
+            <Mail size="48" />
           </a>
-        </blockquote>
+          <a
+            href="https://github.com/afonsojramos"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkStyles.gray}
+          >
+            <GitHub size="48" />
+          </a>
+          <a
+            href="https://linkedin.com/in/afonsojramos"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkStyles.gray}
+          >
+            <LinkedIn size="48" style={{ padding: '4 4' }} />
+          </a>
+        </div>
       </article>
     </Page>
   )
