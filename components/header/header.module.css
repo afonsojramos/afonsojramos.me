@@ -24,10 +24,6 @@
   background: none;
 }
 
-.logo {
-  margin-right: var(--gap-half);
-}
-
 .nav {
   z-index: 10;
   margin: var(--small-gap) auto var(--big-gap) auto;
@@ -52,7 +48,6 @@
   overflow: auto;
   color: var(--gray-alpha);
   font-weight: 500;
-  margin-left: var(--gap-double);
 }
 
 .hint {

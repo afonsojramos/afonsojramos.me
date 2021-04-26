@@ -1,5 +1,5 @@
-const withIcon = icon => {
-  const Icon = ({ size = 24, color = 'currentColor' }) => {
+const withIcon = (icon) => {
+  const Icon = ({ size = 24, style = null, color = 'currentColor' }) => {
     return (
       <svg
         viewBox="0 0 24 24"
@@ -7,6 +7,7 @@ const withIcon = icon => {
         height={size}
         fill={color}
         dangerouslySetInnerHTML={{ __html: icon }}
+        style={style}
       />
     )
   }
