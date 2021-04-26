@@ -10,11 +10,15 @@ const About = () => {
 
         <p>
           Backend developer,{' '}
-          <Link underline href="/keyboards">
+          <Link underline href="https://github.com/afonsojramos" external>
             open-Source
           </Link>{' '}
           &{' '}
-          <Link underline href="/keyboards">
+          <Link
+            underline
+            href="https://github.com/afonsojramos/competitive-programming"
+            external
+          >
             competitive programming
           </Link>{' '}
           enthusiast,{' '}
@@ -24,9 +28,11 @@ const About = () => {
           <Link underline href="https://untappd.com/user/afonsojramos" external>
             beer afficionado
           </Link>
-          , {/* <Link underline href="/travels"> */}
-          peripatetic
-          {/* </Link>*/} by nature.
+          ,{' '}
+          <Link underline href="/travels">
+            peripatetic
+          </Link>{' '}
+          by nature.
         </p>
 
         <p>
