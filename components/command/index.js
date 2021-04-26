@@ -1,4 +1,12 @@
-import React, { useEffect, useRef, useMemo, useState, memo } from 'react'
+import {
+  createContext,
+  memo,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import cn from 'classnames'
 import { useRouter } from 'next/router'
 import useDelayedRender from 'use-delayed-render'
@@ -38,8 +46,8 @@ import { useTheme } from 'next-themes'
 import tinykeys from '@lib/tinykeys'
 import postMeta from '@data/blog.json'
 
-const CommandData = React.createContext({})
-const useCommandData = () => React.useContext(CommandData)
+const CommandData = createContext({})
+const useCommandData = () => useContext(CommandData)
 
 const CommandMenu = memo(() => {
   const listRef = useRef()

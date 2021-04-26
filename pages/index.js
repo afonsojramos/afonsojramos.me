@@ -32,7 +32,7 @@ const About = () => {
         <p>
           Working at{' '}
           <Link href="https://hostelworld.com" external>
-            <Hostelworld style={{ width: 40, 'vertical-align': 'middle' }} />
+            <Hostelworld style={{ width: 40, verticalAlign: 'middle' }} />
           </Link>{' '}
           <Link underline href="https://hostelworld.com" external>
             Hostelworld
