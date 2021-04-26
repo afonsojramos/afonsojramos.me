@@ -86,13 +86,13 @@ const CommandMenu = memo(() => {
       h: () => router.push('/'),
       c: () => router.push('/contacts'),
       // Collections
-      r: () => router.push('/reading'),
+      /* r: () => router.push('/reading'),
       d: () => router.push('/design'),
       k: () => router.push('/keyboards'),
       m: () => router.push('/music'),
       p: () => router.push('/projects'),
       q: () => router.push('/quotes'),
-      w: () => router.push('/words'),
+      w: () => router.push('/words'), */
       i: () => router.push('/ideas'),
       // Backspace
       backspace: () => router.back(),
@@ -280,13 +280,13 @@ const DefaultItems = () => {
           closeOnCallback={false}
           callback={() => setPages([...pages, BlogItems])}
         />
-        <Item value="Reading" icon={<Book />} keybind="r" />
+        {/* <Item value="Reading" icon={<Book />} keybind="r" />
         <Item value="Design" icon={<Design />} keybind="d" />
         <Item value="Keyboards" icon={<M6 />} keybind="k" />
         <Item value="Music" icon={<Music />} keybind="m" />
         <Item value="Projects" icon={<Document />} keybind="p" />
         <Item value="Quotes" icon={<Quote />} keybind="q" />
-        <Item value="Words" icon={<Words />} keybind="w" />
+        <Item value="Words" icon={<Words />} keybind="w" /> */}
         <Item value="Ideas" icon={<Lightbulb />} keybind="i" />
       </Group>
 
