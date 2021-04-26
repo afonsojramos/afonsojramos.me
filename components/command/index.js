@@ -131,7 +131,7 @@ const CommandMenu = memo(() => {
   useEffect(() => {
     if (!listRef.current || !heightRef.current) return
 
-    const height = Math.min(listRef.current.offsetHeight + 1, 300)
+    const height = Math.min(listRef.current.offsetHeight + 1, 400)
     heightRef.current.style.height = height + 'px'
   })
 
