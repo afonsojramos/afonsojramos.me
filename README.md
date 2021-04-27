@@ -1,39 +1,18 @@
-<p align="center">
-  <a href="https://afonsojramos.me">
-    <img alt="AJ" src="images/icon.png" />
-  </a>
-</p>
-<h1 align="center">
-Afonso Jorge Ramos - <a href="https://afonsojramos.me">Personal Website</a>
-</h1>
-
-<p align="center">
-  <a href="https://github.com/afonsojramos/afonsojramos">
+<div align="center">
+  <p>
+    <a href="https://afonsojramos.me">
+      <img alt="Afonso Ramos" src="public/favicons/dark.png" style="height: 50px"/>
+    </a>
+  </p>
+  <h1>
+    <a href="https://afonsojramos.me" style="color: white">Afonso Jorge Ramos - Personal Website</a>
+  </h1>
+  <p>
     <img src="https://img.shields.io/badge/license-MIT-%23373737.svg" alt="This website is released under the MIT license." />
-  </a>
-  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
-  <a href="https://lerna.js.org/">
-    <img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="Follow @lekoarts_de" />
-  </a>
-  <img src="https://github.com/afonsojramos/afonsojramos/actions/workflows/npmpublish.yml/badge.svg?branch=main" alt="PRs welcome!" />
-</p>
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
+  </p>
+  Personal website and blog. Designed with a focus on minimalism, UI interactions, and typography.
 
-[**Check out the Website**](https://afonsojramos.me)
+  Built with [Next.js](https://nextjs.org) and styled mostly with CSS Modules.
 
-## ✨ Tech-Stack
-
-1. [Gatsby](https://www.gatsbyjs.org/)
-
-- Static
-
-2. TODO:
-
-## 🚀 Getting Started
-
-Navigate into the site's directory and start it up.
-
-```sh
-npm run dev
-```
-
-Your site is now running at `http://localhost:8000`!
+</div>
