@@ -210,6 +210,6 @@
   .container {
     height: 100% !important;
     /* Height of the iOS Safari Toolbar (:sadfari:) */
-    padding-bottom: 110px;
+    padding-bottom: 140px;
   }
 }
