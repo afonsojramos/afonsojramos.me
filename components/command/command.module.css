@@ -210,6 +210,6 @@
   .container {
     height: 100% !important;
     /* Height of some browsers' toolbar */
-    padding-bottom: 150px;
+    padding-bottom: 160px;
   }
 }
