@@ -31,7 +31,7 @@ const About = () => {
             beer afficionado
           </Link>
           ,{' '}
-          <Link underline href="/travels">
+          <Link underline href="/travels" disabled>
             peripatetic
           </Link>{' '}
           by nature.
