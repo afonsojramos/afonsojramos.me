@@ -310,7 +310,7 @@ const DefaultItems = () => {
           value="Status"
           icon={<Afonso width="24" />}
           callback={() =>
-            window.open('https://status.afonsojramos.me', '_blank')
+            window.open('https://stats.uptimerobot.com/RjDmBHrZAk', '_blank')
           }
         />
       </Group>
