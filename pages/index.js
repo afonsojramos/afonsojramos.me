@@ -6,7 +6,7 @@ import iconStyles from '@components/icons/icons.module.css'
 
 const About = () => {
   return (
-    <Page description="Hi, I'm Afonso. Backend developer, open-source & competitive programming enthusiast, music lover & concerts front-liner, beer afficionado, peripatetic by nature.">
+    <Page description="Afonso Jorge Ramos - Backend developer, open-source & competitive programming enthusiast, music lover & concerts front-liner, beer afficionado, peripatetic by nature.">
       <article>
         <h1>Afonso Ramos</h1>
 
