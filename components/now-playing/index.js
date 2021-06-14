@@ -9,8 +9,7 @@ export default function NowPlaying() {
 
   return data?.isPlaying ? (
     <div>
-      <img src={data.track.image} className={iconStyles.inline}></img>
-      {'   '}
+      <img src={data.track.image} className={iconStyles.inline}></img>{' '}
       <span>
         <Link underline href={data.track.url} external>
           {data.track.title}
@@ -32,8 +31,7 @@ export default function NowPlaying() {
     </div>
   ) : (
     <div>
-      <Spotify className={iconStyles.inline} />
-      <span>Not Playing</span>
+      <Spotify className={iconStyles.inline} /> <span>Not Playing</span>
       {' – '}
       'Spotify'
     </div>
