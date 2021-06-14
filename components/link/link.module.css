@@ -30,3 +30,9 @@
 .underline:focus {
   color: var(--gray);
 }
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.8;
+}

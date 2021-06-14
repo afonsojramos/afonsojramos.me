@@ -23,11 +23,13 @@ const Link = ({
   // Styling
   underline,
   gray,
+  disabled,
   ...props
 }) => {
   const c = cn(className, styles.reset, {
     [styles.gray]: gray,
     [styles.underline]: underline,
+    [styles.disabled]: disabled,
   })
 
   if (external) {
