@@ -1,0 +1,8 @@
+.inline {
+  width: 40px;
+  vertical-align: middle;
+}
+
+img.inline {
+  border-radius: var(--radius);
+}
