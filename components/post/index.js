@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Navigation from './navigation'
 import Page from '@components/page'
 import styles from './post.module.css'
+import ViewCounter from '@components/view-counter'
 
 function escapeHtml(unsafe) {
   return unsafe
@@ -50,6 +51,7 @@ const Post = ({
       />
 
       <Navigation previous={previous} next={next} />
+      <ViewCounter slug={slug} />
     </Page>
   )
 }

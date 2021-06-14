@@ -16,6 +16,7 @@
     "@reach/dialog": "^0.15.0",
     "classnames": "^2.3.1",
     "cmdk": "^0.0.4",
+    "firebase-admin": "^9.9.0",
     "intersection-observer": "^0.12.0",
     "lodash.debounce": "^4.0.8",
     "match-sorter": "^6.3.0",
