@@ -4,10 +4,6 @@ article {
   line-height: 1.9;
 }
 
-article > * + * {
-  margin-top: 2em;
-}
-
 article p {
   color: var(--article-color);
 }

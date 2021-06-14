@@ -13,6 +13,7 @@
   display: block;
   text-decoration: none;
   outline: none;
+  margin-bottom: var(--gap-double);
 }
 
 .link > section {
@@ -109,10 +110,6 @@
 .link.active div {
   transform: none;
   opacity: 1;
-}
-
-.separator {
-  margin-bottom: var(--gap-double);
 }
 
 .title,
