@@ -17,6 +17,7 @@ export default async function handler(_, res) {
   const track = {
     title: song.item.name,
     album: song.item.album.name,
+    albumUrl: song.item.album.external_urls.spotify,
     image: song.item.album.images[0].url,
     url: song.item.external_urls.spotify,
   }

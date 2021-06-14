@@ -17,7 +17,9 @@ export default function NowPlaying() {
       {data?.isPlaying ? (
         <span>
           {': '}
-          <img src={data.track.image} className={iconStyles.inline}></img>{' '}
+          <Link href={data.track.albumUrl} external>
+            <img src={data.track.image} className={iconStyles.inline}></img>{' '}
+          </Link>
           <span>
             <Link underline href={data.track.url} external>
               {data.track.title}
