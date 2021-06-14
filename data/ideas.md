@@ -2,11 +2,13 @@
 
 - [ ] Curriculum Page
 - [ ] World Travels Page
-- [ ] Favourite Concerts Page
+- [x] [Favourite Concerts/Albums Page](/music)
+- [x] [Spotify Connection](/)
+- [ ] Trakt Connection - What TV Shows have I been watching?
 
 ### Blog
 
-- [ ] Welcome to my blog
+- [x] [Welcome to my blog](/blog/opening-ceremony)
 - [ ] Posts on some of my hobbies
   - [ ] Gardening experience
   - [ ] Gaming
