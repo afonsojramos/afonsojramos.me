@@ -1,6 +1,7 @@
 import Page from '@components/page'
 import Link from '@components/link'
 import { Hostelworld } from '@components/icons'
+import NowPlaying from '../components/now-playing'
 
 const About = () => {
   return (
@@ -46,6 +47,7 @@ const About = () => {
           to bring better travelling experiences to the world.
         </p>
       </article>
+      <NowPlaying />
     </Page>
   )
 }
