@@ -2,45 +2,65 @@
   "data": [
     {
       "year": "2021",
-      "concerts": [
-        {
-          "title": "James Grant & Jody Wistersnoff 3",
-          "festival": "test",
-          "image": "https://i.ytimg.com/vi/_RQe4oMTtOE/maxresdefault.jpg"
-        }
-      ],
+      "concerts": [],
       "albums": [
         {
-          "title": "James Grant & Jody Wisternoff",
-          "description": "Anjunadeep Open Air (ABGT 350)",
-          "image": "https://i.ytimg.com/vi/_RQe4oMTtOE/maxresdefault.jpg",
-          "url": "https://youtu.be/_RQe4oMTtOE"
-        },
-        {
-          "title": "Irminsul, Le Pilier Du Monde",
-          "description": "Damabia (Andrew Bayer Remix)",
-          "image": "https://i.ytimg.com/vi/ELcCv6SoAao/hqdefault.jpg",
-          "url": "https://www.youtube.com/watch?v=ELcCv6SoAao"
+          "title": "For the first time",
+          "description": "Black Country, New Road",
+          "image": "https://i.scdn.co/image/ab67616d00001e020ffaa4f75b2297d36ff1e0ad",
+          "url": "https://open.spotify.com/album/2PfgptDcfJTFtoZIS3AukX"
         }
       ]
     },
     {
       "year": "2020",
-      "concerts": [],
-      "albums": [
+      "concerts": [
         {
-          "title": "James Grant & Jody Wisternoff 1",
-          "description": "Anjunadeep Open Air (ABGT 350)",
-          "image": "https://i.ytimg.com/vi/_RQe4oMTtOE/maxresdefault.jpg",
-          "url": "https://youtu.be/_RQe4oMTtOE"
+          "title": "Salvador e Luísa Sobral",
+          "festival": "Teatro Sá da Bandeira - Porto",
+          "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1623665579/IMG_20201222_202731_w7umv5.jpg"
         },
         {
-          "title": "Irminsul, Le Pilier Du Monde 2",
-          "description": "Damabia (Andrew Bayer Remix)",
-          "image": "https://i.ytimg.com/vi/ELcCv6SoAao/hqdefault.jpg",
-          "url": "https://www.youtube.com/watch?v=ELcCv6SoAao"
+          "title": "Manel Cruz",
+          "festival": "Teatro Sá da Bandeira - Porto",
+          "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1623665578/IMG_20201029_225346_jvpfgq.jpg"
+        },
+        {
+          "title": "André Henriques",
+          "festival": "Teatro Cinema de Fafe",
+          "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1623665576/IMG_20201009_215125_ma7vop.jpg"
+        },
+        {
+          "title": "Fugly",
+          "festival": "Concertos de Bolso - Feira do Livro Porto",
+          "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1623665140/IMG_20200909_192536_sopswt.jpg"
+        }
+      ],
+      "albums": [
+        {
+          "title": "Alfredo",
+          "description": "Freddie Gibbs & The Alchemist",
+          "image": "https://i.scdn.co/image/ab67616d00001e0252c24049a16d59e98a638651",
+          "url": "https://open.spotify.com/album/3znl1qe13kyjQv7KcR685N?si=2SswTE2jSLC7x6keFJhwuQ&dl_branch=1"
+        },
+        {
+          "title": "Punisher",
+          "description": "Phoebe Bridgers",
+          "image": "https://i.scdn.co/image/ab67616d00001e023040ca980277cf1445934add",
+          "url": "https://open.spotify.com/album/2xECuqnvvmVktV7UO8Dd3s"
         }
       ]
+    },
+    {
+      "year": "2019",
+      "concerts": [
+        {
+          "title": "King Gizzard and the Lizzard Wizzard",
+          "festival": "Razzmatazz - Barcelona",
+          "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1623664751/IMG_20191019_213217_xkheor.jpg"
+        }
+      ],
+      "albums": []
     }
   ]
 }
