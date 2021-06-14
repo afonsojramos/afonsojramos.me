@@ -17,7 +17,7 @@ const Music = () => {
           return (
             <div key={year}>
               <h3>{year}</h3>
-              <div className={entryStyles.separator}>
+              <div>
                 {concerts.map((entry) => {
                   return (
                     <Entry
