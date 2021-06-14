@@ -1,3 +1,13 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
+}
+
+.grid > .link {
+  margin: 0;
+}
+
 .link {
   width: 100%;
   display: block;
@@ -79,6 +89,11 @@
   opacity: 1;
 }
 
+.grid .link div {
+  bottom: 1rem;
+  left: 1rem;
+}
+
 .link div {
   position: absolute;
   bottom: 2rem;
@@ -96,15 +111,25 @@
   opacity: 1;
 }
 
+.separator {
+  margin-bottom: var(--gap-double);
+}
+
 .title,
 .description {
   margin: 0;
   line-height: normal;
 }
 
+.grid .description,
+.grid .title {
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
 .title {
   color: #fff;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: var(--gap);
 }
