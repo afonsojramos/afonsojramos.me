@@ -41,7 +41,7 @@ const About = () => {
           Working at{' '}
           <Link href="https://hostelworld.com" external>
             <Hostelworld className={iconStyles.inline} />
-          </Link>{' '}
+          </Link>
           <Link underline href="https://hostelworld.com" external>
             Hostelworld
           </Link>{' '}
