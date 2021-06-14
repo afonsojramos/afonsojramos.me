@@ -2,6 +2,7 @@ import Page from '@components/page'
 import Link from '@components/link'
 import { Hostelworld } from '@components/icons'
 import NowPlaying from '../components/now-playing'
+import iconStyles from '@components/icons/icons.module.css'
 
 const About = () => {
   return (
@@ -39,7 +40,7 @@ const About = () => {
         <p>
           Working at{' '}
           <Link href="https://hostelworld.com" external>
-            <Hostelworld style={{ width: 40, verticalAlign: 'middle' }} />
+            <Hostelworld className={iconStyles.inline} />
           </Link>{' '}
           <Link underline href="https://hostelworld.com" external>
             Hostelworld

@@ -14,11 +14,18 @@ export default async function handler(_, res) {
   }
 
   const isPlaying = song.is_playing
-  const title = song.item.name
-  const artist = song.item.artists.map((_artist) => _artist.name).join(', ')
-  const album = song.item.album.name
-  const albumImageUrl = song.item.album.images[0].url
-  const songUrl = song.item.external_urls.spotify
+  const track = {
+    title: song.item.name,
+    album: song.item.album.name,
+    image: song.item.album.images[0].url,
+    url: song.item.external_urls.spotify,
+  }
+  const artists = song.item.artists.map((_artist) => {
+    return {
+      name: _artist.name,
+      url: _artist.external_urls.spotify,
+    }
+  })
 
   res.setHeader(
     'Cache-Control',
@@ -26,11 +33,8 @@ export default async function handler(_, res) {
   )
 
   return res.status(200).json({
-    album,
-    albumImageUrl,
-    artist,
+    artists,
+    track,
     isPlaying,
-    songUrl,
-    title,
   })
 }
