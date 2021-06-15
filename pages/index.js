@@ -6,12 +6,12 @@ import iconStyles from '@components/icons/icons.module.css'
 
 const About = () => {
   return (
-    <Page description="Afonso Jorge Ramos - Backend developer, open-source & competitive programming enthusiast, music lover & concerts front-liner, beer afficionado, peripatetic by nature.">
+    <Page description="Afonso Jorge Ramos - Software developer, open-source & competitive programming enthusiast, music lover & concerts front-liner, beer afficionado, peripatetic by nature.">
       <article>
         <h1>Afonso Ramos</h1>
 
         <p>
-          Backend developer,{' '}
+          Software developer,{' '}
           <Link underline href="https://github.com/afonsojramos" external>
             open-source
           </Link>{' '}
@@ -31,7 +31,7 @@ const About = () => {
             beer afficionado
           </Link>
           ,{' '}
-          <Link underline href="/travels">
+          <Link underline href="/world">
             peripatetic
           </Link>{' '}
           by nature.
