@@ -4,6 +4,7 @@ import entryStyles from '../components/entry/entry.module.css'
 
 // Data
 import { data as years } from '@data/music.json'
+import NowPlaying from '@components/now-playing'
 
 const Music = () => {
   return (
@@ -12,6 +13,7 @@ const Music = () => {
       description="Collection of pictures of the most memorable concerts so far."
     >
       <h2>Favorite Albums & Concerts</h2>
+      <NowPlaying bigPicture />
       <article>
         {years.map(({ year, concerts, albums }) => {
           return (

@@ -3,6 +3,20 @@
   margin-bottom: 0;
 }
 
+.bigPicture {
+  width: 80px;
+  vertical-align: middle;
+  margin-right: 1rem;
+  border-radius: var(--radius);
+}
+
 .nowPlaying + span > img {
   margin-left: 0.2rem;
+}
+
+.nowPlayingData {
+  display: flex;
+  align-items: center;
+  line-height: 2;
+  justify-content: center;
 }

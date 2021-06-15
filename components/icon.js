@@ -1,8 +1,13 @@
 const withIcon = (icon) => {
-  const Icon = ({ size = 24, style = null, color = 'currentColor' }) => {
+  const Icon = ({
+    size = 24,
+    style = null,
+    color = 'currentColor',
+    viewBox = '0 0 24 24',
+  }) => {
     return (
       <svg
-        viewBox="0 0 24 24"
+        viewBox={viewBox}
         width={size}
         height={size}
         fill={color}

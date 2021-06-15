@@ -5,26 +5,39 @@ import { Spotify } from '../icons'
 import iconStyles from '../icons/icons.module.css'
 import styles from './now-playing.module.css'
 
-export default function NowPlaying() {
+export default function NowPlaying({ bigPicture = false }) {
   const { data } = useSWR('/api/now-playing', fetcher)
 
   return (
     <div>
-      <Spotify className={iconStyles.inline} />{' '}
-      <span className={styles.nowPlaying}>
-        {data?.isPlaying ? 'Now' : 'Not Currently'} Playing
-      </span>
-      {data?.isPlaying ? (
+      {!bigPicture && (
         <span>
+          <Spotify className={iconStyles.inline} />{' '}
+          <span className={styles.nowPlaying}>
+            {data?.isPlaying ? 'Now' : 'Not Currently'} Playing
+          </span>
           {': '}
+        </span>
+      )}
+      {data?.isPlaying ? (
+        <span className={bigPicture && styles.nowPlayingData}>
           <Link href={data.track.albumUrl} external>
-            <img src={data.track.image} className={iconStyles.inline}></img>{' '}
+            <img
+              src={data.track.image}
+              className={bigPicture ? styles.bigPicture : iconStyles.inline}
+            ></img>{' '}
           </Link>
           <span>
+            {bigPicture && (
+              <span className={styles.nowPlaying}>
+                {data?.isPlaying ? 'Now' : 'Not Currently'} Playing
+                <br />
+              </span>
+            )}
             <Link underline href={data.track.url} external>
               {data.track.title}
             </Link>
-            {' – '}
+            {bigPicture ? <br /> : ' – '}
             <span>
               {data?.artists.map((artist, index) => {
                 return (
