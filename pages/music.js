@@ -3,10 +3,11 @@ import Entry from '@components/entry'
 import entryStyles from '../components/entry/entry.module.css'
 
 // Data
-import { data as years } from '@data/music.json'
+import music from '@data/music.json'
 import NowPlaying from '@components/now-playing'
 
 const Music = () => {
+  const { data: years } = music
   return (
     <Page
       title="Music"
