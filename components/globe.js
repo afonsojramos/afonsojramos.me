@@ -63,7 +63,6 @@ const GlobeWrapper = () => {
           <b>${properties.ADMIN} (${properties.ISO_A2})</b>
           `}
         rendererConfig={{ preserveDrawingBuffer: true }}
-        pointOfView={{ lng: 30, lat: 30 }}
         controls={
           globeRef &&
           globeRef.current &&
