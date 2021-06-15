@@ -27,13 +27,8 @@ import {
   Sparkles,
   Pencil,
   Search,
-  Design,
-  M6,
-  Book,
   Music,
-  Document,
-  Quote,
-  Words,
+  Travel,
   Lightbulb,
   ArrowRight,
   GitHub,
@@ -91,8 +86,8 @@ const CommandMenu = memo(() => {
       d: () => router.push('/design'),
       k: () => router.push('/keyboards'),
       p: () => router.push('/projects'),
-      q: () => router.push('/quotes'),
-      w: () => router.push('/words'), */
+      q: () => router.push('/quotes'),*/
+      w: () => router.push('/world'),
       m: () => router.push('/music'),
       i: () => router.push('/ideas'),
       // Backspace
@@ -285,8 +280,8 @@ const DefaultItems = () => {
         <Item value="Design" icon={<Design />} keybind="d" />
         <Item value="Keyboards" icon={<M6 />} keybind="k" />
         <Item value="Projects" icon={<Document />} keybind="p" />
-        <Item value="Quotes" icon={<Quote />} keybind="q" />
-      <Item value="Words" icon={<Words />} keybind="w" /> */}
+        <Item value="Quotes" icon={<Quote />} keybind="q" /> */}
+        <Item value="World" icon={<Travel viewBox="0 0 44 44" />} keybind="w" />
         <Item value="Music" icon={<Music />} keybind="m" />
         <Item value="Ideas" icon={<Lightbulb />} keybind="i" />
       </Group>

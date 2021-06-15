@@ -15,7 +15,7 @@ const Travels = ({ html }) => {
 }
 
 export const getStaticProps = async () => {
-  const md = await getMarkdown('data/travels.md')
+  const md = await getMarkdown('data/world.md')
 
   return {
     props: {
