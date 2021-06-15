@@ -14,9 +14,8 @@ export default function NowPlaying({ bigPicture = false }) {
         <span>
           <Spotify className={iconStyles.inline} />{' '}
           <span className={styles.nowPlaying}>
-            {data?.isPlaying ? 'Now' : 'Not Currently'} Playing
+            {data?.isPlaying ? 'Now Playing: ' : 'Music is on Pause'}
           </span>
-          {': '}
         </span>
       )}
       {data?.isPlaying ? (
@@ -30,7 +29,7 @@ export default function NowPlaying({ bigPicture = false }) {
           <span>
             {bigPicture && (
               <span className={styles.nowPlaying}>
-                {data?.isPlaying ? 'Now' : 'Not Currently'} Playing
+                {data?.isPlaying ? 'Now Playing' : 'Music is on Pause'}
                 <br />
               </span>
             )}
