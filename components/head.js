@@ -5,7 +5,7 @@ const defaultOgImage =
   'https://res.cloudinary.com/afonsojramos/image/upload/v1619293728/og-image_lnsn0r.png'
 
 const Head = ({
-  title = 'Afonso Ramos',
+  title = 'Afonso Jorge Ramos - Sofware Engineer',
   description = "Hi, I'm Afonso, ⚡️ Software Engineer who ❤️ loves to learn on a daily basis.",
   image = defaultOgImage,
   children,
