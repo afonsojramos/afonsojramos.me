@@ -19,7 +19,7 @@ export default function NowPlaying({ bigPicture = false }) {
         </span>
       )}
       {data?.isPlaying ? (
-        <span className={bigPicture && styles.nowPlayingData}>
+        <span className={bigPicture ? styles.nowPlayingData : ''}>
           <Link href={data.track.albumUrl} external>
             <img
               src={data.track.image}
