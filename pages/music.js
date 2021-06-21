@@ -13,13 +13,13 @@ const Music = () => {
       title="Music"
       description="Collection of pictures of the most memorable concerts so far."
     >
-      <h2>Favorite Albums & Concerts</h2>
+      <h1>Favorite Albums & Concerts</h1>
       <NowPlaying bigPicture />
       <article>
         {years.map(({ year, concerts, albums }) => {
           return (
             <div key={year}>
-              <h3>{year}</h3>
+              <h2 id={year}>{year}</h2>
               <div>
                 {concerts.map((entry) => {
                   return (

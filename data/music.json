@@ -1,14 +1,86 @@
 {
+  "schema": {
+    "year": "",
+    "concerts": [
+      {
+        "title": "",
+        "festival": "",
+        "image": ""
+      }
+    ],
+    "albums": [
+      {
+        "title": "",
+        "artist": "",
+        "image": "",
+        "url": ""
+      }
+    ]
+  },
   "data": [
     {
       "year": "2021",
-      "concerts": [],
+      "concerts": [
+        {
+          "title": "Raquel Martins",
+          "festival": "Hot Five - Uptown",
+          "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1624204742/IMG_20210617_205016_cmwbqy.jpg"
+        }
+      ],
       "albums": [
         {
           "title": "For the first time",
-          "description": "Black Country, New Road",
+          "artist": "Black Country, New Road",
           "image": "https://i.scdn.co/image/ab67616d00001e020ffaa4f75b2297d36ff1e0ad",
           "url": "https://open.spotify.com/album/2PfgptDcfJTFtoZIS3AukX"
+        },
+        {
+          "title": "Promises",
+          "artist": "Floating Points",
+          "image": "https://i.scdn.co/image/ab67616d00001e028718f18aca81c2f4961946f4",
+          "url": "https://open.spotify.com/album/3ShtO5VCYa3ctlR5uzLWBa"
+        },
+        {
+          "title": "Cavalcade",
+          "artist": "black midi",
+          "image": "https://i.scdn.co/image/ab67616d00001e02313e685574adc6ead733b53c",
+          "url": "https://open.spotify.com/album/7AsC27VDa3yOksZrfBSD6D"
+        },
+        {
+          "title": "Bright Green Field",
+          "artist": "Squid",
+          "image": "https://i.scdn.co/image/ab67616d00001e0255fa8fe66444b56a47f69327",
+          "url": "https://open.spotify.com/album/4z44Wir05QzQYSCs0KwsKX"
+        },
+        {
+          "title": "Jubilee",
+          "artist": "Japanese Breakfast",
+          "image": "https://i.scdn.co/image/ab67616d00001e02fc6b64a6baeac1ea56cf7437",
+          "url": "https://open.spotify.com/album/0ajoNtBO6xHfWEkORtRCAv"
+        },
+        {
+          "title": "To See the Next Part of the Dream",
+          "artist": "파란노을 [Parannoul]",
+          "image": "https://i.scdn.co/image/ab67616d00001e0291771a796206ea1fe20387b5",
+          "url": "https://open.spotify.com/album/0sLt9EsWnVZgJAO5Sp35YQ"
+        },
+        {
+          "title": "Fragments of a Dying Star",
+          "artist": "Dispirited Spirits",
+          "image": "https://i.scdn.co/image/ab67616d00001e020821f296f7c70f2e1e8dceda",
+          "url": "https://open.spotify.com/album/6rGRUCqGLJ0KHHm6O1lk7M"
+        },
+        {
+          "title": "Collapsed In Sunbeams",
+          "artist": "Arlo Parks",
+          "image": "https://i.scdn.co/image/ab67616d00001e020869a7bb597fe38cb1b98102",
+          "url": "https://open.spotify.com/album/42joEEymK7EIHODfNB4yug"
+        },
+        {
+          "title": "Drunk Tank Pink",
+          "artist": "shame",
+          "image": "https://i.scdn.co/image/ab67616d00001e0217ceb0f6809c94057a76cb26",
+          "url": "https://open.spotify.com/album/7hl54HF6Nykh5IDrbqhiJX"
         }
       ]
     },
@@ -39,15 +111,57 @@
       "albums": [
         {
           "title": "Alfredo",
-          "description": "Freddie Gibbs & The Alchemist",
+          "artist": "Freddie Gibbs & The Alchemist",
           "image": "https://i.scdn.co/image/ab67616d00001e0252c24049a16d59e98a638651",
           "url": "https://open.spotify.com/album/3znl1qe13kyjQv7KcR685N?si=2SswTE2jSLC7x6keFJhwuQ&dl_branch=1"
         },
         {
           "title": "Punisher",
-          "description": "Phoebe Bridgers",
+          "artist": "Phoebe Bridgers",
           "image": "https://i.scdn.co/image/ab67616d00001e023040ca980277cf1445934add",
           "url": "https://open.spotify.com/album/2xECuqnvvmVktV7UO8Dd3s"
+        },
+        {
+          "title": "The New Abnormal",
+          "artist": "The Strokes",
+          "image": "https://i.scdn.co/image/ab67616d00001e02bfa99afb5ef0d26d5064b23b",
+          "url": "https://open.spotify.com/album/2xkZV2Hl1Omi8rk2D7t5lN"
+        },
+        {
+          "title": "アダンの風 (Windswept Adan)",
+          "artist": "Ichiko Aoba",
+          "image": "https://i.scdn.co/image/ab67616d00001e022a98379b6053e71d97449af8",
+          "url": "https://open.spotify.com/album/1W0SccGphtGQNYqaqQ5nhA"
+        },
+        {
+          "title": "Circles",
+          "artist": "Mac Miller",
+          "image": "https://i.scdn.co/image/ab67616d00001e0226b7dd89810cc1a40ada642c",
+          "url": "https://open.spotify.com/album/5sY6UIQ32GqwMLAfSNEaXb"
+        },
+        {
+          "title": "Shore",
+          "artist": "Fleet Foxes",
+          "image": "https://i.scdn.co/image/ab67616d00001e024908c0ea9f3884cee21e85c1",
+          "url": "https://open.spotify.com/album/0lmjCPEcec2k6L7ysNIcd3"
+        },
+        {
+          "title": "Future Nostalgia",
+          "artist": "Dua Lipa",
+          "image": "https://i.scdn.co/image/ab67616d00001e02bd26ede1ae69327010d49946",
+          "url": "https://open.spotify.com/album/7fJJK56U9fHixgO0HQkhtI"
+        },
+        {
+          "title": "songs",
+          "artist": "Adrianne Lenker",
+          "image": "https://i.scdn.co/image/ab67616d00001e021e15b31739403f7bf7db598f",
+          "url": "https://open.spotify.com/album/2WKfCjW3EDmgHswj5eVXuG"
+        },
+        {
+          "title": "Shabrang",
+          "artist": "Sevdaliza",
+          "image": "https://i.scdn.co/image/ab67616d00001e022142c120bedc0c32cceb497e",
+          "url": "https://open.spotify.com/album/54tTC9UQtLnu5Wldhlnstr"
         }
       ]
     },
@@ -60,7 +174,74 @@
           "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1623664751/IMG_20191019_213217_xkheor.jpg"
         }
       ],
-      "albums": []
+      "albums": [
+        {
+          "title": "Titanic Rising",
+          "artist": "Weyes Blood",
+          "image": "https://i.scdn.co/image/ab67616d00001e02b0ac3ede8fb336c47d067a43",
+          "url": "https://open.spotify.com/album/53VKICyqCf91sVkTdFrzKX"
+        },
+        {
+          "title": "KIWANUKA",
+          "artist": "Michael Kiwanuka",
+          "image": "https://i.scdn.co/image/ab67616d00001e0260ada139840fb439d6750f27",
+          "url": "https://open.spotify.com/album/1yIqauTni1V7l7djYAKSsZ"
+        },
+        {
+          "title": "MAGDALENE",
+          "artist": "FKA twigs",
+          "image": "https://i.scdn.co/image/ab67616d00001e02eae0ec108e9db33c4bcb29d0",
+          "url": "https://open.spotify.com/album/2w8Wshbp9RCPJdPU1iOpaY"
+        },
+        {
+          "title": "IGOR",
+          "artist": "Tyler, The Creator",
+          "image": "https://i.scdn.co/image/ab67616d00001e027005885df706891a3c182a57",
+          "url": "https://open.spotify.com/album/5zi7WsKlIiUXv09tbGLKsE"
+        },
+        {
+          "title": "Infest The Rats' Nest",
+          "artist": "King Gizzard & The Lizard Wizard",
+          "image": "https://i.scdn.co/image/ab67616d00001e029f20343552da5fab7cc4f897",
+          "url": "https://open.spotify.com/album/5Bz2LxOp0wz7ov0T9WiRmc"
+        },
+        {
+          "title": "GREY Area",
+          "artist": "Little Simz",
+          "image": "https://i.scdn.co/image/ab67616d00001e021c54fc953531d5da04232deb",
+          "url": "https://open.spotify.com/album/4Wwm4xg2748zhYuzDRFTgY"
+        },
+        {
+          "title": "Bandana",
+          "artist": "Freddie Gibbs, Madlib",
+          "image": "https://i.scdn.co/image/ab67616d00001e023bf3b1061f9f703b0f6bf532",
+          "url": "https://open.spotify.com/album/31KbO7WnDp2AjPdmRTJzdf"
+        },
+        {
+          "title": "Pang",
+          "artist": "Caroline Polachek",
+          "image": "https://i.scdn.co/image/ab67616d00001e027d983e7bf67c2806218c2759",
+          "url": "https://open.spotify.com/album/4ClyeVlAKJJViIyfVW0yQD"
+        },
+        {
+          "title": "ANIMA",
+          "artist": "Thom Yorke",
+          "image": "https://i.scdn.co/image/ab67616d00001e02a1fd2fef30236c8efe0efc86",
+          "url": "https://open.spotify.com/album/1g4vEVvVVFvFju0gS0DMbh"
+        }
+      ]
+    },
+    {
+      "year": "2015",
+      "concerts": [],
+      "albums": [
+        {
+          "title": "Hasta La Raíz",
+          "artist": "Natalia Lafourcade",
+          "image": "https://i.scdn.co/image/ab67616d00001e02af40eb5492843b988f42d533",
+          "url": "https://open.spotify.com/album/6DWTUm9rifRvl5PTyNMwqV"
+        }
+      ]
     }
   ]
 }
