@@ -40,7 +40,7 @@ const Music = () => {
                       title={entry.title}
                       image={entry.image}
                       href={entry.url}
-                      description={entry.description}
+                      description={entry.artist}
                     />
                   )
                 })}
