@@ -8,3 +8,38 @@
   margin: 0 auto;
   padding: 0 var(--gap);
 }
+
+.musicYear > h2 {
+  margin-bottom: 0;
+}
+
+.musicYear > h3 {
+  margin-top: 0;
+}
+
+.sidenav {
+  position: fixed;
+  padding: 2em;
+  top: 50%;
+  transform: translate(-95%, -50%);
+}
+
+.sidenav > ul {
+  list-style: none;
+}
+
+.sidenav > ul > li {
+  padding: var(--gap);
+}
+
+.sidenav > ul > li > a {
+  padding: var(--gap);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .sidenav {
+    display: none;
+  }
+}

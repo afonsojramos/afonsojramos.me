@@ -1,6 +1,8 @@
 import Page from '@components/page'
 import Entry from '@components/entry'
+import Link from '@components/link'
 import entryStyles from '../components/entry/entry.module.css'
+import styles from '../components/page/page.module.css'
 
 // Data
 import music from '@data/music.json'
@@ -15,11 +17,25 @@ const Music = () => {
     >
       <h1>Favorite Albums & Concerts</h1>
       <NowPlaying bigPicture />
+      <div className={styles.sidenav}>
+        <ul>
+          {years.map(({ year }) => {
+            return (
+              <li>
+                <Link key={year} href={'#' + year}>
+                  {year}
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
       <article>
-        {years.map(({ year, concerts, albums }) => {
+        {years.map(({ year, description, concerts, albums }) => {
           return (
-            <div key={year}>
+            <div key={year} className={styles.musicYear}>
               <h2 id={year}>{year}</h2>
+              <h3>{description}</h3>
               <div>
                 {concerts.map((entry) => {
                   return (
