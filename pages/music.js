@@ -21,10 +21,8 @@ const Music = () => {
         <ul>
           {years.map(({ year }) => {
             return (
-              <li>
-                <Link key={year} href={'#' + year}>
-                  {year}
-                </Link>
+              <li key={year}>
+                <Link href={'#' + year}>{year}</Link>
               </li>
             )
           })}
