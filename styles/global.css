@@ -76,6 +76,7 @@
 
 html {
   line-height: 1.5;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -214,6 +215,12 @@ details {
   padding: 1rem;
   border-radius: var(--radius);
 }
+
+/* nav {
+  white-space: nowrap;
+  background: #37474f;
+  width: max-content;
+} */
 
 .contacts > .social {
   text-align: center;

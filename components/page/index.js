@@ -1,5 +1,6 @@
 import Head from '@components/head'
 import Header from '@components/header'
+import Link from '@components/link'
 import styles from './page.module.css'
 
 const Page = ({
@@ -19,7 +20,11 @@ const Page = ({
         image={image}
       />
 
-      {header && <Header title={showHeaderTitle && title} />}
+      {header && (
+        <Link href="#">
+          <Header title={showHeaderTitle && title} />
+        </Link>
+      )}
       <main className={styles.main}>{children}</main>
     </div>
   )
