@@ -23,7 +23,7 @@
       "concerts": [
         {
           "title": "Raquel Martins",
-          "festival": "Hot Five - Uptown",
+          "festival": "Hot Five Uptown - Porto",
           "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1624204742/IMG_20210617_205016_cmwbqy.jpg"
         }
       ],
@@ -99,12 +99,12 @@
         },
         {
           "title": "André Henriques",
-          "festival": "Teatro Cinema de Fafe",
+          "festival": "Teatro Cinema - Fafe",
           "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1623665576/IMG_20201009_215125_ma7vop.jpg"
         },
         {
           "title": "Fugly",
-          "festival": "Concertos de Bolso - Feira do Livro Porto",
+          "festival": "Concertos de Bolso (Feira do Livro) - Porto",
           "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1623665140/IMG_20200909_192536_sopswt.jpg"
         }
       ],
@@ -167,6 +167,7 @@
     },
     {
       "year": "2019",
+      "description": "This was an amazing year for music 🥰",
       "concerts": [
         {
           "title": "King Gizzard and the Lizzard Wizzard",
@@ -228,6 +229,42 @@
           "artist": "Thom Yorke",
           "image": "https://i.scdn.co/image/ab67616d00001e02a1fd2fef30236c8efe0efc86",
           "url": "https://open.spotify.com/album/1g4vEVvVVFvFju0gS0DMbh"
+        },
+        {
+          "title": "Designer",
+          "artist": "Aldous Harding",
+          "image": "https://i.scdn.co/image/ab67616d00001e023b5bd0bc8b71a4bd2edf7b69",
+          "url": "https://open.spotify.com/album/0QNJa03XQeMOuQhi9izThh"
+        },
+        {
+          "title": "Ventura",
+          "artist": "Anderson .Paak",
+          "image": "https://i.scdn.co/image/ab67616d00001e023d5b8fe604275dfab677bd0d",
+          "url": "https://open.spotify.com/album/0YF8PfcGbsKg5IaFyPnlyY"
+        },
+        {
+          "title": "Injury Reserve",
+          "artist": "Injury Reserve",
+          "image": "https://i.scdn.co/image/ab67616d00001e02bbb8e75cc391ddeba931b3eb",
+          "url": "https://open.spotify.com/album/5UWKsRDw3O4BsobmeyRpB9"
+        },
+        {
+          "title": "Assume Form",
+          "artist": "James Blake",
+          "image": "https://i.scdn.co/image/ab67616d00001e02a7695725012f01292f2877e0",
+          "url": "https://open.spotify.com/album/1LJE8ppunlaafUQzNJsxl2"
+        },
+        {
+          "title": "My Finest Work Yet",
+          "artist": "Andrew Bird",
+          "image": "https://i.scdn.co/image/ab67616d00001e0274ffdd29cc4898e8ed01d747",
+          "url": "https://open.spotify.com/album/2xQ1WHVV0MdVSRkpND5P51"
+        },
+        {
+          "title": "Wave",
+          "artist": "Patrick Watson",
+          "image": "https://i.scdn.co/image/ab67616d00001e024eb6484d7f998a527f6fcfad",
+          "url": "https://open.spotify.com/album/4sgJYX3we1RoranerDs8ph"
         }
       ]
     },
