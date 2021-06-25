@@ -22,6 +22,7 @@ const Posts = ({ slug, posts, paginate }) => {
             title={post.title}
             type={date}
             description={post.description}
+            slug={post.slug}
           />
         )
       })}
