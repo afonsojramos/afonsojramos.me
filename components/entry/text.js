@@ -1,10 +1,15 @@
 import { memo } from 'react'
 import cn from 'classnames'
+import useSWR from 'swr'
+import fetcher from '@lib/fetcher'
 
 import Link from '@components/link'
 import styles from './text.module.css'
 
-const TextEntry = ({ title, description, type, comment, href, as }) => {
+const TextEntry = ({ title, description, type, comment, href, as, slug }) => {
+  const { data } = useSWR(`/api/views/${slug}`, fetcher)
+  const views = data?.total
+
   return (
     <li className={styles.item}>
       <Link
@@ -21,6 +26,7 @@ const TextEntry = ({ title, description, type, comment, href, as }) => {
             <p className={cn(styles.description, 'clamp')}>{description}</p>
           )}
         </div>
+        {`${views ? views.toLocaleString() : '–––'} views`}
       </Link>
     </li>
   )
