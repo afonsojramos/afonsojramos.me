@@ -20,11 +20,7 @@ const Page = ({
         image={image}
       />
 
-      {header && (
-        <Link href="#">
-          <Header title={showHeaderTitle && title} />
-        </Link>
-      )}
+      {header && <Header title={showHeaderTitle && title} />}
       <main className={styles.main}>{children}</main>
     </div>
   )
