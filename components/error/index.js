@@ -15,7 +15,7 @@ const Error = ({ status }) => {
         <>
           <h1>This page cannot be found.</h1>
 
-          <p>
+          <div>
             <blockquote cite="https://afonsojramos.me/">
               <p>The perfect personal website doesn't exis-</p>
 
@@ -26,7 +26,7 @@ const Error = ({ status }) => {
                 </Link>
               </footer>
             </blockquote>
-          </p>
+          </div>
         </>
       ) : (
         <section className={styles.section}>
