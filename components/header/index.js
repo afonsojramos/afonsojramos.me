@@ -13,10 +13,10 @@ const Header = ({ title, content }) => {
           <LogoIcon />
         </Link>
 
-        {title && (
-          <Link href="#" className={styles.content}>
-            {title}
-          </Link>
+        {title && title !== 404 ? (
+          <Link href="#">{title}</Link>
+        ) : (
+          <p className={styles.content}>{title}</p>
         )}
 
         <Command />
