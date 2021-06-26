@@ -14,27 +14,29 @@ import { DialogContent, DialogOverlay } from '@reach/dialog'
 
 import {
   Command,
+  CommandGroup,
   CommandInput,
   CommandItem,
   CommandList,
   useCommand,
   usePages,
-  CommandGroup,
 } from 'cmdk'
 
 import {
+  Afonso,
+  ArrowLeft,
+  ArrowRight,
   Command as CommandIcon,
-  Sparkles,
+  GitHub,
+  Home,
+  Lightbulb,
+  LinkedIn,
+  Menu,
+  Music,
   Pencil,
   Search,
-  Music,
+  Sparkles,
   Travel,
-  Lightbulb,
-  ArrowRight,
-  GitHub,
-  LinkedIn,
-  ArrowLeft,
-  Afonso,
 } from '@components/icons'
 import styles from './command.module.css'
 import headerStyles from '@components/header/header.module.css'
@@ -126,7 +128,7 @@ const CommandMenu = memo(() => {
   useEffect(() => {
     if (!listRef.current || !heightRef.current) return
 
-    const height = Math.min(listRef.current.offsetHeight + 1, 400)
+    const height = Math.min(listRef.current.offsetHeight + 1, 450)
     heightRef.current.style.height = height + 'px'
   })
 
@@ -252,7 +254,8 @@ const DefaultItems = () => {
   return (
     <>
       <Group title="Navigation">
-        <Item value="Home" icon={<ArrowRight />} keybind="h" />
+        <Item value="Home" icon={<Home />} keybind="h" />
+        <Item value="Menu" icon={<Menu />} keybind="Shift+M" />
         <Item value="Go Back" icon={<ArrowLeft />} keybind="backspace" />
         <Item value="Contacts" icon={<ArrowRight />} keybind="c" />
         <Item
