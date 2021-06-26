@@ -1,7 +1,7 @@
 ### Website
 
 - [ ] Curriculum Page
-- [ ] World Travels Page
+- [x] World Travels Page
 - [x] [Favourite Concerts/Albums Page](/music)
 - [x] [Spotify Connection](/)
 - [ ] Trakt Connection - What TV Shows have I been watching?
