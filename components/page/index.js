@@ -1,6 +1,5 @@
 import Head from '@components/head'
 import Header from '@components/header'
-import Link from '@components/link'
 import styles from './page.module.css'
 
 const Page = ({
