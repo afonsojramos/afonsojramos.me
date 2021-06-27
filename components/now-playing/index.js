@@ -17,47 +17,52 @@ export default function NowPlaying({ bigPicture = false }) {
   return (
     <div className={bigPicture ? styles.bigPicture : styles.nowPlaying}>
       <span className={styles.nowPlaying}>
-        <Spotify className={iconStyles.inline} />
-        <Lottie
-          animationData={
-            theme === 'dark'
-              ? replaceColor('#000000', '#ffffff', lottiePlay)
-              : lottiePlay
-          }
-          play
-          loop={false}
-          style={{
-            width: 40,
-            height: 40,
-            alignSelf: 'center',
-          }}
-          goTo={100}
-          segments={!data || !data.isPlaying ? [0, 100] : [100, 190]}
-        />
+        <Link
+          href={'https://open.spotify.com/user/1167513964?si=59c88013d20a4da9'}
+        >
+          <Spotify className={iconStyles.inline} />
+          <Lottie
+            animationData={
+              theme === 'dark'
+                ? replaceColor('#000000', '#ffffff', lottiePlay)
+                : lottiePlay
+            }
+            loop={false}
+            style={{
+              width: 39,
+              height: 39,
+              alignSelf: 'center',
+            }}
+            segments={!data?.isPlaying ? [0, 100] : [100, 190]}
+            speed={0.7}
+            play
+            className={data ? styles.show : styles.noShow}
+          />
+        </Link>
       </span>
       {data && data.track && (
-        <span>
-          <Link href={data?.track.albumUrl} external>
+        <span className={styles.show}>
+          <Link href={data.track.albumUrl} external>
             <img
-              src={data?.track.image}
+              src={data.track.image}
               className={
                 bigPicture ? styles.bigPictureImage : iconStyles.inline
               }
             ></img>{' '}
           </Link>
           <span>
-            <Link underline href={data?.track.url} external>
-              {data?.track.title}
+            <Link underline href={data.track.url} external>
+              {data.track.title}
             </Link>
 
             {bigPicture ? <br /> : ' – '}
-            {data?.artists.map((artist, index) => {
+            {data.artists.map((artist, index) => {
               return (
                 <>
                   <Link key={artist.name} underline href={artist.url} external>
                     {artist.name}
                   </Link>
-                  {index < data?.artists.length - 1 ? ', ' : ''}
+                  {index < data.artists.length - 1 ? ', ' : ''}
                 </>
               )
             })}

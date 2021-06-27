@@ -2,7 +2,8 @@ div.nowPlaying {
   margin-top: 3rem;
 }
 
-.nowPlaying {
+.nowPlaying,
+span.nowPlaying a {
   display: flex;
 }
 
@@ -20,8 +21,11 @@ div.nowPlaying {
   display: block;
 }
 
-.bigPicture > span + span {
-  display: contents;
+.bigPicture > span + span > span {
+  padding-top: 16px;
+  display: block;
+  float: right;
+  animation: fadein 2s;
 }
 
 .bigPicture img {
@@ -29,6 +33,18 @@ div.nowPlaying {
   vertical-align: middle;
   margin-right: 1rem;
   border-radius: var(--radius);
-  margin-left: 1rem;
-  float: left;
+  margin-left: 0.4rem;
+}
+
+.show {
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
