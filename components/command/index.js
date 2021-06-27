@@ -101,9 +101,7 @@ const CommandMenu = memo(() => {
   useEffect(() => {
     const unsubs = [
       tinykeys(window, keymap, { ignoreFocus: true }),
-      tinykeys(window, { '$mod+m': () => setOpen((o) => !o) }),
-      tinykeys(window, { 'Shift+m': () => setOpen((o) => !o) }),
-      tinykeys(window, { 'Alt+m': () => setOpen((o) => !o) }),
+      tinykeys(window, { k: () => setOpen((o) => !o) }),
     ]
     return () => {
       unsubs.forEach((unsub) => unsub())
@@ -136,7 +134,7 @@ const CommandMenu = memo(() => {
     <>
       <button
         className={headerStyles.command}
-        title="Shift+M / Control+M / ⌘+M"
+        title="K"
         onClick={() => setOpen(true)}
       >
         <CommandIcon />
@@ -255,7 +253,7 @@ const DefaultItems = () => {
     <>
       <Group title="Navigation">
         <Item value="Home" icon={<Home />} keybind="h" />
-        <Item value="Menu" icon={<Menu />} keybind="Shift+M" />
+        <Item value="Menu" icon={<Menu />} keybind="k" />
         <Item value="Go Back" icon={<ArrowLeft />} keybind="backspace" />
         <Item value="Contacts" icon={<ArrowRight />} keybind="c" />
         <Item
