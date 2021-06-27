@@ -1,46 +1,27 @@
 import useSWR from 'swr'
 import Link from '@components/link'
 import fetcher from '@lib/fetcher'
-import Lottie from 'react-lottie-player'
-import { replaceColor } from 'lottie-colorify'
-import { useTheme } from 'next-themes'
 
 import { Spotify } from '../icons'
 import iconStyles from '../icons/icons.module.css'
 import styles from './now-playing.module.css'
-import lottiePlay from '@components/icons/lottie/play.json'
 
 export default function NowPlaying({ bigPicture = false }) {
   const { data } = useSWR('/api/now-playing', fetcher)
-  const { theme } = useTheme()
 
   return (
     <div className={bigPicture ? styles.bigPicture : styles.nowPlaying}>
-      <span className={styles.nowPlaying}>
+      <span>
         <Link
           href={'https://open.spotify.com/user/1167513964?si=59c88013d20a4da9'}
+          external
         >
           <Spotify className={iconStyles.inline} />
-          <Lottie
-            animationData={
-              theme === 'dark'
-                ? replaceColor('#000000', '#ffffff', lottiePlay)
-                : lottiePlay
-            }
-            loop={false}
-            style={{
-              width: 39,
-              height: 39,
-              alignSelf: 'center',
-            }}
-            segments={!data?.isPlaying ? [0, 100] : [100, 190]}
-            speed={0.7}
-            play
-            className={data ? styles.show : styles.noShow}
-          />
         </Link>
+        {!bigPicture &&
+          (data?.isPlaying ? <b> Now Playing: </b> : <b> Music on Pause </b>)}
       </span>
-      {data && data.track && (
+      {data && data.isPlaying && (
         <span className={styles.show}>
           <Link href={data.track.albumUrl} external>
             <img
