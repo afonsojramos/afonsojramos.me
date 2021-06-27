@@ -14,7 +14,7 @@ const Page = ({
   return (
     <div className={styles.wrapper}>
       <Head
-        title={`${title ? `${title} - ` : ''}Afonso Ramos`}
+        title={`${title ? `${title} - ` : ''}Afonso Jorge Ramos`}
         description={description}
         image={image}
       />

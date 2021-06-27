@@ -35,7 +35,7 @@ const Head = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@afonsojramos" />
       <meta name="apple-mobile-web-app-title" content="Afonso" />
-      <meta name="author" content="Afonso Ramos" />
+      <meta name="author" content="Afonso Jorge Ramos" />
 
       {/* RSS feed */}
       <link

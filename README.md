@@ -1,7 +1,7 @@
 <div align="center">
   <p>
     <a href="https://afonsojramos.me">
-      <img alt="Afonso Ramos" src="public/favicons/dark.png" style="height: 50px"/>
+      <img alt="Afonso Jorge Ramos" src="public/favicons/dark.png" style="height: 50px"/>
     </a>
   </p>
   <h1>
@@ -13,6 +13,6 @@
   </p>
   Personal website and blog. Designed with a focus on minimalism, UI interactions, and typography.
 
-  Built with [Next.js](https://nextjs.org) and styled mostly with CSS Modules.
+Built with [Next.js](https://nextjs.org) and styled mostly with CSS Modules.
 
 </div>
