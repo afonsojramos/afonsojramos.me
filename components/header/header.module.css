@@ -48,6 +48,7 @@
   overflow: auto;
   color: var(--gray-alpha);
   font-weight: 500;
+  margin-left: -20px; /* icon size diff */
 }
 
 .hint {
