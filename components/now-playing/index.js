@@ -16,7 +16,7 @@ export default function NowPlaying({ bigPicture = false }) {
           href={'https://open.spotify.com/user/1167513964?si=59c88013d20a4da9'}
           external
         >
-          <Spotify className={iconStyles.inline} />
+          <Spotify className={bigPicture ? styles.bigIcon : styles.inline} />
         </Link>
         {!bigPicture &&
           (data?.isPlaying ? <b> Now Playing: </b> : <b> Music on Pause </b>)}

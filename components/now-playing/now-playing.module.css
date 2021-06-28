@@ -2,13 +2,24 @@ div.nowPlaying {
   margin-top: 3rem;
 }
 
-.nowPlaying,
-span.nowPlaying a {
-  display: flex;
+div.nowPlaying > span > b {
+  vertical-align: middle;
 }
 
 .nowPlaying img {
   margin-left: 0.4rem;
+}
+
+.inline {
+  width: 30px;
+  vertical-align: middle;
+  margin-right: 0.2rem;
+}
+
+.bigIcon {
+  width: 50px;
+  vertical-align: middle;
+  margin-right: 0.2rem;
 }
 
 .bigPicture {
