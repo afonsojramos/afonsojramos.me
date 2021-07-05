@@ -1,5 +1,8 @@
 div.nowPlaying {
   margin-top: 3rem;
+  height: 40px;
+  display: flex;
+  align-items: center;
 }
 
 div.nowPlaying > span > b {
