@@ -1,16 +1,21 @@
-div.nowPlaying {
+.nowPlaying {
   margin-top: 3rem;
   height: 40px;
   display: flex;
   align-items: center;
 }
 
-div.nowPlaying > span > b {
+.nowPlaying > span {
+  max-width: 34rem;
+}
+
+.nowPlaying > span > b {
   vertical-align: middle;
 }
 
 .nowPlaying img {
   margin-left: 0.4rem;
+  float: left;
 }
 
 .inline {
@@ -30,18 +35,17 @@ div.nowPlaying > span > b {
   justify-content: center;
 }
 
-.bigPicture > span {
-  display: block;
-}
-
 .bigPicture > span + span > span {
-  padding-top: 16px;
   display: block;
   float: right;
   animation: fadein 2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 25rem;
 }
 
-.bigPicture img {
+.bigPicture > .show > a > img {
   width: 80px;
   vertical-align: middle;
   margin-right: 1rem;
@@ -52,6 +56,21 @@ div.nowPlaying > span > b {
 .show {
   animation: fadein 2s;
   margin-left: 0.2rem;
+  display: flex;
+}
+
+.show > span {
+  vertical-align: middle;
+  margin: auto;
+}
+
+div.nowPlaying > .show > a {
+  display: inherit;
+  margin-right: 0.2rem;
+}
+
+.show > a > img {
+  margin: auto;
 }
 
 @keyframes fadein {
