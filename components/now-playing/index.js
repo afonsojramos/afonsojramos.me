@@ -1,6 +1,7 @@
 import useSWR from 'swr'
 import Link from '@components/link'
 import fetcher from '@lib/fetcher'
+import Image from 'next/image'
 
 import { Spotify } from '../icons'
 import iconStyles from '../icons/icons.module.css'
@@ -24,12 +25,14 @@ export default function NowPlaying({ bigPicture = false }) {
       {data && data.isPlaying && (
         <span className={styles.show}>
           <Link href={data.track.albumUrl} external>
-            <img
+            <Image
               src={data.track.image}
               className={
                 bigPicture ? styles.bigPictureImage : iconStyles.inline
               }
-            ></img>{' '}
+              width={bigPicture ? '80' : '40'}
+              height={bigPicture ? '80' : '40'}
+            ></Image>{' '}
           </Link>
           <span>
             <Link underline href={data.track.url} external>
