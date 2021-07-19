@@ -8,7 +8,7 @@ const Head = ({
   title = 'Afonso Jorge Ramos - Sofware Engineer',
   description = "Hi, I'm Afonso, ⚡️ Software Engineer who ❤️ loves to learn on a daily basis.",
   image = defaultOgImage,
-  children,
+  children
 }) => {
   const { systemTheme } = useTheme()
 
@@ -24,7 +24,7 @@ const Head = ({
 
       {/* Image */}
       <meta name="twitter:image" content={image} />
-      <meta name="og:image" content={image} />
+      <meta name="image" property="og:image" content={image} />
 
       {/* URL */}
       <meta name="og:url" content="https://afonsojramos.me" />
