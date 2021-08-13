@@ -22,7 +22,7 @@
     "lodash.debounce": "^4.0.8",
     "lottie-colorify": "^0.8.0",
     "match-sorter": "^6.3.0",
-    "next": "^11.0.1",
+    "next": "^11.1.0",
     "next-themes": "^0.0.14",
     "node-fetch": "^2.6.1",
     "nprogress": "^0.2.0",
