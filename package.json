@@ -48,7 +48,7 @@
     "eslint-plugin-react": "^7.25.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "gray-matter": "^4.0.3",
-    "lowdb": "^2.1.0",
+    "lowdb": "^3.0.0",
     "marked": "^3.0.4",
     "next-sitemap": "^1.6.168",
     "next-unused": "^0.0.6",
