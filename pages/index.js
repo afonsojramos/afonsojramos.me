@@ -1,6 +1,6 @@
 import Page from '@components/page'
 import Link from '@components/link'
-import { Hostelworld } from '@components/icons'
+import { EDreams } from '@components/icons'
 import NowPlaying from '../components/now-playing'
 import iconStyles from '@components/icons/icons.module.css'
 
@@ -39,13 +39,13 @@ const About = () => {
 
         <p>
           Working at{' '}
-          <Link href="https://hostelworld.com" external>
-            <Hostelworld className={iconStyles.inline} />
+          <Link href="https://edreams.com/" external>
+            <EDreams className={iconStyles.inline} />
           </Link>
-          <Link underline href="https://hostelworld.com" external>
-            Hostelworld
+          <Link underline href="https://edreams.com/" external>
+            eDreams ODIGEO
           </Link>{' '}
-          to bring better travelling experiences to the world.
+          to help create the one stop travel company.
         </p>
       </article>
       <NowPlaying />
