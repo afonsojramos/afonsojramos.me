@@ -5,7 +5,7 @@ import {
   useEffect,
   useMemo,
   useRef,
-  useState,
+  useState
 } from 'react'
 import cn from 'classnames'
 import { useRouter } from 'next/router'
@@ -19,7 +19,7 @@ import {
   CommandItem,
   CommandList,
   useCommand,
-  usePages,
+  usePages
 } from 'cmdk'
 
 import {
@@ -36,7 +36,7 @@ import {
   Pencil,
   Search,
   Sparkles,
-  Travel,
+  Travel
 } from '@components/icons'
 import styles from './command.module.css'
 import headerStyles from '@components/header/header.module.css'
@@ -52,7 +52,7 @@ const CommandMenu = memo(() => {
   const commandRef = useRef()
   const router = useRouter()
   const commandProps = useCommand({
-    label: 'Site Navigation',
+    label: 'Site Navigation'
   })
   const [pages, setPages] = usePages(commandProps, ThemeItems)
   const [open, setOpen] = useState(false)
@@ -60,7 +60,7 @@ const CommandMenu = memo(() => {
 
   const { mounted, rendered } = useDelayedRender(open, {
     enterDelay: -1,
-    exitDelay: 200,
+    exitDelay: 200
   })
 
   // Can't do this inside of useCommand because it relies on useDelayedRender
@@ -86,14 +86,13 @@ const CommandMenu = memo(() => {
       // Collections
       /* r: () => router.push('/reading'),
       d: () => router.push('/design'),
-      k: () => router.push('/keyboards'),
       p: () => router.push('/projects'),
       q: () => router.push('/quotes'),*/
       w: () => router.push('/world'),
       m: () => router.push('/music'),
       i: () => router.push('/ideas'),
       // Backspace
-      backspace: () => router.back(),
+      backspace: () => router.back()
     }
   }, [router, setPages])
 
@@ -101,7 +100,7 @@ const CommandMenu = memo(() => {
   useEffect(() => {
     const unsubs = [
       tinykeys(window, keymap, { ignoreFocus: true }),
-      tinykeys(window, { k: () => setOpen((o) => !o) }),
+      tinykeys(window, { '$mod+k': () => setOpen((o) => !o) })
     ]
     return () => {
       unsubs.forEach((unsub) => unsub())
@@ -143,7 +142,7 @@ const CommandMenu = memo(() => {
       <DialogOverlay
         isOpen={mounted}
         className={cn(styles.screen, {
-          [styles.show]: rendered,
+          [styles.show]: rendered
         })}
         onDismiss={() => setOpen(false)}
       >
@@ -155,7 +154,7 @@ const CommandMenu = memo(() => {
             {...commandProps}
             ref={commandRef}
             className={cn(styles.command, {
-              [styles.show]: rendered,
+              [styles.show]: rendered
             })}
           >
             <div className={styles.top}>
@@ -173,7 +172,7 @@ const CommandMenu = memo(() => {
             <div
               ref={heightRef}
               className={cn(styles.container, {
-                [styles.empty]: list.current.length === 0,
+                [styles.empty]: list.current.length === 0
               })}
             >
               <CommandList ref={listRef}>
@@ -253,7 +252,7 @@ const DefaultItems = () => {
     <>
       <Group title="Navigation">
         <Item value="Home" icon={<Home />} keybind="h" />
-        <Item value="Menu" icon={<Menu />} keybind="k" />
+        <Item value="Menu" icon={<Menu />} keybind="ctrl+k" />
         <Item value="Go Back" icon={<ArrowLeft />} keybind="backspace" />
         <Item value="Contacts" icon={<ArrowRight />} keybind="c" />
         <Item
@@ -279,7 +278,6 @@ const DefaultItems = () => {
         />
         {/* <Item value="Reading" icon={<Book />} keybind="r" />
         <Item value="Design" icon={<Design />} keybind="d" />
-        <Item value="Keyboards" icon={<M6 />} keybind="k" />
         <Item value="Projects" icon={<Document />} keybind="p" />
         <Item value="Quotes" icon={<Quote />} keybind="q" /> */}
         <Item value="World" icon={<Travel viewBox="0 0 44 44" />} keybind="w" />
