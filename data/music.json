@@ -81,6 +81,18 @@
           "artist": "shame",
           "image": "https://i.scdn.co/image/ab67616d00001e0217ceb0f6809c94057a76cb26",
           "url": "https://open.spotify.com/album/7hl54HF6Nykh5IDrbqhiJX"
+        },
+        {
+          "title": "Te Amo Lá Fora",
+          "artist": "DUDA BEAT",
+          "image": "https://i.scdn.co/image/ab67616d00001e0276c181220fd7e1512ee4ff9d",
+          "url": "https://open.spotify.com/album/5o6MJpi6Y4fQwI8gmv0oZc"
+        },
+        {
+          "title": "Crack-Up",
+          "artist": "Fleet Foxes",
+          "image": "https://i.scdn.co/image/ab67616d00001e0271b24e854cdd7633cb5baaa7",
+          "url": "http://open.spotify.com/album/0xtTojp4zfartyGtbFKN3v"
         }
       ]
     },
@@ -162,6 +174,24 @@
           "artist": "Sevdaliza",
           "image": "https://i.scdn.co/image/ab67616d00001e022142c120bedc0c32cceb497e",
           "url": "https://open.spotify.com/album/54tTC9UQtLnu5Wldhlnstr"
+        },
+        {
+          "title": "Dinner Party",
+          "artist": "Terrace Martin",
+          "image": "https://i.scdn.co/image/ab67616d00001e025557786a9c1b65b81c018551",
+          "url": "https://open.spotify.com/album/4Wq9dC08uEtSuGc8mFwC3r"
+        },
+        {
+          "title": "Set My Heart On Fire Immediately",
+          "artist": "Perfume Genius",
+          "image": "https://i.scdn.co/image/ab67616d00001e0243f44b90dd0a223b06aba994",
+          "url": "https://open.spotify.com/album/5qWrp5RcqjxB8ak7dtK6Iv"
+        },
+        {
+          "title": "how i'm feeling now",
+          "artist": "Charli XCX",
+          "image": "https://i.scdn.co/image/ab67616d00001e02664e38c99d077cc52ab48914",
+          "url": "https://open.spotify.com/album/3a9qH2VEsSiOZvMrjaS0Nu"
         }
       ]
     },
@@ -265,6 +295,138 @@
           "artist": "Patrick Watson",
           "image": "https://i.scdn.co/image/ab67616d00001e024eb6484d7f998a527f6fcfad",
           "url": "https://open.spotify.com/album/4sgJYX3we1RoranerDs8ph"
+        },
+        {
+          "title": "GINGER",
+          "artist": "BROCKHAMPTON",
+          "image": "https://i.scdn.co/image/ab67616d00001e0246f07fa4f28bf824840ddacb",
+          "url": "https://open.spotify.com/album/1jToVugwBEzcak8gJNZG2f"
+        },
+        {
+          "title": "ARIZONA BABY",
+          "artist": "Kevin Abstract",
+          "image": "https://i.scdn.co/image/ab67616d00001e02595101c281d7e229e1f0e6c4",
+          "url": "https://open.spotify.com/album/6wi40lIjhukePWyXRKY7qO"
+        },
+        {
+          "title": "Miami Memory",
+          "artist": "Alex Cameron",
+          "image": "https://i.scdn.co/image/ab67616d00001e02bf96842d5f15a8a49d12ab67",
+          "url": "https://open.spotify.com/album/33u2PRETjYklC6UqxJBGW2"
+        }
+      ]
+    },
+    {
+      "year": "2018",
+      "concerts": [],
+      "albums": [
+        {
+          "title": "iridescence",
+          "artist": "BROCKHAMPTON",
+          "image": "https://i.scdn.co/image/ab67616d00001e02de91214392394303e66d1cb6",
+          "url": "https://open.spotify.com/album/3Mj4A4nNJzIdxOyS4yzOhj"
+        },
+        {
+          "title": "For Ever",
+          "artist": "Jungle",
+          "image": "https://i.scdn.co/image/ab67616d00001e02ed7161514b659102e49bb589",
+          "url": "https://open.spotify.com/album/1VZxGX1lzF1QjY5QofhC5r"
+        },
+        {
+          "title": "I'm All Ears",
+          "artist": "Let's Eat Grandma",
+          "image": "https://i.scdn.co/image/ab67616d00001e024a8007933fab9c774ae4cc83",
+          "url": "https://open.spotify.com/album/4TgXvHJWXGk0BlBvfs13Qg"
+        },
+        {
+          "title": "No New World",
+          "artist": "MASS OF THE FERMENTING DREGS",
+          "image": "https://i.scdn.co/image/ab67616d00001e02ca20c2d8675dde280330e436",
+          "url": "https://open.spotify.com/album/1Or7rQnUCdwz3NX5QFSIne"
+        },
+        {
+          "title": "KIDS SEE GHOSTS",
+          "artist": "KIDS SEE GHOSTS",
+          "image": "https://i.scdn.co/image/ab67616d00001e02013c00ee367dd85396f79c82",
+          "url": "https://open.spotify.com/album/6pwuKxMUkNg673KETsXPUV"
+        },
+        {
+          "title": "Wide Awake!",
+          "artist": "Parquet Courts",
+          "image": "https://i.scdn.co/image/ab67616d00001e021317be574cc7f4cad6eb4f27",
+          "url": "https://open.spotify.com/album/5uTI2HcpAywDP8Vo1DpJta"
+        },
+        {
+          "title": "Whack World",
+          "artist": "Tierra Whack",
+          "image": "https://i.scdn.co/image/ab67616d00001e02fb22c7162d3867dc3c2af466",
+          "url": "https://open.spotify.com/album/3ogNAkUhvQy0cFOfLoR6Y8"
+        },
+        {
+          "title": "Dirty Computer",
+          "artist": "Janelle Monáe",
+          "image": "https://i.scdn.co/image/ab67616d00001e020a60fb0deda858270cca82ee",
+          "url": "https://open.spotify.com/album/2PjlaxlMunGOUvcRzlTbtE"
+        },
+        {
+          "title": "Virtue",
+          "artist": "The Voidz",
+          "image": "https://i.scdn.co/image/ab67616d00001e02d00e504004a48159ac896b64",
+          "url": "https://open.spotify.com/album/2dMmcXlG8xtRJNlsjIrPWe"
+        },
+        {
+          "title": "Little Dark Age",
+          "artist": "MGMT",
+          "image": "https://i.scdn.co/image/ab67616d00001e02b47d309281c66820b7137f5d",
+          "url": "https://open.spotify.com/album/7GjVWG39IOj4viyWplJV4H"
+        },
+        {
+          "title": "Con Todo El Mundo",
+          "artist": "Khruangbin",
+          "image": "https://i.scdn.co/image/ab67616d00001e02811309a5bbc336e25df4e2ed",
+          "url": "https://open.spotify.com/album/09AkhNYWocEZWbeYl1YBf7"
+        },
+        {
+          "title": "The Weather",
+          "artist": "Pond",
+          "image": "https://i.scdn.co/image/ab67616d00001e02278d7e7ae4ba3d04191c9032",
+          "url": "https://open.spotify.com/album/3N9tV0l74lqxcBegMv80S7"
+        },
+        {
+          "title": "Sex & Food",
+          "artist": "Unknown Mortal Orchestra",
+          "image": "https://i.scdn.co/image/ab67616d00001e02aa839bb04931542d830c73b1",
+          "url": "https://open.spotify.com/album/7c2Xfq7aQKzs0KdSI3K7Rc"
+        },
+        {
+          "title": "Isolation",
+          "artist": "Kali Uchis",
+          "image": "https://i.scdn.co/image/ab67616d00001e0290b4e1905b1fc48c537ec053",
+          "url": "https://open.spotify.com/album/4EPQtdq6vvwxuYeQTrwDVY"
+        },
+        {
+          "title": "7",
+          "artist": "Beach House",
+          "image": "https://i.scdn.co/image/ab67616d00001e0274ba05ea8826cb0e4ca49c21",
+          "url": "https://open.spotify.com/album/65bVa55LFhY4PLx0kg8LjW"
+        },
+        {
+          "title": "Twin Fantasy",
+          "artist": "Car Seat Headrest",
+          "image": "https://i.scdn.co/image/ab67616d00001e02e4221d183898a2c206626b64",
+          "url": "https://open.spotify.com/album/20U1UWeGcGq7JVW0tf8yfH"
+        },
+        {
+          "title": "Parcels",
+          "artist": "Parcels",
+          "image": "https://i.scdn.co/image/ab67616d00001e02d26bc8655d6132c9e243f82e",
+          "url": "https://open.spotify.com/album/6tNAnVG8xrmMbINuWutrNy"
+        },
+        {
+          "title": "You Won't Get What You Want",
+          "artist": "Daughters",
+          "image": "https://i.scdn.co/image/ab67616d00001e02ff4070fbf8c5b085a78ceaa7",
+          "url": "https://open.spotify.com/album/21wg2jYkGO5RcnU2CV2a2s"
         }
       ]
     },
@@ -277,6 +439,168 @@
           "artist": "Rex Orange County",
           "image": "https://i.scdn.co/image/ab67616d00001e0294c6cd33b8be451c2372c6fa",
           "url": "https://open.spotify.com/album/2NBVxjZcbH5H1N1Ab2ExDH"
+        },
+        {
+          "title": "Polygondwanaland",
+          "artist": "King Gizzard & The Lizard Wizard",
+          "image": "https://i.scdn.co/image/ab67616d00001e029d38dd6e81b0c8943ed44d32",
+          "url": "https://open.spotify.com/album/6FAntlrL2g642UbLj66GTi"
+        },
+        {
+          "title": "Phase",
+          "artist": "Mildlife",
+          "image": "https://i.scdn.co/image/ab67616d00001e0200baf5242fb0e5a63c72da37",
+          "url": "https://open.spotify.com/album/12zGIRwGNFH74714QX90W6"
+        },
+        {
+          "title": "Prince of Tears",
+          "artist": "Baxter Dury",
+          "image": "https://i.scdn.co/image/ab67616d00001e022e802f6a5627ea46c4f23223",
+          "url": "https://open.spotify.com/album/3qb5B25qWfVjvWzFVmci0f"
+        },
+        {
+          "title": "4eva Is A Mighty Long Time",
+          "artist": "Big K.R.I.T.",
+          "image": "https://i.scdn.co/image/ab67616d00001e02f5da2c149c9b9d25ed41a87d",
+          "url": "https://open.spotify.com/album/6vGEX2ejVVsHTIsqI1teZg"
+        },
+        {
+          "title": "Mura Masa",
+          "artist": "Mura Masa",
+          "image": "https://i.scdn.co/image/ab67616d00001e026818aa231aa543cf87e1374a",
+          "url": "https://open.spotify.com/album/0NBTBo1qrg554sAj79nEqD"
+        },
+        {
+          "title": "How Did We Get So Dark?",
+          "artist": "Royal Blood",
+          "image": "https://i.scdn.co/image/ab67616d00001e0294b63000190c83e4dc4ea064",
+          "url": "https://open.spotify.com/album/3Rz6kF8eGqrDOEteo5YsBj"
+        },
+        {
+          "title": "The OOZ",
+          "artist": "King Krule",
+          "image": "https://i.scdn.co/image/ab67616d00001e0202c79f3d1c61cc837bea3d5e",
+          "url": "https://open.spotify.com/album/2Xx8ZUbuoyKnDgHh6Ot4xk"
+        },
+        {
+          "title": "Flower Boy",
+          "artist": "Tyler, The Creator",
+          "image": "https://i.scdn.co/image/ab67616d00001e028940ac99f49e44f59e6f7fb3",
+          "url": "https://open.spotify.com/album/2nkto6YNI4rUYTLqEwWJ3o"
+        },
+        {
+          "title": "3:33am",
+          "artist": "Amber Mark",
+          "image": "https://i.scdn.co/image/ab67616d00001e02517c947f0f581bb61054dec2",
+          "url": "https://open.spotify.com/album/0Yo1LADdOR5RZtkilf891i"
+        },
+        {
+          "title": "Universal High",
+          "artist": "Childhood",
+          "image": "https://i.scdn.co/image/ab67616d00001e02cc95b4ba257d3e8119ce6752",
+          "url": "https://open.spotify.com/album/0rigKScunOtcgNHU22KY5z"
+        },
+        {
+          "title": "Somersault",
+          "artist": "Beach Fossils",
+          "image": "https://i.scdn.co/image/ab67616d00001e024f5dd456ecd31eb5c17d0b07",
+          "url": "https://open.spotify.com/album/6Kkz3vJXJzemMSQkbsqWQR"
+        },
+        {
+          "title": "Pure Comedy",
+          "artist": "Father John Misty",
+          "image": "https://i.scdn.co/image/ab67616d00001e02f4e83d9a0d718e10d7bd7e60",
+          "url": "https://open.spotify.com/album/2QgZA6t1oFOjiJ59x7jrEI"
+        },
+        {
+          "title": "This Old Dog",
+          "artist": "Mac DeMarco",
+          "image": "https://i.scdn.co/image/ab67616d00001e0298526846ff341ae71e5c3818",
+          "url": "https://open.spotify.com/album/6XzoFb3hP14jVQeCMRdVJR"
+        },
+        {
+          "title": "Antisocialites",
+          "artist": "Alvvays",
+          "image": "https://i.scdn.co/image/ab67616d00001e02cf82e9f972caedcf41b6dfa0",
+          "url": "https://open.spotify.com/album/5TGZvGolR6PoM1zYYyZNzX"
+        }
+      ]
+    },
+    {
+      "year": "2016",
+      "concerts": [],
+      "albums": [
+        {
+          "title": "American Boyfriend: A Suburban Love Story",
+          "artist": "Kevin Abstract",
+          "image": "https://i.scdn.co/image/ab67616d00001e02030b3a60e1041ebec36d2a73",
+          "url": "https://open.spotify.com/album/1yyCXBEu27Ia1Y3torWIwC"
+        },
+        {
+          "title": "Being No One, Going Nowhere",
+          "artist": "STRFKR",
+          "image": "https://i.scdn.co/image/ab67616d00001e02ed5af5dd2c1946b1100c6bfb",
+          "url": "https://open.spotify.com/album/2Atz9f2tBNGwjQEuOsYayk"
+        },
+        {
+          "title": "Black Focus",
+          "artist": "Yussef Kamaal",
+          "image": "https://i.scdn.co/image/ab67616d00001e029db63254bf5a8be73bbaed21",
+          "url": "https://open.spotify.com/album/0CAXEcXpruvyGKSTjyLDNu"
+        },
+        {
+          "title": "Lewis Del Mar",
+          "artist": "Lewis Del Mar",
+          "image": "https://i.scdn.co/image/ab67616d00001e0211555ed45c4377e101d7979d",
+          "url": "https://open.spotify.com/album/7BKGTpCWDwTCeHnlLFcfLJ"
+        },
+        {
+          "title": "Mediterrâneo",
+          "artist": "Valter Lobo",
+          "image": "https://i.scdn.co/image/ab67616d00001e028166ec0d7b259586d938e025",
+          "url": "https://open.spotify.com/album/5RwXL3PDUgwvBjAeTJrGRo"
+        },
+        {
+          "title": "22, A Million",
+          "artist": "Bon Iver",
+          "image": "https://i.scdn.co/image/ab67616d00001e02011bea9a2b6b25b84a1f611c",
+          "url": "https://open.spotify.com/album/1PgfRdl3lPyACfUGH4pquG"
+        },
+        {
+          "title": "MY WOMAN",
+          "artist": "Angel Olsen",
+          "image": "https://i.scdn.co/image/ab67616d00001e0274a77e48d8042b1b53280660",
+          "url": "https://open.spotify.com/album/5M8xQaQZuW2LZGVXZ3mlKN"
+        },
+        {
+          "title": "IV",
+          "artist": "BADBADNOTGOOD",
+          "image": "https://i.scdn.co/image/ab67616d00001e02f6c8d14a6c5306b1cc3c3ba9",
+          "url": "https://open.spotify.com/album/6R7CVG0kOF7h0NLg10ezpZ"
+        },
+        {
+          "title": "99.9%",
+          "artist": "KAYTRANADA",
+          "image": "https://i.scdn.co/image/ab67616d00001e0242c18fe458181bc13d08070a",
+          "url": "https://open.spotify.com/album/1dZZh7PvVgce1DDsDPzy8Z"
+        },
+        {
+          "title": "Nonagon Infinity",
+          "artist": "King Gizzard & The Lizard Wizard",
+          "image": "https://i.scdn.co/image/ab67616d00001e023785e7207f46259e4dd9cec4",
+          "url": "https://open.spotify.com/album/7hpznmwqB8FM05bEpN9P94"
+        },
+        {
+          "title": "Atomic",
+          "artist": "Mogwai",
+          "image": "https://i.scdn.co/image/ab67616d00001e02f89661c991489dc0a66c9385",
+          "url": "https://open.spotify.com/album/0CqzNvp9W9Dl3oMU9SWIkT"
+        },
+        {
+          "title": "III",
+          "artist": "Moderat",
+          "image": "https://i.scdn.co/image/ab67616d00001e02b4a9148a73a4c433a3035451",
+          "url": "https://open.spotify.com/album/7BmMOUo8nrmYHB2EHBGkSt"
         }
       ]
     },
