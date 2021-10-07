@@ -1,6 +1,6 @@
 import Page from '@components/page'
 import Link from '@components/link'
-import { EDreams } from '@components/icons'
+import { EDreams, Ensico } from '@components/icons'
 import NowPlaying from '../components/now-playing'
 import iconStyles from '@components/icons/icons.module.css'
 
@@ -41,11 +41,21 @@ const About = () => {
           Working at{' '}
           <Link href="https://edreams.com/" external>
             <EDreams className={iconStyles.inline} />
-          </Link>
+          </Link>{' '}
           <Link underline href="https://edreams.com/" external>
             eDreams ODIGEO
           </Link>{' '}
           to help create the one stop travel company.
+        </p>
+        <p>
+          Bringing accessible coding lessons to 5th to 9th grade students at{' '}
+          <Link href="https://www.ensico.pt/" external>
+            <Ensico className={iconStyles.inline} />
+          </Link>{' '}
+          <Link underline href="https://www.ensico.pt/" external>
+            Ensico
+          </Link>{' '}
+          .
         </p>
       </article>
       <NowPlaying />
