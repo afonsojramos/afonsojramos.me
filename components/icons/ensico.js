@@ -2,8 +2,8 @@ const effectsStyle = { fill: 'var(--name)' }
 const bookStyle = {
   fill: 'none',
   stroke: '#3859FF',
-  'stroke-width': '8',
-  'stroke-linejoin': 'round'
+  strokeWidth: '8',
+  strokeLinejoin: 'round',
 }
 
 const Ensico = ({ className = null }) => {
