@@ -16,12 +16,14 @@
 .nowPlaying img {
   margin-left: 0.4rem;
   float: left;
+  height: 48px;
+  max-width: none !important;
 }
 
 .inline {
   width: 30px;
   vertical-align: middle;
-  margin-right: 0.2rem;
+  margin-right: 0.5rem;
 }
 
 .bigIcon {
@@ -59,7 +61,7 @@
 
 .show {
   animation: fadein 2s;
-  margin-left: 0.2rem;
+  margin-left: 0.5rem;
   display: flex;
 }
 
@@ -70,7 +72,9 @@
 
 div.nowPlaying > .show > a {
   display: inherit;
-  margin-right: 0.2rem;
+  margin-right: 0.5rem;
+  height: 48px;
+  width: 48px;
 }
 
 @keyframes fadein {
