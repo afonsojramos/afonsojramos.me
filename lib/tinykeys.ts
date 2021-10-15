@@ -153,6 +153,8 @@ export default function keybindings(
       return
     }
 
+    if (event.ctrlKey && event.key === 'k') event.preventDefault()
+
     // Ignore event when a focusable item is focused
     if (options.ignoreFocus) {
       if (document.activeElement) {
@@ -173,7 +175,6 @@ export default function keybindings(
       let remainingExpectedPresses = prev ? prev : sequence
       let currentExpectedPress = remainingExpectedPresses[0]
 
-      event.preventDefault()
       let matches = match(event, currentExpectedPress)
 
       if (!matches) {
