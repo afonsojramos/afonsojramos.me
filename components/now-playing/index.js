@@ -34,7 +34,7 @@ export default function NowPlaying({ bigPicture = false }) {
               height={bigPicture ? '80' : '40'}
             ></Image>{' '}
           </Link>
-          <span>
+          <span className={styles.artists}>
             <Link underline href={data.track.url} external>
               {data.track.title}
             </Link>
@@ -42,12 +42,12 @@ export default function NowPlaying({ bigPicture = false }) {
             {bigPicture ? <br /> : ' – '}
             {data.artists.map((artist, index) => {
               return (
-                <>
-                  <Link key={artist.name} underline href={artist.url} external>
+                <span key={artist.name}>
+                  <Link underline href={artist.url} external>
                     {artist.name}
                   </Link>
                   {index < data.artists.length - 1 ? ', ' : ''}
-                </>
+                </span>
               )
             })}
           </span>

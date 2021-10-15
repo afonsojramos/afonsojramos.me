@@ -77,6 +77,19 @@ div.nowPlaying > .show > a {
   width: 48px;
 }
 
+div.nowPlaying .artists {
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 48px;
+}
+
+@media (max-width: 370px) {
+  .nowPlaying > span > b {
+    display: none;
+  }
+}
+
 @keyframes fadein {
   from {
     opacity: 0;
