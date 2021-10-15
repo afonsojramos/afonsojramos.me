@@ -173,6 +173,7 @@ export default function keybindings(
       let remainingExpectedPresses = prev ? prev : sequence
       let currentExpectedPress = remainingExpectedPresses[0]
 
+      event.preventDefault()
       let matches = match(event, currentExpectedPress)
 
       if (!matches) {
