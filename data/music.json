@@ -22,6 +22,11 @@
       "year": "2021",
       "concerts": [
         {
+          "title": "Sensible Soccers",
+          "festival": "Manoel Debut - Serralves",
+          "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1634508619/IMG_20210919_195845_bd1c6c.jpg"
+        },
+        {
           "title": "Raquel Martins",
           "festival": "Hot Five Uptown - Porto",
           "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1624204742/IMG_20210617_205016_cmwbqy.jpg"
@@ -89,10 +94,10 @@
           "url": "https://open.spotify.com/album/5o6MJpi6Y4fQwI8gmv0oZc"
         },
         {
-          "title": "Crack-Up",
-          "artist": "Fleet Foxes",
-          "image": "https://i.scdn.co/image/ab67616d00001e0271b24e854cdd7633cb5baaa7",
-          "url": "http://open.spotify.com/album/0xtTojp4zfartyGtbFKN3v"
+          "title": "Manoel",
+          "artist": "Sensible Soccers",
+          "image": "https://i.scdn.co/image/ab67616d00001e02cdee49db3fec5fbb624777f2",
+          "url": "https://open.spotify.com/album/543Od6jPztHDBppscYO0J6"
         }
       ]
     },
