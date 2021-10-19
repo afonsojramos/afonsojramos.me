@@ -98,6 +98,12 @@
           "artist": "Sensible Soccers",
           "image": "https://i.scdn.co/image/ab67616d00001e02cdee49db3fec5fbb624777f2",
           "url": "https://open.spotify.com/album/543Od6jPztHDBppscYO0J6"
+        },
+        {
+          "title": "Mood Valiant",
+          "artist": "Hiatus Kaiyote",
+          "image": "https://i.scdn.co/image/ab67616d00001e02da81bffabbcac771ccff4e99",
+          "url": "https://open.spotify.com/album/456WeVeZk38VJuqg2sL7QG"
         }
       ]
     },
@@ -318,6 +324,12 @@
           "artist": "Alex Cameron",
           "image": "https://i.scdn.co/image/ab67616d00001e02bf96842d5f15a8a49d12ab67",
           "url": "https://open.spotify.com/album/33u2PRETjYklC6UqxJBGW2"
+        },
+        {
+          "title": "<atrás/além>",
+          "artist": "O Terno",
+          "image": "https://i.scdn.co/image/ab67616d00001e02c32340c5ed875c13a0a7173a",
+          "url": "https://open.spotify.com/album/5RHNy7sIVDOcLTsz4OeiwL"
         }
       ]
     },
@@ -572,6 +584,18 @@
       "concerts": [],
       "albums": [
         {
+          "title": "Blonde",
+          "artist": "Frank Ocean",
+          "image": "https://i.scdn.co/image/ab67616d00001e0284a7049bbfc628dfd90870b9",
+          "url": "https://open.spotify.com/album/1PDX0hMmsSdq122EupvNZF"
+        },
+        {
+          "title": "\"Awaken, My Love!\"",
+          "artist": "Childish Gambino",
+          "image": "https://i.scdn.co/image/ab67616d00001e02b08b996d08001270adc8b555",
+          "url": "https://open.spotify.com/album/4Carzsnpd6yvuHZ49I0oz8"
+        },
+        {
           "title": "American Boyfriend: A Suburban Love Story",
           "artist": "Kevin Abstract",
           "image": "https://i.scdn.co/image/ab67616d00001e02030b3a60e1041ebec36d2a73",
@@ -642,6 +666,48 @@
           "artist": "Moderat",
           "image": "https://i.scdn.co/image/ab67616d00001e02b4a9148a73a4c433a3035451",
           "url": "https://open.spotify.com/album/7BmMOUo8nrmYHB2EHBGkSt"
+        },
+        {
+          "title": "Telefone",
+          "artist": "Noname",
+          "image": "https://i.scdn.co/image/ab67616d00001e02e9ef4d0bab9c9bf9ef5d3f36",
+          "url": "https://open.spotify.com/album/18Scpsg5OV1iYNtSaCsjwz"
+        },
+        {
+          "title": "Those Who Throw Objects at the Crocodiles Will Be Asked to Retrieve Them",
+          "artist": "Bruno Pernadas",
+          "image": "https://i.scdn.co/image/ab67616d00001e024c73ab17499ac768a8a0952f",
+          "url": "https://open.spotify.com/album/2NYnAb4TkXGHrY8wZ9uZwT"
+        },
+        {
+          "title": "The Life Of Pablo",
+          "artist": "Kanye West",
+          "image": "https://i.scdn.co/image/ab67616d00001e022a7db835b912dc5014bd37f4",
+          "url": "https://open.spotify.com/album/7gsWAHLeT0w7es6FofOXk1"
+        },
+        {
+          "title": "A Moon Shaped Pool",
+          "artist": "Radiohead",
+          "image": "https://i.scdn.co/image/ab67616d00001e020365011d800890bd210dd043",
+          "url": "https://open.spotify.com/album/6vuykQgDLUCiZ7YggIpLM9"
+        },
+        {
+          "title": "Light Upon the Lake",
+          "artist": "Whitney",
+          "image": "https://i.scdn.co/image/ab67616d00001e02dd69d8ba2268cc625504b24f",
+          "url": "https://open.spotify.com/album/5yMCA6HdFAeL1aqUjxO3MO"
+        },
+        {
+          "title": "Princesa",
+          "artist": "Carne Doce",
+          "image": "https://i.scdn.co/image/ab67616d00001e02d6365f187a126d93f8cadc22",
+          "url": "https://open.spotify.com/album/3krb3LsOogMryKOllCsYAL"
+        },
+        {
+          "title": "Teens Of Denial",
+          "artist": "Car Seat Headrest",
+          "image": "https://i.scdn.co/image/ab67616d00001e0231f15d11cadb2af5dac0121a",
+          "url": "https://open.spotify.com/album/0czBomMxaMCzanUaFhESOW"
         }
       ]
     },
@@ -650,10 +716,136 @@
       "concerts": [],
       "albums": [
         {
+          "title": "Tell Me I'm Pretty",
+          "artist": "Cage The Elephant",
+          "image": "https://i.scdn.co/image/ab67616d00001e02e7dd69ac32cf313fde62cbad",
+          "url": "https://open.spotify.com/album/0nW0w37lrQ87k7PLZvC4qJ"
+        },
+        {
+          "title": "Paper Mâché Dream Balloon",
+          "artist": "King Gizzard & The Lizard Wizard",
+          "image": "https://i.scdn.co/image/ab67616d00001e0284754cebbe3cf0116504589e",
+          "url": "https://open.spotify.com/album/6upVMLoNWxRF5Ahrd8YGF2"
+        },
+        {
+          "title": "<I°_°I>",
+          "artist": "Caravan Palace",
+          "image": "https://i.scdn.co/image/ab67616d00001e02972d81c61727a2a0298fb21d",
+          "url": "https://open.spotify.com/album/3LBVVeFs1R0VJobVUzNSdx"
+        },
+        {
+          "title": "The Future Sugar",
+          "artist": "Rey Pila",
+          "image": "https://i.scdn.co/image/ab67616d00001e022cca1b895803d9e572b69129",
+          "url": "https://open.spotify.com/album/1k4iFJs342EvXCEqQ3kt3V"
+        },
+        {
+          "title": "Midnight Snack",
+          "artist": "HOMESHAKE",
+          "image": "https://i.scdn.co/image/ab67616d00001e02b334a71bedd011f1da6fc799",
+          "url": "https://open.spotify.com/album/4p7OubIrnoRbhi3YUbN5Ib"
+        },
+        {
+          "title": "Depression Cherry",
+          "artist": "Beach House",
+          "image": "https://i.scdn.co/image/ab67616d00001e02d5140862a9eec9017629eaff",
+          "url": "https://open.spotify.com/album/4SkZTSXdPpzTbf6C0m1UKv"
+        },
+        {
+          "title": "Currents",
+          "artist": "Tame Impala",
+          "image": "https://i.scdn.co/image/ab67616d00001e029e1cfc756886ac782e363d79",
+          "url": "https://open.spotify.com/album/79dL7FLiJFOO0EoehUHQBv"
+        },
+        {
+          "title": "Get To Heaven",
+          "artist": "Everything Everything",
+          "image": "https://i.scdn.co/image/ab67616d00001e02889741e4d5cfc40e4610770c",
+          "url": "https://open.spotify.com/album/1oScYOf8ImO6L9bdvhep1J"
+        },
+        {
           "title": "Hasta La Raíz",
           "artist": "Natalia Lafourcade",
           "image": "https://i.scdn.co/image/ab67616d00001e02af40eb5492843b988f42d533",
           "url": "https://open.spotify.com/album/6DWTUm9rifRvl5PTyNMwqV"
+        },
+        {
+          "title": "Weird Little Birthday",
+          "artist": "Happyness",
+          "image": "https://i.scdn.co/image/ab67616d00001e02f8ef361061ba7c9c25d42c1e",
+          "url": "https://open.spotify.com/album/24jYrXKPwQrnzcy0qyLhYs"
+        },
+        {
+          "title": "Carrie & Lowell",
+          "artist": "Sufjan Stevens",
+          "image": "https://i.scdn.co/image/ab67616d00001e024dfbe36486a0e8655b119660",
+          "url": "https://open.spotify.com/album/0U8DeqqKDgIhIiWOdqiQXE"
+        },
+        {
+          "title": "Have You In My Wilderness",
+          "artist": "Julia Holter",
+          "image": "https://i.scdn.co/image/ab67616d00001e024cac722e46ba3b7a6535e41a",
+          "url": "https://open.spotify.com/album/1kVTV6AoeMjAOMOJyVfYOl"
+        },
+        {
+          "title": "Multi-Love",
+          "artist": "Unknown Mortal Orchestra",
+          "image": "https://i.scdn.co/image/ab67616d00001e02dad8074eb0c60a82d1d8973c",
+          "url": "https://open.spotify.com/album/2aoI8tkPq9NBvGiARD0KoR"
+        },
+        {
+          "title": "Fading Frontier",
+          "artist": "Deerhunter",
+          "image": "https://i.scdn.co/image/ab67616d00001e02eba21fd3c71cb20082c8e8d9",
+          "url": "https://open.spotify.com/album/0y5XgOUEiJSSIMxC4ALRAC"
+        },
+        {
+          "title": "Solo",
+          "artist": "Nils Frahm",
+          "image": "https://i.scdn.co/image/ab67616d00001e02b5ac7ee9200799e3a3260ebb",
+          "url": "https://open.spotify.com/album/7eC6sBSIM2MgWdpywd90iU"
+        },
+        {
+          "title": "Reflektor",
+          "artist": "Arcade Fire",
+          "image": "https://i.scdn.co/image/ab67616d00001e02678bfbaf23b8dfa454017b0b",
+          "url": "https://open.spotify.com/album/2brwuyGZ2lLqWnBX6U4MQT"
+        },
+        {
+          "title": "The Universe Smiles Upon You",
+          "artist": "Khruangbin",
+          "image": "https://i.scdn.co/image/ab67616d00001e02bc009dcb7578608697771b74",
+          "url": "https://open.spotify.com/album/2OPcQNLP8DQVumD8kBRAH3"
+        },
+        {
+          "title": "Joy, Departed",
+          "artist": "Sorority Noise",
+          "image": "https://i.scdn.co/image/ab67616d00001e026354297d51d09ce4d4c07b06",
+          "url": "https://open.spotify.com/album/0QS65kaBpmHYzVoyhIKXfJ"
+        }
+      ]
+    },
+    {
+      "year": "1994",
+      "concerts": [],
+      "albums": [
+        {
+          "title": "Dummy",
+          "artist": "Portishead",
+          "image": "https://i.scdn.co/image/ab67616d00001e02dc20397b139223620af148f6",
+          "url": "https://open.spotify.com/album/3539EbNgIdEDGBKkUf4wno"
+        }
+      ]
+    },
+    {
+      "year": "1975",
+      "concerts": [],
+      "albums": [
+        {
+          "title": "Onde Quando Como Porquê Cantamos Pessoas Vivas",
+          "artist": "Quarteto 1111",
+          "image": "https://i.scdn.co/image/ab67616d00001e020ddf549e79f9bc8a82330da1",
+          "url": "https://open.spotify.com/album/5j52TsnHpqAHaPa1qEhkop"
         }
       ]
     }
