@@ -3,7 +3,7 @@ import useSWR from 'swr'
 
 import fetcher from '@lib/fetcher'
 
-export default function ViewCounter({ slug }) {
+export default function ViewCounter({ slug, string = true }) {
   const { data } = useSWR(`/api/views/${slug}`, fetcher)
   const views = data?.total
 
@@ -16,5 +16,5 @@ export default function ViewCounter({ slug }) {
     registerView()
   }, [slug])
 
-  return `${views ? views : '–––'} views`
+  return string ? `${views ? views : '–––'} views` : null
 }
