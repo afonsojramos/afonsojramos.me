@@ -49,7 +49,7 @@ const GlobeWrapper = () => {
         polygonsData={countries.features.filter(
           ({ properties }) => properties.ISO_A2 !== 'AQ'
         )}
-        polygonAltitude={(d) => 0.01}
+        polygonAltitude={() => 0.01}
         polygonCapColor={({ properties }) => {
           return (
             (lived.includes(properties.ISO_A2) && 'blue') ||

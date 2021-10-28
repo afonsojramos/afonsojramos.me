@@ -1,8 +1,12 @@
 {
   "root": true,
-  "extends": ["eslint:recommended", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@next/next/recommended",
+    "prettier"
+  ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+  "plugins": ["prettier"],
   "env": {
     "browser": true,
     "commonjs": true,
@@ -33,31 +37,10 @@
         "no-dupe-class-members": "off",
         "no-undef": "off",
 
-        // Add TypeScript specific rules (and turn off ESLint equivalents)
-        "@typescript-eslint/consistent-type-assertions": "warn",
         "no-array-constructor": "off",
-        "@typescript-eslint/no-array-constructor": "warn",
-        "@typescript-eslint/no-namespace": "error",
         "no-use-before-define": "off",
-        "@typescript-eslint/no-use-before-define": [
-          "warn",
-          {
-            "functions": false,
-            "classes": false,
-            "variables": false,
-            "typedefs": false
-          }
-        ],
         "no-unused-vars": "off",
-        "@typescript-eslint/no-unused-vars": [
-          "warn",
-          {
-            "args": "none",
-            "ignoreRestSiblings": true
-          }
-        ],
-        "no-useless-constructor": "off",
-        "@typescript-eslint/no-useless-constructor": "warn"
+        "no-useless-constructor": "off"
       }
     }
   ],
@@ -68,6 +51,7 @@
     "RAW_ASSETS_URL": true
   },
   "rules": {
+    "prettier/prettier": "error",
     "array-callback-return": "warn",
     "default-case": ["warn", { "commentPattern": "^no default$" }],
     "dot-location": ["warn", "property"],
@@ -136,14 +120,6 @@
     "no-undef": "error",
     "no-unexpected-multiline": "warn",
     "no-unreachable": "warn",
-    "@typescript-eslint/no-unused-expressions": [
-      "error",
-      {
-        "allowShortCircuit": true,
-        "allowTernary": true,
-        "allowTaggedTemplates": true
-      }
-    ],
     "no-unused-labels": "warn",
     "no-unused-vars": [
       "warn",
@@ -174,37 +150,13 @@
     ],
     "no-with": "warn",
     "no-whitespace-before-property": "warn",
-    "react-hooks/exhaustive-deps": "warn",
     "require-yield": "warn",
     "rest-spread-spacing": ["warn", "never"],
     "strict": ["warn", "never"],
     "unicode-bom": ["warn", "never"],
     "use-isnan": "warn",
     "valid-typeof": "warn",
-    "getter-return": "warn",
-    "react/forbid-foreign-prop-types": ["warn", { "allowInPropTypes": true }],
-    "react/jsx-no-comment-textnodes": "warn",
-    "react/jsx-no-duplicate-props": "warn",
-    "react/jsx-no-target-blank": [
-      "warn",
-      {
-        "allowReferrer": true,
-        "enforceDynamicLinks": "never"
-      }
-    ],
-    "react/jsx-no-undef": "error",
-    "react/jsx-pascal-case": "off",
-    "react/jsx-uses-react": "warn",
-    "react/jsx-uses-vars": "warn",
-    "react/no-danger-with-children": "warn",
-    "react/no-deprecated": "warn",
-    "react/no-direct-mutation-state": "warn",
-    "react/no-is-mounted": "warn",
-    "react/no-typos": "error",
-    "react/react-in-jsx-scope": "off",
-    "react/require-render-return": "error",
-    "react/style-prop-object": "warn",
-    "react-hooks/rules-of-hooks": "error"
+    "getter-return": "warn"
   },
   "ignorePatterns": ["**/node_modules/**/*", "**/.next/**/*"]
 }
