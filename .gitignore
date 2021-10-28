@@ -1,6 +1,7 @@
 # Custom
 /public/feed.xml
 *.Identifier
+/public/sitemap.xml
 
 # Logs
 logs
