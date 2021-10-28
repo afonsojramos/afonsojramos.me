@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "author": "Afonso Jorge Ramos <afonsojorgeramos@gmail.com>",
   "scripts": {
-    "lint": "eslint . && prettier --write '**/*.js' --loglevel warn",
+    "lint": "next lint",
     "dev": "next -p 3003",
-    "build": "yarn rss && next build",
+    "build": "npm run rss && next build",
     "rss": "node lib/rss",
-    "new": "node lib/db",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "find:unused": "next-unused",
+    "start": "next start"
   },
   "pre-commit": "lint",
   "license": "MIT",
@@ -32,21 +33,16 @@
     "use-delayed-render": "^0.0.7"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^12.0.1",
     "@types/classnames": "^2.3.0",
     "@types/lodash.debounce": "^4.0.6",
     "@types/nprogress": "^0.2.0",
     "@types/react": "^17.0.30",
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
-    "babel-eslint": "^10.0.2",
-    "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.1.2",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.26.1",
-    "eslint-plugin-react-hooks": "^4.2.0",
     "gray-matter": "^4.0.3",
     "lowdb": "^3.0.0",
     "marked": "^3.0.7",
@@ -76,6 +72,9 @@
     "include": [
       "components",
       "lib"
+    ],
+    "exclude": [
+      "rss.js"
     ]
   }
 }

@@ -60,7 +60,7 @@ const About = () => {
         </p>
       </article>
       <NowPlaying />
-      <ViewCounter slug={'home'} />
+      <ViewCounter slug={'home'} string={false} />
     </Page>
   )
 }
