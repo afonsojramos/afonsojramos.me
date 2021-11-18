@@ -104,6 +104,12 @@
           "artist": "Hiatus Kaiyote",
           "image": "https://i.scdn.co/image/ab67616d00001e02da81bffabbcac771ccff4e99",
           "url": "https://open.spotify.com/album/456WeVeZk38VJuqg2sL7QG"
+        },
+        {
+          "title": "Peace Or Love",
+          "artist": "Kings of Convenience",
+          "image": "https://i.scdn.co/image/ab67616d00001e02e59fe44927bc2258ce6771d4",
+          "url": "https://open.spotify.com/album/1I8t93pjEtNM1vbtoUII0m"
         }
       ]
     },
@@ -822,6 +828,18 @@
           "artist": "Sorority Noise",
           "image": "https://i.scdn.co/image/ab67616d00001e026354297d51d09ce4d4c07b06",
           "url": "https://open.spotify.com/album/0QS65kaBpmHYzVoyhIKXfJ"
+        }
+      ]
+    },
+    {
+      "year": "2013",
+      "concerts": [],
+      "albums": [
+        {
+          "title": "We Are the 21st Century Ambassadors of Peace & Magic",
+          "artist": "Foxygen",
+          "image": "https://i.scdn.co/image/ab67616d00001e0240404a50cc12e75859d1dcc0",
+          "url": "https://open.spotify.com/album/7FfiN9ztbjLNPWhuhFHaWf"
         }
       ]
     },
