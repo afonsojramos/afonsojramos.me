@@ -19,13 +19,15 @@
 
 .sidenav {
   position: fixed;
-  padding: 2em;
+  padding: 2rem;
   top: 50%;
   transform: translate(-95%, -50%);
 }
 
 .sidenav > ul {
   list-style: none;
+  height: 40rem;
+  overflow-y: scroll;
 }
 
 .sidenav > ul > li {
