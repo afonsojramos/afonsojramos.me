@@ -31,7 +31,7 @@ const Error = ({ status }) => {
               height: 300,
               margin: '0 auto',
               marginBottom: '-50px',
-              marginTop: '-50px',
+              marginTop: '-50px'
             }}
           />
           <h1>This page cannot be found.</h1>
