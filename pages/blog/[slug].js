@@ -17,15 +17,15 @@ export const getStaticProps = ({ params: { slug } }) => {
       previous: posts[postIndex + 1] || null,
       next: posts[postIndex - 1] || null,
       ...rest,
-      html: renderMarkdown(body),
-    },
+      html: renderMarkdown(body)
+    }
   }
 }
 
 export const getStaticPaths = () => {
   return {
     paths: getPosts().map((p) => `/blog/${p.slug}`),
-    fallback: false,
+    fallback: false
   }
 }
 

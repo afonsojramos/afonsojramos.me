@@ -19,8 +19,8 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      html: md,
-    },
+      html: md
+    }
   }
 }
 

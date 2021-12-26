@@ -1,9 +1,9 @@
 {
   "root": true,
   "extends": [
+    "prettier",
     "eslint:recommended",
-    "plugin:@next/next/recommended",
-    "prettier"
+    "plugin:@next/next/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["prettier"],

@@ -11,7 +11,7 @@ const Posts = ({ posts, paginate }) => {
       {posts.slice(0, paginate ? showMore : undefined).map((post) => {
         const date = new Date(post.date).toLocaleDateString('default', {
           month: 'numeric',
-          day: 'numeric',
+          day: 'numeric'
         })
 
         return (

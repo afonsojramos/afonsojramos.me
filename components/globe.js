@@ -8,14 +8,14 @@ import countryLists from '@data/countries.json'
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
     width: undefined,
-    height: undefined,
+    height: undefined
   })
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setWindowSize({
         width: window.innerWidth,
-        height: window.innerHeight,
+        height: window.innerHeight
       })
     }
   }, [])

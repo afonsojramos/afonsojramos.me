@@ -10,7 +10,7 @@ export default function ViewCounter({ slug, string = true }) {
   useEffect(() => {
     const registerView = () =>
       fetch(`/api/views/${slug}`, {
-        method: 'POST',
+        method: 'POST'
       })
 
     registerView()

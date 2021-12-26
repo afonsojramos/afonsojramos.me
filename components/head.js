@@ -8,7 +8,7 @@ const Head = ({
   title = 'Afonso Jorge Ramos - Sofware Engineer',
   description = "Hi, I'm Afonso, ⚡️ Software Engineer who ❤️ loves to learn on a daily basis.",
   image = defaultOgImage,
-  children,
+  children
 }) => {
   const { systemTheme } = useTheme()
 

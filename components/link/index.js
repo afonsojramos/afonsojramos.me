@@ -29,7 +29,7 @@ const Link = ({
   const c = cn(className, styles.reset, {
     [styles.gray]: gray,
     [styles.underline]: underline,
-    [styles.disabled]: disabled,
+    [styles.disabled]: disabled
   })
 
   if (external) {

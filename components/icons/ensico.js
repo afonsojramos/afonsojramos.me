@@ -3,7 +3,7 @@ const bookStyle = {
   fill: 'none',
   stroke: '#3859FF',
   strokeWidth: '8',
-  strokeLinejoin: 'round',
+  strokeLinejoin: 'round'
 }
 
 const Ensico = ({ className = null }) => {

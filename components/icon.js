@@ -3,7 +3,7 @@ const withIcon = (icon) => {
     size = 24,
     style = null,
     color = 'currentColor',
-    viewBox = '0 0 24 24',
+    viewBox = '0 0 24 24'
   }) => {
     return (
       <svg
