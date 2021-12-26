@@ -87,7 +87,7 @@ const Music = ({ deviceType }) => {
                 {albums.map((entry) => {
                   return (
                     <Entry
-                      key={entry.title}
+                      key={`${entry.title} - ${entry.artist}`}
                       title={entry.title}
                       image={entry.image}
                       href={entry.url}
