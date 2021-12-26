@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import useDelayedRender from 'use-delayed-render'
 import cn from 'classnames'
 import Page from '@components/page'
 import Entry from '@components/entry'
@@ -17,6 +18,10 @@ import NowPlaying from '@components/now-playing'
 const Music = ({ deviceType }) => {
   const { data: years } = music
   const [modalShow, setModalShow] = useState(false)
+  const { mounted, rendered } = useDelayedRender(modalShow, {
+    enterDelay: -1,
+    exitDelay: 200
+  })
 
   const YearList = () => (
     <div className={cn(styles.sidenav)}>
@@ -46,14 +51,15 @@ const Music = ({ deviceType }) => {
           if (isMobile)
             return (
               <DialogOverlay
-                isOpen={modalShow}
+                isOpen={mounted}
                 className={cn(commandStyles.screen, {
-                  [commandStyles.show]: modalShow
+                  [commandStyles.show]: rendered
                 })}
                 onDismiss={() => setModalShow(false)}
               >
                 <DialogContent
                   style={{ boxShadow: '0px 10px 50px hsla(0, 0%, 0%, 0.33)' }}
+                  className={commandStyles['dialog-content']}
                   aria-label="Year Selector"
                 >
                   <YearList />
