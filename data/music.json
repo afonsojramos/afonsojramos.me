@@ -134,6 +134,12 @@
           "artist": "IDLES",
           "image": "https://i.scdn.co/image/ab67616d00001e027f47685cca9f36c37ea71e25",
           "url": "https://open.spotify.com/album/27ygqCfb4dXQ3jyXnC58FU"
+        },
+        {
+          "title": "Tozé Brito (de) novo",
+          "artist": "Tozé Brito (de) novo",
+          "image": "https://i.scdn.co/image/ab67616d00001e028d272dd01139729ab9762713",
+          "url": "https://play.spotify.com/album/6na0T3Ynm6iurMgSYDnIx4"
         }
       ]
     },
@@ -233,6 +239,12 @@
           "artist": "Charli XCX",
           "image": "https://i.scdn.co/image/ab67616d00001e02664e38c99d077cc52ab48914",
           "url": "https://open.spotify.com/album/3a9qH2VEsSiOZvMrjaS0Nu"
+        },
+        {
+          "title": "2017 - 2019",
+          "artist": "Against All Logic",
+          "image": "https://i.scdn.co/image/ab67616d00001e0238eb912d9b66a6b54e685a8a",
+          "url": "https://open.spotify.com/album/75vFTgDgdfVhbniLoyCNKh"
         }
       ]
     },
@@ -360,6 +372,18 @@
           "artist": "O Terno",
           "image": "https://i.scdn.co/image/ab67616d00001e02c32340c5ed875c13a0a7173a",
           "url": "https://open.spotify.com/album/5RHNy7sIVDOcLTsz4OeiwL"
+        },
+        {
+          "title": "Schlagenheim",
+          "artist": "black midi",
+          "image": "https://i.scdn.co/image/ab67616d00001e027e0f9cd686104c9a8c25428a",
+          "url": "https://open.spotify.com/album/14LuwckQuyWIvVlKrYuLzP"
+        },
+        {
+          "title": "There Existed an Addiction to Blood",
+          "artist": "clipping.",
+          "image": "https://i.scdn.co/image/ab67616d00001e02d9d3dc6a3be4eda2f47dc799",
+          "url": "https://open.spotify.com/album/1sJzod7aGgZwu2ShYec8GQ"
         }
       ]
     },
@@ -856,6 +880,156 @@
       ]
     },
     {
+      "year": "2014",
+      "concerts": [],
+      "albums": [
+        {
+          "title": "To Be Kind",
+          "artist": "Swans",
+          "image": "https://i.scdn.co/image/ab67616d00001e02e487374389cbc3952639a80b",
+          "url": "https://play.spotify.com/album/1WwiyWxa40PKucRxIKlEVM"
+        },
+        {
+          "title": "Piñata",
+          "artist": "Freddie Gibbs, Madlib",
+          "image": "https://i.scdn.co/image/ab67616d00001e02d844f6b7311a69b9a08e7a0f",
+          "url": "https://play.spotify.com/album/43uErencdmuTRFZPG3zXL1"
+        },
+        {
+          "title": "Faces",
+          "artist": "Mac Miller",
+          "image": "https://i.scdn.co/image/ab67616d00001e02e4251cf5331ad74eaaeca36e",
+          "url": "https://open.spotify.com/album/5SKnXCvB4fcGSZu32o3LRY"
+        },
+        {
+          "title": "Sylvan Esso",
+          "artist": "Sylvan Esso",
+          "image": "https://i.scdn.co/image/ab67616d00001e02ea6019a29888aaba30f440db",
+          "url": "https://open.spotify.com/album/5Abelpx4c3FzhTOZP3ZIvS"
+        },
+        {
+          "title": "Too Bright",
+          "artist": "Perfume Genius",
+          "image": "https://i.scdn.co/image/ab67616d00001e0228a2e9502e9c3fe93848bf32",
+          "url": "https://open.spotify.com/album/5qtHbJAK0C1IkacqJBqsa2"
+        },
+        {
+          "title": "Cavalo",
+          "artist": "Rodrigo Amarante",
+          "image": "https://i.scdn.co/image/ab67616d00001e02c1221d56ae9b1e9bafacd753",
+          "url": "https://open.spotify.com/album/31ztYM5ZqVNKZolLUrVtug"
+        },
+        {
+          "title": "Are We There",
+          "artist": "Sharon Van Etten",
+          "image": "https://i.scdn.co/image/ab67616d00001e0252df8bfdbf3aa92c882685ec",
+          "url": "https://open.spotify.com/album/69EhwEgjEWQ8GqH7wqEndn"
+        },
+        {
+          "title": "Wlfgrl",
+          "artist": "Machine Girl",
+          "image": "https://i.scdn.co/image/ab67616d00001e02c5b1bba9b35324a557cc33bc",
+          "url": "https://open.spotify.com/album/1xbcqJ0EAMxyGyffMzO8rL"
+        },
+        {
+          "title": "Kiasmos",
+          "artist": "Kiasmos",
+          "image": "https://i.scdn.co/image/ab67616d00001e02bb0ea18476f664df4f9fd460",
+          "url": "https://open.spotify.com/album/7pBDu7nc2KaMsh0SfZMc2d"
+        },
+        {
+          "title": "Salad Days",
+          "artist": "Mac DeMarco",
+          "image": "https://i.scdn.co/image/ab67616d00001e02d29a6b42f592c433ee31104d",
+          "url": "https://open.spotify.com/album/7xPhDaYZ2ejV04aNtdBdvj"
+        },
+        {
+          "title": "Odyssey",
+          "artist": "Home",
+          "image": "https://i.scdn.co/image/ab67616d00001e02d7df624c4f4b1c715b8ea9ce",
+          "url": "https://play.spotify.com/album/6aZyHNR0hqCSd3WZZdKt0B"
+        },
+        {
+          "title": "Singles",
+          "artist": "Future Islands",
+          "image": "https://i.scdn.co/image/ab67616d00001e02fc28f848a959a286c2d91ffa",
+          "url": "https://open.spotify.com/album/1dKh4z5Aayt8FFDWjO5FDh"
+        },
+        {
+          "title": "Alvvays",
+          "artist": "Alvvays",
+          "image": "https://i.scdn.co/image/ab67616d00001e0235a1966c699c94d5503c02aa",
+          "url": "https://open.spotify.com/album/1j3pIPXjLIFkp84OfVUsNT"
+        },
+        {
+          "title": "Our Love",
+          "artist": "Caribou",
+          "image": "https://i.scdn.co/image/cbdece8b29bac077b9c14aaaa87270af23ab7cce",
+          "url": "https://open.spotify.com/album/233jGebCTUPAYF5MxvLB7A"
+        },
+        {
+          "title": "III",
+          "artist": "BADBADNOTGOOD",
+          "image": "https://i.scdn.co/image/ab67616d00001e02c395c2cd6fdcaa30335d7b5f",
+          "url": "https://open.spotify.com/album/4fKloYEEuG3ckFoOF8glRj"
+        },
+        {
+          "title": "French Exit",
+          "artist": "TV Girl",
+          "image": "https://i.scdn.co/image/ab67616d00001e023cfca71bb96dacbb1c0fb2bf",
+          "url": "https://open.spotify.com/album/6WrxgVbi9Q96gV8tZMq3FH"
+        },
+        {
+          "title": "ZABA",
+          "artist": "Glass Animals",
+          "image": "https://i.scdn.co/image/ab67616d00001e02a21fef5c656ccfbfcc7ce6e4",
+          "url": "https://open.spotify.com/album/7jfkffCqKYEJmIgGOIJ9me"
+        },
+        {
+          "title": "Couch",
+          "artist": "Blowfuse",
+          "image": "https://i.scdn.co/image/ab67616d00001e022ce63eec82a6bb4201885ede",
+          "url": "https://open.spotify.com/album/4IJ5f6J9owLts8uGxYnx66"
+        },
+        {
+          "title": "This Is All Yours",
+          "artist": "alt-J",
+          "image": "https://i.scdn.co/image/ab67616d00001e0257e8362b39b7b3a85822303d",
+          "url": "https://open.spotify.com/album/6TbkWAqqY4nhQnYim61IU8"
+        },
+        {
+          "title": "Royal Blood",
+          "artist": "Royal Blood",
+          "image": "https://i.scdn.co/image/ab67616d00001e0269471a9c0a6073a9beb81410",
+          "url": "https://open.spotify.com/album/0BFzNaeaNv4mahOzwZFGHK"
+        },
+        {
+          "title": "Jungle",
+          "artist": "Jungle",
+          "image": "https://i.scdn.co/image/ab67616d00001e02a41a6c65f0428c84e556d396",
+          "url": "https://open.spotify.com/album/6IH6co1QUS7uXoyPDv0rIr"
+        },
+        {
+          "title": "First Mind",
+          "artist": "Nick Mulvey",
+          "image": "https://i.scdn.co/image/ab67616d00001e0295c5bd516c3a4adebfa4282e",
+          "url": "https://open.spotify.com/album/0ntJpgznXrZ6Qc8wTxtcXh"
+        },
+        {
+          "title": "Morning Phase",
+          "artist": "Beck",
+          "image": "https://i.scdn.co/image/ab67616d00001e02d7bd73dcba8647a51bf23ae7",
+          "url": "https://open.spotify.com/album/3BBFUxPg8KFmAv96SmY4ok"
+        },
+        {
+          "title": "Do Princípio",
+          "artist": "Tiago Bettencourt",
+          "image": "https://i.scdn.co/image/ab67616d00001e025e0c784fe2fb3acd6979f06f",
+          "url": "https://open.spotify.com/album/7cYv9V8cH4EAUmOnk3zGkW"
+        }
+      ]
+    },
+    {
       "year": "2013",
       "concerts": [],
       "albums": [
@@ -864,6 +1038,348 @@
           "artist": "Foxygen",
           "image": "https://i.scdn.co/image/ab67616d00001e0240404a50cc12e75859d1dcc0",
           "url": "https://open.spotify.com/album/7FfiN9ztbjLNPWhuhFHaWf"
+        },
+        {
+          "title": "Melophobia",
+          "artist": "Cage The Elephant",
+          "image": "https://i.scdn.co/image/ab67616d00001e029166a9093ea242eed64d21c6",
+          "url": "https://open.spotify.com/album/0H6DSMuGSRC25Ka7PE4O4q"
+        },
+        {
+          "title": "AM",
+          "artist": "Arctic Monkeys",
+          "image": "https://i.scdn.co/image/ab67616d00001e024f669de38690faf2cf88c245",
+          "url": "https://open.spotify.com/album/5bU1XKYxHhEwukllT20xtk"
+        },
+        {
+          "title": "Fuzz",
+          "artist": "Fuzz",
+          "image": "https://i.scdn.co/image/ab67616d00001e0204ec6a31e30079273e11314c",
+          "url": "https://open.spotify.com/album/1D3YttJsWvUUSvOVRbic0o"
+        },
+        {
+          "title": "Tawk Tomahawk",
+          "artist": "Hiatus Kaiyote",
+          "image": "https://i.scdn.co/image/ab67616d00001e02c2eef9f8d1212c80ed4ee399",
+          "url": "https://open.spotify.com/album/54UDcBALhfyaQ67fsSZrkQ"
+        },
+        {
+          "title": "Kveikur",
+          "artist": "Sigur Rós",
+          "image": "https://i.scdn.co/image/ab67616d00001e02d2388c226e1ab495973435ab",
+          "url": "https://open.spotify.com/album/1rRNqn4MTZfh393GzGvBtY"
+        },
+        {
+          "title": "Trouble Will Find Me",
+          "artist": "The National",
+          "image": "https://i.scdn.co/image/ab67616d00001e02dde1a49f8cdfdeffc14b8b85",
+          "url": "https://open.spotify.com/album/2JhR4tjuc3MIKa8v2JaKze"
+        },
+        {
+          "title": "Evil Friends",
+          "artist": "Portugal. The Man",
+          "image": "https://i.scdn.co/image/ab67616d00001e02a1dfbbbaf24e01e0f1964d77",
+          "url": "https://open.spotify.com/album/6VoOCCv0bXPrTHDncJyIgF"
+        },
+        {
+          "title": "Night Time, My Time",
+          "artist": "Sky Ferreira",
+          "image": "https://i.scdn.co/image/ab67616d00001e02d39843a4927d1dd474978d23",
+          "url": "https://open.spotify.com/album/0DucmDrdJM4evPXMbFJXBS"
+        },
+        {
+          "title": "II",
+          "artist": "Unknown Mortal Orchestra",
+          "image": "https://i.scdn.co/image/ab67616d00001e02d4c801e232fceb86e9dc539a",
+          "url": "https://open.spotify.com/album/41C5iULlHU9sMYiekI75Pn"
+        },
+        {
+          "title": "Random Access Memories",
+          "artist": "Daft Punk",
+          "image": "https://i.scdn.co/image/ab67616d00001e021d97ca7376f835055f828139",
+          "url": "https://open.spotify.com/album/4m2880jivSbbyEGAKfITCa"
+        },
+        {
+          "title": "Yeezus",
+          "artist": "Kanye West",
+          "image": "https://i.scdn.co/image/ab67616d00001e02074fbc426af3ca5d6e4b625a",
+          "url": "https://open.spotify.com/album/0XTAmejG8F97wF5MWoVbaY"
+        },
+        {
+          "title": "Overgrown",
+          "artist": "James Blake",
+          "image": "https://i.scdn.co/image/ab67616d00001e02e3248e994fec952e380f8562",
+          "url": "https://open.spotify.com/album/12ExNn0hx85F8UNzoKCyCD"
+        },
+        {
+          "title": "II",
+          "artist": "Moderat",
+          "image": "https://i.scdn.co/image/ab67616d00001e023d9a8f6b2706a6b36895f6dd",
+          "url": "https://open.spotify.com/album/4QNlqYSMYCPiKZfzUfH7jK"
+        },
+        {
+          "title": "Woman",
+          "artist": "Rhye",
+          "image": "https://i.scdn.co/image/ab67616d00001e02a13907cf58fb1bd99f90a543",
+          "url": "https://open.spotify.com/album/6b1HPtDuYioXwmw5xLLFQ9"
+        },
+        {
+          "title": "Mala",
+          "artist": "Devendra Banhart",
+          "image": "https://i.scdn.co/image/ab67616d00001e02bcf2e51e254b5bdd336c6cd9",
+          "url": "https://open.spotify.com/album/1Z69PSnbIBojgF9NBJbKca"
+        },
+        {
+          "title": "AMOK",
+          "artist": "Atoms For Peace",
+          "image": "https://i.scdn.co/image/ab67616d00001e02aa1270979321fba144a09811",
+          "url": "https://open.spotify.com/album/6dJZDZMNdBPZrJcNv57bEq"
+        },
+        {
+          "title": "Miracle Mile",
+          "artist": "STRFKR",
+          "image": "https://i.scdn.co/image/ab67616d00001e02cb916d1e03610b396f0120f3",
+          "url": "https://open.spotify.com/album/5S4tasGYxpQuSEWLYvgyQp"
+        }
+      ]
+    },
+    {
+      "year": "2012",
+      "concerts": [],
+      "albums": [
+        {
+          "title": "The Seer",
+          "artist": "Swans",
+          "image": "https://i.scdn.co/image/ab67616d00001e02cac5a58e83c7aed0b1a4c761",
+          "url": "https://open.spotify.com/album/1ijaW4mgV7Xz7DK5cXyjoo"
+        },
+        {
+          "title": "The Adventures of Mr. Fox",
+          "artist": "KOAN Sound",
+          "image": "https://i.scdn.co/image/ab67616d00001e0282a099a3e4861b61e71a575d",
+          "url": "https://open.spotify.com/album/6HcxxnB2J6WODYFENqrLTa"
+        },
+        {
+          "title": "World Psychedelic Classics 4: Nobody Can Live Forever: The Existential Soul of Tim Maia",
+          "artist": "Tim Maia",
+          "image": "https://i.scdn.co/image/ab67616d00001e0247358c9d72ca353ce0644bb1",
+          "url": "https://open.spotify.com/album/59NOU4R72nphHRtwQlGfjJ"
+        },
+        {
+          "title": "The Money Store",
+          "artist": "Death Grips",
+          "image": "https://i.scdn.co/image/ab67616d00001e02b4f8459b0f719f8a97ee1c8c",
+          "url": "https://open.spotify.com/album/1PQDjdBpHPikAodJqjzm6a"
+        },
+        {
+          "title": "Seven Thunders Roar",
+          "artist": "Stoned Jesus",
+          "image": "https://i.scdn.co/image/ab67616d00001e027e266fc9d1ed70ca5ab91cc9",
+          "url": "https://open.spotify.com/album/5KEs1CBh2Keg4OMVsYfaZU"
+        },
+        {
+          "title": "Bloom",
+          "artist": "Beach House",
+          "image": "https://i.scdn.co/image/ab67616d00001e026fde4310dfefdb4a1c0d269b",
+          "url": "https://open.spotify.com/album/600BVck2XflTAsEo0KhIfm"
+        },
+        {
+          "title": "Swing Lo Magellan",
+          "artist": "Dirty Projectors",
+          "image": "https://i.scdn.co/image/ab67616d00001e0228f844b0afeeb2492be74022",
+          "url": "https://open.spotify.com/album/5leXnIiFPYSr7yHgdwxMDG"
+        },
+        {
+          "title": "Beacon",
+          "artist": "Two Door Cinema Club",
+          "image": "https://i.scdn.co/image/ab67616d00001e02db08470066dae4de091b3d5b",
+          "url": "https://open.spotify.com/album/6CPwf8Yo8a4cgBDVeShL5C"
+        },
+        {
+          "title": "2",
+          "artist": "Mac DeMarco",
+          "image": "https://i.scdn.co/image/ab67616d00001e021e07e60dea6e2c877ea3b2b4",
+          "url": "https://open.spotify.com/album/7x6wYKbZUU2BL3N8ZWwM3q"
+        },
+        {
+          "title": "Lonerism",
+          "artist": "Tame Impala",
+          "image": "https://i.scdn.co/image/ab67616d00001e02e248eeab03d186b5ccc6d03e",
+          "url": "https://open.spotify.com/album/76vY9yohh4kVwSKkyKbyEQ"
+        },
+        {
+          "title": "channel ORANGE",
+          "artist": "Frank Ocean",
+          "image": "https://i.scdn.co/image/ab67616d00001e02f11f1c4ad183b7fa625f8534",
+          "url": "https://open.spotify.com/album/623Ef2ZEB3Njklix4PC0Rs"
+        },
+        {
+          "title": "Shields",
+          "artist": "Grizzly Bear",
+          "image": "https://i.scdn.co/image/ab67616d00001e021f0901ad55e3edb8a32bcb3b",
+          "url": "https://open.spotify.com/album/57LAEzKL94ZHwbIkUWYCDY"
+        },
+        {
+          "title": "Tetra",
+          "artist": "C2C",
+          "image": "https://i.scdn.co/image/ab67616d00001e0244f4da79f1a43a9793928161",
+          "url": "https://open.spotify.com/album/3bJg5G91aADhnnYNkMel3z"
+        },
+        {
+          "title": "Voyeur",
+          "artist": "Saint Motel",
+          "image": "https://i.scdn.co/image/ab67616d00001e02e94bcdf1c7b684417d75db68",
+          "url": "https://open.spotify.com/album/24nqMCIROq1MULNqjzeglz"
+        },
+        {
+          "title": "Colourmeinkindness",
+          "artist": "Basement",
+          "image": "https://i.scdn.co/image/ab67616d00001e02538b47deea5dd9d60da8cd58",
+          "url": "https://open.spotify.com/album/70yn72rS28G1jieaBHlZhY"
+        },
+        {
+          "title": "I.",
+          "artist": "Cigarettes After Sex",
+          "image": "https://i.scdn.co/image/ab67616d00001e0229a9946d5f7bb3aa9da8853d",
+          "url": "https://open.spotify.com/album/5GvLhLPpP03FuLvxgdEnpj"
+        },
+        {
+          "title": "good kid, m.A.A.d city (Deluxe)",
+          "artist": "Kendrick Lamar",
+          "image": "https://i.scdn.co/image/ab67616d00001e02e202e51d849adb761c0c079c",
+          "url": "https://open.spotify.com/album/1DqhWr73Fh5yoNzKLas0G3"
+        },
+        {
+          "title": "Coexist",
+          "artist": "The xx",
+          "image": "https://i.scdn.co/image/ab67616d00001e0272770e0507fc3a46e47daf95",
+          "url": "https://open.spotify.com/album/2cRMVS71c49Pf5SnIlJX3U"
+        }
+      ]
+    },
+    {
+      "year": "2011",
+      "concerts": [],
+      "albums": [
+        {
+          "title": "Kaputt",
+          "artist": "Destroyer",
+          "image": "https://i.scdn.co/image/ab67616d00001e023aa7f651391db4887eb6747b",
+          "url": "https://open.spotify.com/album/4XuDhEQRnieTnCbeUu9GoR"
+        },
+        {
+          "title": "Helplessness Blues",
+          "artist": "Fleet Foxes",
+          "image": "https://i.scdn.co/image/ab67616d00001e0200bff7dd349edf79276b5b5f",
+          "url": "https://open.spotify.com/album/6SUzec8cWCUMhvdW3KbMYZ"
+        },
+        {
+          "title": "Angles",
+          "artist": "The Strokes",
+          "image": "https://i.scdn.co/image/ab67616d00001e02397d02cfe1aab2923f9d1697",
+          "url": "https://open.spotify.com/album/6Jx4cGhWHewTcfKDJKguBQ"
+        },
+        {
+          "title": "Young The Giant",
+          "artist": "Young the Giant",
+          "image": "https://i.scdn.co/image/ab67616d00001e022d057fa5b5580c47ea6474c4",
+          "url": "https://open.spotify.com/album/0SjFStr64eylrHDmZHGiTI"
+        },
+        {
+          "title": "Toque Dela",
+          "artist": "Marcelo Camelo",
+          "image": "https://i.scdn.co/image/ab67616d00001e029567789633ace59e4e2f2a9d",
+          "url": "https://open.spotify.com/album/1NP7PX0MQPH6pLHr2R8e9K"
+        },
+        {
+          "title": "A Different Kind Of Fix",
+          "artist": "Bombay Bicycle Club",
+          "image": "https://i.scdn.co/image/ab67616d00001e026989e8d5f8d2b682d8bcd8f1",
+          "url": "https://open.spotify.com/album/4W6ztwnEbK92Arl8kI9c9N"
+        },
+        {
+          "title": "Portamento",
+          "artist": "The Drums",
+          "image": "https://i.scdn.co/image/ab67616d00001e02cff6d36ac6bf6e50f94ad160",
+          "url": "https://open.spotify.com/album/1NAjWuELiyrM0RoQfNbHWb"
+        },
+        {
+          "title": "The English Riviera",
+          "artist": "Metronomy",
+          "image": "https://i.scdn.co/image/ab67616d00001e028ca7d89456553e4bbbf3c981",
+          "url": "https://open.spotify.com/album/716fnrS2qXChPC3J2X73pK"
+        },
+        {
+          "title": "Wasting Light",
+          "artist": "Foo Fighters",
+          "image": "https://i.scdn.co/image/ab67616d00001e02cdac19bbaee5cc123edcc26f",
+          "url": "https://open.spotify.com/album/5lnQLEUiVDkLbFJHXHQu9m"
+        },
+        {
+          "title": "Forever Dolphin Love",
+          "artist": "Connan Mockasin",
+          "image": "https://i.scdn.co/image/ab67616d00001e02b7730df9215ca347413b7084",
+          "url": "https://open.spotify.com/album/7s9NpXqhb6i0xsnIvMqI7j"
+        }
+      ]
+    },
+    {
+      "year": "2010",
+      "concerts": [],
+      "albums": [
+        {
+          "title": "My Beautiful Dark Twisted Fantasy",
+          "artist": "Kanye West",
+          "image": "https://i.scdn.co/image/ab67616d00001e02d9194aa18fa4c9362b47464f",
+          "url": "https://open.spotify.com/album/20r762YmB5HeofjMCiPMLv"
+        }
+      ]
+    },
+    {
+      "year": "2007",
+      "concerts": [],
+      "albums": [
+        {
+          "title": "Ga Ga Ga Ga Ga",
+          "artist": "Spoon",
+          "image": "https://i.scdn.co/image/ab67616d00001e026b1c8c07f5aa4c0ffd7af5ac",
+          "url": "https://open.spotify.com/album/6zEGEx2ZXpiLczrpu5wWqu"
+        }
+      ]
+    },
+    {
+      "year": "2003",
+      "concerts": [],
+      "albums": [
+        {
+          "title": "Room On Fire",
+          "artist": "The Strokes",
+          "image": "https://i.scdn.co/image/ab67616d00001e020f35726025e0f025da4c688f",
+          "url": "https://open.spotify.com/album/3HFbH1loOUbqCyPsLuHLLh"
+        }
+      ]
+    },
+    {
+      "year": "2001",
+      "concerts": [],
+      "albums": [
+        {
+          "title": "Is This It",
+          "artist": "The Strokes",
+          "image": "https://i.scdn.co/image/ab67616d00001e02a388a3f20d1bf2123249cc79",
+          "url": "https://open.spotify.com/album/2yNaksHgeMQM9Quse463b5"
+        }
+      ]
+    },
+    {
+      "year": "1996",
+      "concerts": [],
+      "albums": [
+        {
+          "title": "Soundtracks for the Blind",
+          "artist": "Swans",
+          "image": "https://i.scdn.co/image/ab67616d00001e026da79ce4a0a2c682a41bf9bd",
+          "url": "https://play.spotify.com/album/7yV8WpwCChvzW3qr5MuzMf"
         }
       ]
     },
@@ -876,6 +1392,24 @@
           "artist": "Portishead",
           "image": "https://i.scdn.co/image/ab67616d00001e02dc20397b139223620af148f6",
           "url": "https://open.spotify.com/album/3539EbNgIdEDGBKkUf4wno"
+        },
+        {
+          "title": "Selected Ambient Works Volume II",
+          "artist": "Aphex Twin",
+          "image": "https://i.scdn.co/image/ab67616d00001e0232083f1a325ed4939f1fbecd",
+          "url": "https://open.spotify.com/album/17vHPMmoxN5B8cdhCDeMTe"
+        }
+      ]
+    },
+    {
+      "year": "1993",
+      "concerts": [],
+      "albums": [
+        {
+          "title": "A lenda do Quarteto 1111",
+          "artist": "Quarteto 1111",
+          "image": "https://i.scdn.co/image/ab67616d00001e02bc57b8e1d6822dfdd2844117",
+          "url": "https://play.spotify.com/album/2V3jB9Qty42D9OB14JgK3S"
         }
       ]
     },
@@ -888,6 +1422,18 @@
           "artist": "Quarteto 1111",
           "image": "https://i.scdn.co/image/ab67616d00001e020ddf549e79f9bc8a82330da1",
           "url": "https://open.spotify.com/album/5j52TsnHpqAHaPa1qEhkop"
+        }
+      ]
+    },
+    {
+      "year": "1969",
+      "concerts": [],
+      "albums": [
+        {
+          "title": "In The Court Of The Crimson King (Expanded & Remastered Original Album Mix)",
+          "artist": "King Crimson",
+          "image": "https://i.scdn.co/image/ab67616d00001e020e36a62897cf3f5937bf9c16",
+          "url": "https://play.spotify.com/album/6tVg2Wl9hVKMpHYcAl2V2M"
         }
       ]
     }
