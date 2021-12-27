@@ -1,4 +1,4 @@
-import { GitHub, LinkedIn, Mail } from '@components/icons'
+import { GitHub, LinkedIn, Mail, Telegram } from '@components/icons'
 import Page from '@components/page'
 
 import linkStyles from '../components/link/link.module.css'
@@ -33,6 +33,14 @@ const Contacts = () => {
             className={linkStyles.gray}
           >
             <LinkedIn size="48" style={{ padding: '4 4' }} />
+          </a>
+          <a
+            href="https://t.me/afonsojramos"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkStyles.gray}
+          >
+            <Telegram size="48" />
           </a>
         </div>
       </article>
