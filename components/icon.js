@@ -13,6 +13,8 @@ const withIcon = (icon) => {
         fill={color}
         dangerouslySetInnerHTML={{ __html: icon }}
         style={style}
+        fill-rule="evenodd"
+        clip-rule="evenodd"
       />
     )
   }

@@ -1,4 +1,4 @@
-import { GitHub, LinkedIn, Mail, Telegram } from '@components/icons'
+import { CV, GitHub, LinkedIn, Mail, Telegram } from '@components/icons'
 import Page from '@components/page'
 
 import linkStyles from '../components/link/link.module.css'
@@ -16,7 +16,7 @@ const Contacts = () => {
             rel="noopener noreferrer"
             className={linkStyles.gray}
           >
-            <Mail size="48" />
+            <Mail size="50" />
           </a>
           <a
             href="https://github.com/afonsojramos"
@@ -32,7 +32,7 @@ const Contacts = () => {
             rel="noopener noreferrer"
             className={linkStyles.gray}
           >
-            <LinkedIn size="48" style={{ padding: '4 4' }} />
+            <LinkedIn size="46" style={{ padding: '4 4' }} />
           </a>
           <a
             href="https://t.me/afonsojramos"
@@ -40,7 +40,15 @@ const Contacts = () => {
             rel="noopener noreferrer"
             className={linkStyles.gray}
           >
-            <Telegram size="48" />
+            <Telegram size="46" />
+          </a>
+          <a
+            href="/Curriculum_Vitae_Afonso_Ramos.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkStyles.gray}
+          >
+            <CV size="48" style={{ padding: '4 4' }} />
           </a>
         </div>
       </article>
