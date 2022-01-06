@@ -899,7 +899,6 @@
     },
     {
       "year": "2014",
-      "concerts": [],
       "albums": [
         {
           "title": "To Be Kind",
@@ -1049,7 +1048,6 @@
     },
     {
       "year": "2013",
-      "concerts": [],
       "albums": [
         {
           "title": "We Are the 21st Century Ambassadors of Peace & Magic",
@@ -1163,7 +1161,6 @@
     },
     {
       "year": "2012",
-      "concerts": [],
       "albums": [
         {
           "title": "The Seer",
@@ -1277,7 +1274,6 @@
     },
     {
       "year": "2011",
-      "concerts": [],
       "albums": [
         {
           "title": "Kaputt",
@@ -1343,7 +1339,6 @@
     },
     {
       "year": "2010",
-      "concerts": [],
       "albums": [
         {
           "title": "My Beautiful Dark Twisted Fantasy",
@@ -1355,7 +1350,6 @@
     },
     {
       "year": "2007",
-      "concerts": [],
       "albums": [
         {
           "title": "Ga Ga Ga Ga Ga",
@@ -1367,7 +1361,6 @@
     },
     {
       "year": "2003",
-      "concerts": [],
       "albums": [
         {
           "title": "Room On Fire",
@@ -1379,7 +1372,6 @@
     },
     {
       "year": "2001",
-      "concerts": [],
       "albums": [
         {
           "title": "Is This It",
@@ -1391,7 +1383,6 @@
     },
     {
       "year": "1996",
-      "concerts": [],
       "albums": [
         {
           "title": "Soundtracks for the Blind",
@@ -1403,7 +1394,6 @@
     },
     {
       "year": "1994",
-      "concerts": [],
       "albums": [
         {
           "title": "Dummy",
@@ -1421,7 +1411,6 @@
     },
     {
       "year": "1993",
-      "concerts": [],
       "albums": [
         {
           "title": "A lenda do Quarteto 1111",
@@ -1432,26 +1421,48 @@
       ]
     },
     {
-      "year": "1975",
-      "concerts": [],
+      "year": "1970s",
       "albums": [
         {
           "title": "Onde Quando Como Porquê Cantamos Pessoas Vivas",
           "artist": "Quarteto 1111",
           "image": "https://i.scdn.co/image/ab67616d00001e020ddf549e79f9bc8a82330da1",
           "url": "https://open.spotify.com/album/5j52TsnHpqAHaPa1qEhkop"
+        },
+        {
+          "title": "Elis & Tom",
+          "artist": "Elis Regina, Antônio Carlos Jobim",
+          "image": "https://i.scdn.co/image/ab67616d00001e021b3ef7785a0a4e5b08b5418e",
+          "url": "https://play.spotify.com/album/3SE9n6EaVOJ81KA1KPLUWS"
+        },
+        {
+          "title": "The Dark Side Of The Moon (2011 Remastered Version)",
+          "artist": "Pink Floyd",
+          "image": "https://i.scdn.co/image/ab67616d00001e024ada80e2e0d11d8f6a99d42e",
+          "url": "https://open.spotify.com/album/2WT1pbYjLJciAR26yMebkH"
+        },
+        {
+          "title": "Atom Heart Mother (2011 Remastered Version)",
+          "artist": "Pink Floyd",
+          "image": "https://i.scdn.co/image/ab67616d00001e02a1e9ff73dae4f4599bdb6f09",
+          "url": "https://open.spotify.com/album/5c1ZTzT4oSkiiFS4wmEuOe"
         }
       ]
     },
     {
-      "year": "1969",
-      "concerts": [],
+      "year": "1960s",
       "albums": [
         {
           "title": "In The Court Of The Crimson King (Expanded & Remastered Original Album Mix)",
           "artist": "King Crimson",
           "image": "https://i.scdn.co/image/ab67616d00001e020e36a62897cf3f5937bf9c16",
           "url": "https://play.spotify.com/album/6tVg2Wl9hVKMpHYcAl2V2M"
+        },
+        {
+          "title": "Samba Esquema Novo",
+          "artist": "Jorge Ben Jor",
+          "image": "https://i.scdn.co/image/ab67616d00001e022daa87c238a78a680511da3c",
+          "url": "https://open.spotify.com/album/3xWp6y0HGsHZlXljNs7VRy"
         }
       ]
     }

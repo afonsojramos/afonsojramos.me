@@ -78,7 +78,7 @@ const Music = ({ deviceType }) => {
               </h2>
               <h3>{description}</h3>
               <div>
-                {concerts.map((entry) => {
+                {concerts?.map((entry) => {
                   return (
                     <Entry
                       key={entry.title}
