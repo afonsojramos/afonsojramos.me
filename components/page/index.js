@@ -7,7 +7,7 @@ const Page = ({
   footer = true,
   title,
   description,
-  image,
+  image = undefined,
   showHeaderTitle = true,
   children
 }) => {
