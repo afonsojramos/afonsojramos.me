@@ -57,22 +57,20 @@ const Link = ({
   }
 
   return (
-    <>
-      <NextLink
-        href={href}
-        as={as}
-        prefetch={canPrefetch(href) ? undefined : false}
-        passHref={passHref}
-      >
-        {passHref ? (
-          children
-        ) : (
-          <a className={c} {...props}>
-            {children}
-          </a>
-        )}
-      </NextLink>
-    </>
+    <NextLink
+      href={href}
+      as={as}
+      prefetch={canPrefetch(href) ? undefined : false}
+      passHref={passHref}
+    >
+      {passHref ? (
+        children
+      ) : (
+        <a className={c} {...props}>
+          {children}
+        </a>
+      )}
+    </NextLink>
   )
 }
 

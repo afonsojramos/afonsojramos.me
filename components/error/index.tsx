@@ -32,7 +32,7 @@ const Error = ({ status }: { status: Number }) => {
               marginBottom: '-50px',
               marginTop: '-50px'
             }}
-            audioFactory
+            audioFactory={undefined}
           />
           <h1>This page cannot be found.</h1>
 
