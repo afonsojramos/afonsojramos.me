@@ -1,8 +1,8 @@
 module.exports = {
   typescript: {
-    ignoreDevErrors: true,
+    ignoreDevErrors: true
   },
   images: {
-    domains: ['i.scdn.co'],
-  },
+    domains: ['i.scdn.co']
+  }
 }

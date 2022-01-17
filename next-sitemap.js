@@ -11,7 +11,7 @@ module.exports = {
           : path.includes('/blog/')
           ? '0.5'
           : config.priority,
-      lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+      lastmod: config.autoLastmod ? new Date().toISOString() : undefined
     }
-  },
+  }
 }
