@@ -30,7 +30,8 @@
       "@lib/*": ["lib/*"],
       "@styles/*": ["styles/*"],
       "@data/*": ["data/*"]
-    }
+    },
+    "incremental": true
   },
   "exclude": ["node_modules"],
   "include": ["**/*.ts", "**/*.tsx", "**/*.js"]
