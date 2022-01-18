@@ -70,6 +70,10 @@
   margin: auto;
 }
 
+.show > a span {
+  display: flex !important;
+}
+
 div.nowPlaying > .show > a {
   display: inherit;
   margin-right: 0.5rem;
