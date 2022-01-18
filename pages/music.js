@@ -15,7 +15,7 @@ import { DialogContent, DialogOverlay } from '@reach/dialog'
 import music from '@data/music.json'
 import NowPlaying from '@components/now-playing'
 
-const Music = ({ deviceType }) => {
+const Music = () => {
   const { data: years } = music
   const [modalShow, setModalShow] = useState(false)
   const { mounted, rendered } = useDelayedRender(modalShow, {
