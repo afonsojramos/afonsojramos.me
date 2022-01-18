@@ -1,6 +1,17 @@
 import { getNowPlaying } from '@lib/spotify'
+import { NextApiRequest, NextApiResponse } from 'next'
+import {
+  ArtistInterface,
+  NotPlayingInterface,
+  NowPlayingInterface,
+  TrackInterface
+} from './interfaces/now-playing.interface'
+import { SpotifyArtistInterface } from './interfaces/spotify.interface'
 
-export default async function handler(_, res) {
+export default async function handler(
+  _req: NextApiRequest,
+  res: NextApiResponse<NowPlayingInterface | NotPlayingInterface>
+) {
   const response = await getNowPlaying()
 
   if (response.status === 204 || response.status > 400) {
@@ -14,19 +25,21 @@ export default async function handler(_, res) {
   }
 
   const isPlaying = song.is_playing
-  const track = {
+  const track: TrackInterface = {
     title: song.item.name,
     album: song.item.album.name,
     albumUrl: song.item.album.external_urls.spotify,
     image: song.item.album.images[0].url,
     url: song.item.external_urls.spotify
   }
-  const artists = song.item.artists.map((_artist) => {
-    return {
-      name: _artist.name,
-      url: _artist.external_urls.spotify
+  const artists: ArtistInterface[] = song.item.artists.map(
+    (_artist: SpotifyArtistInterface) => {
+      return {
+        name: _artist.name,
+        url: _artist.external_urls.spotify
+      }
     }
-  })
+  )
 
   res.setHeader(
     'Cache-Control',
