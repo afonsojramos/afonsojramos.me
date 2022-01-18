@@ -1,4 +1,4 @@
-const Spotify = ({ className = null }) => {
+const Spotify = ({ className = '' }) => {
   return (
     <svg viewBox="0 0 168 168" className={className}>
       <path

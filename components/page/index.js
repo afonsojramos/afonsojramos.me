@@ -4,7 +4,6 @@ import styles from './page.module.css'
 
 const Page = ({
   header = true,
-  footer = true,
   title,
   description,
   image = undefined,
