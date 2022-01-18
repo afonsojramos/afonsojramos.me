@@ -37,7 +37,7 @@ const Error = ({ status }: { status: Number }) => {
           <h1>This page cannot be found.</h1>
 
           <blockquote cite="https://afonsojramos.me/">
-            <p>The perfect personal website doesn't exis-</p>
+            <p>The perfect personal website doesn&apos;t exis-</p>
 
             <footer>
               — You, before visiting this{' '}

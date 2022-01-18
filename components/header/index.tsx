@@ -5,7 +5,7 @@ import styles from './header.module.css'
 import { Logo as LogoIcon } from '@components/icons'
 import Command from '@components/command'
 
-const Header = ({ title }) => {
+const Header = ({ title }: { title: string }) => {
   return (
     <nav className={styles.nav}>
       <div className={styles.header}>
@@ -13,7 +13,7 @@ const Header = ({ title }) => {
           <LogoIcon />
         </Link>
 
-        {title !== 404 ? (
+        {title !== '404' ? (
           <Link className={styles.content} href="#">
             {title}
           </Link>
