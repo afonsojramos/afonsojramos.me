@@ -6,9 +6,13 @@ import Image from 'next/image'
 import { Spotify } from '../icons'
 import iconStyles from '../icons/icons.module.css'
 import styles from './now-playing.module.css'
+import { NowPlayingInterface } from '../../pages/api/interfaces/now-playing.interface'
 
 export default function NowPlaying({ bigPicture = false }) {
-  const { data } = useSWR('/api/now-playing', fetcher)
+  const { data }: { data?: NowPlayingInterface } = useSWR<NowPlayingInterface>(
+    '/api/now-playing',
+    fetcher
+  )
 
   return (
     <div className={bigPicture ? styles.bigPicture : styles.nowPlaying}>
@@ -30,6 +34,7 @@ export default function NowPlaying({ bigPicture = false }) {
               className={
                 bigPicture ? styles.bigPictureImage : iconStyles.inline
               }
+              alt={`${data.track.title} by ${data.artists[0].name}`}
               width={bigPicture ? '80' : '40'}
               height={bigPicture ? '80' : '40'}
             ></Image>{' '}
