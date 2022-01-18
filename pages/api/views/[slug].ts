@@ -1,10 +1,15 @@
 import db from '@lib/firebase'
+import type { NextApiRequest, NextApiResponse } from 'next'
+import { ViewsTotalInterface } from '../interfaces/firebase.interface'
 
-export default async (req, res) => {
+const slugViews = async (
+  req: NextApiRequest,
+  res: NextApiResponse<ViewsTotalInterface>
+) => {
   const ref =
     req.query.slug === 'home'
       ? db.ref('home')
-      : db.ref('views').child(req.query.slug)
+      : db.ref('views').child(req.query.slug.toString())
 
   if (req.method === 'GET') {
     const snapshot = await ref.once('value')
@@ -28,3 +33,5 @@ export default async (req, res) => {
     })
   }
 }
+
+export default slugViews
