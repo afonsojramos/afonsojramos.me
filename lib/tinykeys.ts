@@ -33,6 +33,7 @@ type KeyBindingPress = [string[], string]
  * A map of keybinding strings to event handlers.
  */
 export interface KeyBindingMap {
+  // eslint-disable-next-line no-unused-vars
   [keybinding: string]: (event: KeyboardEvent) => void
 }
 
