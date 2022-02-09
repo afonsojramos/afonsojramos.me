@@ -139,25 +139,25 @@
           "title": "SINNER GET READY",
           "artist": "Lingua Ignota",
           "image": "https://i.scdn.co/image/ab67616d00001e0213b45fe30d1afd2e909fa410",
-          "url": "https://play.spotify.com/album/06wtf2TCkmyTgS1yZGiSr5"
+          "url": "https://open.spotify.com/album/06wtf2TCkmyTgS1yZGiSr5"
         },
         {
           "title": "Daddy's Home",
           "artist": "St. Vincent",
           "image": "https://i.scdn.co/image/ab67616d00001e02bbd97562a9466a1883bc7229",
-          "url": "https://play.spotify.com/album/654KFpNOZ26Hj9luu7aKeM"
+          "url": "https://open.spotify.com/album/654KFpNOZ26Hj9luu7aKeM"
         },
         {
           "title": "Once Twice Melody",
           "artist": "Beach House",
           "image": "https://i.scdn.co/image/ab67616d00001e02a0f92e160324eea3c797c243",
-          "url": "https://play.spotify.com/album/4TXjlsgAAdeiIZl63oMpW4"
+          "url": "https://open.spotify.com/album/4TXjlsgAAdeiIZl63oMpW4"
         },
         {
           "title": "KicK iii",
           "artist": "Arca",
           "image": "https://i.scdn.co/image/ab67616d00001e024d8cf86a052ca229b2f72f14",
-          "url": "https://play.spotify.com/album/1paea7BPqUpZksvNkQ2cqQ"
+          "url": "https://open.spotify.com/album/1paea7BPqUpZksvNkQ2cqQ"
         }
       ]
     },
@@ -268,7 +268,7 @@
           "title": "Cajarana",
           "artist": "André Henriques",
           "image": "https://i.scdn.co/image/ab67616d00001e02b4f9b0b42b39f4a4e211f71e",
-          "url": "https://play.spotify.com/album/1d2VTPkIvTzRa9hnAwHpcC"
+          "url": "https://open.spotify.com/album/1d2VTPkIvTzRa9hnAwHpcC"
         }
       ]
     },
@@ -413,7 +413,6 @@
     },
     {
       "year": "2018",
-      "concerts": [],
       "albums": [
         {
           "title": "iridescence",
@@ -533,7 +532,6 @@
     },
     {
       "year": "2017",
-      "concerts": [],
       "albums": [
         {
           "title": "Apricot Princess",
@@ -665,7 +663,6 @@
     },
     {
       "year": "2016",
-      "concerts": [],
       "albums": [
         {
           "title": "Blonde",
@@ -797,7 +794,6 @@
     },
     {
       "year": "2015",
-      "concerts": [],
       "albums": [
         {
           "title": "Tell Me I'm Pretty",
@@ -916,13 +912,13 @@
           "title": "To Be Kind",
           "artist": "Swans",
           "image": "https://i.scdn.co/image/ab67616d00001e02e487374389cbc3952639a80b",
-          "url": "https://play.spotify.com/album/1WwiyWxa40PKucRxIKlEVM"
+          "url": "https://open.spotify.com/album/1WwiyWxa40PKucRxIKlEVM"
         },
         {
           "title": "Piñata",
           "artist": "Freddie Gibbs, Madlib",
           "image": "https://i.scdn.co/image/ab67616d00001e02d844f6b7311a69b9a08e7a0f",
-          "url": "https://play.spotify.com/album/43uErencdmuTRFZPG3zXL1"
+          "url": "https://open.spotify.com/album/43uErencdmuTRFZPG3zXL1"
         },
         {
           "title": "Faces",
@@ -976,7 +972,7 @@
           "title": "Odyssey",
           "artist": "Home",
           "image": "https://i.scdn.co/image/ab67616d00001e02d7df624c4f4b1c715b8ea9ce",
-          "url": "https://play.spotify.com/album/6aZyHNR0hqCSd3WZZdKt0B"
+          "url": "https://open.spotify.com/album/6aZyHNR0hqCSd3WZZdKt0B"
         },
         {
           "title": "Singles",
@@ -1281,6 +1277,12 @@
           "artist": "The xx",
           "image": "https://i.scdn.co/image/ab67616d00001e0272770e0507fc3a46e47daf95",
           "url": "https://open.spotify.com/album/2cRMVS71c49Pf5SnIlJX3U"
+        },
+        {
+          "title": "Sun",
+          "artist": "Cat Power",
+          "image": "https://i.scdn.co/image/ab67616d00001e02aaac5479cd9db05e896db80f",
+          "url": "https://open.spotify.com/album/1IoiJGsAHdL0OL9IOjTflm"
         }
       ]
     },
@@ -1368,6 +1370,12 @@
           "artist": "Spoon",
           "image": "https://i.scdn.co/image/ab67616d00001e026b1c8c07f5aa4c0ffd7af5ac",
           "url": "https://open.spotify.com/album/6zEGEx2ZXpiLczrpu5wWqu"
+        },
+        {
+          "title": "In Rainbows",
+          "artist": "Radiohead",
+          "image": "https://i.scdn.co/image/ab67616d00001e02de3c04b5fc750b68899b20a9",
+          "url": "https://open.spotify.com/album/5vkqYmiPBYLaalcmjujWxK"
         }
       ]
     },
@@ -1379,6 +1387,12 @@
           "artist": "The Strokes",
           "image": "https://i.scdn.co/image/ab67616d00001e020f35726025e0f025da4c688f",
           "url": "https://open.spotify.com/album/3HFbH1loOUbqCyPsLuHLLh"
+        },
+        {
+          "title": "You Forgot It In People",
+          "artist": "Broken Social Scene",
+          "image": "https://i.scdn.co/image/ab67616d00001e0203da841c188eb597c6cf3611",
+          "url": "https://open.spotify.com/album/6nL0U84JsEJ0cRsGCnsDnJ"
         }
       ]
     },
@@ -1394,13 +1408,35 @@
       ]
     },
     {
+      "year": "1998",
+      "albums": [
+        {
+          "title": "Instrument Soundtrack",
+          "artist": "Fugazi",
+          "image": "https://i.scdn.co/image/ab67616d00001e02528034c2cfe590178ac6657a",
+          "url": "https://open.spotify.com/album/3tnzZhTTjRTExYc9odG0dt"
+        }
+      ]
+    },
+    {
+      "year": "1997",
+      "albums": [
+        {
+          "title": "OK Computer",
+          "artist": "Radiohead",
+          "image": "https://i.scdn.co/image/ab67616d00001e02c8b444df094279e70d0ed856",
+          "url": "https://open.spotify.com/album/6dVIqQ8qmQ5GBnJ9shOYGE"
+        }
+      ]
+    },
+    {
       "year": "1996",
       "albums": [
         {
           "title": "Soundtracks for the Blind",
           "artist": "Swans",
           "image": "https://i.scdn.co/image/ab67616d00001e026da79ce4a0a2c682a41bf9bd",
-          "url": "https://play.spotify.com/album/7yV8WpwCChvzW3qr5MuzMf"
+          "url": "https://open.spotify.com/album/7yV8WpwCChvzW3qr5MuzMf"
         }
       ]
     },
@@ -1428,13 +1464,59 @@
           "title": "A lenda do Quarteto 1111",
           "artist": "Quarteto 1111",
           "image": "https://i.scdn.co/image/ab67616d00001e02bc57b8e1d6822dfdd2844117",
-          "url": "https://play.spotify.com/album/2V3jB9Qty42D9OB14JgK3S"
+          "url": "https://open.spotify.com/album/2V3jB9Qty42D9OB14JgK3S"
+        }
+      ]
+    },
+    {
+      "year": "1991",
+      "albums": [
+        {
+          "title": "loveless",
+          "artist": "my bloody valentine",
+          "image": "https://i.scdn.co/image/ab67616d00001e02db8e38addb58131f77b48377",
+          "url": "https://open.spotify.com/album/3USQKOw0se5pBNEndu82Rb"
+        }
+      ]
+    },
+    {
+      "year": "1980s",
+      "albums": [
+        {
+          "title": "13 Songs",
+          "artist": "Fugazi",
+          "image": "https://i.scdn.co/image/ab67616d00001e02a4758aa77a0f99752d8d6643",
+          "url": "https://open.spotify.com/album/3tnzZhTTjRTExYc9odG0dt"
+        },
+        {
+          "title": "Caetanear",
+          "artist": "Caetano Veloso",
+          "image": "https://i.scdn.co/image/ab67616d00001e02f55d8e57bec9c6a6e410a7b2",
+          "url": "https://open.spotify.com/album/1vbnJI2hyuD8v6b2mGtQIl"
+        },
+        {
+          "title": "Apollo",
+          "artist": "Brian Eno",
+          "image": "https://i.scdn.co/image/ab67616d00001e02f2b52822fe54084cf07bfe02",
+          "url": "https://open.spotify.com/album/1Z2jkEtW5Sc9wWVxUgyG0E"
+        },
+        {
+          "title": "Volume Um",
+          "artist": "José Pinhal",
+          "image": "https://i.scdn.co/image/ab67616d00001e024439e281554f5e22a30e9b47",
+          "url": "https://open.spotify.com/album/6pNyRkOYDA3GxpaFMXwNVN"
         }
       ]
     },
     {
       "year": "1970s",
       "albums": [
+        {
+          "title": "10.000 Anos Depois Entre Vénus e Marte",
+          "artist": "José Cid",
+          "image": "https://upload.wikimedia.org/wikipedia/en/thumb/5/57/10%2C000_Anos_Depois_Entre_Venus_E_Marte.jpg/220px-10%2C000_Anos_Depois_Entre_Venus_E_Marte.jpg",
+          "url": "https://www.youtube.com/watch?v=otfChsCRGf8"
+        },
         {
           "title": "Onde Quando Como Porquê Cantamos Pessoas Vivas",
           "artist": "Quarteto 1111",
@@ -1445,19 +1527,43 @@
           "title": "Elis & Tom",
           "artist": "Elis Regina, Antônio Carlos Jobim",
           "image": "https://i.scdn.co/image/ab67616d00001e021b3ef7785a0a4e5b08b5418e",
-          "url": "https://play.spotify.com/album/3SE9n6EaVOJ81KA1KPLUWS"
+          "url": "https://open.spotify.com/album/3SE9n6EaVOJ81KA1KPLUWS"
         },
         {
-          "title": "The Dark Side Of The Moon (2011 Remastered Version)",
+          "title": "The Dark Side Of The Moon",
           "artist": "Pink Floyd",
           "image": "https://i.scdn.co/image/ab67616d00001e024ada80e2e0d11d8f6a99d42e",
           "url": "https://open.spotify.com/album/2WT1pbYjLJciAR26yMebkH"
         },
         {
-          "title": "Atom Heart Mother (2011 Remastered Version)",
+          "title": "Atom Heart Mother",
           "artist": "Pink Floyd",
           "image": "https://i.scdn.co/image/ab67616d00001e02a1e9ff73dae4f4599bdb6f09",
           "url": "https://open.spotify.com/album/5c1ZTzT4oSkiiFS4wmEuOe"
+        },
+        {
+          "title": "華麗なるエレクトーン -ザ・ワード-",
+          "artist": "セキトオ・シゲオ",
+          "image": "https://i.scdn.co/image/ab67616d00001e02583e3a677882a4a4e7115234",
+          "url": "https://open.spotify.com/album/2rwQ71x5mXHX162ce5ypy7"
+        },
+        {
+          "title": "Fragile (Deluxe Edition)",
+          "artist": "Yes",
+          "image": "https://i.scdn.co/image/ab67616d00001e0297f9466138456632edb5c00e",
+          "url": "https://open.spotify.com/album/0dZF93WHyOhTWjz5EWM7yG"
+        },
+        {
+          "title": "Maggot Brain",
+          "artist": "Funkadelic",
+          "image": "https://i.scdn.co/image/ab67616d00001e029a821e0e5e798068ee8bf684",
+          "url": "https://open.spotify.com/album/3ywVzrwMQ3Kq43N9zBdBQm"
+        },
+        {
+          "title": "Wish You Were Here",
+          "artist": "Pink Floyd",
+          "image": "https://i.scdn.co/image/ab67616d00001e02da9d96e9fb5b97fe95ac3d38",
+          "url": "https://open.spotify.com/album/6uvBKDGlJAYLH5Vy6RQVsc"
         }
       ]
     },
@@ -1465,16 +1571,28 @@
       "year": "1960s",
       "albums": [
         {
-          "title": "In The Court Of The Crimson King (Expanded & Remastered Original Album Mix)",
+          "title": "The Velvet Underground & Nico 45th Anniversary",
+          "artist": "The Velvet Underground, Nico",
+          "image": "https://i.scdn.co/image/ab67616d00001e0298260c528e6eec9dd431c1d7",
+          "url": "https://open.spotify.com/album/4xwx0x7k6c5VuThz5qVqmV"
+        },
+        {
+          "title": "In The Court Of The Crimson King",
           "artist": "King Crimson",
           "image": "https://i.scdn.co/image/ab67616d00001e020e36a62897cf3f5937bf9c16",
-          "url": "https://play.spotify.com/album/6tVg2Wl9hVKMpHYcAl2V2M"
+          "url": "https://open.spotify.com/album/6tVg2Wl9hVKMpHYcAl2V2M"
         },
         {
           "title": "Samba Esquema Novo",
           "artist": "Jorge Ben Jor",
           "image": "https://i.scdn.co/image/ab67616d00001e022daa87c238a78a680511da3c",
           "url": "https://open.spotify.com/album/3xWp6y0HGsHZlXljNs7VRy"
+        },
+        {
+          "title": "Anatomy of a Murder",
+          "artist": "Duke Ellington",
+          "image": "https://i.scdn.co/image/ab67616d00001e020405b7489c772ff3158eff6f",
+          "url": "https://open.spotify.com/album/3WbMnT3abDjzrCzZQ9WtLK"
         }
       ]
     }
