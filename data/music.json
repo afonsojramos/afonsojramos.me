@@ -1348,6 +1348,24 @@
           "artist": "Connan Mockasin",
           "image": "https://i.scdn.co/image/ab67616d00001e02b7730df9215ca347413b7084",
           "url": "https://open.spotify.com/album/7s9NpXqhb6i0xsnIvMqI7j"
+        },
+        {
+          "title": "Never Trust a Happy Song",
+          "artist": "Grouplove",
+          "image": "https://i.scdn.co/image/ab67616d00001e02d84a9bbcba91cb6a4a212b1b",
+          "url": "https://open.spotify.com/album/3oylWMc9TTC6Nx4I6U3axc"
+        },
+        {
+          "title": "Idle Labor",
+          "artist": "Craft Spells",
+          "image": "https://i.scdn.co/image/ab67616d00001e02b8d021b436bc1923f087dbf4",
+          "url": "https://open.spotify.com/album/3IzLouGQA5uY4NfT6zNe3j"
+        },
+        {
+          "title": "Torches",
+          "artist": "Foster The People",
+          "image": "https://i.scdn.co/image/ab67616d00001e02121d5f92cf90576907dfb1e5",
+          "url": "https://open.spotify.com/album/7Kmmw7Z5D2UD5MVwdm10sT"
         }
       ]
     },
@@ -1359,6 +1377,148 @@
           "artist": "Kanye West",
           "image": "https://i.scdn.co/image/ab67616d00001e02d9194aa18fa4c9362b47464f",
           "url": "https://open.spotify.com/album/20r762YmB5HeofjMCiPMLv"
+        },
+        {
+          "title": "Melted",
+          "artist": "Ty Segall",
+          "image": "https://i.scdn.co/image/ab67616d00001e021d99b68491ca47084bda0734",
+          "url": "https://open.spotify.com/album/5P0LN9xrnLY1By7mlkKtkx"
+        },
+        {
+          "title": "Gemini",
+          "artist": "Wild Nothing",
+          "image": "https://i.scdn.co/image/ab67616d00001e02448f2c8c21496345b031442b",
+          "url": "https://open.spotify.com/album/2UoAYpQzSNLuW47goFJE5x"
+        },
+        {
+          "title": "InnerSpeaker",
+          "artist": "Tame Impala",
+          "image": "https://i.scdn.co/image/ab67616d00001e02176e82d09ac75d62810f0056",
+          "url": "https://open.spotify.com/album/1DNSmmRLfv97Yjq7MTFWng"
+        },
+        {
+          "title": "Broken Bells",
+          "artist": "Broken Bells",
+          "image": "https://i.scdn.co/image/ab67616d00001e02e198b6b9c5bfe013458e8ec9",
+          "url": "https://open.spotify.com/album/0X7WyEKdm5afGj1fmD7Blx"
+        },
+        {
+          "title": "Plastic Beach",
+          "artist": "Gorillaz",
+          "image": "https://i.scdn.co/image/ab67616d00001e02661d019f34569f79eae9e985",
+          "url": "https://open.spotify.com/album/2dIGnmEIy1WZIcZCFSj6i8"
+        },
+        {
+          "title": "Hooray! For Happiness",
+          "artist": "The Last Dinosaur",
+          "image": "https://i.scdn.co/image/ab67616d00001e027ad11aaccf2e3f73b4d44e3d",
+          "url": "https://open.spotify.com/album/711BUAij7FQyF93WPaBuh8"
+        },
+        {
+          "title": "Teen Dream",
+          "artist": "Beach House",
+          "image": "https://i.scdn.co/image/ab67616d00001e023649e6aad682e87a79bd761d",
+          "url": "https://open.spotify.com/album/5BouX39qnrl5UxjB0Cs3lO"
+        },
+        {
+          "title": "剃刀乙女",
+          "artist": "Ichiko Aoba",
+          "image": "https://i.scdn.co/image/ab67616d00001e023b738a28f44b8dd8d175f8c7",
+          "url": "https://open.spotify.com/album/1lpxxmRaI4loziFL9USol5"
+        },
+        {
+          "title": "The Fall",
+          "artist": "Gorillaz",
+          "image": "https://i.scdn.co/image/ab67616d00001e02bfcb1c9ce002a2c2cd5e9f34",
+          "url": "https://open.spotify.com/album/5jJGGsAztgUEXUHHZ2zrah"
+        },
+        {
+          "title": "Heligoland",
+          "artist": "Massive Attack",
+          "image": "https://i.scdn.co/image/ab67616d00001e02852aaa233e122f1dbfefcf00",
+          "url": "https://open.spotify.com/album/1F8y2bg9V9nRoy8zuxo3Jt"
+        }
+      ]
+    },
+    {
+      "year": "2009",
+      "albums": [
+        {
+          "title": "Moderat",
+          "artist": "Moderat",
+          "image": "https://i.scdn.co/image/ab67616d00001e0227ce0e73b9cf23e8e22ebfe4",
+          "url": "https://open.spotify.com/album/2HEh23ogCT3wiYfag2iMxD"
+        },
+        {
+          "title": "Study Guide",
+          "artist": "Question & Freddie Joachim",
+          "image": "https://i.scdn.co/image/ab67616d00001e02fb552e73c82502f3db1b044e",
+          "url": "https://open.spotify.com/album/46LudqPGBEIX9l8FlVqe9x"
+        },
+        {
+          "title": "Fever Ray",
+          "artist": "Fever Ray",
+          "image": "https://i.scdn.co/image/ab67616d00001e02e2abb658d00dc81d54375cb6",
+          "url": "https://open.spotify.com/album/0ixCVTYtBghqNKuGP1a9om"
+        },
+        {
+          "title": "I Had The Blues But I Shook Them Loose",
+          "artist": "Bombay Bicycle Club",
+          "image": "https://i.scdn.co/image/ab67616d00001e02bb076ef98d5f02467a3be611",
+          "url": "https://open.spotify.com/album/4X0bhkSBOfcnOPyfG5Ef6a"
+        },
+        {
+          "title": "Drift",
+          "artist": "Nosaj Thing",
+          "image": "https://i.scdn.co/image/ab67616d00001e0296fd330d6d3bfb2579aae913",
+          "url": "https://open.spotify.com/album/5hAYGaI45A3xyfyztCQV5j"
+        },
+        {
+          "title": "Album",
+          "artist": "Girls",
+          "image": "https://i.scdn.co/image/ab67616d00001e02974a676342db723d1f5383b8",
+          "url": "https://open.spotify.com/album/1csBXckSWxkPEUXT4nSeP3"
+        }
+      ]
+    },
+    {
+      "year": "2008",
+      "albums": [
+        {
+          "title": "Deathconsciousness",
+          "artist": "Have A Nice Life",
+          "image": "https://i.scdn.co/image/ab67616d00001e02a54f2b401501b3569990c256",
+          "url": "https://open.spotify.com/album/6MH3CAXp8AN8ELrbex18dM"
+        },
+        {
+          "title": "O Amor dá-Me Tesão / Não Fui Eu Que Estraguei",
+          "artist": "Foge Foge Bandido",
+          "image": "https://i.scdn.co/image/ab67616d00001e02f4e506719f5569a91bb5f42e",
+          "url": "https://open.spotify.com/album/0yDcbYfuf4V3aJ5SmtlQIY"
+        },
+        {
+          "title": "Fleet Foxes",
+          "artist": "Fleet Foxes",
+          "image": "https://i.scdn.co/image/ab67616d00001e02561726f8053f54775e7d5bfe",
+          "url": "https://open.spotify.com/album/1rfgmU0AYNwWfS88pCOlX7"
+        },
+        {
+          "title": "Starfucker",
+          "artist": "STRFKR",
+          "image": "https://i.scdn.co/image/ab67616d00001e02a42a9e3de0baca2e178d0c73",
+          "url": "https://open.spotify.com/album/4mBSeOEiQ4WgDaCnydb0tZ"
+        },
+        {
+          "title": "The Sparrow and the Crow",
+          "artist": "William Fitzsimmons",
+          "image": "https://i.scdn.co/image/ab67616d00001e02df262836e0388e39ad7a62f5",
+          "url": "https://open.spotify.com/album/2DjhgnwjDunba78KGvCcoK"
+        },
+        {
+          "title": "808s & Heartbreak",
+          "artist": "Kanye West",
+          "image": "https://i.scdn.co/image/ab67616d00001e02346d77e155d854735410ed18",
+          "url": "https://open.spotify.com/album/3WFTGIO6E3Xh4paEOBY9OU"
         }
       ]
     },
@@ -1376,12 +1536,201 @@
           "artist": "Radiohead",
           "image": "https://i.scdn.co/image/ab67616d00001e02de3c04b5fc750b68899b20a9",
           "url": "https://open.spotify.com/album/5vkqYmiPBYLaalcmjujWxK"
+        },
+        {
+          "title": "Oracular Spectacular",
+          "artist": "MGMT",
+          "image": "https://i.scdn.co/image/ab67616d00001e028b32b139981e79f2ebe005eb",
+          "url": "https://open.spotify.com/album/6mm1Skz3JE6AXneya9Nyiv"
+        },
+        {
+          "title": "Little Dragon",
+          "artist": "Little Dragon",
+          "image": "https://i.scdn.co/image/ab67616d00001e028560ee6d1a4d5f9e2c67955c",
+          "url": "https://open.spotify.com/album/34AtsFexhxnKPVJFtLIN1I"
+        },
+        {
+          "title": "Justice",
+          "artist": "Justice",
+          "image": "https://i.scdn.co/image/ab67616d00001e021c0bcf8b536295438d26c70d",
+          "url": "https://open.spotify.com/album/4GGazqHvuKwxBjWLFaJkDL"
+        },
+        {
+          "title": "Minutes to Midnight",
+          "artist": "Linkin Park",
+          "image": "https://i.scdn.co/image/ab67616d00001e027144af5790b8937dee6b7f42",
+          "url": "https://open.spotify.com/album/7pgs38iLfEqUtwgCRgvbND"
+        },
+        {
+          "title": "Vista Point",
+          "artist": "Yawning Man",
+          "image": "https://i.scdn.co/image/ab67616d00001e0243780ce6f9eb11e204ce33f9",
+          "url": "https://open.spotify.com/album/63j1bHAkaHjUU6l6WyODiw"
+        },
+        {
+          "title": "S/T",
+          "artist": "This Will Destroy You",
+          "image": "https://i.scdn.co/image/ab67616d00001e0246db3c1d529e0d7c0f7430ce",
+          "url": "https://open.spotify.com/album/72vAmnfrNfzORX6gG7p8Jf"
+        },
+        {
+          "title": "Favourite Worst Nightmare",
+          "artist": "Arctic Monkeys",
+          "image": "https://i.scdn.co/image/ab67616d00001e02b1f8da74f225fa1225cdface",
+          "url": "https://open.spotify.com/album/1XkGORuUX2QGOEIL4EbJKm"
+        },
+        {
+          "title": "The Shepherd's Dog",
+          "artist": "Iron & Wine",
+          "image": "https://i.scdn.co/image/ab67616d00001e0264557127ccd172e75db09ea6",
+          "url": "https://open.spotify.com/album/3cgyaeNsyR71FvHTPH5v3u"
+        }
+      ]
+    },
+    {
+      "year": "2006",
+      "albums": [
+        {
+          "title": "Olhos De Mongol",
+          "artist": "Linda Martini",
+          "image": "https://i.scdn.co/image/ab67616d00001e0243f99561e967ed98fb31ef12",
+          "url": "https://open.spotify.com/album/6hDZhsdeMstnFgd9AiWnJy"
+        },
+        {
+          "title": "Goodnight",
+          "artist": "William Fitzsimmons",
+          "image": "https://i.scdn.co/image/ab67616d00001e029fd42eee3685503b8ba10552",
+          "url": "https://open.spotify.com/album/4mNpxvAvj2ay7Vat4pfEFI"
+        },
+        {
+          "title": "10,000 Days",
+          "artist": "TOOL",
+          "image": "https://i.scdn.co/image/ab67616d00001e02781369aabc39c792cc55604f",
+          "url": "https://open.spotify.com/album/1fvWYcbjuycyHpzNPH1Vfk"
+        }
+      ]
+    },
+    {
+      "year": "2005",
+      "albums": [
+        {
+          "title": "Modal Soul",
+          "artist": "Nujabes",
+          "image": "https://i.scdn.co/image/ab67616d00001e02912cc8fe2e9a53d328757a41",
+          "url": "https://open.spotify.com/album/6nVACH6a27eOWiumAJhDWS"
+        },
+        {
+          "title": "The Life Aquatic Exclusive Studio Sessions Featuring Seu Jorge",
+          "artist": "Seu Jorge",
+          "image": "https://i.scdn.co/image/ab67616d00001e02c85c85665c7886a468541ce4",
+          "url": "https://open.spotify.com/album/2tAFOhqz3DxxVI2s5YNsrD"
+        },
+        {
+          "title": "Neveroddoreven",
+          "artist": "I Monster",
+          "image": "https://i.scdn.co/image/ab67616d00001e02a7f5262f1aaa89bc67f69352",
+          "url": "https://open.spotify.com/album/4qD7h4hXvmKT49wDrN2kLE"
+        },
+        {
+          "title": "Illinois",
+          "artist": "Sufjan Stevens",
+          "image": "https://i.scdn.co/image/ab67616d00001e02712c76b4152918fb8d37c53d",
+          "url": "https://open.spotify.com/album/1pOl0KEC1iQnA6F0XxV4To"
+        },
+        {
+          "title": "Demon Days",
+          "artist": "Gorillaz",
+          "image": "https://i.scdn.co/image/ab67616d00001e0219d85a472f328a6ed9b704cf",
+          "url": "https://open.spotify.com/album/0bUTHlWbkSQysoM3VsWldT"
+        },
+        {
+          "title": "Late Registration",
+          "artist": "Kanye West",
+          "image": "https://i.scdn.co/image/ab67616d00001e02428d2255141c2119409a31b2",
+          "url": "https://open.spotify.com/album/5ll74bqtkcXlKE7wwkMq4g"
+        },
+        {
+          "title": "Céu",
+          "artist": "Céu",
+          "image": "https://i.scdn.co/image/ab67616d00001e02b3584f500d28c41a05ddf07a",
+          "url": "https://open.spotify.com/album/17jh7tYL1hiAltz0DJlvLN"
+        },
+        {
+          "title": "From mars to sirius",
+          "artist": "Gojira",
+          "image": "https://i.scdn.co/image/ab67616d00001e02b796e05ee8c5555cac42ecd1",
+          "url": "https://open.spotify.com/album/0AvFF0HlQYvYKHaRURGZBs"
+        },
+        {
+          "title": "Frances the Mute",
+          "artist": "The Mars Volta",
+          "image": "https://i.scdn.co/image/ab67616d00001e02a6fb6a5868d334326c641fa4",
+          "url": "https://open.spotify.com/album/30iqYID1JMBXLVFfErwTSd"
+        },
+        {
+          "title": "Team Sleep (U.S. Release)",
+          "artist": "Team Sleep",
+          "image": "https://i.scdn.co/image/ab67616d00001e024b2a07c3a9b8230f687ca5ba",
+          "url": "https://open.spotify.com/album/7BORauiIbjPkOVRzSq38DP"
+        }
+      ]
+    },
+    {
+      "year": "2004",
+      "albums": [
+        {
+          "title": "Hot Fuss",
+          "artist": "The Killers",
+          "image": "https://i.scdn.co/image/ab67616d00001e0248f15b8233e77462047a6e99",
+          "url": "https://open.spotify.com/album/1ujPmNlTMp41h4EG6OOBGR"
+        },
+        {
+          "title": "Madvillainy",
+          "artist": "Madvillain, Madlib, MF DOOM",
+          "image": "https://i.scdn.co/image/ab67616d00001e0202abe1eaf9da931f42629b4a",
+          "url": "https://open.spotify.com/album/01FCoGEQ3NFWF4fHJzdiax"
+        },
+        {
+          "title": "When It Falls",
+          "artist": "Zero 7",
+          "image": "https://i.scdn.co/image/ab67616d00001e029788f3b976e29c469fefee64",
+          "url": "https://open.spotify.com/album/0rZ4eyogYJlxLevP1Wm1b6"
+        },
+        {
+          "title": "MM...FOOD",
+          "artist": "MF DOOM",
+          "image": "https://i.scdn.co/image/ab67616d00001e0274db4b6928c824b57f7d743b",
+          "url": "https://open.spotify.com/album/7IvmRtuLsTlRZhRS6KUQRn"
+        },
+        {
+          "title": "Spirals in Hyperspace",
+          "artist": "Ozric Tentacles",
+          "image": "https://i.scdn.co/image/ab67616d00001e027c3269f11e8cceb84c0e1718",
+          "url": "https://open.spotify.com/album/7EVKKZMWphUwkGzntYSnEz"
+        },
+        {
+          "title": "Bom Dia",
+          "artist": "Pluto",
+          "image": "https://i.scdn.co/image/ab67616d00001e0211319b897fbcf4bb5257a951",
+          "url": "https://open.spotify.com/album/4hUEJkl2B87nVy9pby0OZv"
+        },
+        {
+          "title": "Talkie Walkie",
+          "artist": "Air",
+          "image": "https://i.scdn.co/image/ab67616d00001e026400fab74f28e90759ac8815",
+          "url": "https://open.spotify.com/album/0hQOqvZv1nQvPiBjzyn363"
         }
       ]
     },
     {
       "year": "2003",
       "albums": [
+        {
+          "title": "Metaphorical Music",
+          "artist": "Nujabes",
+          "image": "https://i.scdn.co/image/ab67616d00001e02a1a897ee5e642da6d945bcd7",
+          "url": "https://open.spotify.com/album/5FrjDW96mCYw9ECc74c637"
+        },
         {
           "title": "Room On Fire",
           "artist": "The Strokes",
@@ -1393,6 +1742,41 @@
           "artist": "Broken Social Scene",
           "image": "https://i.scdn.co/image/ab67616d00001e0203da841c188eb597c6cf3611",
           "url": "https://open.spotify.com/album/6nL0U84JsEJ0cRsGCnsDnJ"
+        },
+        {
+          "title": "Velocity: Design: Comfort.",
+          "artist": "Sweet Trip",
+          "image": "https://i.scdn.co/image/ab67616d00001e022aa34d5906e01231eff70f82",
+          "url": "https://open.spotify.com/album/0eUUQ4rly8Q8PyJPWLgde2"
+        },
+        {
+          "title": "Happy Songs For Happy People",
+          "artist": "Mogwai",
+          "image": "https://i.scdn.co/image/ab67616d00001e02f274ef2c8892ab14c6fc3656",
+          "url": "https://open.spotify.com/album/1FvIoulivmS5n4Kp3zpBr2"
+        },
+        {
+          "title": "Dopesmoker",
+          "artist": "Sleep",
+          "image": "https://i.scdn.co/image/ab67616d00001e02e66a17ba6cf437d65f625ad0",
+          "url": "https://open.spotify.com/album/1u49hpxNCoTCWmJa1NXUZl"
+        }
+      ]
+    },
+    {
+      "year": "2002",
+      "albums": [
+        {
+          "title": "The Richest Man In Babylon",
+          "artist": "Thievery Corporation",
+          "image": "https://i.scdn.co/image/ab67616d00001e0204e93d47237c8a89306ccc2f",
+          "url": "https://open.spotify.com/album/7qJaVqhgiBtPLb9MOzwmZA"
+        },
+        {
+          "title": "( )",
+          "artist": "Sigur Rós",
+          "image": "https://i.scdn.co/image/ab67616d00001e02b86f9276199af632c42a90cc",
+          "url": "https://open.spotify.com/album/3FR8CV7OSyZDnxneavnh8t"
         }
       ]
     },
@@ -1404,6 +1788,94 @@
           "artist": "The Strokes",
           "image": "https://i.scdn.co/image/ab67616d00001e02a388a3f20d1bf2123249cc79",
           "url": "https://open.spotify.com/album/2yNaksHgeMQM9Quse463b5"
+        },
+        {
+          "title": "The Glow, Pt. 2",
+          "artist": "The Microphones",
+          "image": "https://i.scdn.co/image/ab67616d00001e0200c91ccec6800014b8513717",
+          "url": "https://open.spotify.com/album/6QYoRO2sXThCORAifrP4Bl"
+        },
+        {
+          "title": "Amelie from Montmartre (Original SoundTrack)",
+          "artist": "Yann Tiersen",
+          "image": "https://i.scdn.co/image/ab67616d00001e02744df0b9856350ecdeae5729",
+          "url": "https://open.spotify.com/album/3QMOVTfwazGKLvyLq41pyV"
+        },
+        {
+          "title": "Simple Things",
+          "artist": "Zero 7",
+          "image": "https://i.scdn.co/image/ab67616d00001e020f387fd18dfdc5f0c18b80d3",
+          "url": "https://open.spotify.com/album/1VRBB9iu84o3g16CczH9iH"
+        },
+        {
+          "title": "Rock Action",
+          "artist": "Mogwai",
+          "image": "https://i.scdn.co/image/ab67616d00001e02a9bd3c7372f28d5cfd91b0d5",
+          "url": "https://open.spotify.com/album/4NbXiCf3b0Pqpl0YILc3S4"
+        }
+      ]
+    },
+    {
+      "year": "2000",
+      "albums": [
+        {
+          "title": "Popless",
+          "artist": "GNR",
+          "image": "https://i.scdn.co/image/ab67616d00001e02e9395d1e169bb83e5e90f81d",
+          "url": "https://open.spotify.com/album/7GqnstFIZ7DeaL5P1zekyp"
+        },
+        {
+          "title": "Lift Your Skinny Fists Like Antennas to Heaven",
+          "artist": "Godspeed You! Black Emperor",
+          "image": "https://i.scdn.co/image/ab67616d00001e020791c8a2dc44008c52b4883a",
+          "url": "https://open.spotify.com/album/2rT82YYlV9UoxBYLIezkRq"
+        },
+        {
+          "title": "Kid A",
+          "artist": "Radiohead",
+          "image": "https://i.scdn.co/image/ab67616d00001e02c174bffb607ee576329291a6",
+          "url": "https://open.spotify.com/album/19RUXBFyM4PpmrLRdtqWbp"
+        },
+        {
+          "title": "The Virgin Suicides (Deluxe Version - 15th Anniversary)",
+          "artist": "Air",
+          "image": "https://i.scdn.co/image/ab67616d00001e02c87d12e357af666dc1a857d8",
+          "url": "https://open.spotify.com/album/4ChzUkrMJVlmXpekFlJws5"
+        }
+      ]
+    },
+    {
+      "year": "1999",
+      "albums": [
+        {
+          "title": "98.12.28 男達の別れ (Live)",
+          "artist": "Fishmans",
+          "image": "https://i.scdn.co/image/ab67616d00001e02b8b2f65e2dfa733439974801",
+          "url": "https://open.spotify.com/album/5K4YFkTizFoMOyN5Khfp7G"
+        },
+        {
+          "title": "Ágætis byrjun",
+          "artist": "Sigur Rós",
+          "image": "https://i.scdn.co/image/ab67616d00001e025155b8344b7747e9708bd16d",
+          "url": "https://open.spotify.com/album/1DMMv1Kmoli3Y9fVEZDUVC"
+        },
+        {
+          "title": "O Monstro Precisa De Amigos",
+          "artist": "Ornatos Violeta",
+          "image": "https://i.scdn.co/image/ab67616d00001e02c43c10e473664ca39ab1febc",
+          "url": "https://open.spotify.com/album/1ctUX6jooPNVVKA8T6uNkz"
+        },
+        {
+          "title": "Jalamanta",
+          "artist": "Brant Bjork",
+          "image": "https://i.scdn.co/image/ab67616d00001e029ec93abc0e8ce7ba0a84626a",
+          "url": "https://open.spotify.com/album/36Lf0Mx1e57ogNhoY2ywv2"
+        },
+        {
+          "title": "Enema Of The State",
+          "artist": "blink-182",
+          "image": "https://i.scdn.co/image/ab67616d00001e0215a7914ef11f09b4c537f078",
+          "url": "https://open.spotify.com/album/1fF8kYX49s5Ufv4XEY5sjW"
         }
       ]
     },
@@ -1415,6 +1887,48 @@
           "artist": "Fugazi",
           "image": "https://i.scdn.co/image/ab67616d00001e02528034c2cfe590178ac6657a",
           "url": "https://open.spotify.com/album/3tnzZhTTjRTExYc9odG0dt"
+        },
+        {
+          "title": "Moon Safari",
+          "artist": "Air",
+          "image": "https://i.scdn.co/image/ab67616d00001e021036fcd9b08c3fe598ef2883",
+          "url": "https://open.spotify.com/album/5dmYtZVJ1bG9RyrZBRrkOA"
+        },
+        {
+          "title": "Mezzanine",
+          "artist": "Massive Attack",
+          "image": "https://i.scdn.co/image/ab67616d00001e022fcb0a3c7a66e516b11cd26e",
+          "url": "https://open.spotify.com/album/49MNmJhZQewjt06rpwp6QR"
+        },
+        {
+          "title": "Big Calm",
+          "artist": "Morcheeba",
+          "image": "https://i.scdn.co/image/ab67616d00001e0237ee51bfb9ad12746d1df5a6",
+          "url": "https://open.spotify.com/album/1ILnMWNKUXzcXug4Tq2JRP"
+        },
+        {
+          "title": "In the Aeroplane Over the Sea",
+          "artist": "Neutral Milk Hotel",
+          "image": "https://i.scdn.co/image/ab67616d00001e02589ce9a911c6e65b1f80c558",
+          "url": "https://open.spotify.com/album/0vVekV45lOaVKs6RZQQNob"
+        },
+        {
+          "title": "Psyence Fiction",
+          "artist": "UNKLE",
+          "image": "https://i.scdn.co/image/ab67616d00001e024f1a91e8d19ff7e39b671b25",
+          "url": "https://open.spotify.com/album/6Dxx0vxLQ83LK1PMZezlcY"
+        },
+        {
+          "title": "COWBOY BEBOP (Original Motion Picture Soundtrack)",
+          "artist": "SEATBELTS",
+          "image": "https://i.scdn.co/image/ab67616d00001e02e90a54d6e31d9ff3f1d566fa",
+          "url": "https://open.spotify.com/album/1XoE7ZirQ3gjxq8HIzTJU9"
+        },
+        {
+          "title": "Music Has The Right To Children",
+          "artist": "Boards of Canada",
+          "image": "https://i.scdn.co/image/ab67616d00001e020ddcb1077d30a5ffb59b6864",
+          "url": "https://open.spotify.com/album/1vWnB0hYmluskQuzxwo25a"
         }
       ]
     },
@@ -1426,6 +1940,30 @@
           "artist": "Radiohead",
           "image": "https://i.scdn.co/image/ab67616d00001e02c8b444df094279e70d0ed856",
           "url": "https://open.spotify.com/album/6dVIqQ8qmQ5GBnJ9shOYGE"
+        },
+        {
+          "title": "Ladies and gentlemen we are floating in space",
+          "artist": "Spiritualized",
+          "image": "https://i.scdn.co/image/ab67616d00001e024ff03e0f8b9c600b6e48b382",
+          "url": "https://open.spotify.com/album/56YzQ0dhmRMDryZsrjdHun"
+        },
+        {
+          "title": "O Melhor De António Variações",
+          "artist": "António Variações",
+          "image": "https://i.scdn.co/image/ab67616d00001e0218e165e0deb4a13133322c56",
+          "url": "https://open.spotify.com/album/6UYUblITZs7VZf3pPhfQzJ"
+        },
+        {
+          "title": "A Grand Love Story",
+          "artist": "Kid Loco",
+          "image": "https://i.scdn.co/image/ab67616d00001e025fceab5f345f3b75548b3880",
+          "url": "https://open.spotify.com/album/6R1VyRo1cFv2JDC1diCkPS"
+        },
+        {
+          "title": "Proud Like a God",
+          "artist": "Guano Apes",
+          "image": "https://i.scdn.co/image/ab67616d00001e0290de79652ab78e4954dd7a8f",
+          "url": "https://open.spotify.com/album/1N5L209IqXQ6cqV2HFJU4G"
         }
       ]
     },
@@ -1437,6 +1975,47 @@
           "artist": "Swans",
           "image": "https://i.scdn.co/image/ab67616d00001e026da79ce4a0a2c682a41bf9bd",
           "url": "https://open.spotify.com/album/7yV8WpwCChvzW3qr5MuzMf"
+        },
+        {
+          "title": "Tidal",
+          "artist": "Fiona Apple",
+          "image": "https://i.scdn.co/image/ab67616d00001e02b254ca0983d65ede8e3d2f7a",
+          "url": "https://open.spotify.com/album/5gVBXH8MT6zfdRkjp7qT18"
+        },
+        {
+          "title": "Ser Solidário",
+          "artist": "José Mário Branco",
+          "image": "https://i.scdn.co/image/ab67616d00001e02f4230685fede8504e414b21a",
+          "url": "https://open.spotify.com/album/4BU9W4qEpf2n04qpbEHAab"
+        },
+        {
+          "title": "Travelling Without Moving",
+          "artist": "Jamiroquai",
+          "image": "https://i.scdn.co/image/ab67616d00001e021a34b380dc283479f2b8a02b",
+          "url": "https://open.spotify.com/album/39j0mP1Vx1zRKMLMHhybw3"
+        },
+        {
+          "title": "If You're Feeling Sinister",
+          "artist": "Belle and Sebastian",
+          "image": "https://i.scdn.co/image/ab67616d00001e02153a4a570f85c3ae8de890c2",
+          "url": "https://play.spotify.com/album/4usPTyIIgnAZ9eiItfEYSK"
+        }
+      ]
+    },
+    {
+      "year": "1995",
+      "albums": [
+        {
+          "title": "(What's the Story) Morning Glory?",
+          "artist": "Oasis",
+          "image": "https://i.scdn.co/image/ab67616d00001e02d9cf309cca48a59b1c75746a",
+          "url": "https://open.spotify.com/album/0PTVq4kaAAuROnfvfA7bHG"
+        },
+        {
+          "title": "Post",
+          "artist": "Björk",
+          "image": "https://i.scdn.co/image/ab67616d00001e025092260f47e0d95717b834c3",
+          "url": "https://open.spotify.com/album/3p7WXDBxhC5KS9IFXnwae7"
         }
       ]
     },
@@ -1454,6 +2033,12 @@
           "artist": "Aphex Twin",
           "image": "https://i.scdn.co/image/ab67616d00001e0232083f1a325ed4939f1fbecd",
           "url": "https://open.spotify.com/album/17vHPMmoxN5B8cdhCDeMTe"
+        },
+        {
+          "title": "Souvlaki",
+          "artist": "Slowdive",
+          "image": "https://i.scdn.co/image/ab67616d00001e0253da07db25e2543cce38abfe",
+          "url": "https://open.spotify.com/album/4i21O3uVh5palcfFhCjlT7"
         }
       ]
     },
@@ -1465,6 +2050,35 @@
           "artist": "Quarteto 1111",
           "image": "https://i.scdn.co/image/ab67616d00001e02bc57b8e1d6822dfdd2844117",
           "url": "https://open.spotify.com/album/2V3jB9Qty42D9OB14JgK3S"
+        },
+        {
+          "title": "Against Perfection",
+          "artist": "Adorable",
+          "image": "https://i.scdn.co/image/ab67616d00001e02f95fabd88252e640a6bec7e1",
+          "url": "https://open.spotify.com/album/2Mcs6yUdV7MkpQyCf8szkJ"
+        },
+        {
+          "title": "93 'til Infinity",
+          "artist": "Souls Of Mischief",
+          "image": "https://i.scdn.co/image/ab67616d00001e0243969ecfe687484121805478",
+          "url": "https://open.spotify.com/album/7aSjaEi3OQ2aZemcJDhMb1"
+        }
+      ]
+    },
+    {
+      "year": "1992",
+      "albums": [
+        {
+          "title": "Going Blank Again (Expanded)",
+          "artist": "Ride",
+          "image": "https://i.scdn.co/image/ab67616d00001e02b6aeeb6414c5d3ddac43be2a",
+          "url": "https://play.spotify.com/album/5l70cCHX1QzN680J68rblF"
+        },
+        {
+          "title": "Spooky",
+          "artist": "Lush",
+          "image": "https://i.scdn.co/image/ab67616d00001e0291cb9bcea05c25a067756533",
+          "url": "https://open.spotify.com/album/4sy5PYpO6j5BgLajSMGcZD"
         }
       ]
     },
@@ -1505,6 +2119,12 @@
           "artist": "José Pinhal",
           "image": "https://i.scdn.co/image/ab67616d00001e024439e281554f5e22a30e9b47",
           "url": "https://open.spotify.com/album/6pNyRkOYDA3GxpaFMXwNVN"
+        },
+        {
+          "title": "Psicopátria",
+          "artist": "GNR",
+          "image": "https://i.scdn.co/image/ab67616d00001e024fe9b1a4f50c5eae92bdb115",
+          "url": "https://open.spotify.com/album/3vbFmgbT27kgxQJr5lvpCo"
         }
       ]
     },
