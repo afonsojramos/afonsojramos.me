@@ -47,7 +47,7 @@ const Music = () => {
       <h1>Favorite Albums & Concerts</h1>
       <NowPlaying bigPicture />
       <Device>
-        {({ isMobile }) => {
+        {({ isMobile }: { isMobile: boolean }) => {
           if (isMobile)
             return (
               <DialogOverlay

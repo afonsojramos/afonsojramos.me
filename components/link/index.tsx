@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, MouseEventHandler } from 'react'
 import NextLink from 'next/link'
 import cn from 'classnames'
 
@@ -24,6 +24,7 @@ const Link = ({
   underline,
   gray,
   disabled,
+  onClick,
   ...props
 }: {
   external?: boolean
@@ -34,6 +35,7 @@ const Link = ({
   underline?: boolean
   gray?: boolean
   disabled?: boolean
+  onClick?: MouseEventHandler<HTMLAnchorElement>
   children: any
 }) => {
   const c = cn(className, styles.reset, {
@@ -49,6 +51,7 @@ const Link = ({
         target="_blank"
         rel="noopener noreferrer"
         className={c}
+        onClick={onClick}
         {...props}
       >
         {children}
@@ -66,7 +69,7 @@ const Link = ({
       {passHref ? (
         children
       ) : (
-        <a className={c} {...props}>
+        <a className={c} onClick={onClick} {...props}>
           {children}
         </a>
       )}

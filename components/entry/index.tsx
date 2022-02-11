@@ -5,7 +5,19 @@ import 'intersection-observer'
 import styles from './entry.module.css'
 const imagePrefix = `https://res.cloudinary.com/afonsojramos/image/fetch/q_60,w_1000`
 
-const Entry = ({ title, description, image, href, position }) => {
+const Entry = ({
+  title,
+  description,
+  image,
+  href,
+  position
+}: {
+  title: string
+  description: string
+  image: string
+  href?: string
+  position?: string
+}) => {
   const [ref, inView] = useInView({ triggerOnce: true })
 
   return (
