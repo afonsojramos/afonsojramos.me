@@ -1,15 +1,9 @@
 import Link from '@components/link'
-import { PostProps } from '.'
+import { IPost } from '@interfaces/post'
 
 import styles from './navigation.module.css'
 
-const Previous = ({
-  previous,
-  next
-}: {
-  previous: PostProps
-  next: PostProps
-}) => {
+const Previous = ({ previous, next }: { previous?: IPost; next?: IPost }) => {
   return (
     <div className={styles.navigation}>
       <div className={styles.previous}>

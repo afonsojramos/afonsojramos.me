@@ -1,11 +1,11 @@
 import { getTopTracks } from '@lib/spotify'
 import { NextApiRequest, NextApiResponse } from 'next'
-import { SpotifyTopTracksInterface } from './interfaces/spotify.interface'
-import { TopTracksInterface } from './interfaces/top-tracks.interface'
+import { SpotifyTopTracksInterface } from '@interfaces/spotify'
+import { ITopTracks } from '@interfaces/top-tracks'
 
 export default async function handler(
   _req: NextApiRequest,
-  res: NextApiResponse<TopTracksInterface>
+  res: NextApiResponse<ITopTracks>
 ) {
   const response = await getTopTracks()
   const { items } = await response.json()

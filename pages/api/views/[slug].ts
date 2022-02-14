@@ -1,10 +1,10 @@
 import db from '@lib/firebase'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { ViewsTotalInterface } from '../interfaces/firebase.interface'
+import { IViewsTotal } from '@interfaces/firebase'
 
 const slugViews = async (
   req: NextApiRequest,
-  res: NextApiResponse<ViewsTotalInterface>
+  res: NextApiResponse<IViewsTotal>
 ) => {
   const ref =
     req.query.slug === 'home'

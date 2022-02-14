@@ -1,16 +1,16 @@
 import { getNowPlaying } from '@lib/spotify'
 import { NextApiRequest, NextApiResponse } from 'next'
 import {
-  ArtistInterface,
-  NotPlayingInterface,
-  NowPlayingInterface,
-  TrackInterface
-} from './interfaces/now-playing.interface'
-import { SpotifyArtistInterface } from './interfaces/spotify.interface'
+  IArtist,
+  INotPlaying,
+  INowPlaying,
+  ITrack
+} from '@interfaces/now-playing'
+import { SpotifyArtistInterface } from '@interfaces/spotify'
 
 export default async function handler(
   _req: NextApiRequest,
-  res: NextApiResponse<NowPlayingInterface | NotPlayingInterface>
+  res: NextApiResponse<INowPlaying | INotPlaying>
 ) {
   const response = await getNowPlaying()
 
@@ -25,14 +25,14 @@ export default async function handler(
   }
 
   const isPlaying = song.is_playing
-  const track: TrackInterface = {
+  const track: ITrack = {
     title: song.item.name,
     album: song.item.album.name,
     albumUrl: song.item.album.external_urls.spotify,
     image: song.item.album.images[0].url,
     url: song.item.external_urls.spotify
   }
-  const artists: ArtistInterface[] = song.item.artists.map(
+  const artists: IArtist[] = song.item.artists.map(
     (_artist: SpotifyArtistInterface) => {
       return {
         name: _artist.name,

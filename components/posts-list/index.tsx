@@ -2,8 +2,9 @@ import { useState } from 'react'
 
 import TextEntry from '@components/entry/text'
 import styles from './posts-list.module.css'
+import { IPost } from '@interfaces/post'
 
-const Posts = ({ posts, paginate }) => {
+const Posts = ({ posts, paginate }: { posts: IPost[]; paginate?: boolean }) => {
   const [showMore, setShowMore] = useState(3)
 
   return (

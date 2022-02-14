@@ -1,10 +1,10 @@
 import db from '@lib/firebase'
 import { NextApiRequest, NextApiResponse } from 'next'
-import { ViewsTotalInterface } from '../interfaces/firebase.interface'
+import { IViewsTotal } from '@interfaces/firebase'
 
 const views = async (
   _req: NextApiRequest,
-  res: NextApiResponse<ViewsTotalInterface>
+  res: NextApiResponse<IViewsTotal>
 ) => {
   const snapshot = await db.ref('views').once('value')
   const views: number = snapshot.val()
