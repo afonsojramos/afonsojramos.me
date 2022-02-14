@@ -28,6 +28,7 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["components/*"],
+      "@interfaces/*": ["interfaces/*"],
       "@lib/*": ["lib/*"],
       "@styles/*": ["styles/*"],
       "@data/*": ["data/*"]

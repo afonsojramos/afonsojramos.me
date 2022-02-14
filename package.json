@@ -67,12 +67,14 @@
   "next-unused": {
     "alias": {
       "@components": "components/",
+      "@interfaces": "interfaces/",
       "@data": "data/",
       "@lib": "lib/",
       "@styles": "styles/"
     },
     "include": [
       "components",
+      "interfaces",
       "lib"
     ],
     "exclude": [

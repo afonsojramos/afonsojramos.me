@@ -1,4 +1,4 @@
-interface TopTracksInterface {
+interface ITopTracks {
   tracks: {
     artist: string
     songUrl: string
@@ -6,4 +6,4 @@ interface TopTracksInterface {
   }[]
 }
 
-export type { TopTracksInterface }
+export type { ITopTracks }
