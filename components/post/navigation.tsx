@@ -1,8 +1,15 @@
 import Link from '@components/link'
+import { PostProps } from '.'
 
 import styles from './navigation.module.css'
 
-const Previous = ({ previous, next }) => {
+const Previous = ({
+  previous,
+  next
+}: {
+  previous: PostProps
+  next: PostProps
+}) => {
   return (
     <div className={styles.navigation}>
       <div className={styles.previous}>

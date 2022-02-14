@@ -24,7 +24,9 @@ const Link = ({
   underline,
   gray,
   disabled,
+
   onClick,
+  title,
   ...props
 }: {
   external?: boolean
@@ -36,6 +38,7 @@ const Link = ({
   gray?: boolean
   disabled?: boolean
   onClick?: MouseEventHandler<HTMLAnchorElement>
+  title?: string
   children: any
 }) => {
   const c = cn(className, styles.reset, {
@@ -52,6 +55,7 @@ const Link = ({
         rel="noopener noreferrer"
         className={c}
         onClick={onClick}
+        title={title}
         {...props}
       >
         {children}

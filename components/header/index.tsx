@@ -5,7 +5,7 @@ import styles from './header.module.css'
 import { Logo as LogoIcon } from '@components/icons'
 import Command from '@components/command'
 
-const Header = ({ title }: { title: string }) => {
+const Header = ({ title }: { title?: string }) => {
   return (
     <nav className={styles.nav}>
       <div className={styles.header}>

@@ -1,7 +1,7 @@
-const withIcon = (icon) => {
+const withIcon = (icon: string) => {
   const Icon = ({
     size = 24,
-    style = null,
+    style = undefined,
     color = 'currentColor',
     viewBox = '0 0 24 24'
   }) => {

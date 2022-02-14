@@ -9,6 +9,13 @@ const Page = ({
   image = undefined,
   showHeaderTitle = true,
   children
+}: {
+  header?: boolean
+  title?: string
+  description?: string
+  image?: string
+  showHeaderTitle?: boolean
+  children: any
 }) => {
   return (
     <div className={styles.wrapper}>
@@ -18,7 +25,7 @@ const Page = ({
         image={image}
       />
 
-      {header && <Header title={showHeaderTitle && title} />}
+      {header && <Header title={showHeaderTitle ? title : undefined} />}
       <main className={styles.main}>{children}</main>
     </div>
   )

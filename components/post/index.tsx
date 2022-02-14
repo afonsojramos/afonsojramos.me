@@ -5,7 +5,22 @@ import Page from '@components/page'
 import styles from './post.module.css'
 import ViewCounter from '@components/view-counter'
 
-function escapeHtml(unsafe) {
+export interface PostProps {
+  title: string
+  slug: string
+  html: string
+  hidden: boolean
+  og: string
+  description: string
+  date: string
+}
+
+export interface PostNavigationProps {
+  previous: PostProps
+  next: PostProps
+}
+
+function escapeHtml(unsafe: string) {
   return unsafe
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -24,15 +39,14 @@ const Post = ({
   date,
   previous,
   next
-}) => {
+}: PostProps & PostNavigationProps) => {
   return (
     <Page
-      slug={slug}
       title={title}
       description={description}
       showHeaderTitle={false}
       image={
-        og && og === true
+        og
           ? `https://res.cloudinary.com/afonsojramos/image/upload/${slug}.png`
           : og
       }

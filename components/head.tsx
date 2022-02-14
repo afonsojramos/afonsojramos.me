@@ -9,6 +9,11 @@ const Head = ({
   description = "Hi, I'm Afonso, ⚡️ Software Engineer who ❤️ loves to learn on a daily basis.",
   image = defaultOgImage,
   children
+}: {
+  title: string
+  description?: string
+  image?: string
+  children?: any
 }) => {
   const { systemTheme } = useTheme()
 

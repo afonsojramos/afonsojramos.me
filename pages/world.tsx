@@ -2,7 +2,7 @@ import Page from '@components/page'
 import Globe from '@components/globe'
 import getMarkdown from '@lib/get-markdown'
 
-const Travels = ({ html }) => {
+const Travels = ({ html }: { html: string }) => {
   return (
     <Page
       title="World Travels"

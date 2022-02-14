@@ -6,7 +6,21 @@ import fetcher from '@lib/fetcher'
 import Link from '@components/link'
 import styles from './text.module.css'
 
-const TextEntry = ({ title, description, type, href, as, slug }) => {
+const TextEntry = ({
+  title,
+  description,
+  type,
+  href,
+  as,
+  slug
+}: {
+  title: string
+  description: string
+  type: string
+  href: string
+  as: string
+  slug: string
+}) => {
   const { data } = useSWR(`/api/views/${slug}`, fetcher)
   const views = data?.total
 
