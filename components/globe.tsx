@@ -1,14 +1,26 @@
-import { useState, useRef, useEffect } from 'react'
+import {
+  useState,
+  useRef,
+  useEffect,
+  FunctionComponent,
+  MutableRefObject
+} from 'react'
+import { GlobeMethods, GlobeProps } from 'react-globe.gl'
 
-let Globe = () => null
+let Globe: FunctionComponent<
+  GlobeProps & { ref?: MutableRefObject<GlobeMethods | undefined> } & {
+    controls: any
+  }
+>
 if (typeof window !== 'undefined') Globe = require('react-globe.gl').default
 
 import countryLists from '@data/countries.json'
+import { FeatureCollection } from 'geojson'
 
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
-    width: undefined,
-    height: undefined
+    width: 0,
+    height: 0
   })
 
   useEffect(() => {
@@ -24,8 +36,8 @@ function useWindowSize() {
 
 const GlobeWrapper = () => {
   const [imageUrl] = useState('/CFCFCF.png')
-  const globeRef = useRef(null)
-  const [countries, setCountries] = useState({ features: [] })
+  const globeRef = useRef<GlobeMethods & { controls: any }>()
+  const [countries, setCountries] = useState<FeatureCollection>()
   const { lived, visited } = countryLists
   const [mounted, setMounted] = useState(false)
   const size = useWindowSize()
@@ -38,29 +50,30 @@ const GlobeWrapper = () => {
     setMounted(true)
   }, [])
 
-  return (
-    mounted && (
+  if (mounted)
+    return (
       <Globe
         ref={globeRef}
         width={(size.width > 720 && 720) || size.width - 32}
         height={(size.width > 720 && 720) || size.height / 2}
         backgroundColor={'rgba(0,0,0,0)'}
         globeImageUrl={imageUrl}
-        polygonsData={countries.features.filter(
-          ({ properties }) => properties.ISO_A2 !== 'AQ'
+        polygonsData={countries?.features.filter(
+          // remove antarctica
+          ({ properties }) => properties?.ISO_A2 !== 'AQ'
         )}
         polygonAltitude={() => 0.01}
-        polygonCapColor={({ properties }) => {
+        polygonCapColor={({ properties }: any) => {
           return (
-            (lived.includes(properties.ISO_A2) && 'blue') ||
-            (visited.includes(properties.ISO_A2) && 'green') ||
+            (lived.includes(properties?.ISO_A2) && 'blue') ||
+            (visited.includes(properties?.ISO_A2) && 'green') ||
             'grey'
           )
         }}
         polygonSideColor={() => 'rgba(0, 0, 0, 0.2)'}
         polygonStrokeColor={() => '#111'}
-        polygonLabel={({ properties }) => `
-          <b>${properties.ADMIN} (${properties.ISO_A2})</b>
+        polygonLabel={({ properties }: any) => `
+          <b>${properties?.ADMIN} (${properties?.ISO_A2})</b>
           `}
         rendererConfig={{ preserveDrawingBuffer: true }}
         controls={
@@ -74,7 +87,7 @@ const GlobeWrapper = () => {
         }
       />
     )
-  )
+  return <></>
 }
 
 export default GlobeWrapper

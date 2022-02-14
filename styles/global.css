@@ -236,6 +236,14 @@ details {
   background-color: var(--gray);
 }
 
+.scene-tooltip b {
+  text-shadow:
+   -1px -1px 0 var(--light-gray),  
+    1px -1px 0 var(--light-gray),
+    -1px 1px 0 var(--light-gray),
+     1px 1px 0 var(--light-gray);
+}
+
 /* nav {
   white-space: nowrap;
   background: #37474f;
