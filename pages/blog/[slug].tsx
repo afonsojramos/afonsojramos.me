@@ -1,12 +1,17 @@
 import Post from '@components/post'
 import getPosts from '@lib/get-posts'
 import renderMarkdown from '@lib/render-markdown'
+import { IPost, IPostNavigation } from '../../interfaces'
 
-const PostPage = (props) => {
+const PostPage = (props: IPost & IPostNavigation) => {
   return <Post {...props} />
 }
 
-export const getStaticProps = ({ params: { slug } }) => {
+export const getStaticProps = ({
+  params: { slug }
+}: {
+  params: { slug: string }
+}): { props: IPost & IPostNavigation } => {
   const posts = getPosts()
   const postIndex = posts.findIndex((p) => p.slug === slug)
   const post = posts[postIndex]
