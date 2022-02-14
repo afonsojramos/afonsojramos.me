@@ -14,7 +14,7 @@ const Error = ({ status }: { status: Number }) => {
     theme === 'dark' ? replaceColor('#000000', '#ffffff', lottie404) : lottie404
 
   return (
-    <Page title={status || 'Error'} description={'Error 404'}>
+    <Page title={`${status}` || 'Error'} description={'Error 404'}>
       <Head>
         <title>404 — Afonso</title>
       </Head>
