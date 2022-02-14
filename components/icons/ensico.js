@@ -6,7 +6,7 @@ const bookStyle = {
   strokeLinejoin: 'round'
 }
 
-const Ensico = ({ className = null }) => {
+const Ensico = ({ className = {} }) => {
   return (
     <svg viewBox="0 0 184.6 130.4" className={className}>
       <path

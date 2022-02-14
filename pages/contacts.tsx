@@ -5,7 +5,7 @@ import linkStyles from '../components/link/link.module.css'
 
 const Contacts = () => {
   return (
-    <Page title="Contacts" footer={false} description="Get in touch.">
+    <Page title="Contacts" description="Get in touch.">
       <article className="contacts">
         <p>Get in touch!</p>
 
@@ -16,7 +16,7 @@ const Contacts = () => {
             rel="noopener noreferrer"
             className={linkStyles.gray}
           >
-            <Mail size="50" />
+            <Mail size={50} />
           </a>
           <a
             href="https://github.com/afonsojramos"
@@ -24,7 +24,7 @@ const Contacts = () => {
             rel="noopener noreferrer"
             className={linkStyles.gray}
           >
-            <GitHub size="48" />
+            <GitHub size={48} />
           </a>
           <a
             href="https://linkedin.com/in/afonsojramos"
@@ -32,7 +32,7 @@ const Contacts = () => {
             rel="noopener noreferrer"
             className={linkStyles.gray}
           >
-            <LinkedIn size="46" style={{ padding: '4 4' }} />
+            <LinkedIn size={46} style={{ padding: '4 4' }} />
           </a>
           <a
             href="https://t.me/afonsojramos"
@@ -40,7 +40,7 @@ const Contacts = () => {
             rel="noopener noreferrer"
             className={linkStyles.gray}
           >
-            <Telegram size="46" />
+            <Telegram size={46} />
           </a>
           <a
             href="/Curriculum_Vitae_Afonso_Ramos.pdf"
@@ -48,7 +48,7 @@ const Contacts = () => {
             rel="noopener noreferrer"
             className={linkStyles.gray}
           >
-            <CV size="48" style={{ padding: '4 4' }} />
+            <CV size={48} style={{ padding: '4 4' }} />
           </a>
         </div>
       </article>
