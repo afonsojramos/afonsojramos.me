@@ -2,21 +2,13 @@ import matter from 'gray-matter'
 import fs from 'fs'
 import path from 'path'
 
-interface Post {
-  title?: string
-  description?: string
-  slug?: string
-  date?: string
-  published?: boolean
-}
-
 const getPosts = () => {
   const posts = fs
     .readdirSync('./posts/')
     .filter((file) => path.extname(file) === '.md')
     .map((file) => {
       const postContent = fs.readFileSync(`./posts/${file}`, 'utf8')
-      const { data, content }: { data: Post; content: string } =
+      const { data, content }: { data: any; content: string } =
         matter(postContent)
 
       if (data.published === false) {
