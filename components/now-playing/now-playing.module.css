@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.nowPlaying > span:first-child {
+  min-width: fit-content;
+}
+
 .nowPlaying > span {
   max-width: 34rem;
 }
