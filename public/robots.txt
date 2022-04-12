@@ -7,4 +7,3 @@ Host: https://afonsojramos.me
 
 # Sitemaps
 Sitemap: https://afonsojramos.me/sitemap.xml
-Sitemap: https://afonsojramos.me/sitemap-0.xml
