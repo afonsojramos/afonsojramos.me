@@ -19,6 +19,7 @@ Router.events.on('routeChangeError', () => {
 
 import '@styles/global.css'
 import { ThemeProvider } from 'next-themes'
+import Script from 'next/script'
 
 class MyApp extends App {
   render() {
@@ -26,6 +27,12 @@ class MyApp extends App {
     return (
       <ThemeProvider disableTransitionOnChange defaultTheme="dark">
         <Component {...pageProps} />
+        <Script
+          defer
+          data-domain-id="ad5b2dc6392a0ea4077ba9922d11d191cdccbf78"
+          src="https://fairdatacenter.de/cdn/fair.js"
+          strategy="afterInteractive"
+        ></Script>
       </ThemeProvider>
     )
   }
