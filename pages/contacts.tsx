@@ -1,5 +1,6 @@
 import { CV, GitHub, LinkedIn, Mail, Telegram } from '@components/icons'
 import Page from '@components/page'
+import Link from '../components/link'
 
 import linkStyles from '../components/link/link.module.css'
 
@@ -7,8 +8,11 @@ const Contacts = () => {
   return (
     <Page title="Contacts" description="Get in touch.">
       <article className="contacts">
-        <p>Get in touch!</p>
-
+        Get in touch through my{' '}
+        <Link underline href="https://calendly.com/afonsojramos/30min" external>
+          Calendly
+        </Link>
+        !
         <div className="social">
           <a
             href="mailto:afonsojorgeramos@gmail.com?subject=Hello"
