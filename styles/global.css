@@ -217,6 +217,10 @@ details {
   border-radius: var(--radius);
 }
 
+.social {
+  margin-top: 3rem;
+}
+
 ::-webkit-scrollbar {
   width: 20px;
 }
@@ -237,11 +241,8 @@ details {
 }
 
 .scene-tooltip b {
-  text-shadow:
-   -1px -1px 0 var(--light-gray),  
-    1px -1px 0 var(--light-gray),
-    -1px 1px 0 var(--light-gray),
-     1px 1px 0 var(--light-gray);
+  text-shadow: -1px -1px 0 var(--light-gray), 1px -1px 0 var(--light-gray),
+    -1px 1px 0 var(--light-gray), 1px 1px 0 var(--light-gray);
 }
 
 /* nav {
