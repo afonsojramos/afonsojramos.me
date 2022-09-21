@@ -9,8 +9,6 @@ import {
 } from 'react'
 import cn from 'classnames'
 import { useRouter } from 'next/router'
-import useDelayedRender from 'use-delayed-render'
-import { DialogContent, DialogOverlay } from '@reach/dialog'
 
 import {
   Command,
@@ -51,31 +49,26 @@ const CommandMenu = memo(() => {
   const listRef = useRef()
   const commandRef = useRef()
   const router = useRouter()
-  const commandProps = useCommand({
+  /* const commandProps = useCommand({
     label: 'Site Navigation'
-  })
-  const [pages, setPages] = usePages(commandProps, ThemeItems)
+  }) */
+  //const [pages, setPages] = usePages(commandProps, ThemeItems)
   const [open, setOpen] = useState(false)
-  const { search, list } = commandProps
-
-  const { mounted, rendered } = useDelayedRender(open, {
-    enterDelay: -1,
-    exitDelay: 200
-  })
+  //const { search, list } = commandProps
 
   // Can't do this inside of useCommand because it relies on useDelayedRender
-  useEffect(() => {
+  /* useEffect(() => {
     if (!mounted) {
       setPages([DefaultItems])
     }
-  }, [mounted, setPages])
+  }, [mounted, setPages]) */
 
-  const Items = pages[pages.length - 1]
+  //const Items = pages[pages.length - 1]
 
   const keymap = useMemo(() => {
     return {
       t: () => {
-        setPages([ThemeItems])
+        //setPages([ThemeItems])
         setOpen(true)
       },
       // Blog
@@ -94,7 +87,7 @@ const CommandMenu = memo(() => {
       // Backspace
       backspace: () => router.back()
     }
-  }, [router, setPages])
+  }, [router])
 
   // Register the keybinds globally
   useEffect(() => {
@@ -118,7 +111,7 @@ const CommandMenu = memo(() => {
         commandRef.current.style.transform = ''
       }, 100)
     }
-  }, [pages])
+  }, [])
 
   const heightRef = useRef()
 
@@ -139,17 +132,14 @@ const CommandMenu = memo(() => {
         <CommandIcon />
       </button>
 
-      <DialogOverlay
+      {/* <div
         isOpen={mounted}
         className={cn(styles.screen, {
           [styles.show]: rendered
         })}
         onDismiss={() => setOpen(false)}
       >
-        <DialogContent
-          className={styles['dialog-content']}
-          aria-label="Site Navigation"
-        >
+        <div className={styles['dialog-content']} aria-label="Site Navigation">
           <Command
             {...commandProps}
             ref={commandRef}
@@ -184,8 +174,30 @@ const CommandMenu = memo(() => {
               </CommandList>
             </div>
           </Command>
-        </DialogContent>
-      </DialogOverlay>
+        </div>
+      </div> */}
+      <Command.Dialog
+        open={open}
+        onOpenChange={setOpen}
+        label="Global Command Menu"
+        className={cn(styles.command, {
+          [styles.show]: open
+        })}
+      >
+        <Command.Input />
+        <Command.List>
+          <Command.Empty>No results found.</Command.Empty>
+
+          <Command.Group heading="Letters">
+            <Command.Item>a</Command.Item>
+            <Command.Item>b</Command.Item>
+            <Command.Separator />
+            <Command.Item>c</Command.Item>
+          </Command.Group>
+
+          <Command.Item>Apple</Command.Item>
+        </Command.List>
+      </Command.Dialog>
     </>
   )
 })
@@ -195,7 +207,7 @@ export default CommandMenu
 
 const ThemeItems = () => {
   const { theme: activeTheme, themes, setTheme } = useTheme()
-  const { setOpen } = useCommandData()
+  //const { setOpen } = useCommandData()
 
   return themes.map((theme) => {
     if (theme === activeTheme) return null
@@ -205,7 +217,7 @@ const ThemeItems = () => {
         key={`theme-${theme}`}
         callback={() => {
           setTheme(theme)
-          setOpen(false)
+          //setOpen(false)
         }}
       >
         {theme}
