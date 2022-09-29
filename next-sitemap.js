@@ -1,6 +1,7 @@
 module.exports = {
   siteUrl: 'https://afonsojramos.me',
   generateRobotsTxt: true,
+  generateIndexSitemap: false,
   transform: async (config, path) => {
     return {
       loc: path,
