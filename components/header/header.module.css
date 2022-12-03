@@ -26,16 +26,21 @@
 
 .nav {
   z-index: 10;
-  margin: var(--small-gap) auto var(--big-gap) auto;
+  padding: var(--small-gap) var(--gap);
   position: sticky;
-  padding: var(--gap) 0;
   top: 0;
   backdrop-filter: saturate(180%) blur(20px);
   background-color: var(--header-bg);
 }
 
+@media (max-width: 768px) {
+  .nav {
+    padding: var(--gap);
+  }
+}
+
 .header {
-  height: 32px;
+  height: 60px;
   margin: 0 auto;
   padding: 0 var(--gap);
   max-width: var(--main-content);
@@ -49,6 +54,9 @@
   color: var(--gray-alpha);
   font-weight: 500;
   margin-left: -20px; /* icon size diff */
+  flex-grow: 1;
+  text-align: center;
+  margin-inline: 2em;
 }
 
 .hint {
@@ -65,6 +73,6 @@
 
 @media (max-width: 960px) {
   .nav {
-    margin: var(--gap-double) 0;
+    padding: var(--gap);
   }
 }
