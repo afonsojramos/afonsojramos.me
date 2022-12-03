@@ -61,10 +61,6 @@
     "rss": "^1.2.2",
     "typescript": "^4.9.3"
   },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "none"
-  },
   "next-unused": {
     "alias": {
       "@components": "components/",
