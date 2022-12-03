@@ -69,14 +69,11 @@ const Link = ({
       as={as}
       prefetch={canPrefetch(href) ? undefined : false}
       passHref={passHref}
+      className={c}
+      onClick={onClick}
+      {...props}
     >
-      {passHref ? (
-        children
-      ) : (
-        <a className={c} onClick={onClick} {...props}>
-          {children}
-        </a>
-      )}
+      {children}
     </NextLink>
   )
 }
