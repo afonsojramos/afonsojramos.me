@@ -1,8 +1,8 @@
-import NextHead from 'next/head'
-import { useTheme } from 'next-themes'
+import NextHead from 'next/head';
+import { useTheme } from 'next-themes';
 
 const defaultOgImage =
-  'https://res.cloudinary.com/afonsojramos/image/upload/v1619293728/og-image_lnsn0r.png'
+  'https://res.cloudinary.com/afonsojramos/image/upload/v1619293728/og-image_lnsn0r.png';
 
 const Head = ({
   title = 'Afonso Jorge Ramos - Sofware Engineer',
@@ -10,12 +10,12 @@ const Head = ({
   image = defaultOgImage,
   children
 }: {
-  title: string
-  description?: string
-  image?: string
-  children?: any
+  title: string;
+  description?: string;
+  image?: string;
+  children?: React.ReactNode;
 }) => {
-  const { systemTheme } = useTheme()
+  const { systemTheme } = useTheme();
 
   return (
     <NextHead>
@@ -51,14 +51,12 @@ const Head = ({
       />
 
       {/* Favicons */}
-      <link rel="manifest" href="/favicons/manifest.webmanifest" />
       <meta name="theme-color" content="#000000" />
-      <link rel="mask-icon" href="/favicons/pinned.svg" color="#000000" />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/favicons/favicon-180x180.png"
-      />
+      <link rel="mask-icon" href="/favicon/pinned.svg" color="#000000" />
+      {/* Favicons */}
+      {favicons.map((linkProps) => (
+        <link key={linkProps.href} {...linkProps} />
+      ))}
 
       {/* Dynamic favicon */}
       {!systemTheme || systemTheme === 'dark' ? (
@@ -66,13 +64,13 @@ const Head = ({
           <link
             rel="alternate icon"
             type="image/png"
-            href="/favicons/dark.png"
+            href="/favicon/dark.png"
             key="dynamic-favicon-alternate"
           />
           <link
             rel="icon"
             type="image/svg+xml"
-            href="/favicons/dark.svg"
+            href="/favicon/dark.svg"
             key="dynamic-favicon"
           />
         </>
@@ -81,20 +79,103 @@ const Head = ({
           <link
             rel="alternate icon"
             type="image/png"
-            href="/favicons/light.png"
+            href="/favicon/light.png"
             key="dynamic-favicon-alternate"
           />
           <link
             rel="icon"
             type="image/svg+xml"
-            href="/favicons/light.svg"
+            href="/favicon/light.svg"
             key="dynamic-favicon"
           />
         </>
       )}
       {children}
     </NextHead>
-  )
-}
+  );
+};
 
-export default Head
+type Favicons = {
+  rel: string;
+  href: string;
+  sizes?: string;
+  type?: string;
+};
+
+const favicons: Array<Favicons> = [
+  {
+    rel: 'apple-touch-icon',
+    sizes: '57x57',
+    href: '/favicon/apple-icon-57x57.png'
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '60x60',
+    href: '/favicon/apple-icon-60x60.png'
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '72x72',
+    href: '/favicon/apple-icon-72x72.png'
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '76x76',
+    href: '/favicon/apple-icon-76x76.png'
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '114x114',
+    href: '/favicon/apple-icon-114x114.png'
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '120x120',
+    href: '/favicon/apple-icon-120x120.png'
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '144x144',
+    href: '/favicon/apple-icon-144x144.png'
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '152x152',
+    href: '/favicon/apple-icon-152x152.png'
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '180x180',
+    href: '/favicon/apple-icon-180x180.png'
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '192x192',
+    href: '/favicon/android-icon-192x192.png'
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '32x32',
+    href: '/favicon/favicon-32x32.png'
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '96x96',
+    href: '/favicon/favicon-96x96.png'
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '16x16',
+    href: '/favicon/favicon-16x16.png'
+  },
+  {
+    rel: 'manifest',
+    href: '/favicon/manifest.json'
+  }
+];
+
+export default Head;
