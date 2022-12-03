@@ -105,7 +105,8 @@ const Item = ({
   const cb = () => {
     if (onSelect) {
       onSelect();
-    } else if (keybind && pagesKeymap[keybind]) {
+    }
+    if (keybind && pagesKeymap[keybind]) {
       pagesKeymap[keybind]?.();
     }
   };
@@ -134,12 +135,14 @@ const CommandMenu = () => {
   const keymap = useMemo(() => {
     return {
       t: () => {
-        setPages((pages) => [...pages, PageGroup.Themes]);
-        setOpen(true);
+        setSearch('');
+        setPages([PageGroup.Themes]);
+        // timeout to prevent key in input
+        setTimeout(() => setOpen(true), 100);
       },
       ...pagesKeymap
     };
-  }, [setPages]);
+  }, [setSearch, setPages, setOpen]);
 
   // Register the keybinds globally
   useEffect(() => {
@@ -206,7 +209,7 @@ const CommandMenu = () => {
                     <Item
                       value="Search"
                       onSelect={() => {
-                        setPages([...pages, PageGroup.Blog]);
+                        setPages([PageGroup.Blog]);
                         setSearch('');
                       }}
                     >
@@ -243,14 +246,7 @@ const CommandMenu = () => {
                       <Home />
                       Home
                     </Item>
-                    <Item
-                      value="Themes"
-                      keybind="t"
-                      onSelect={() => {
-                        setPages([...pages, PageGroup.Themes]);
-                        setSearch('');
-                      }}
-                    >
+                    <Item value="Themes" keybind="t">
                       <Sparkles />
                       Themes
                     </Item>
