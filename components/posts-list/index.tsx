@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-import TextEntry from '@components/entry/text'
-import styles from './posts-list.module.css'
-import { IPost } from '@interfaces/post'
+import TextEntry from '@components/entry/text';
+import styles from './posts-list.module.css';
+import { IPost } from '@interfaces/post';
 
 const Posts = ({ posts, paginate }: { posts: IPost[]; paginate?: boolean }) => {
-  const [showMore, setShowMore] = useState(3)
+  const [showMore, setShowMore] = useState(3);
 
   return (
     <div className={styles.container}>
@@ -13,7 +13,7 @@ const Posts = ({ posts, paginate }: { posts: IPost[]; paginate?: boolean }) => {
         const date = new Date(post.date).toLocaleDateString('default', {
           month: 'numeric',
           day: 'numeric'
-        })
+        });
 
         return (
           <TextEntry
@@ -25,12 +25,12 @@ const Posts = ({ posts, paginate }: { posts: IPost[]; paginate?: boolean }) => {
             description={post.description}
             slug={post.slug}
           />
-        )
+        );
       })}
       {paginate && showMore < posts.length && (
         <button
           onClick={() => {
-            setShowMore(showMore + 3)
+            setShowMore(showMore + 3);
           }}
           className={styles.button}
         >
@@ -38,7 +38,7 @@ const Posts = ({ posts, paginate }: { posts: IPost[]; paginate?: boolean }) => {
         </button>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Posts
+export default Posts;

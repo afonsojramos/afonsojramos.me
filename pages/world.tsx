@@ -1,6 +1,6 @@
-import Page from '@components/page'
-import Globe from '@components/globe'
-import getMarkdown from '@lib/get-markdown'
+import Page from '@components/page';
+import Globe from '@components/globe';
+import getMarkdown from '@lib/get-markdown';
 
 const Travels = ({ html }: { html: string }) => {
   return (
@@ -11,17 +11,17 @@ const Travels = ({ html }: { html: string }) => {
       <Globe />
       <article dangerouslySetInnerHTML={{ __html: html }} />
     </Page>
-  )
-}
+  );
+};
 
 export const getStaticProps = async () => {
-  const md = await getMarkdown('data/world.md')
+  const md = await getMarkdown('data/world.md');
 
   return {
     props: {
       html: md
     }
-  }
-}
+  };
+};
 
-export default Travels
+export default Travels;

@@ -18,7 +18,7 @@ const YLD = ({ className = {} }) => {
         ></path>
       </g>
     </svg>
-  )
-}
+  );
+};
 
-export default YLD
+export default YLD;

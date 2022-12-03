@@ -1,7 +1,7 @@
-import Link from '@components/link'
-import { IPost } from '@interfaces/post'
+import Link from '@components/link';
+import { IPost } from '@interfaces/post';
 
-import styles from './navigation.module.css'
+import styles from './navigation.module.css';
 
 const Previous = ({ previous, next }: { previous?: IPost; next?: IPost }) => {
   return (
@@ -24,7 +24,7 @@ const Previous = ({ previous, next }: { previous?: IPost; next?: IPost }) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Previous
+export default Previous;

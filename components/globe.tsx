@@ -4,51 +4,52 @@ import {
   useEffect,
   FunctionComponent,
   MutableRefObject
-} from 'react'
-import { GlobeMethods, GlobeProps } from 'react-globe.gl'
+} from 'react';
+import { GlobeMethods, GlobeProps } from 'react-globe.gl';
 
 let Globe: FunctionComponent<
   GlobeProps & { ref?: MutableRefObject<GlobeMethods | undefined> } & {
-    controls: any
+    controls: any;
   }
->
-if (typeof window !== 'undefined') Globe = require('react-globe.gl').default
+>;
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+if (typeof window !== 'undefined') Globe = require('react-globe.gl').default;
 
-import countryLists from '@data/countries.json'
-import { FeatureCollection } from 'geojson'
+import countryLists from '@data/countries.json';
+import { FeatureCollection } from 'geojson';
 
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
     width: 0,
     height: 0
-  })
+  });
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight
-      })
+      });
     }
-  }, [])
-  return windowSize
+  }, []);
+  return windowSize;
 }
 
 const GlobeWrapper = () => {
-  const [imageUrl] = useState('/CFCFCF.png')
-  const globeRef = useRef<GlobeMethods & { controls: any }>()
-  const [countries, setCountries] = useState<FeatureCollection>()
-  const { lived, visited } = countryLists
-  const [mounted, setMounted] = useState(false)
-  const size = useWindowSize()
+  const [imageUrl] = useState('/CFCFCF.png');
+  const globeRef = useRef<GlobeMethods & { controls: any }>();
+  const [countries, setCountries] = useState<FeatureCollection>();
+  const { lived, visited } = countryLists;
+  const [mounted, setMounted] = useState(false);
+  const size = useWindowSize();
 
   useEffect(() => {
     // load data
     fetch('/countries.geojson')
       .then((res) => res.json())
-      .then(setCountries)
-    setMounted(true)
-  }, [])
+      .then(setCountries);
+    setMounted(true);
+  }, []);
 
   if (mounted)
     return (
@@ -68,7 +69,7 @@ const GlobeWrapper = () => {
             (lived.includes(properties?.ISO_A2) && 'blue') ||
             (visited.includes(properties?.ISO_A2) && 'green') ||
             'grey'
-          )
+          );
         }}
         polygonSideColor={() => 'rgba(0, 0, 0, 0.2)'}
         polygonStrokeColor={() => '#111'}
@@ -86,8 +87,8 @@ const GlobeWrapper = () => {
           (globeRef.current.controls().dampingFactor = 100)
         }
       />
-    )
-  return <></>
-}
+    );
+  return <></>;
+};
 
-export default GlobeWrapper
+export default GlobeWrapper;

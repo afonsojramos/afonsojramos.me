@@ -1,17 +1,19 @@
-import Head from 'next/head'
-import Lottie from 'react-lottie-player'
-import { replaceColor } from 'lottie-colorify'
-import { useTheme } from 'next-themes'
+import Head from 'next/head';
+import Lottie from 'react-lottie-player';
+import { replaceColor } from 'lottie-colorify';
+import { useTheme } from 'next-themes';
 
-import Page from '@components/page'
-import Link from '@components/link'
-import lottie404 from '@components/icons/lottie/404.json'
-import styles from './error.module.css'
+import Page from '@components/page';
+import Link from '@components/link';
+import lottie404 from '@components/icons/lottie/404.json';
+import styles from './error.module.css';
 
-const Error = ({ status }: { status: Number }) => {
-  const { theme } = useTheme()
+const Error = ({ status }: { status: number }) => {
+  const { theme } = useTheme();
   const animationData: JSON =
-    theme === 'dark' ? replaceColor('#000000', '#ffffff', lottie404) : lottie404
+    theme === 'dark'
+      ? replaceColor('#000000', '#ffffff', lottie404)
+      : lottie404;
 
   return (
     <Page title={`${status}` || 'Error'} description={'Error 404'}>
@@ -54,7 +56,7 @@ const Error = ({ status }: { status: Number }) => {
         </section>
       )}
     </Page>
-  )
-}
+  );
+};
 
-export default Error
+export default Error;

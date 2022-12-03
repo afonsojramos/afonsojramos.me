@@ -1,4 +1,4 @@
-import admin from 'firebase-admin'
+import admin from 'firebase-admin';
 
 if (!admin.apps.length) {
   admin.initializeApp({
@@ -8,7 +8,7 @@ if (!admin.apps.length) {
       projectId: process.env.FIREBASE_PROJECT_ID
     }),
     databaseURL: process.env.FIREBASE_DATABASE_URL
-  })
+  });
 }
 
-export default admin.database()
+export default admin.database();

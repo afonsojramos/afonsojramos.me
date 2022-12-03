@@ -1,8 +1,8 @@
-import { CV, GitHub, LinkedIn, Mail, Telegram } from '@components/icons'
-import Page from '@components/page'
-import Link from '../components/link'
+import { CV, GitHub, LinkedIn, Mail, Telegram } from '@components/icons';
+import Page from '@components/page';
+import Link from '../components/link';
 
-import linkStyles from '../components/link/link.module.css'
+import linkStyles from '../components/link/link.module.css';
 
 const Contacts = () => {
   return (
@@ -57,7 +57,7 @@ const Contacts = () => {
         </div>
       </article>
     </Page>
-  )
-}
+  );
+};
 
-export default Contacts
+export default Contacts;

@@ -1,16 +1,16 @@
-import { memo, MouseEventHandler } from 'react'
-import NextLink from 'next/link'
-import cn from 'classnames'
+import { memo, MouseEventHandler } from 'react';
+import NextLink from 'next/link';
+import cn from 'classnames';
 
-import styles from './link.module.css'
+import styles from './link.module.css';
 
 const canPrefetch = (href: string) => {
   if (!href || !href.startsWith('/')) {
-    return false
+    return false;
   }
 
-  return true
-}
+  return true;
+};
 
 const Link = ({
   external,
@@ -29,23 +29,23 @@ const Link = ({
   title,
   ...props
 }: {
-  external?: boolean
-  href: string
-  as?: string
-  passHref?: boolean
-  className?: string
-  underline?: boolean
-  gray?: boolean
-  disabled?: boolean
-  onClick?: MouseEventHandler<HTMLAnchorElement>
-  title?: string
-  children: any
+  external?: boolean;
+  href: string;
+  as?: string;
+  passHref?: boolean;
+  className?: string;
+  underline?: boolean;
+  gray?: boolean;
+  disabled?: boolean;
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
+  title?: string;
+  children: any;
 }) => {
   const c = cn(className, styles.reset, {
     [styles.gray]: gray,
     [styles.underline]: underline,
     [styles.disabled]: disabled
-  })
+  });
 
   if (external) {
     return (
@@ -60,7 +60,7 @@ const Link = ({
       >
         {children}
       </a>
-    )
+    );
   }
 
   return (
@@ -75,8 +75,8 @@ const Link = ({
     >
       {children}
     </NextLink>
-  )
-}
+  );
+};
 
-Link.displayName = 'Link'
-export default memo(Link)
+Link.displayName = 'Link';
+export default memo(Link);

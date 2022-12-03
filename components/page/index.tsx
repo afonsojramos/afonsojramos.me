@@ -1,6 +1,6 @@
-import Head from '@components/head'
-import Header from '@components/header'
-import styles from './page.module.css'
+import Head from '@components/head';
+import Header from '@components/header';
+import styles from './page.module.css';
 
 const Page = ({
   header = true,
@@ -10,12 +10,12 @@ const Page = ({
   showHeaderTitle = true,
   children
 }: {
-  header?: boolean
-  title?: string
-  description?: string
-  image?: string
-  showHeaderTitle?: boolean
-  children: any
+  header?: boolean;
+  title?: string;
+  description?: string;
+  image?: string;
+  showHeaderTitle?: boolean;
+  children: React.ReactNode;
 }) => {
   return (
     <div className={styles.wrapper}>
@@ -28,7 +28,7 @@ const Page = ({
       {header && <Header title={showHeaderTitle ? title : undefined} />}
       <main className={styles.main}>{children}</main>
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

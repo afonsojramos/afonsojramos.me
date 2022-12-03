@@ -13,6 +13,6 @@ module.exports = {
           ? '0.5'
           : config.priority,
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined
-    }
+    };
   }
-}
+};

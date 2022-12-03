@@ -1,9 +1,9 @@
 interface ITopTracks {
   tracks: {
-    artist: string
-    songUrl: string
-    title: string
-  }[]
+    artist: string;
+    songUrl: string;
+    title: string;
+  }[];
 }
 
-export type { ITopTracks }
+export type { ITopTracks };

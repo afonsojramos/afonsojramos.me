@@ -1,10 +1,10 @@
-import { memo } from 'react'
-import cn from 'classnames'
-import useSWR from 'swr'
-import fetcher from '@lib/fetcher'
+import { memo } from 'react';
+import cn from 'classnames';
+import useSWR from 'swr';
+import fetcher from '@lib/fetcher';
 
-import Link from '@components/link'
-import styles from './text.module.css'
+import Link from '@components/link';
+import styles from './text.module.css';
 
 const TextEntry = ({
   title,
@@ -14,15 +14,15 @@ const TextEntry = ({
   as,
   slug
 }: {
-  title: string
-  description: string
-  type: string
-  href: string
-  as: string
-  slug: string
+  title: string;
+  description: string;
+  type: string;
+  href: string;
+  as: string;
+  slug: string;
 }) => {
-  const { data } = useSWR(`/api/views/${slug}`, fetcher)
-  const views = data?.total
+  const { data } = useSWR(`/api/views/${slug}`, fetcher);
+  const views = data?.total;
 
   return (
     <li className={styles.item}>
@@ -43,7 +43,7 @@ const TextEntry = ({
         {`${views ? views.toLocaleString() : '–––'} views`}
       </Link>
     </li>
-  )
-}
+  );
+};
 
-export default memo(TextEntry)
+export default memo(TextEntry);
