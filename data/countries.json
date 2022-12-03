@@ -13,10 +13,8 @@
     "GB",
     "BA",
     "SI",
-    "SK"
+    "SK",
+    "DK"
   ],
-  "lived": [
-    "PT",
-    "ES"
-  ]
+  "lived": ["PT", "ES"]
 }
