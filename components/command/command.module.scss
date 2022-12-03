@@ -1,0 +1,186 @@
+.screen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  --overlay: rgba(0, 0, 0, 0.6);
+  background: var(--overlay);
+  --padding: 0 20px;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+  height: 100vh;
+  display: none;
+
+  &.show {
+    opacity: 1;
+    display: flex;
+  }
+}
+
+.command {
+  [cmdk-dialog] {
+    background: var(--overlay);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    --overlay: rgba(0, 0, 0, 0.6);
+    background: var(--overlay);
+    --padding: 0 20px;
+    z-index: 999;
+    opacity: 1;
+
+    
+
+    :global(html[data-theme='light']) & {
+      --overlay: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  [cmdk-root] {
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
+    background: var(--bg);
+    border-radius: 12px;
+    overflow: hidden;
+    font-family: var(--font-sans);
+    --cmdk-shadow: 0px 30px 60px rgba(0, 0, 0, 0.4), 0px 0px 60px rgba(0, 0, 0, 0.5),
+    inset 0px 1px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: var(--cmdk-shadow);
+    opacity: 1;
+    color: var(--fg);
+    transition: transform 100ms ease;
+
+    @media (max-width: 600px) {
+      width: 92%;
+    }
+  }
+
+  [cmdk-input] {
+    font-family: var(--font-sans);
+    height: 60px;
+    border: none;
+    width: 100%;
+    font-size: 17px;
+    padding: 8px 8px 16px 8px;
+    outline: none;
+    background: var(--bg);
+    color: var(--fg);
+    border-radius: 0;
+    padding-top: 1em;
+    padding-inline: 1em;
+
+    &::placeholder {
+      color: var(--gray);
+    }
+  }
+
+  [cmdk-item] {
+    content-visibility: auto;
+    cursor: pointer;
+    height: 60px;
+    border-radius: 8px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 var(--gap);
+    color: var(--gray);
+    user-select: none;
+    will-change: background, color;
+    transition: all 150ms ease;
+    transition-property: none;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+
+    &[aria-selected='true'] {
+      background: var(--lightest-gray);
+      color: var(--fg);
+    }
+
+    &[aria-disabled='true'] {
+      color: var(--gray8);
+      cursor: not-allowed;
+    }
+
+    &:active {
+      transition-property: background;
+      background: var(--gray);
+    }
+
+    & + [cmdk-item] {
+      margin-top: 4px;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-right: var(--gap-half);
+    }
+  }
+
+  [cmdk-list] {
+    height: min(450px, calc(var(--cmdk-list-height)));
+    max-height: 550px;
+    overflow: auto;
+    overscroll-behavior: contain;
+    transition: 100ms ease;
+    transition-property: height;
+    margin: 0.2em 0;
+  }
+
+  [cmdk-shortcuts] {
+    display: flex;
+    margin-left: auto;
+    gap: 8px;
+
+    kbd {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      min-width: 20px;
+      padding: 4px;
+      height: 20px;
+      font-weight: 400;
+      border-radius: 4px;
+      color: var(--gray);
+      background: var(--lighter-gray);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+    }
+  }
+
+  [cmdk-separator] {
+    height: 1px;
+    width: 100%;
+    background: var(--gray5);
+    margin: 4px 0;
+  }
+
+  [cmdk-group-heading] {
+    user-select: none;
+    font-size: 12px;
+    color: var(--gray);
+    background: var(--lighter-gray);
+    padding: 0.5em 1em;
+    display: flex;
+    align-items: center;
+  }
+
+  [cmdk-empty] {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    white-space: pre-wrap;
+    color: var(--gray11);
+  }
+}

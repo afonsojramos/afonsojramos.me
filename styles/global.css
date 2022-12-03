@@ -97,6 +97,7 @@ body {
   font-family: var(--font-sans);
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 p,
@@ -194,6 +195,22 @@ code {
 
 .flex {
   display: flex;
+}
+
+[data-radix-popper-content-wrapper] {
+  z-index: 999 !important;
+  position: absolute !important;
+  top: calc(30px + var(--big-gap) + (3 * var(--gap-double))) !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  transform: none !important;
+}
+
+@media (max-width: 900px) {
+  [data-radix-popper-content-wrapper] {
+    top: calc(30px + (3 * var(--gap-double))) !important;
+  }
 }
 
 kbd {
