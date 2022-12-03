@@ -15,7 +15,7 @@ const NewDay = ({ className = {} }) => {
         fill="currentColor"
       ></path>
     </svg>
-  )
-}
+  );
+};
 
-export default NewDay
+export default NewDay;

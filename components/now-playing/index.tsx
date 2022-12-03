@@ -1,18 +1,18 @@
-import useSWR from 'swr'
-import Link from '@components/link'
-import fetcher from '@lib/fetcher'
-import Image from 'next/image'
+import useSWR from 'swr';
+import Link from '@components/link';
+import fetcher from '@lib/fetcher';
+import Image from 'next/image';
 
-import { Spotify } from '../icons'
-import iconStyles from '../icons/icons.module.css'
-import styles from './now-playing.module.css'
-import { INowPlaying } from '@interfaces/now-playing'
+import { Spotify } from '../icons';
+import iconStyles from '../icons/icons.module.css';
+import styles from './now-playing.module.css';
+import { INowPlaying } from '@interfaces/now-playing';
 
 export default function NowPlaying({ bigPicture = false }) {
   const { data }: { data?: INowPlaying } = useSWR<INowPlaying>(
     '/api/now-playing',
     fetcher
-  )
+  );
 
   return (
     <div className={bigPicture ? styles.bigPicture : styles.nowPlaying}>
@@ -53,11 +53,11 @@ export default function NowPlaying({ bigPicture = false }) {
                   </Link>
                   {index < data.artists.length - 1 ? ', ' : ''}
                 </span>
-              )
+              );
             })}
           </span>
         </span>
       )}
     </div>
-  )
+  );
 }

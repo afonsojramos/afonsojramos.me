@@ -1,4 +1,4 @@
-import Page from '@components/page'
+import Page from '@components/page';
 
 const Resume = () => {
   return (
@@ -7,7 +7,7 @@ const Resume = () => {
         <p>Get in touch!</p>
       </article>
     </Page>
-  )
-}
+  );
+};
 
-export default Resume
+export default Resume;

@@ -1,5 +1,5 @@
 interface IViewsTotal {
-  total: number
+  total: number;
 }
 
-export type { IViewsTotal }
+export type { IViewsTotal };

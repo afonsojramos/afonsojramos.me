@@ -1,9 +1,9 @@
-import { memo } from 'react'
-import Link from '@components/link'
+import { memo } from 'react';
+import Link from '@components/link';
 
-import styles from './header.module.css'
-import { Logo as LogoIcon } from '@components/icons'
-import Command from '@components/command'
+import styles from './header.module.css';
+import { Logo as LogoIcon } from '@components/icons';
+import Command from '@components/command';
 
 const Header = ({ title }: { title?: string }) => {
   return (
@@ -24,8 +24,8 @@ const Header = ({ title }: { title?: string }) => {
         <Command />
       </div>
     </nav>
-  )
-}
+  );
+};
 
-Header.displayName = 'Header'
-export default memo(Header)
+Header.displayName = 'Header';
+export default memo(Header);

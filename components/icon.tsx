@@ -16,10 +16,10 @@ const withIcon = (icon: string) => {
         fillRule="evenodd"
         clipRule="evenodd"
       />
-    )
-  }
+    );
+  };
 
-  return Icon
-}
+  return Icon;
+};
 
-export default withIcon
+export default withIcon;

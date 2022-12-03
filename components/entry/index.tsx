@@ -1,9 +1,9 @@
-import cn from 'classnames'
-import { useInView } from 'react-intersection-observer'
-import 'intersection-observer'
+import cn from 'classnames';
+import { useInView } from 'react-intersection-observer';
+import 'intersection-observer';
 
-import styles from './entry.module.css'
-const imagePrefix = `https://res.cloudinary.com/afonsojramos/image/fetch/q_60,w_1000`
+import styles from './entry.module.css';
+const imagePrefix = `https://res.cloudinary.com/afonsojramos/image/fetch/q_60,w_1000`;
 
 const Entry = ({
   title,
@@ -12,13 +12,13 @@ const Entry = ({
   href,
   position
 }: {
-  title: string
-  description: string
-  image: string
-  href?: string
-  position?: string
+  title: string;
+  description: string;
+  image: string;
+  href?: string;
+  position?: string;
 }) => {
-  const [ref, inView] = useInView({ triggerOnce: true })
+  const [ref, inView] = useInView({ triggerOnce: true });
 
   return (
     <a
@@ -45,7 +45,7 @@ const Entry = ({
         </div>
       </section>
     </a>
-  )
-}
+  );
+};
 
-export default Entry
+export default Entry;

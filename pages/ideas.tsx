@@ -1,5 +1,5 @@
-import Page from '@components/page'
-import getMarkdown from '@lib/get-markdown'
+import Page from '@components/page';
+import getMarkdown from '@lib/get-markdown';
 
 const Ideas = ({ html }: { html: string }) => {
   return (
@@ -9,17 +9,17 @@ const Ideas = ({ html }: { html: string }) => {
     >
       <article dangerouslySetInnerHTML={{ __html: html }} />
     </Page>
-  )
-}
+  );
+};
 
 export const getStaticProps = async () => {
-  const md = await getMarkdown('data/ideas.md')
+  const md = await getMarkdown('data/ideas.md');
 
   return {
     props: {
       html: md
     }
-  }
-}
+  };
+};
 
-export default Ideas
+export default Ideas;

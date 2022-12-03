@@ -1,9 +1,9 @@
-import Page from '@components/page'
-import Link from '@components/link'
-import { EDreams, Ensico } from '@components/icons'
-import NowPlaying from '../components/now-playing'
-import iconStyles from '@components/icons/icons.module.css'
-import ViewCounter from '@components/view-counter'
+import Page from '@components/page';
+import Link from '@components/link';
+import { Ensico, NewDay, YLD } from '@components/icons';
+import NowPlaying from '../components/now-playing';
+import iconStyles from '@components/icons/icons.module.css';
+import ViewCounter from '@components/view-counter';
 
 const About = () => {
   return (
@@ -40,14 +40,12 @@ const About = () => {
 
         <p>
           Working at{' '}
-          <Link href="https://edreams.com/" external>
-            <EDreams className={iconStyles.inline} />
+          <Link href="https://yld.io/" external>
+            <YLD className={iconStyles.inline} />
           </Link>{' '}
-          <Link underline href="https://edreams.com/" external>
-            eDreams ODIGEO
-          </Link>{' '}
-          to help create the one stop travel company.
+          and <NewDay className={iconStyles.inline} />.
         </p>
+
         <p>
           Bringing accessible coding lessons to 5th to 9th grade students at{' '}
           <Link href="https://www.ensico.pt/" external>
@@ -62,7 +60,7 @@ const About = () => {
       <NowPlaying />
       <ViewCounter slug={'home'} string={false} />
     </Page>
-  )
-}
+  );
+};
 
-export default About
+export default About;

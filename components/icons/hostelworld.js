@@ -6,7 +6,7 @@ const Hostelworld = ({ className = null }) => {
         fill="#f37349"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default Hostelworld
+export default Hostelworld;

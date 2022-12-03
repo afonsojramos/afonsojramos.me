@@ -15,7 +15,7 @@ const EDreams = ({ className = {} }) => {
         </g>
       </g>
     </svg>
-  )
-}
+  );
+};
 
-export default EDreams
+export default EDreams;

@@ -1,7 +1,7 @@
-import Page from '@components/page'
-import PostsList from '@components/posts-list'
-import getPosts from '@lib/get-posts'
-import { IPost } from '@interfaces/post'
+import Page from '@components/page';
+import PostsList from '@components/posts-list';
+import getPosts from '@lib/get-posts';
+import { IPost } from '@interfaces/post';
 
 const Blog = ({ posts }: { posts: IPost[] }) => {
   return (
@@ -12,17 +12,17 @@ const Blog = ({ posts }: { posts: IPost[] }) => {
         </ul>
       </article>
     </Page>
-  )
-}
+  );
+};
 
 export const getStaticProps = () => {
-  const posts = getPosts()
+  const posts = getPosts();
 
   return {
     props: {
       posts
     }
-  }
-}
+  };
+};
 
-export default Blog
+export default Blog;

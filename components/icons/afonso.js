@@ -1,4 +1,4 @@
-const Afonso = ({ width = null, color = 'currentColor' }) => {
+const Afonso = ({ width = 24, color = 'currentColor' }) => {
   return (
     <svg viewBox="0 0 441.68 441.68" width={width} fill={color}>
       <path
@@ -6,7 +6,7 @@ const Afonso = ({ width = null, color = 'currentColor' }) => {
         transform="translate(-35.16 -35.16)"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default Afonso
+export default Afonso;

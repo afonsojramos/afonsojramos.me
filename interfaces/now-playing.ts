@@ -1,24 +1,24 @@
 interface INotPlaying {
-  isPlaying: false
+  isPlaying: false;
 }
 
 interface INowPlaying {
-  isPlaying: true
-  track: ITrack
-  artists: IArtist[]
+  isPlaying: true;
+  track: ITrack;
+  artists: IArtist[];
 }
 
 interface ITrack {
-  title: string
-  album: string
-  albumUrl: string
-  image: string
-  url: string
+  title: string;
+  album: string;
+  albumUrl: string;
+  image: string;
+  url: string;
 }
 
 interface IArtist {
-  name: string
-  url: string
+  name: string;
+  url: string;
 }
 
-export type { INotPlaying, INowPlaying, ITrack, IArtist }
+export type { INotPlaying, INowPlaying, ITrack, IArtist };

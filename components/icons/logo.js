@@ -6,7 +6,7 @@ const Logo = () => {
         transform="translate(-35.16 -35.16)"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default Logo
+export default Logo;

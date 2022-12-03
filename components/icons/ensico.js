@@ -1,10 +1,10 @@
-const effectsStyle = { fill: 'var(--name)' }
+const effectsStyle = { fill: 'var(--name)' };
 const bookStyle = {
   fill: 'none',
   stroke: '#3859FF',
   strokeWidth: '8',
   strokeLinejoin: 'round'
-}
+};
 
 const Ensico = ({ className = {} }) => {
   return (
@@ -39,7 +39,7 @@ const Ensico = ({ className = {} }) => {
       />
       <line style={bookStyle} x1="88.1" y1="21.3" x2="88.1" y2="108.1" />
     </svg>
-  )
-}
+  );
+};
 
-export default Ensico
+export default Ensico;

@@ -1,10 +1,10 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
-import Navigation from './navigation'
-import Page from '@components/page'
-import styles from './post.module.css'
-import ViewCounter from '@components/view-counter'
-import { IPost } from '@interfaces/post'
+import Navigation from './navigation';
+import Page from '@components/page';
+import styles from './post.module.css';
+import ViewCounter from '@components/view-counter';
+import { IPost } from '@interfaces/post';
 
 function escapeHtml(unsafe: string) {
   return unsafe
@@ -12,7 +12,7 @@ function escapeHtml(unsafe: string) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;')
+    .replace(/'/g, '&#039;');
 }
 
 const Post = ({
@@ -49,7 +49,7 @@ const Post = ({
       <Navigation previous={previous} next={next} />
       <ViewCounter slug={slug} />
     </Page>
-  )
-}
+  );
+};
 
-export default Post
+export default Post;
