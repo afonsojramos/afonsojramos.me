@@ -43,7 +43,11 @@ const About = () => {
           <Link href="https://yld.io/" external>
             <YLD className={iconStyles.inline} />
           </Link>{' '}
-          and <NewDay className={iconStyles.inline} />.
+          and{' '}
+          <Link href="https://www.newday.co.uk/" external>
+            <NewDay className={iconStyles.inline} />
+          </Link>
+          .
         </p>
 
         <p>
