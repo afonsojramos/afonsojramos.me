@@ -233,7 +233,11 @@ const CommandMenu = () => {
                       <Phone />
                       Contacts
                     </Item>
-                    <Item value="Menu" keybind="⌘+k">
+                    <Item
+                      value="Menu"
+                      keybind="⌘+k"
+                      onSelect={() => setOpen(false)}
+                    >
                       <CommandIcon />
                       Menu
                     </Item>
