@@ -20,6 +20,11 @@
 }
 
 .command {
+  & {
+    max-width: 700px;
+    margin: auto;
+  }
+
   [cmdk-dialog] {
     background: var(--overlay);
     position: fixed;
@@ -41,9 +46,6 @@
   }
 
   [cmdk-root] {
-    max-width: 700px;
-    width: 100%;
-    margin: auto;
     background: var(--bg);
     border-radius: 12px;
     overflow: hidden;
