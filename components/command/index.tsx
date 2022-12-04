@@ -50,7 +50,6 @@ const ThemeItems = ({ closeDialog }: { closeDialog: () => void }) => {
   return (
     <>
       {themes.map((theme) => {
-        console.log(theme);
         if (theme === activeTheme) return null;
         return (
           <Command.Item
