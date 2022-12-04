@@ -249,7 +249,11 @@ const CommandMenu = () => {
                       <Home />
                       Home
                     </Item>
-                    <Item value="Themes" keybind="t">
+                    <Item
+                      value="Themes"
+                      keybind="t"
+                      onSelect={() => setPages([PageGroup.Themes])}
+                    >
                       <Sparkles />
                       Themes
                     </Item>
