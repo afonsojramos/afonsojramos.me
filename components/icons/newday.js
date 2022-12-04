@@ -1,4 +1,4 @@
-const NewDay = ({ className = {} }) => {
+const NewDay = ({ className = {}, style = {} }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -7,6 +7,7 @@ const NewDay = ({ className = {} }) => {
       viewBox="0 0 237 72"
       fill="black"
       className={className}
+      style={style}
     >
       <path
         fillRule="evenodd"

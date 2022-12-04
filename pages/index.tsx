@@ -1,8 +1,8 @@
-import Page from '@components/page';
-import Link from '@components/link';
 import { Ensico, NewDay, YLD } from '@components/icons';
-import NowPlaying from '../components/now-playing';
 import iconStyles from '@components/icons/icons.module.css';
+import Link from '@components/link';
+import NowPlaying from '@components/now-playing';
+import Page from '@components/page';
 import ViewCounter from '@components/view-counter';
 
 const About = () => {
@@ -45,7 +45,7 @@ const About = () => {
           </Link>{' '}
           and{' '}
           <Link href="https://www.newday.co.uk/" external>
-            <NewDay className={iconStyles.inline} />
+            <NewDay className={iconStyles.inline} style={{ width: 60 }} />
           </Link>
           .
         </p>
