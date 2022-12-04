@@ -13,8 +13,7 @@
 
 .command:hover,
 .command:focus,
-.logo:hover,
-.logo:focus-within {
+.logo:hover {
   outline: none;
   background: var(--lighter-gray);
 }
