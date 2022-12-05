@@ -1,0 +1,25 @@
+.labels {
+  display: flex;
+  flex-direction: column;
+  margin: -1em 2em;
+  align-items: flex-end;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  align-self: right;
+  right: 0;
+  margin: 0.5em 0;
+  min-width: 10em;
+
+  & > div {
+    width: 1em;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+  }
+
+  & > span {
+    margin-left: 0.5em;
+  }
+}

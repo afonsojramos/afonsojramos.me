@@ -1,27 +1,29 @@
 import Page from '@components/page';
 import Globe from '@components/globe';
-import getMarkdown from '@lib/get-markdown';
+import Labels from '@components/label';
+import { ILabel } from '../interfaces';
 
-const Travels = ({ html }: { html: string }) => {
+const labels: ILabel[] = [
+  {
+    label: "Where I've been",
+    color: 'green'
+  },
+  {
+    label: "Where I've lived",
+    color: 'blue'
+  }
+];
+
+const Travels = () => {
   return (
     <Page
       title="World Travels"
       description="Register of places I've visited so far."
     >
       <Globe />
-      <article dangerouslySetInnerHTML={{ __html: html }} />
+      <Labels labels={labels} />
     </Page>
   );
-};
-
-export const getStaticProps = async () => {
-  const md = await getMarkdown('data/world.md');
-
-  return {
-    props: {
-      html: md
-    }
-  };
 };
 
 export default Travels;
