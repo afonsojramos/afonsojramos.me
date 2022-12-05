@@ -62,9 +62,13 @@
   margin-left: var(--gap-double);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .title,
   .description {
     -webkit-line-clamp: 2;
+  }
+
+  .type {
+    flex-basis: fit-content;
   }
 }
