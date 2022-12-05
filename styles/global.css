@@ -262,11 +262,9 @@ details {
     -1px 1px 0 var(--light-gray), 1px 1px 0 var(--light-gray);
 }
 
-/* nav {
-  white-space: nowrap;
-  background: #37474f;
-  width: max-content;
-} */
+div.scene-tooltip {
+  color: var(--fg);
+}
 
 .contacts > .social {
   text-align: center;
