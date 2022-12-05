@@ -26,6 +26,7 @@ class MyApp extends App {
     return (
       <ThemeProvider disableTransitionOnChange defaultTheme="dark">
         <Component {...pageProps} />
+      <Analytics />
       </ThemeProvider>
     );
   }
