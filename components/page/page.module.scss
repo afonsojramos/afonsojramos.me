@@ -9,12 +9,20 @@
   padding: 0 var(--gap);
 }
 
-.musicYear > h2 {
-  margin-bottom: 0;
-}
+.musicYear {
+  > p {
+    visibility: hidden;
+    height: 10em;
+    margin-top: -10em;
+  }
 
-.musicYear > h3 {
-  margin-top: 0;
+  > h2 {
+    margin-bottom: 0;
+  }
+
+  > h3 {
+    margin-top: 0;
+  }
 }
 
 .sidenav {
@@ -46,6 +54,11 @@
     text-decoration-thickness: 0.125em;
     text-underline-offset: 5px;
     text-decoration-color: var(--gray);
+
+    > p {
+      height: 8em;
+      margin-top: -8em;
+    }
   }
 
   .sidenav {

@@ -1,6 +1,6 @@
 import Head from '@components/head';
 import Header from '@components/header';
-import styles from './page.module.css';
+import styles from './page.module.scss';
 
 const Page = ({
   header = true,

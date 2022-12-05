@@ -25,7 +25,7 @@
 
 .nav {
   z-index: 10;
-  padding: var(--small-gap) var(--gap);
+  padding: var(--gap-double) var(--gap);
   position: sticky;
   top: 0;
   backdrop-filter: saturate(180%) blur(20px);
