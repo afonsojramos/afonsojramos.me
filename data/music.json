@@ -1,23 +1,5 @@
 {
-  "schema": {
-    "year": "",
-    "concerts": [
-      {
-        "title": "",
-        "festival": "",
-        "image": ""
-      }
-    ],
-    "albums": [
-      {
-        "title": "",
-        "artist": "",
-        "image": "",
-        "url": ""
-      }
-    ]
-  },
-  "data": [
+  "music": [
     {
       "year": "2021",
       "concerts": [

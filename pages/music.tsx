@@ -1,27 +1,32 @@
-import { useState } from 'react';
-import cn from 'classnames';
-import Page from '@components/page';
+import commandStyles from '@components/command/command.module.scss';
 import Entry from '@components/entry';
+import entryStyles from '@components/entry/entry.module.css';
+import Error from '@components/error';
 import Link from '@components/link';
-
-import entryStyles from '../components/entry/entry.module.css';
-import commandStyles from '../components/command/command.module.scss';
-import styles from '../components/page/page.module.css';
-
-// Data
-import music from '@data/music.json';
 import NowPlaying from '@components/now-playing';
+import Page from '@components/page';
+import styles from '@components/page/page.module.css';
+import { IYear } from '@interfaces/music';
+import fetcher from '@lib/fetcher';
 import * as Popover from '@radix-ui/react-popover';
+import cn from 'classnames';
+import { useState } from 'react';
 import { isMobile, MobileView } from 'react-device-detect';
+import useSWR from 'swr';
 
 const Music = () => {
-  const { data: years } = music;
   const [modalShow, setModalShow] = useState(false);
+
+  const { data, error } = useSWR('/api/music', fetcher);
+  if (error) return <Error title="Error loading data" />;
+  if (!data) return <Error title="Loading..." loading />;
+
+  const music: IYear[] = JSON.parse(data).music;
 
   const YearList = () => (
     <div className={cn(styles.sidenav)}>
       <ul>
-        {years.map(({ year }) => {
+        {music.map(({ year }) => {
           return (
             <li key={year}>
               <Link href={'#' + year} onClick={() => setModalShow(false)}>
@@ -62,7 +67,7 @@ const Music = () => {
           </MobileView>
         </Popover.Content>
         <article>
-          {years.map(({ year, description, concerts, albums }) => {
+          {music.map(({ year, description, concerts, albums }) => {
             return (
               <div key={year} className={styles.musicYear}>
                 <h2 id={year} onClick={() => isMobile && setModalShow(true)}>
