@@ -1,7 +1,7 @@
 <div align="center">
   <p>
     <a href="https://afonsojramos.me">
-      <img alt="Afonso Jorge Ramos" src="public/favicons/dark.png" style="height: 50px"/>
+      <img alt="Afonso Jorge Ramos" src="public/favicon/dark.png" style="height: 50px"/>
     </a>
   </p>
   <h1>
