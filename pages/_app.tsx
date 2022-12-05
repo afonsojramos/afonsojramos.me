@@ -1,8 +1,8 @@
-import React from 'react';
-import Router from 'next/router';
-import App from 'next/app';
-import nprogress from 'nprogress';
+import { Analytics } from '@vercel/analytics/react';
 import debounce from 'lodash.debounce';
+import { type AppType } from 'next/app';
+import Router from 'next/router';
+import nprogress from 'nprogress';
 
 // Only show nprogress after 500ms (slow loading)
 const start = debounce(nprogress.start, 500);
@@ -20,16 +20,13 @@ Router.events.on('routeChangeError', () => {
 import '@styles/global.css';
 import { ThemeProvider } from 'next-themes';
 
-class MyApp extends App {
-  render() {
-    const { Component, pageProps } = this.props;
-    return (
-      <ThemeProvider disableTransitionOnChange defaultTheme="dark">
-        <Component {...pageProps} />
+const Website: AppType = ({ Component, pageProps }) => {
+  return (
+    <ThemeProvider disableTransitionOnChange defaultTheme="dark">
+      <Component {...pageProps} />
       <Analytics />
-      </ThemeProvider>
-    );
-  }
-}
+    </ThemeProvider>
+  );
+};
 
-export default MyApp;
+export default Website;
