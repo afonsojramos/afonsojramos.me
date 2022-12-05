@@ -53,6 +53,7 @@
     opacity: 1;
     color: var(--fg);
     transition: transform 100ms ease;
+    margin: auto;
 
     @media (max-width: 600px) {
       width: 92%;
