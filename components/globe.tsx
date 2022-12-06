@@ -6,12 +6,26 @@ import {
   MutableRefObject
 } from 'react';
 import { GlobeMethods, GlobeProps } from 'react-globe.gl';
+import Labels from '@components/label';
+import { ILabel } from '@interfaces/label';
 
 let Globe: FunctionComponent<
   GlobeProps & { ref?: MutableRefObject<GlobeMethods | undefined> } & {
     controls: any;
   }
 >;
+
+const labels: ILabel[] = [
+  {
+    label: "Where I've been",
+    color: 'green'
+  },
+  {
+    label: "Where I've lived",
+    color: 'blue'
+  }
+];
+
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 if (typeof window !== 'undefined') Globe = require('react-globe.gl').default;
 
@@ -53,40 +67,43 @@ const GlobeWrapper = () => {
 
   if (mounted)
     return (
-      <Globe
-        ref={globeRef}
-        width={(size.width > 720 && 720) || size.width - 32}
-        height={(size.width > 720 && 720) || size.height / 2}
-        backgroundColor={'rgba(0,0,0,0)'}
-        globeImageUrl={imageUrl}
-        polygonsData={countries?.features.filter(
-          // remove antarctica
-          ({ properties }) => properties?.ISO_A2 !== 'AQ'
-        )}
-        polygonAltitude={() => 0.01}
-        polygonCapColor={({ properties }: any) => {
-          return (
-            (lived.includes(properties?.ISO_A2) && 'blue') ||
-            (visited.includes(properties?.ISO_A2) && 'green') ||
-            'grey'
-          );
-        }}
-        polygonSideColor={() => 'rgba(0, 0, 0, 0.2)'}
-        polygonStrokeColor={() => '#111'}
-        polygonLabel={({ properties }: any) => `
+      <>
+        <Globe
+          ref={globeRef}
+          width={(size.width > 720 && 720) || size.width - 32}
+          height={(size.width > 720 && 720) || size.height / 2}
+          backgroundColor={'rgba(0,0,0,0)'}
+          globeImageUrl={imageUrl}
+          polygonsData={countries?.features.filter(
+            // remove antarctica
+            ({ properties }) => properties?.ISO_A2 !== 'AQ'
+          )}
+          polygonAltitude={() => 0.01}
+          polygonCapColor={({ properties }: any) => {
+            return (
+              (lived.includes(properties?.ISO_A2) && 'blue') ||
+              (visited.includes(properties?.ISO_A2) && 'green') ||
+              'grey'
+            );
+          }}
+          polygonSideColor={() => 'rgba(0, 0, 0, 0.2)'}
+          polygonStrokeColor={() => '#111'}
+          polygonLabel={({ properties }: any) => `
           <b>${properties?.ADMIN} (${properties?.ISO_A2})</b>
           `}
-        rendererConfig={{ preserveDrawingBuffer: true }}
-        controls={
-          globeRef &&
-          globeRef.current &&
-          (globeRef.current.controls().autoRotate = true) &&
-          (globeRef.current.controls().autoRotateSpeed = 0.5) &&
-          (globeRef.current.controls().enableZoom = false) &&
-          (globeRef.current.controls().enableDamping = true) &&
-          (globeRef.current.controls().dampingFactor = 100)
-        }
-      />
+          rendererConfig={{ preserveDrawingBuffer: true }}
+          controls={
+            globeRef &&
+            globeRef.current &&
+            (globeRef.current.controls().autoRotate = true) &&
+            (globeRef.current.controls().autoRotateSpeed = 0.5) &&
+            (globeRef.current.controls().enableZoom = false) &&
+            (globeRef.current.controls().enableDamping = true) &&
+            (globeRef.current.controls().dampingFactor = 100)
+          }
+        />
+        <Labels labels={labels} />
+      </>
     );
   return <></>;
 };
