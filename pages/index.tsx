@@ -29,7 +29,7 @@ const About = () => {
             music lover & concerts front-liner,
           </Link>{' '}
           <Link underline href="https://untappd.com/user/afonsojramos" external>
-            beer afficionado
+            craft beer afficionado
           </Link>
           ,{' '}
           <Link underline href="/world">
