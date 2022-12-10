@@ -155,7 +155,8 @@ const CommandMenu = () => {
   // Toggle the menu when ⌘K is pressed
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'k' && e.metaKey) {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
         setOpen((open) => !open);
       }
     };
@@ -182,6 +183,7 @@ const CommandMenu = () => {
                 setPages((pages) => pages.slice(0, -1));
               }
               if (e.key === 'Escape' && !page) {
+                e.preventDefault();
                 setOpen(false);
               }
             }}
