@@ -106,7 +106,7 @@ const Item = ({
       onSelect();
     }
     if (keybind && pagesKeymap[keybind]) {
-      pagesKeymap[keybind]?.();
+      pagesKeymap[keybind]();
     }
   };
 
