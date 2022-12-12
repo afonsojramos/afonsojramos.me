@@ -1,18 +1,15 @@
 import { marked } from 'marked';
-import Highlight, { defaultProps } from 'prism-react-renderer';
+import Highlight, { Language, Prism } from 'prism-react-renderer';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { format } from 'prettier';
-
-// Don't want any theme at all
-delete defaultProps.theme;
 
 import linkStyles from '../components/link/link.module.css';
 
 const renderer = new marked.Renderer();
 
-renderer.heading = (text, level, raw, slugger) => {
+renderer.heading = (text, level, _raw, slugger) => {
   const id = slugger.slug(text);
-  const Component = `h${level}`;
+  const Component = `h${level}` as keyof JSX.IntrinsicElements;
 
   return renderToStaticMarkup(
     <Component>
@@ -36,9 +33,9 @@ renderer.listitem = (text, task, checked) => {
 
   return `<li>${text}</li>`;
 };
-renderer.code = (code, options) => {
+renderer.code = (code, options: string) => {
   const opts = options.split(' ').map((o) => o.trim());
-  const language = opts[0];
+  const language: Language = opts[0] as Language;
   const highlight = opts
     .filter((o) => o.startsWith('highlight='))
     .pop()
@@ -54,12 +51,11 @@ renderer.code = (code, options) => {
       formattedCode = format(code, {
         semi: false,
         singleQuote: true,
-        parser: language === 'jsx' || language === 'jsx' ? 'babel' : language
+        parser: language === 'jsx' ? 'babel' : language
       });
       // eslint-disable-next-line no-empty
     } catch (e) {} // Don't really mind if it fails
   }
-
   return renderToStaticMarkup(
     <pre>
       <Code language={language} code={formattedCode} highlight={highlight} />
@@ -74,11 +70,20 @@ marked.setOptions({
   renderer
 });
 
-const renderMarkdown = (markdown) => marked(markdown);
+const renderMarkdown = (markdown: string) => marked(markdown);
 
 export default renderMarkdown;
 
-const Code = ({ code, language, highlight, ...props }) => {
+const Code = ({
+  code,
+  language,
+  highlight,
+  ...props
+}: {
+  code: string;
+  language: Language;
+  highlight?: string;
+}) => {
   if (!language)
     return <code {...props} dangerouslySetInnerHTML={{ __html: code }} />;
 
@@ -88,18 +93,18 @@ const Code = ({ code, language, highlight, ...props }) => {
           // Expand ranges like 3-5 into [3,4,5]
           const [start, end] = h.split('-').map(Number);
           const x = Array(end - start + 1)
-            .fill()
-            .map((_, i) => i + start);
+            .fill(start, end)
+            .map((_, i) => (i + start).toString());
           return [...lines, ...x];
         }
 
-        return [...lines, Number(h)];
-      }, [])
+        return [...lines, h];
+      }, new Array<string>())
     : [];
 
   // https://mdxjs.com/guides/syntax-harkedighlighting#all-together
   return (
-    <Highlight {...defaultProps} code={code.trim()} language={language}>
+    <Highlight Prism={Prism} code={code.trim()} language={language}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <code className={className} style={{ ...style }}>
           {tokens.map((line, i) => (
@@ -107,13 +112,13 @@ const Code = ({ code, language, highlight, ...props }) => {
               key={i}
               {...getLineProps({ line, key: i })}
               style={
-                highlightedLines.includes(i + 1)
+                highlightedLines.includes((i + 1).toString())
                   ? {
                       background: 'var(--highlight)',
                       margin: '0 -1rem',
                       padding: '0 1rem'
                     }
-                  : null
+                  : {}
               }
             >
               {line.map((token, key) => (
