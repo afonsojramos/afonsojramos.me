@@ -26,7 +26,7 @@ renderer.link = (href, _, text) =>
 renderer.checkbox = () => '';
 renderer.listitem = (text, task, checked) => {
   if (task) {
-    return `<li class="reset"><span class="check">&#8203;<input type="checkbox" disabled ${
+    return `<li class="checkbox"><span class="check">&#8203;<input type="checkbox" disabled ${
       checked ? 'checked' : ''
     } /></span><span>${text}</span></li>`;
   }

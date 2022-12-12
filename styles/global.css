@@ -160,7 +160,7 @@ button {
 }
 
 p a,
-a.reset {
+a.checkbox {
   outline: none;
   color: var(--fg);
   text-decoration: none;
@@ -169,8 +169,8 @@ a.reset {
 p a:hover,
 p a:focus,
 p a:active,
-a.reset:hover,
-a.reset:focus {
+a.checkbox:hover,
+a.checkbox:focus {
   color: var(--gray);
 }
 

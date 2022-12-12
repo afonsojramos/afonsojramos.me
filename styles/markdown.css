@@ -10,19 +10,10 @@ article p {
 
 article img {
   max-width: 100%;
-  /* width: var(--main-content); */
   width: auto;
   margin: auto;
   display: block;
   border-radius: var(--radius);
-}
-
-article [id]::before {
-  content: '';
-  display: block;
-  height: 70px;
-  margin-top: -70px;
-  visibility: hidden;
 }
 
 /* Lists */
@@ -38,7 +29,7 @@ article ol {
   list-style-position: inside;
 }
 
-article ul li.reset {
+article ul li.checkbox {
   display: flex;
   align-items: flex-start;
 
@@ -46,7 +37,7 @@ article ul li.reset {
   margin-left: -0.5rem;
 }
 
-article ul li.reset .check {
+article ul li.checkbox .check {
   display: flex;
   align-items: center;
   margin-right: 0.51rem;

@@ -41,7 +41,7 @@ const Link = ({
   title?: string;
   children: any;
 }) => {
-  const c = cn(className, styles.reset, {
+  const c = cn(className, styles.checkbox, {
     [styles.gray]: gray,
     [styles.underline]: underline,
     [styles.disabled]: disabled
