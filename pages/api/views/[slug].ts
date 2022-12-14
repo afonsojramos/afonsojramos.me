@@ -20,11 +20,11 @@ const slugViews = async (
     return res.status(200).json({ total: views });
   }
 
-  if (req.method === 'POST') {
-    await new Promise((resolve) => setTimeout(resolve, 500));
+  if (req.method === 'POST' && process.env.NODE_ENV === 'production') {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     const { snapshot } = await ref.transaction((currentViews) => {
       if (currentViews === null) {
-        return '\\u2013\\u2013\\u2013';
+        return `———`;
       }
 
       return currentViews + 1;
