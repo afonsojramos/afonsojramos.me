@@ -1,11 +1,14 @@
 import {
   Afonso,
   ArrowLeft,
+  Calendar,
   Command as CommandIcon,
+  Document,
   GitHub,
   Home,
   Lightbulb,
   LinkedIn,
+  Mail,
   Music,
   Pencil,
   Search,
@@ -22,7 +25,6 @@ import * as Popover from '@radix-ui/react-popover';
 import { useTheme } from 'next-themes';
 import router, { useRouter } from 'next/router';
 import tinykeys from 'tinykeys';
-import Phone from '../icons/phone';
 import styles from './command.module.scss';
 
 enum PageGroup {
@@ -31,17 +33,21 @@ enum PageGroup {
 }
 
 const pagesKeymap: { [key: string]: () => void } = {
-  // Blog
-  b: () => router.push('/blog'),
-  // Navigation
+  // Pages
   h: () => router.push('/'),
-  c: () => router.push('/contacts'),
-  // Collections
+  b: () => router.push('/blog'),
   w: () => router.push('/world'),
   m: () => router.push('/music'),
   i: () => router.push('/ideas'),
-  // Backspace
-  backspace: () => router.back()
+  // Navigation
+  backspace: () => router.back(),
+  // External
+  'c v': () => window.open('https://cv.afonsojramos.me'),
+  'g i': () => window.open('https://github.com/afonsojramos'),
+  'l i': () => window.open('https://linkedin.com/in/afonsojramos'),
+  's s': () => window.open('https://status.afonsojramos.me'),
+  'c l': () => window.open('https://calendly.com/afonsojramos/30min'),
+  'g g': () => window.open('mailto:afonsojorgeramos@gmail.com?subject=Hello')
 };
 
 const ThemeItems = ({ closeDialog }: { closeDialog: () => void }) => {
@@ -228,12 +234,12 @@ const CommandMenu = () => {
                       <Lightbulb />
                       Ideas
                     </Item>
+                    <Item value="Resume" keybind="c v">
+                      <Document />
+                      Resume
+                    </Item>
                   </Command.Group>
                   <Command.Group heading="Navigation">
-                    <Item value="Contacts" keybind="c">
-                      <Phone />
-                      Contacts
-                    </Item>
                     <Item
                       value="Menu"
                       keybind="⌘+k"
@@ -260,18 +266,26 @@ const CommandMenu = () => {
                       Themes
                     </Item>
                   </Command.Group>
-                  <Command.Group heading="Social">
-                    <Item value="GitHub">
+                  <Command.Group heading="External">
+                    <Item value="GitHub" keybind="g i">
                       <GitHub />
                       GitHub
                     </Item>
-                    <Item value="LinkedIn">
+                    <Item value="LinkedIn" keybind="l i">
                       <LinkedIn />
                       LinkedIn
                     </Item>
-                    <Item value="Status Page">
+                    <Item value="Status Page" keybind="s s">
                       <Afonso />
                       Status
+                    </Item>
+                    <Item value="Calendly" keybind="c l">
+                      <Calendar />
+                      Calendly
+                    </Item>
+                    <Item value="Email" keybind="g g">
+                      <Mail />
+                      Email
                     </Item>
                   </Command.Group>
                 </>
