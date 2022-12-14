@@ -42,8 +42,6 @@ renderer.code = (code, options: string) => {
     ?.replace('highlight=', '')
     .trim();
   const raw = options.includes('raw');
-
-  // Touch it up with Prettier
   let formattedCode = code;
 
   if (!raw) {
@@ -102,7 +100,6 @@ const Code = ({
       }, new Array<string>())
     : [];
 
-  // https://mdxjs.com/guides/syntax-harkedighlighting#all-together
   return (
     <Highlight Prism={Prism} code={code.trim()} language={language}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
