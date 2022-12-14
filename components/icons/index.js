@@ -2,6 +2,7 @@ export { default as Afonso } from './afonso';
 export { default as ArrowLeft } from './arrow-left';
 export { default as ArrowRight } from './arrow-right';
 export { default as Book } from './book';
+export { default as Calendar } from './calendar';
 export { default as Command } from './command';
 export { default as CV } from './cv';
 export { default as Design } from './design';
