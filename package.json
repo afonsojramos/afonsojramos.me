@@ -19,7 +19,7 @@
     "@vercel/analytics": "^0.1.6",
     "classnames": "^2.3.2",
     "cmdk": "^0.1.20",
-    "firebase-admin": "^11.3.0",
+    "firebase-admin": "^11.4.1",
     "intersection-observer": "^0.12.2",
     "lodash.debounce": "^4.0.8",
     "lottie-colorify": "^0.8.0",
