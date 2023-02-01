@@ -42,7 +42,7 @@
     "@types/lodash.debounce": "^4.0.7",
     "@types/marked": "^4.0.8",
     "@types/nprogress": "^0.2.0",
-    "@types/prettier": "^2.7.1",
+    "@types/prettier": "^2.7.2",
     "@types/react": "^18",
     "@types/react-dom": "^18.0.9",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
