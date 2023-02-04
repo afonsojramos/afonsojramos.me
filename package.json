@@ -52,7 +52,7 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "gray-matter": "^4.0.3",
-    "lowdb": "^5.0.5",
+    "lowdb": "^5.1.0",
     "marked": "^4.2.12",
     "next-sitemap": "^3.1.49",
     "next-unused": "^0.0.6",
