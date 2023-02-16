@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "@radix-ui/react-popover": "^1.0.3",
-    "@vercel/analytics": "^0.1.8",
+    "@vercel/analytics": "^0.1.9",
     "classnames": "^2.3.2",
     "cmdk": "^0.1.22",
     "firebase-admin": "^11.5.0",
