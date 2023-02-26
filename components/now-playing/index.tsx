@@ -4,7 +4,7 @@ import fetcher from '@lib/fetcher';
 import Image from 'next/image';
 
 import { Spotify } from '../icons';
-import iconStyles from '../icons/icons.module.css';
+import iconStyles from '../icons/icons.module.scss';
 import styles from './now-playing.module.css';
 import { INowPlaying } from '@interfaces/now-playing';
 

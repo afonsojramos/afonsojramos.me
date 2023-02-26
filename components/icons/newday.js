@@ -1,4 +1,4 @@
-const NewDay = ({ className = {}, style = {} }) => {
+const NewDay = ({ className = '', style = {} }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

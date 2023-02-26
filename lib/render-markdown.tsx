@@ -3,7 +3,7 @@ import Highlight, { Language, Prism } from 'prism-react-renderer';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { format } from 'prettier';
 
-import linkStyles from '../components/link/link.module.css';
+import linkStyles from '../components/link/link.module.scss';
 
 const renderer = new marked.Renderer();
 

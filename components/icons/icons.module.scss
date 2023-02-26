@@ -1,7 +1,11 @@
 .inline {
   width: 40px;
   vertical-align: middle;
-  margin-right: 0.2rem;
+
+  & > svg {
+    vertical-align: sub;
+    width: inherit;
+  }
 }
 
 img.inline {

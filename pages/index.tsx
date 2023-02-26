@@ -1,18 +1,19 @@
 import { Ensico, NewDay, YLD } from '@components/icons';
-import iconStyles from '@components/icons/icons.module.css';
+import iconStyles from '@components/icons/icons.module.scss';
+import linkStyles from '@components/link/link.module.scss';
 import Link from '@components/link';
 import NowPlaying from '@components/now-playing';
 import Page from '@components/page';
 import ViewCounter from '@components/view-counter';
 
-const About = () => {
+const Home = () => {
   return (
     <Page description="Afonso Jorge Ramos - Software developer, open-source & competitive programming enthusiast, music lover & concerts front-liner, beer afficionado, peripatetic by nature.">
       <article>
         <h1>Afonso Ramos</h1>
 
         <p>
-          Software developer,{' '}
+          Full-Stack Software Engineer,{' '}
           <Link underline href="https://github.com/afonsojramos" external>
             open-source
           </Link>{' '}
@@ -43,20 +44,18 @@ const About = () => {
           <Link href="https://yld.io/" external>
             <YLD className={iconStyles.inline} />
           </Link>{' '}
-          and{' '}
+          helping{' '}
           <Link href="https://www.newday.co.uk/" external>
             <NewDay className={iconStyles.inline} style={{ width: 60 }} />
-          </Link>
-          .
+          </Link>{' '}
+          grow and fulfill their mission.
         </p>
 
         <p>
           Bringing accessible coding lessons to 5th to 9th grade students at{' '}
           <Link href="https://www.ensico.pt/" external>
-            <Ensico className={iconStyles.inline} />
-          </Link>{' '}
-          <Link underline href="https://www.ensico.pt/" external>
-            Ensico
+            <Ensico className={iconStyles.inline} />{' '}
+            <span className={linkStyles.underlink}>Ensico</span>
           </Link>{' '}
           .
         </p>
@@ -67,4 +66,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Home;

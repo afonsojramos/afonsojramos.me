@@ -2,7 +2,7 @@ import { memo, MouseEventHandler } from 'react';
 import NextLink from 'next/link';
 import cn from 'classnames';
 
-import styles from './link.module.css';
+import styles from './link.module.scss';
 
 const canPrefetch = (href: string) => {
   if (!href || !href.startsWith('/')) {

@@ -11,7 +11,7 @@ import { ILabel } from '@interfaces/label';
 
 let Globe: FunctionComponent<
   GlobeProps & { ref?: MutableRefObject<GlobeMethods | undefined> } & {
-    controls: any;
+    controls: unknown;
   }
 >;
 

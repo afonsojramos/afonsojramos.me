@@ -1,11 +1,11 @@
-const YLD = ({ className = {} }) => {
+const YLD = ({ className = '' }) => {
   return (
     <svg className={className} viewBox="0 0 54 54">
       <title>YLD Logo</title>
       <g stroke="none" fill="none">
         <rect
           id="Logo-rectangle"
-          fill="var(--fg)"
+          fill="currentColor"
           x="0"
           y="0"
           width="54"
