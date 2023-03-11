@@ -1,4 +1,4 @@
-const effectsStyle = { fill: 'var(--name)' };
+const effectsStyle = { fill: 'currentColor' };
 const bookStyle = {
   fill: 'none',
   stroke: '#3859FF',
