@@ -1,6 +1,177 @@
 {
   "music": [
     {
+      "year": "2022",
+      "concerts": [
+        {
+          "title": "Extrazen",
+          "festival": "Plano B - Porto",
+          "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1678628187/extrazen.jpg"
+        },
+        {
+          "title": "L'Imperatrice",
+          "festival": "Paredes de Coura",
+          "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1678628799/imperatrice_p2xhos.jpg"
+        },
+        {
+          "title": "IDLES",
+          "festival": "Paredes de Coura",
+          "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1678628884/idles_pc2dkd.jpg"
+        },
+        {
+          "title": "Bad Bad Not Good - MF Doom Tribute",
+          "festival": "Paredes de Coura",
+          "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1678629092/bbng_lgwllo.jpg"
+        },
+        {
+          "title": "Floating Points",
+          "festival": "Apollo - Barcelona",
+          "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1678629518/simby_ufdvkf.png"
+        },
+        {
+          "title": "Little Simz",
+          "festival": "Primavera Sound Porto",
+          "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1678629518/simby_ufdvkf.png"
+        },
+        {
+          "title": "Squid",
+          "festival": "Primavera Sound Porto",
+          "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1678629986/IMG_20220612_012505_ptnywj.jpg"
+        },
+        {
+          "title": "Caroline Polachek",
+          "festival": "Primavera Sound Porto",
+          "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1678630518/IMG_20220610_004541_eb2ryd.jpg"
+        },
+        {
+          "title": "Black Midi",
+          "festival": "Primavera Sound Porto",
+          "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1678630771/IMG_20220609_223634_pplben.jpg"
+        },
+        {
+          "title": "Bala Desejo",
+          "festival": "Hotel Mouco",
+          "image": "https://res.cloudinary.com/afonsojramos/image/upload/v1678630939/IMG_20220601_220217_v0hzcw.jpg"
+        }
+      ],
+      "albums": [
+        {
+          "title": "I Love You Jennifer B",
+          "artist": "Jockstrap",
+          "image": "https://i.scdn.co/image/ab67616d0000b273f9770facc0c14c7f34ffb6c3",
+          "url": "https://open.spotify.com/album/4YFlC5Abaj48ERwaOPfpu8"
+        },
+        {
+          "title": "Ants From Up There",
+          "artist": "Black Country, New Road",
+          "image": "https://i.scdn.co/image/ab67616d0000b273af2d88c14cb157d6b851dbb3",
+          "url": "https://open.spotify.com/album/21xp7NdU1ajmO1CX0w2Egd"
+        },
+        {
+          "title": "CRASH",
+          "artist": "Charli XCX",
+          "image": "https://i.scdn.co/image/ab67616d0000b273f629eb64fd8ef76a97b154f5",
+          "url": "https://open.spotify.com/album/1QqipMXWzJhr6yfcNKTp8B"
+        },
+        {
+          "title": "And In The Darkness, Hearts Aglow",
+          "artist": "Weyes Blood",
+          "image": "https://i.scdn.co/image/ab67616d0000b273db8ab490bcedb6e518c37e6e",
+          "url": "https://open.spotify.com/album/1hngVRZt95TrqPqXoJzQ4A"
+        },
+        {
+          "title": "You Belong There",
+          "artist": "Daniel Rossen",
+          "image": "https://i.scdn.co/image/ab67616d0000b273c91181ad7ca6ca9748ab13f4",
+          "url": "https://open.spotify.com/album/1eb8tDRzXuhb3omC50SkHt"
+        },
+        {
+          "title": "Actual Life 3 (January 1 - September 9 2022)",
+          "artist": "Fred again..",
+          "image": "https://i.scdn.co/image/ab67616d0000b2737622b889949b07f15c6b57e2",
+          "url": "https://open.spotify.com/album/5q2iMctlDvEMYVIawF6Vop"
+        },
+        {
+          "title": "Dragon New Warm Mountain I Believe In You",
+          "artist": "Big Thief",
+          "image": "https://i.scdn.co/image/ab67616d0000b27366f96f9905972982d2ab45d4",
+          "url": "https://open.spotify.com/album/7Ln81p86r5cCsesd3KBWIY"
+        },
+        {
+          "title": "Melt My Eyez See Your Future",
+          "artist": "Denzel Curry",
+          "image": "https://i.scdn.co/image/ab67616d0000b2735b924aa009b61b6b9d831eec",
+          "url": "https://open.spotify.com/album/7KtyUeiJidoZO0ybxBXw0Q"
+        },
+        {
+          "title": "De Todas las Flores",
+          "artist": "Natalia Lafourcade",
+          "image": "https://i.scdn.co/image/ab67616d0000b273164f6eeb838f0a702d9d6319",
+          "url": "https://open.spotify.com/album/4BJoDX0fIjR4RsFF4vyd81"
+        },
+        {
+          "title": "Aethiopes",
+          "artist": "billy woods",
+          "image": "https://i.scdn.co/image/ab67616d0000b273c52698aafe4f8d780fbd4ae5",
+          "url": "https://open.spotify.com/album/34uTUAM6SE8Eo6Cv4PRqwD"
+        },
+        {
+          "title": "NO THANK YOU",
+          "artist": "Little Simz",
+          "image": "https://i.scdn.co/image/ab67616d0000b27372f48f1e2e04cc76d06ee708",
+          "url": "https://open.spotify.com/album/57263zG8Md6XZ9lBUPPYCm"
+        },
+        {
+          "title": "MOTOMAMI",
+          "artist": "ROSALÍA",
+          "image": "https://i.scdn.co/image/ab67616d0000b2730c179967a265de0fc76382fe",
+          "url": "https://open.spotify.com/album/6jbtHi5R0jMXoliU2OS0lo"
+        },
+        {
+          "title": "Ice, Death, Planets, Lungs, Mushrooms And Lava",
+          "artist": "King Gizzard & The Lizard Wizard",
+          "image": "https://i.scdn.co/image/ab67616d0000b273d29b9ead409a2ce8833831a1",
+          "url": "https://open.spotify.com/album/2nPbslvl01lfELsFHTKp0s"
+        },
+        {
+          "title": "SIM SIM SIM",
+          "artist": "Bala Desejo",
+          "image": "https://i.scdn.co/image/ab67616d0000b273b8476fccdbc3d98353b799ac",
+          "url": "https://open.spotify.com/album/5lPgAWFWtQOUllSFzoWJtx"
+        },
+        {
+          "title": "Florist",
+          "artist": "Florist",
+          "image": "https://i.scdn.co/image/ab67616d0000b273b3e857a9c521f648fdcb0a3f",
+          "url": "https://open.spotify.com/album/7EvfFPMMvMJ20olfdEkPBR"
+        },
+        {
+          "title": "Mil Coisas Invisíveis",
+          "artist": "Tim Bernardes",
+          "image": "https://i.scdn.co/image/ab67616d0000b273380ca225f6725dcb5c6ba145",
+          "url": "https://open.spotify.com/album/1I74KuYarc1dMEgZ0io50Y"
+        },
+        {
+          "title": "Death Is a Dream",
+          "artist": "HTRK",
+          "image": "https://i.scdn.co/image/ab67616d0000b27392d8ff4a6d04640332f087a4",
+          "url": "https://open.spotify.com/album/3yOjzY8Hj1JPKBCWoB3gvI"
+        },
+        {
+          "title": "Hyper-Dimensional Expansion Beam",
+          "artist": "The Comet Is Coming",
+          "image": "https://i.scdn.co/image/ab67616d0000b2738ccf59dd549e90aad1bf5290",
+          "url": "https://open.spotify.com/album/1XPsJnIVMjOt04rczMWVO4"
+        },
+        {
+          "title": "Hellfire",
+          "artist": "black midi",
+          "image": "https://i.scdn.co/image/ab67616d0000b273079bc2bd9ea16956274efc24",
+          "url": "https://open.spotify.com/album/68z6MWYYNmvTcru1QMcYId"
+        }
+      ]
+    },
+    {
       "year": "2021",
       "concerts": [
         {
@@ -394,7 +565,7 @@
         {
           "title": "Resavoir",
           "artist": "Resavoir",
-          "image": "https://i.scdn.co/image/ab67616d00001e02a5b2b2f2b5b2f2b5b2f2b2b2",
+          "image": "https://i.scdn.co/image/ab67616d0000b2739b604dbe4b0f45301e9fb1e7",
           "url": "https://open.spotify.com/album/7MjK7jYBy07G2GTCZgSzxd"
         }
       ]
@@ -1354,6 +1525,12 @@
           "artist": "Foster The People",
           "image": "https://i.scdn.co/image/ab67616d00001e02121d5f92cf90576907dfb1e5",
           "url": "https://open.spotify.com/album/7Kmmw7Z5D2UD5MVwdm10sT"
+        },
+        {
+          "title": "Life Is Full Of Possibilities (Deluxe)",
+          "artist": "Dntel",
+          "image": "https://i.scdn.co/image/ab67616d0000b2735498c1450aca3e3b9a4ce08a",
+          "url": "https://open.spotify.com/album/1UFMT6XephLvL7R2Rfb9dc"
         }
       ]
     },
