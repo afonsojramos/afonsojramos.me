@@ -1,6 +1,6 @@
 import commandStyles from '@components/command/command.module.scss';
 import Entry from '@components/entry';
-import entryStyles from '@components/entry/entry.module.css';
+import entryStyles from '@components/entry/entry.module.scss';
 import Error from '@components/error';
 import Link from '@components/link';
 import NowPlaying from '@components/now-playing';

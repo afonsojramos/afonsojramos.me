@@ -2,8 +2,7 @@ import cn from 'classnames';
 import { useInView } from 'react-intersection-observer';
 import 'intersection-observer';
 
-import styles from './entry.module.css';
-const imagePrefix = `https://res.cloudinary.com/afonsojramos/image/fetch/q_60,w_1000`;
+import styles from './entry.module.scss';
 
 const Entry = ({
   title,

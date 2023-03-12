@@ -1,0 +1,169 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(calc(3 * var(--big-gap)), 1fr)
+  );
+  grid-gap: 1rem;
+  width: 100%;
+
+  & > .link {
+    margin-bottom: 0.3rem;
+  }
+
+  & .link div {
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  & .description,
+  & .title {
+    font-size: 0.8rem;
+    overflow: hidden;
+  }
+}
+
+.link {
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  height: calc(3.5 * var(--big-gap));
+  outline: none;
+  margin-bottom: var(--gap-double);
+
+  & > section {
+    position: relative;
+    object-fit: cover;
+    height: inherit;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--lighter-gray);
+    border-radius: var(--radius);
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      pointer-events: none;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: var(--radius);
+      background: radial-gradient(
+        circle at center,
+        white 10%,
+        whitesmoke 11%,
+        whitesmoke 100%
+      );
+      z-index: -1;
+    }
+
+    &::after {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0.3;
+      border-radius: var(--radius);
+      background: linear-gradient(
+        to bottom left,
+        rgba(0, 0, 0, 0.1) 20%,
+        rgba(0, 0, 0, 0.6) 100%
+      );
+      background: linear-gradient(
+        23deg,
+        hsla(0, 0%, 0%, 0.69) 0%,
+        hsla(0, 0%, 0%, 0.686) 8.1%,
+        hsla(0, 0%, 0%, 0.676) 15.5%,
+        hsla(0, 0%, 0%, 0.661) 22.5%,
+        hsla(0, 0%, 0%, 0.641) 29%,
+        hsla(0, 0%, 0%, 0.617) 35.3%,
+        hsla(0, 0%, 0%, 0.591) 41.2%,
+        hsla(0, 0%, 0%, 0.564) 47.1%,
+        hsla(0, 0%, 0%, 0.536) 52.9%,
+        hsla(0, 0%, 0%, 0.509) 58.8%,
+        hsla(0, 0%, 0%, 0.483) 64.7%,
+        hsla(0, 0%, 0%, 0.459) 71%,
+        hsla(0, 0%, 0%, 0.439) 77.5%,
+        hsla(0, 0%, 0%, 0.424) 84.5%,
+        hsla(0, 0%, 0%, 0.414) 91.9%,
+        hsla(0, 0%, 0%, 0.41) 100%
+      );
+      transition: opacity var(--transition-slow),
+        transform var(--transition-slow);
+    }
+  }
+  &:hover > section::after,
+  &:focus > section::after,
+  &.active > section::after {
+    opacity: 1;
+  }
+
+  & div {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(10%);
+    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+  }
+
+  &:hover div,
+  &:focus div,
+  &.active div {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.title {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: var(--gap);
+  margin: 0;
+  line-height: normal;
+}
+
+.description {
+  font-weight: 500;
+  color: #eaeaea;
+  margin: 0;
+  line-height: normal;
+}
+
+@media (max-width: 600px) {
+  .link {
+    height: calc(2.5 * var(--big-gap));
+    margin-bottom: var(--gap);
+  }
+
+  .grid {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(calc(2 * var(--big-gap)), 1fr)
+    );
+  }
+
+  .grid > .link {
+    height: calc(2.5 * var(--big-gap));
+  }
+}
+
+@media (hover: none) {
+  .link div {
+    transform: none;
+    opacity: 1;
+  }
+
+  .link > section::after {
+    opacity: 0.8;
+  }
+}
