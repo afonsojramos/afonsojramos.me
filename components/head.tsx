@@ -1,13 +1,10 @@
 import NextHead from 'next/head';
 import { useTheme } from 'next-themes';
 
-const defaultOgImage =
-  'https://res.cloudinary.com/afonsojramos/image/upload/v1619293728/og-image_lnsn0r.png';
-
 const Head = ({
   title = 'Afonso Jorge Ramos - Sofware Engineer',
   description = "Hi, I'm Afonso, ⚡️ Software Engineer who ❤️ loves to learn on a daily basis.",
-  image = defaultOgImage,
+  image = 'https://afonsojramos.me/og.png',
   children
 }: {
   title: string;

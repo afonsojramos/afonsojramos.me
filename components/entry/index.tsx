@@ -1,6 +1,5 @@
 import cn from 'classnames';
-import { useInView } from 'react-intersection-observer';
-import 'intersection-observer';
+import Image from 'next/image';
 
 import styles from './entry.module.scss';
 
@@ -8,36 +7,30 @@ const Entry = ({
   title,
   description,
   image,
-  href,
-  position
+  href
 }: {
   title: string;
   description: string;
   image: string;
   href?: string;
-  position?: string;
 }) => {
-  const [ref, inView] = useInView({ triggerOnce: true });
-
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      ref={ref}
       className={cn(styles.link, { [styles.active]: !image })}
       title={`${title} - ${description}`}
     >
-      <section
-        style={{
-          backgroundImage: image
-            ? !inView
-              ? 'none'
-              : `url('${imagePrefix}/${encodeURIComponent(image)}')`
-            : 'none',
-          backgroundPosition: position ? position : 'center'
-        }}
-      >
+      <section>
+        <Image
+          src={image}
+          alt={`${title} - ${description}`}
+          fill
+          style={{ objectFit: 'cover' }}
+          sizes="(min-width: 66em) 33vw,(min-width: 44em) 50vw,100vw"
+          quality={60}
+        />
         <div>
           <p className={cn(styles.title, 'clamp')}>{title}</p>
           <p className={cn(styles.description, 'clamp')}>{description}</p>

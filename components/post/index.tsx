@@ -30,11 +30,7 @@ const Post = ({
       title={title}
       description={description}
       showHeaderTitle={false}
-      image={
-        og
-          ? `https://res.cloudinary.com/afonsojramos/image/upload/${slug}.png`
-          : og
-      }
+      image={og}
     >
       <Head>{date && <meta name="date" content={date} />}</Head>
 

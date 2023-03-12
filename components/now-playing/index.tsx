@@ -37,7 +37,7 @@ export default function NowPlaying({ bigPicture = false }) {
               alt={`${data.track.title} by ${data.artists[0].name}`}
               width={bigPicture ? '80' : '40'}
               height={bigPicture ? '80' : '40'}
-            ></Image>{' '}
+            />
           </Link>
           <span className={styles.artists}>
             <Link underline href={data.track.url} external>

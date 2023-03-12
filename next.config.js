@@ -5,7 +5,15 @@
  **/
 const nextConfig = {
   images: {
-    domains: ['i.scdn.co', 'upload.wikimedia.org']
+    domains: ['i.scdn.co', 'upload.wikimedia.org'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/afonsojramos/**'
+      }
+    ]
   },
   trailingSlash: true,
   swcMinify: true,
