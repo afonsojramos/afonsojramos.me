@@ -260,7 +260,10 @@ const CommandMenu = () => {
                     <Item
                       value="Themes"
                       keybind="t"
-                      onSelect={() => setPages([PageGroup.Themes])}
+                      onSelect={() => {
+                        setSearch('');
+                        setPages([PageGroup.Themes]);
+                      }}
                     >
                       <Sparkles />
                       Themes
@@ -294,7 +297,13 @@ const CommandMenu = () => {
               {page === PageGroup.Blog && <BlogItems />}
 
               {page === PageGroup.Themes && (
-                <ThemeItems closeDialog={() => setOpen(false)} />
+                <ThemeItems
+                  closeDialog={() => {
+                    setPages((pages) => pages.slice(0, -1));
+                    setSearch('');
+                    setOpen(false);
+                  }}
+                />
               )}
             </Command.List>
           </Command>
