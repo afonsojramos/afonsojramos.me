@@ -46,7 +46,7 @@ const pagesKeymap: { [key: string]: () => void } = {
   'g i': () => window.open('https://github.com/afonsojramos'),
   'l i': () => window.open('https://linkedin.com/in/afonsojramos'),
   's s': () => window.open('https://status.afonsojramos.me'),
-  'c l': () => window.open('https://calendly.com/afonsojramos/30min'),
+  'b m': () => window.open('https://cal.com/afonsojramos'),
   'g g': () => window.open('mailto:afonsojorgeramos@gmail.com?subject=Hello')
 };
 
@@ -279,9 +279,9 @@ const CommandMenu = () => {
                       <Afonso />
                       Status
                     </Item>
-                    <Item value="Calendly" keybind="c l">
+                    <Item value="Book a Meeting" keybind="b m">
                       <Calendar />
-                      Calendly
+                      Book a Meeting
                     </Item>
                     <Item value="Email" keybind="g g">
                       <Mail />
