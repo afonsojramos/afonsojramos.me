@@ -9,17 +9,21 @@
 
   & > .link {
     margin-bottom: 0.3rem;
+    height: auto;
   }
 
-  & .link div {
-    bottom: 1rem;
-    left: 1rem;
-  }
+  & .link > section {
+    aspect-ratio: 1;
 
-  & .description,
-  & .title {
-    font-size: 0.8rem;
-    overflow: hidden;
+    & > div {
+      bottom: 1rem;
+      left: 1rem;
+
+      & .description,
+      & .title {
+        font-size: 0.8rem;
+      }
+    }
   }
 }
 
@@ -150,10 +154,6 @@
       auto-fill,
       minmax(calc(2 * var(--big-gap)), 1fr)
     );
-  }
-
-  .grid > .link {
-    height: calc(2.5 * var(--big-gap));
   }
 }
 
