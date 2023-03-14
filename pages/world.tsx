@@ -1,5 +1,5 @@
 import Page from '@components/page';
-import Globe from '@components/globe';
+import Cobe from '@components/cobe';
 
 const Travels = () => {
   return (
@@ -7,7 +7,7 @@ const Travels = () => {
       title="World Travels"
       description="Register of places I've visited so far."
     >
-      <Globe />
+      <Cobe />
     </Page>
   );
 };
