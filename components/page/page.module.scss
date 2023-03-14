@@ -48,7 +48,19 @@
   font-weight: 500;
 }
 
-@media (max-width: 900px) {
+.mobile {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
   .musicYear {
     text-decoration: underline;
     text-decoration-thickness: 0.125em;

@@ -10,12 +10,35 @@ import { IYear } from '@interfaces/music';
 import fetcher from '@lib/fetcher';
 import * as Popover from '@radix-ui/react-popover';
 import cn from 'classnames';
-import { useState } from 'react';
-import { BrowserView, isMobile, MobileView } from 'react-device-detect';
+import { MutableRefObject, useEffect, useRef, useState } from 'react';
 import useSWR from 'swr';
+
+function useOutsideAlerter(
+  ref: MutableRefObject<null | HTMLDivElement>,
+  callback: any
+) {
+  useEffect(() => {
+    /**
+     * Alert if clicked on outside of element
+     */
+    function handleClickOutside(event: MouseEvent) {
+      if (ref.current && !ref.current.contains(event.target as HTMLElement)) {
+        callback();
+      }
+    }
+    // Bind the event listener
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      // Unbind the event listener on clean up
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [ref]);
+}
 
 const Music = () => {
   const [modalShow, setModalShow] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  useOutsideAlerter(wrapperRef, () => setModalShow(false));
 
   const { data, error } = useSWR('/api/music', fetcher);
   if (error) return <Error title="Error loading data" />;
@@ -24,7 +47,11 @@ const Music = () => {
   const music: IYear[] = JSON.parse(data).music;
 
   const YearList = () => (
-    <div className={cn(styles.sidenav)}>
+    <div
+      className={cn(styles.sidenav)}
+      ref={wrapperRef}
+      aria-label="Year Selector"
+    >
       <ul>
         {music.map(({ year }) => {
           return (
@@ -48,32 +75,30 @@ const Music = () => {
         <h1>Favorite Albums & Concerts</h1>
         <NowPlaying bigPicture />
         <Popover.Content>
-          <MobileView>
+          <div className={styles.mobile}>
             <div
               className={cn(commandStyles.screen, {
                 [commandStyles.show]: modalShow
               })}
             >
-              <div
-                style={{
-                  boxShadow: '0px 10px 50px hsla(0, 0%, 0%, 0.33)'
-                }}
-                className={commandStyles['dialog-content']}
-                aria-label="Year Selector"
-              >
-                <YearList />
-              </div>
+              <YearList />
             </div>
-          </MobileView>
+          </div>
         </Popover.Content>
-        <BrowserView>
+        <div className={styles.desktop}>
           <YearList />
-        </BrowserView>
+        </div>
         <article>
           {music.map(({ year, description, concerts, albums }) => {
             return (
               <div key={year} className={styles.musicYear}>
-                <h2 onClick={() => isMobile && setModalShow(true)}>{year}</h2>
+                <h2
+                  className={styles.mobile}
+                  onClick={() => setModalShow(true)}
+                >
+                  {year}
+                </h2>
+                <h2 className={styles.desktop}>{year}</h2>
                 <p id={year} />
                 <h3>{description}</h3>
                 <div>
