@@ -55,6 +55,10 @@
     text-underline-offset: 5px;
     text-decoration-color: var(--gray);
 
+    > h2 {
+      cursor: pointer;
+    }
+
     > p {
       height: 8em;
       margin-top: -8em;
