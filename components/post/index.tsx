@@ -1,10 +1,10 @@
 import Head from 'next/head';
 
 import Navigation from './navigation';
-import Page from '@components/page';
+import Page from 'components/page';
 import styles from './post.module.css';
-import ViewCounter from '@components/view-counter';
-import { IPost } from '@interfaces/post';
+import ViewCounter from 'components/view-counter';
+import { IPost } from 'interfaces/post';
 
 function escapeHtml(unsafe: string) {
   return unsafe

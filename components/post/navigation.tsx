@@ -1,5 +1,5 @@
-import Link from '@components/link';
-import { IPost } from '@interfaces/post';
+import Link from 'components/link';
+import { IPost } from 'interfaces/post';
 
 import styles from './navigation.module.css';
 

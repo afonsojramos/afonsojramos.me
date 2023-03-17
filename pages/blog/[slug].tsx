@@ -1,9 +1,9 @@
-import Post from '@components/post';
-import getPosts from '@lib/get-posts';
-import renderMarkdown from '@lib/render-markdown';
-import { IPost, IPostNavigation } from '../../interfaces';
+import Post from 'components/post';
+import getPosts from 'lib/get-posts';
+import renderMarkdown from 'lib/render-markdown';
+import { IPost, IPostContent, IPostNavigation } from 'interfaces';
 
-const PostPage = (props: IPost & IPostNavigation) => {
+const PostPage = (props: IPostContent & IPostNavigation) => {
   return <Post {...props} />;
 };
 
@@ -21,8 +21,8 @@ export const getStaticProps = ({
     props: {
       previous: posts[postIndex + 1] || null,
       next: posts[postIndex - 1] || null,
-      ...rest,
-      html: renderMarkdown(body)
+      html: renderMarkdown(body),
+      ...rest
     }
   };
 };

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { NextPageContext } from 'next';
-import Error from '@components/error';
+import Error from 'components/error';
 
 class E extends Component<{ status: number }> {
   static getInitialProps({ res, err }: NextPageContext) {

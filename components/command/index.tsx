@@ -14,13 +14,13 @@ import {
   Search,
   Sparkles,
   Travel
-} from '@components/icons';
+} from 'components/icons';
 import cn from 'classnames';
 import { Command } from 'cmdk';
 import { HTMLAttributes, ReactNode, useEffect, useMemo, useState } from 'react';
 
-import headerStyles from '@components/header/header.module.css';
-import postMeta from '@data/blog.json';
+import headerStyles from 'components/header/header.module.css';
+import postMeta from 'data/blog.json';
 import * as Popover from '@radix-ui/react-popover';
 import { useTheme } from 'next-themes';
 import router, { useRouter } from 'next/router';

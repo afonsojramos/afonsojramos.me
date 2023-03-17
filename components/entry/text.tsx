@@ -1,9 +1,9 @@
 import { memo } from 'react';
 import cn from 'classnames';
 import useSWR from 'swr';
-import fetcher from '@lib/fetcher';
+import fetcher from 'lib/fetcher';
 
-import Link from '@components/link';
+import Link from 'components/link';
 import styles from './text.module.css';
 
 const TextEntry = ({

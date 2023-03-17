@@ -1,9 +1,9 @@
 import { memo } from 'react';
-import Link from '@components/link';
+import Link from 'components/link';
 
 import styles from './header.module.css';
-import { Logo as LogoIcon } from '@components/icons';
-import Command from '@components/command';
+import { Logo as LogoIcon } from 'components/icons';
+import Command from 'components/command';
 
 const Header = ({ title }: { title?: string }) => {
   return (

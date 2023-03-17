@@ -1,11 +1,14 @@
-interface IPostContent {
+interface IPostFrontmatter {
   title: string;
   slug: string;
+  description: string;
+  date: string;
+}
+
+interface IPostContent extends IPostFrontmatter {
   html: string;
   hidden: boolean;
   og: string;
-  description: string;
-  date: string;
 }
 
 interface IPostNavigation {
@@ -15,4 +18,4 @@ interface IPostNavigation {
 
 type IPost = IPostContent & IPostNavigation;
 
-export type { IPostContent, IPostNavigation, IPost };
+export type { IPostFrontmatter, IPostContent, IPostNavigation, IPost };

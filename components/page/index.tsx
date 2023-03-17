@@ -1,5 +1,5 @@
-import Head from '@components/head';
-import Header from '@components/header';
+import Head from 'components/head';
+import Header from 'components/header';
 import styles from './page.module.scss';
 
 const Page = ({

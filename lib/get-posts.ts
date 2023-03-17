@@ -1,6 +1,7 @@
 import matter from 'gray-matter';
 import fs from 'fs';
 import path from 'path';
+import { IPostFrontmatter } from '../interfaces';
 
 const getPosts = () => {
   const posts = fs
@@ -8,14 +9,13 @@ const getPosts = () => {
     .filter((file) => path.extname(file) === '.md')
     .map((file) => {
       const postContent = fs.readFileSync(`./posts/${file}`, 'utf8');
-      const { data, content }: { data: any; content: string } =
-        matter(postContent);
+      const { data, content } = matter(postContent);
 
       if (data.published === false) {
         return null;
       }
 
-      return { ...data, body: content };
+      return { ...(data as IPostFrontmatter), body: content };
     })
     .filter(Boolean)
     .sort((a, b) => {

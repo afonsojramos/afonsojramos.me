@@ -1,5 +1,5 @@
-import Page from '@components/page';
-import Cobe from '@components/cobe';
+import Page from 'components/page';
+import Cobe from 'components/cobe';
 
 const Travels = () => {
   return (

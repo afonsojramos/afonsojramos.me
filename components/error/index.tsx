@@ -3,10 +3,10 @@ import Lottie from 'react-lottie-player';
 import { replaceColor } from 'lottie-colorify';
 import { useTheme } from 'next-themes';
 
-import Page from '@components/page';
-import Link from '@components/link';
-import lottie404 from '@components/icons/lottie/404.json';
-import lottieloading from '@components/icons/lottie/loading.json';
+import Page from 'components/page';
+import Link from 'components/link';
+import lottie404 from 'components/icons/lottie/404.json';
+import lottieloading from 'components/icons/lottie/loading.json';
 import styles from './error.module.scss';
 
 const Error = ({

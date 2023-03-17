@@ -67,13 +67,6 @@
     "typescript": "^4.9.5"
   },
   "next-unused": {
-    "alias": {
-      "@components": "components/",
-      "@interfaces": "interfaces/",
-      "@data": "data/",
-      "@lib": "lib/",
-      "@styles": "styles/"
-    },
     "include": [
       "components",
       "interfaces",
