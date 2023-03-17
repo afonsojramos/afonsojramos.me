@@ -15,7 +15,7 @@ import useSWR from 'swr';
 
 function useOutsideAlerter(
   ref: MutableRefObject<null | HTMLDivElement>,
-  callback: any
+  callback: () => void
 ) {
   useEffect(() => {
     /**
@@ -32,7 +32,7 @@ function useOutsideAlerter(
       // Unbind the event listener on clean up
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [ref]);
+  }, [ref, callback]);
 }
 
 const Music = () => {
@@ -56,7 +56,11 @@ const Music = () => {
         {music.map(({ year }) => {
           return (
             <li key={year}>
-              <Link href={'#' + year} onClick={() => setModalShow(false)}>
+              <Link
+                href={'#' + year}
+                onClick={() => setModalShow(false)}
+                scroll={false}
+              >
                 {year}
               </Link>
             </li>

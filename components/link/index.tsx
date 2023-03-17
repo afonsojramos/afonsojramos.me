@@ -1,4 +1,4 @@
-import { memo, MouseEventHandler } from 'react';
+import { memo, MouseEventHandler, ReactNode } from 'react';
 import NextLink from 'next/link';
 import cn from 'classnames';
 
@@ -19,6 +19,7 @@ const Link = ({
   passHref,
   children,
   className,
+  scroll,
 
   // Styling
   underline,
@@ -34,12 +35,13 @@ const Link = ({
   as?: string;
   passHref?: boolean;
   className?: string;
+  scroll?: boolean;
   underline?: boolean;
   gray?: boolean;
   disabled?: boolean;
   onClick?: MouseEventHandler<HTMLAnchorElement>;
   title?: string;
-  children: any;
+  children: ReactNode;
 }) => {
   const c = cn(className, styles.checkbox, {
     [styles.gray]: gray,
@@ -71,6 +73,7 @@ const Link = ({
       passHref={passHref}
       className={c}
       onClick={onClick}
+      scroll={scroll}
       {...props}
     >
       {children}
