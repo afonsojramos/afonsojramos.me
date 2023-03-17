@@ -10,6 +10,7 @@ export default function Cobe() {
     useRef<HTMLCanvasElement>() as React.MutableRefObject<HTMLCanvasElement>;
   const pointerInteracting = useRef(0);
   const pointerInteractionMovement = useRef(0);
+  const interactionTimeout = useRef(5);
   const [{ r }, api] = useSpring(() => ({
     r: 0,
     config: {
@@ -20,8 +21,7 @@ export default function Cobe() {
     }
   }));
   useEffect(() => {
-    let phi = 0;
-    let width = 0;
+    let currentPhi = 0;
     const onResize = () =>
       canvasRef.current && (width = canvasRef.current.offsetWidth);
     window.addEventListener('resize', onResize);
@@ -72,10 +72,13 @@ export default function Cobe() {
       ],
       opacity: 0.85,
       onRender: (state) => {
-        // Called on every animation frame.
-        // `state` will be an empty object, return updated params.
-        state.phi = phi + r.get();
-        phi += 0.005;
+        state.phi = currentPhi + r.get();
+        interactionTimeout.current += 0.005;
+
+        if (interactionTimeout.current > 1.5) {
+          currentPhi += 0.005;
+        }
+
         state.width = width * 2;
         state.height = width * 2;
       }
@@ -112,6 +115,7 @@ export default function Cobe() {
           if (pointerInteracting.current !== 0) {
             const delta = e.clientX - pointerInteracting.current;
             pointerInteractionMovement.current = delta;
+            interactionTimeout.current = 0;
             api.start({
               r: delta / 200
             });
@@ -121,6 +125,7 @@ export default function Cobe() {
           if (pointerInteracting.current !== null && e.touches[0]) {
             const delta = e.touches[0].clientX - pointerInteracting.current;
             pointerInteractionMovement.current = delta;
+            interactionTimeout.current = 0;
             api.start({
               r: delta / 100
             });
