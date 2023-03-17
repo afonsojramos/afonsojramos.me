@@ -56,7 +56,7 @@
     "marked": "^4.2.12",
     "next-sitemap": "^4.0.5",
     "next-unused": "^0.0.6",
-    "open-graph-scraper": "^5.1.1",
+    "open-graph-scraper": "^5.2.1",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-hover-media-feature": "^1.0.2",
     "postcss-preset-env": "^8.0.1",
