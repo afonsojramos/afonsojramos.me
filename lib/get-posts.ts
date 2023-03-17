@@ -1,26 +1,25 @@
 import matter from 'gray-matter';
 import fs from 'fs';
 import path from 'path';
-import { IPostFrontmatter } from '../interfaces';
+import { IPostBody, IPostFrontmatter } from 'interfaces';
 
 const getPosts = () => {
   const posts = fs
     .readdirSync('./posts/')
     .filter((file) => path.extname(file) === '.md')
-    .map((file) => {
-      const postContent = fs.readFileSync(`./posts/${file}`, 'utf8');
+    .reduce((publishedPosts: (IPostFrontmatter & IPostBody)[], post) => {
+      const postContent = fs.readFileSync(`./posts/${post}`, 'utf8');
       const { data, content } = matter(postContent);
 
-      if (data.published === false) {
-        return null;
-      }
-
-      return { ...(data as IPostFrontmatter), body: content };
-    })
-    .filter(Boolean)
+      if (data.published === 'false') return publishedPosts;
+      return [
+        ...publishedPosts,
+        { ...(data as IPostFrontmatter), body: content }
+      ];
+    }, [])
     .sort((a, b) => {
       return (
-        new Date(b?.date || '').valueOf() - new Date(a?.date || '').valueOf()
+        new Date(b.date || '').valueOf() - new Date(a.date || '').valueOf()
       );
     });
 

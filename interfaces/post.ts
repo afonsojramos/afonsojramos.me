@@ -3,19 +3,28 @@ interface IPostFrontmatter {
   slug: string;
   description: string;
   date: string;
+  published: boolean;
+}
+
+interface IPostBody {
+  body: string;
 }
 
 interface IPostContent extends IPostFrontmatter {
   html: string;
-  hidden: boolean;
-  og: string;
 }
 
 interface IPostNavigation {
-  previous: IPost;
-  next: IPost;
+  previous: IPostFrontmatter & IPostBody;
+  next: IPostFrontmatter & IPostBody;
 }
 
 type IPost = IPostContent & IPostNavigation;
 
-export type { IPostFrontmatter, IPostContent, IPostNavigation, IPost };
+export type {
+  IPostFrontmatter,
+  IPostBody,
+  IPostContent,
+  IPostNavigation,
+  IPost
+};
