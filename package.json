@@ -54,7 +54,7 @@
     "gray-matter": "^4.0.3",
     "lowdb": "^5.1.0",
     "marked": "^4.2.12",
-    "next-sitemap": "^4.0.5",
+    "next-sitemap": "^4.0.6",
     "next-unused": "^0.0.6",
     "open-graph-scraper": "^5.2.2",
     "postcss-flexbugs-fixes": "^5.0.2",
