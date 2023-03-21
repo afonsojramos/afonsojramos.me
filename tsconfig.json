@@ -21,14 +21,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": ["components/*"],
-      "@interfaces/*": ["interfaces/*"],
-      "@lib/*": ["lib/*"],
-      "@styles/*": ["styles/*"],
-      "@data/*": ["data/*"]
-    }
+    "baseUrl": "."
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
   "exclude": ["node_modules"]
