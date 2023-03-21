@@ -1,7 +1,7 @@
-import { getTopTracks } from '@lib/spotify';
+import { getTopTracks } from 'lib/spotify';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { SpotifyTopTracksInterface } from '@interfaces/spotify';
-import { ITopTracks } from '@interfaces/top-tracks';
+import { SpotifyTopTracksInterface } from 'interfaces/spotify';
+import { ITopTracks } from 'interfaces/top-tracks';
 
 export default async function handler(
   _req: NextApiRequest,

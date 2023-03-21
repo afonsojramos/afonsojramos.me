@@ -1,4 +1,4 @@
-import Icon from '@components/icon';
+import Icon from 'components/icon';
 
 const Travel = `<g>
 <path d="M19.024,20.959c0.251-0.392,0.087-1.673,0.087-1.673C9.67,16.034,2.607,11.957,3.007,10.3

@@ -1,9 +1,9 @@
 import Link from 'components/link';
-import { IPost } from 'interfaces/post';
+import { IPostNavigation } from 'interfaces/post';
 
 import styles from './navigation.module.css';
 
-const Previous = ({ previous, next }: { previous?: IPost; next?: IPost }) => {
+const Navigation = ({ previous, next }: IPostNavigation) => {
   return (
     <div className={styles.navigation}>
       <div className={styles.previous}>
@@ -27,4 +27,4 @@ const Previous = ({ previous, next }: { previous?: IPost; next?: IPost }) => {
   );
 };
 
-export default Previous;
+export default Navigation;

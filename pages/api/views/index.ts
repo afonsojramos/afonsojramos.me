@@ -1,6 +1,6 @@
-import db from '@lib/firebase';
+import db from 'lib/firebase';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { IViewsTotal } from '@interfaces/firebase';
+import { IViewsTotal } from 'interfaces/firebase';
 
 const views = async (
   _req: NextApiRequest,

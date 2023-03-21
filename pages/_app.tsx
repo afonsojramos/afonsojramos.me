@@ -17,7 +17,7 @@ Router.events.on('routeChangeError', () => {
   nprogress.done();
 });
 
-import '@styles/global.css';
+import 'styles/global.css';
 import { ThemeProvider } from 'next-themes';
 
 const Website: AppType = ({ Component, pageProps }) => {

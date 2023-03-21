@@ -1,12 +1,12 @@
-import { getNowPlaying } from '@lib/spotify';
+import { getNowPlaying } from 'lib/spotify';
 import { NextApiRequest, NextApiResponse } from 'next';
 import {
   IArtist,
   INotPlaying,
   INowPlaying,
   ITrack
-} from '@interfaces/now-playing';
-import { SpotifyArtistInterface } from '@interfaces/spotify';
+} from 'interfaces/now-playing';
+import { SpotifyArtistInterface } from 'interfaces/spotify';
 
 export default async function handler(
   _req: NextApiRequest,

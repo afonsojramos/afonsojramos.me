@@ -4,6 +4,7 @@ interface IPostFrontmatter {
   description: string;
   date: string;
   published: boolean;
+  og?: string;
 }
 
 interface IPostBody {
