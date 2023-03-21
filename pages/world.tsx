@@ -1,5 +1,5 @@
 import Page from 'components/page';
-import Cobe from 'components/cobe';
+import Cobe from 'components/globe';
 
 const Travels = () => {
   return (

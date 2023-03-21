@@ -3,6 +3,8 @@ import { useTheme } from 'next-themes';
 import { useEffect, useRef } from 'react';
 import { useSpring } from 'react-spring';
 
+import styles from './globe.module.scss';
+
 export default function Cobe() {
   const { theme } = useTheme();
   const canvasRef =
@@ -118,15 +120,7 @@ export default function Cobe() {
     return () => globe.destroy();
   }, [r, theme]);
   return (
-    <div
-      style={{
-        width: '100%',
-        maxWidth: 600,
-        aspectRatio: '1',
-        margin: 'auto',
-        position: 'relative'
-      }}
-    >
+    <div className={styles.globe}>
       <canvas
         ref={canvasRef}
         onPointerDown={(e) => {
@@ -164,18 +158,20 @@ export default function Cobe() {
             });
           }
         }}
-        style={{
-          width: '100%',
-          height: '100%',
-          cursor: 'grab',
-          contain: 'layout paint size',
-          opacity: 0,
-          transition: 'opacity 1s ease',
-          borderRadius: '50%',
-          marginLeft: '5px',
-          backgroundColor: 'var(--bg)'
-        }}
       />
+      <div className={styles.destinations}>
+        <p>Up next:</p>
+        <button
+          onClick={() => (focusRef.current = locationToAngles(59.329, 18.068))}
+        >
+          📍 Stockholm
+        </button>
+        <button
+          onClick={() => (focusRef.current = locationToAngles(52.52, 13.405))}
+        >
+          📍 Berlin once more
+        </button>
+      </div>
     </div>
   );
 }
