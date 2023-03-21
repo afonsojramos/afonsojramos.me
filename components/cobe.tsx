@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import createGlobe from 'cobe';
 import { useTheme } from 'next-themes';
 import { useEffect, useRef } from 'react';
@@ -11,6 +10,14 @@ export default function Cobe() {
   const pointerInteracting = useRef(0);
   const pointerInteractionMovement = useRef(0);
   const interactionTimeout = useRef(5);
+  const locationToAngles = (lat: number, long: number) => {
+    interactionTimeout.current = 0;
+    return [
+      Math.PI - ((long * Math.PI) / 180 - Math.PI / 2),
+      (lat * Math.PI) / 180
+    ];
+  };
+  const focusRef = useRef([0, 0]);
   const [{ r }, api] = useSpring(() => ({
     r: 0,
     config: {
@@ -21,7 +28,10 @@ export default function Cobe() {
     }
   }));
   useEffect(() => {
+    let width = 0;
     let currentPhi = 0;
+    let currentTheta = 0.2;
+    const doublePi = Math.PI * 2;
     const onResize = () =>
       canvasRef.current && (width = canvasRef.current.offsetWidth);
     window.addEventListener('resize', onResize);
@@ -68,17 +78,38 @@ export default function Cobe() {
         { location: [50.85, 4.35], size: 0.05 }, // Brussels
         { location: [51.209, 3.224], size: 0.05 }, // Bruges
         { location: [43.856, 18.413], size: 0.05 }, // Sarajevo
-        { location: [55.676, 12.568], size: 0.05 } // Copenhagen
+        { location: [55.676, 12.568], size: 0.05 }, // Copenhagen
+        { location: [55.953, -3.188], size: 0.05 }, // Edinburgh
+        { location: [51.507, -0.128], size: 0.05 } // London
       ],
       opacity: 0.85,
       onRender: (state) => {
-        state.phi = currentPhi + r.get();
         interactionTimeout.current += 0.005;
 
         if (interactionTimeout.current > 1.5) {
-          currentPhi += 0.005;
+          // resume auto rotation
+          const thetaDiff = Math.abs(currentTheta - 0.2);
+          currentTheta += thetaDiff > 0.001 ? (0.2 - currentTheta) * 0.005 : 0;
+          currentPhi += 0.004;
+          focusRef.current = [0, 0];
+        } else if (focusRef.current[0] !== 0 && focusRef.current[1] !== 0) {
+          // focus movement
+          const [focusPhi, focusTheta] = focusRef.current;
+          const distPositive =
+            (focusPhi - (currentPhi + r.get()) + doublePi) % doublePi;
+          const distNegative =
+            (currentPhi + r.get() - focusPhi + doublePi) % doublePi;
+
+          if (distPositive < distNegative) {
+            currentPhi += distPositive * 0.05;
+          } else {
+            currentPhi -= distNegative * 0.05;
+          }
+          currentTheta = currentTheta * 0.92 + focusTheta * 0.08;
         }
 
+        state.phi = currentPhi + r.get();
+        state.theta = currentTheta;
         state.width = width * 2;
         state.height = width * 2;
       }
@@ -114,6 +145,7 @@ export default function Cobe() {
         onMouseMove={(e) => {
           if (pointerInteracting.current !== 0) {
             const delta = e.clientX - pointerInteracting.current;
+            focusRef.current = [0, 0];
             pointerInteractionMovement.current = delta;
             interactionTimeout.current = 0;
             api.start({
@@ -122,12 +154,13 @@ export default function Cobe() {
           }
         }}
         onTouchMove={(e) => {
-          if (pointerInteracting.current !== null && e.touches[0]) {
+          if (pointerInteracting.current !== 0 && e.touches[0]) {
             const delta = e.touches[0].clientX - pointerInteracting.current;
+            focusRef.current = [0, 0];
             pointerInteractionMovement.current = delta;
             interactionTimeout.current = 0;
             api.start({
-              r: delta / 100
+              r: delta / 15
             });
           }
         }}
