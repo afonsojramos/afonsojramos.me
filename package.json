@@ -33,7 +33,7 @@
     "react-lottie-player": "^1.5.4",
     "react-spring": "^9.7.1",
     "sass": "^1.59.3",
-    "swr": "^2.1.1",
+    "swr": "^2.1.2",
     "tinykeys": "^1.4.0"
   },
   "devDependencies": {
