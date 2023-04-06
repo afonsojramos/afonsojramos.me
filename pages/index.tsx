@@ -1,4 +1,4 @@
-import { Ensico, NewDay, YLD } from 'components/icons';
+import { Ensico, YLD } from 'components/icons';
 import iconStyles from 'components/icons/icons.module.scss';
 import linkStyles from 'components/link/link.module.scss';
 import Link from 'components/link';
