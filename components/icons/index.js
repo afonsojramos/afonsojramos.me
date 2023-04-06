@@ -19,7 +19,6 @@ export { default as Mail } from './mail';
 export { default as Menu } from './menu';
 export { default as Moon } from './moon';
 export { default as Music } from './music';
-export { default as NewDay } from './newday';
 export { default as Pencil } from './pencil';
 export { default as Play } from './play';
 export { default as Quote } from './quote';

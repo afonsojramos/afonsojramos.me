@@ -44,11 +44,7 @@ const Home = () => {
           <Link href="https://yld.io/" external>
             <YLD className={iconStyles.inline} />
           </Link>{' '}
-          helping{' '}
-          <Link href="https://www.newday.co.uk/" external>
-            <NewDay className={iconStyles.inline} style={{ width: 60 }} />
-          </Link>{' '}
-          grow and fulfill their mission.
+          helping a financial services company grow and fulfill their mission.
         </p>
 
         <p>
