@@ -32,7 +32,7 @@
     "react-globe.gl": "^2.23.5",
     "react-lottie-player": "^1.5.4",
     "react-spring": "^9.7.1",
-    "sass": "^1.60.0",
+    "sass": "^1.62.1",
     "swr": "^2.1.5",
     "tinykeys": "^1.4.0"
   },
