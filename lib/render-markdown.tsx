@@ -1,5 +1,5 @@
 import { marked } from 'marked';
-import Highlight, { Language, Prism } from 'prism-react-renderer';
+import { Highlight } from 'prism-react-renderer';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { format } from 'prettier';
 
@@ -35,7 +35,7 @@ renderer.listitem = (text, task, checked) => {
 };
 renderer.code = (code, options: string) => {
   const opts = options.split(' ').map((o) => o.trim());
-  const language: Language = opts[0] as Language;
+  const language = opts[0];
   const highlight = opts
     .filter((o) => o.startsWith('highlight='))
     .pop()
@@ -79,7 +79,7 @@ const Code = ({
   ...props
 }: {
   code: string;
-  language: Language;
+  language: string;
   highlight?: string;
 }) => {
   if (!language)
@@ -101,7 +101,7 @@ const Code = ({
     : [];
 
   return (
-    <Highlight Prism={Prism} code={code.trim()} language={language}>
+    <Highlight code={code.trim()} language={language}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <code className={className} style={{ ...style }}>
           {tokens.map((line, i) => (
