@@ -19,6 +19,21 @@
   }
 }
 
+.commandIcon {
+  display: inline-flex;
+  padding: 10px;
+  margin: -10px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  background: none;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background: var(--lighter-gray);
+  }
+}
+
 .command {
   & {
     max-width: 700px;

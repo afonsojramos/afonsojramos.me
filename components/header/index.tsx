@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import Link from 'components/link';
 
-import styles from './header.module.css';
+import styles from './header.module.scss';
 import { Logo as LogoIcon } from 'components/icons';
 import Command from 'components/command';
 
@@ -14,9 +14,9 @@ const Header = ({ title }: { title?: string }) => {
         </Link>
 
         {title !== '404' ? (
-          <Link className={styles.content} href="#">
+          <a className={styles.content} href="#">
             {title}
-          </Link>
+          </a>
         ) : (
           <p className={styles.content}>{title}</p>
         )}

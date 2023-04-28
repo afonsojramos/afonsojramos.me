@@ -19,7 +19,6 @@ import cn from 'classnames';
 import { Command } from 'cmdk';
 import { HTMLAttributes, ReactNode, useEffect, useMemo, useState } from 'react';
 
-import headerStyles from 'components/header/header.module.css';
 import postMeta from 'data/blog.json';
 import * as Popover from '@radix-ui/react-popover';
 import { useTheme } from 'next-themes';
@@ -173,7 +172,7 @@ const CommandMenu = () => {
 
   return (
     <Popover.Root modal open={open} onOpenChange={setOpen}>
-      <Popover.Trigger className={headerStyles.command}>
+      <Popover.Trigger className={styles.commandIcon}>
         <CommandIcon />
       </Popover.Trigger>
       <div
