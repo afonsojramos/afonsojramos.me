@@ -59,7 +59,7 @@
     "open-graph-scraper": "^5.2.3",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-hover-media-feature": "^1.0.2",
-    "postcss-preset-env": "^8.3.2",
+    "postcss-preset-env": "^8.4.1",
     "prettier": "^2.8.8",
     "prism-react-renderer": "^2.0.4",
     "prompts": "^2.4.2",
