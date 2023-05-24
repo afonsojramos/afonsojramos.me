@@ -6,7 +6,7 @@
     "lint": "next lint",
     "lint:fix": "eslint . --fix",
     "dev": "next -p 3003",
-    "build": "npm run rss && next build",
+    "build": "pnpm run rss && next build",
     "rss": "node lib/rss",
     "postbuild": "next-sitemap",
     "find:unused": "next-unused",
