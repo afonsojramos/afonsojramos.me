@@ -61,10 +61,11 @@ renderer.code = (code, options: string) => {
   );
 };
 
-marked.setOptions({
+marked.use({
   gfm: true,
   breaks: true,
-  headerIds: true,
+  mangle: false,
+  headerIds: false,
   renderer
 });
 
