@@ -7,12 +7,14 @@ const Entry = ({
   title,
   description,
   image,
-  href
+  href,
+  index
 }: {
   title: string;
   description: string;
   image: string;
   href?: string;
+  index?: number;
 }) => {
   return (
     <a
@@ -30,6 +32,7 @@ const Entry = ({
           style={{ objectFit: 'cover' }}
           sizes="(min-width: 66em) 33vw,(min-width: 44em) 50vw,100vw"
           quality={60}
+          priority={index === 0}
         />
         <div>
           <p className={cn(styles.title, 'clamp')}>{title}</p>
