@@ -12,6 +12,7 @@ import * as Popover from '@radix-ui/react-popover';
 import cn from 'classnames';
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
 import useSWR from 'swr';
+import Carousel from '../components/caroussel';
 
 function useOutsideAlerter(
   ref: MutableRefObject<null | HTMLDivElement>,
@@ -105,18 +106,7 @@ const Music = () => {
                 <h2 className={styles.desktop}>{year}</h2>
                 <p id={year} />
                 <h3>{description}</h3>
-                <div>
-                  {concerts?.map((entry) => {
-                    return (
-                      <Entry
-                        key={entry.title}
-                        title={entry.title}
-                        image={entry.image}
-                        description={entry.festival}
-                      />
-                    );
-                  })}
-                </div>
+                <Carousel images={concerts} />
                 <div className={entryStyles.grid}>
                   {albums.map((entry) => {
                     return (
