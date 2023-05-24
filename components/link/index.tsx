@@ -53,8 +53,8 @@ const Link = ({
     return (
       <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={!href.startsWith('#') ? '_blank' : undefined}
+        rel={!href.startsWith('#') ? 'noopener noreferrer' : undefined}
         className={c}
         onClick={onClick}
         title={title}

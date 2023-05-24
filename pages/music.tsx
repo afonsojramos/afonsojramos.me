@@ -61,6 +61,7 @@ const Music = () => {
                 href={'#' + year}
                 onClick={() => setModalShow(false)}
                 scroll={false}
+                external
               >
                 {year}
               </Link>
