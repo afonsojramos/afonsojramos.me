@@ -43,6 +43,10 @@
   --keyword: #fff;
   --name: #fff;
   --highlight: #2e2e2e;
+
+  /* Swiper */
+  --swiper-navigation-color: #fff;
+  --swiper-pagination-color: #fff;
 }
 
 [data-theme='light'] {
@@ -57,11 +61,16 @@
   --gray-alpha: rgba(19, 20, 21, 0.5);
   --selection: rgba(0, 0, 0, 0.99);
 
+  /* Syntax Highlighting */
   --token: #666;
   --comment: #999;
   --keyword: #000;
   --name: #333;
   --highlight: #eaeaea;
+
+  /* Swiper */
+  --swiper-navigation-color: #000;
+  --swiper-pagination-color: #000;
 }
 
 * {
@@ -283,11 +292,16 @@ div.scene-tooltip {
     --gray-alpha: rgba(19, 20, 21, 0.5);
     --selection: rgba(0, 0, 0, 0.99);
 
+    /* Syntax Highlighting */
     --token: #666;
     --comment: #999;
     --keyword: #000;
     --name: #333;
     --highlight: #eaeaea;
+
+    /* Swiper */
+    --swiper-navigation-color: #000;
+    --swiper-pagination-color: #000;
   }
 
   * {
