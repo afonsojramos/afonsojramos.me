@@ -76,5 +76,6 @@
     "exclude": [
       "rss.js"
     ]
-  }
+  },
+  "packageManager": "pnpm@8.6.1"
 }
