@@ -78,5 +78,11 @@
       "rss.js"
     ]
   },
+  "renovate": {
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+      "config:base"
+    ]
+  },
   "packageManager": "pnpm@8.6.1"
 }
