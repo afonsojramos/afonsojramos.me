@@ -10,9 +10,9 @@
     "rss": "node lib/rss",
     "postbuild": "next-sitemap",
     "find:unused": "next-unused",
-    "start": "next start"
+    "start": "next start",
+    "prepare": "husky install"
   },
-  "pre-commit": "lint",
   "license": "MIT",
   "dependencies": {
     "@radix-ui/react-popover": "^1.0.5",
@@ -53,6 +53,7 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "gray-matter": "^4.0.3",
+    "husky": "^8.0.3",
     "lowdb": "^6.0.1",
     "marked": "^5.0.2",
     "next-sitemap": "^4.1.3",
