@@ -66,8 +66,8 @@ dependencies:
     specifier: ^2.1.5
     version: 2.1.5(react@18.2.0)
   tinykeys:
-    specifier: ^1.4.0
-    version: 1.4.0
+    specifier: ^2.0.0
+    version: 2.0.0
 
 devDependencies:
   '@next/eslint-plugin-next':
@@ -10447,8 +10447,8 @@ packages:
     resolution: {integrity: sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==}
     dev: false
 
-  /tinykeys@1.4.0:
-    resolution: {integrity: sha512-ysnVd2E4nWbNXIbHaUidcKGLTmNimqP0hdpsD0Ph5hPJ84ntCF6PHj+Jg3im9nZt9/hNsBg/E6m1psHc2KaPnQ==}
+  /tinykeys@2.0.0:
+    resolution: {integrity: sha512-jY+PTFGIOuMD/38o11uMJQmF9RlItzG3ihj///q+FFQVjLePGtkmSbIOIgeHO5EqqEuLh5ahyREL/GkqTEWkEg==}
     dev: false
 
   /titleize@3.0.0:
