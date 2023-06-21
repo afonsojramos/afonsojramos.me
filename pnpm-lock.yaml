@@ -21,8 +21,8 @@ dependencies:
     specifier: 0.6.3
     version: 0.6.3
   firebase-admin:
-    specifier: 11.8.0
-    version: 11.8.0
+    specifier: 11.9.0
+    version: 11.9.0
   intersection-observer:
     specifier: 0.12.2
     version: 0.12.2
@@ -5599,8 +5599,8 @@ packages:
       locate-path: 6.0.0
       path-exists: 4.0.0
 
-  /firebase-admin@11.8.0:
-    resolution: {integrity: sha512-RxO0wWDnuqVikXExhVjnhVaaXpziKCad4D1rOX5c1WJdk1jAu9hfE4rbrFKZQZgF1okZS04kgCBIFJro7xn8NQ==}
+  /firebase-admin@11.9.0:
+    resolution: {integrity: sha512-My7qrInVZFmImX8aTulrp9kgY6d88Wn+ie8UIXKzZ3SJqQQhDwFT7Q3pgQXK9RfdsUtcxJJ3rCK7MWBm4GGtuw==}
     engines: {node: '>=14'}
     dependencies:
       '@fastify/busboy': 1.2.1
