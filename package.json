@@ -69,6 +69,7 @@
   "renovate": {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "platform": "github",
+    "rangeStrategy": "pin",
     "extends": [
       "config:base"
     ]
