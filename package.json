@@ -68,6 +68,7 @@
   },
   "renovate": {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "platform": "github",
     "extends": [
       "config:base"
     ]
