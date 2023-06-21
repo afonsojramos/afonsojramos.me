@@ -1,3 +1,5 @@
+import cn from 'classnames';
+import { Command } from 'cmdk';
 import {
   Afonso,
   ArrowLeft,
@@ -15,15 +17,13 @@ import {
   Sparkles,
   Travel
 } from 'components/icons';
-import cn from 'classnames';
-import { Command } from 'cmdk';
 import { HTMLAttributes, ReactNode, useEffect, useMemo, useState } from 'react';
 
-import postMeta from 'data/blog.json';
 import * as Popover from '@radix-ui/react-popover';
+import postMeta from 'data/blog.json';
 import { useTheme } from 'next-themes';
 import router, { useRouter } from 'next/router';
-import tinykeys from 'tinykeys';
+import { tinykeys } from 'tinykeys';
 import styles from './command.module.scss';
 
 enum PageGroup {
