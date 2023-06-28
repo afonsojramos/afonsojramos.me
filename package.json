@@ -74,5 +74,5 @@
       "config:base"
     ]
   },
-  "packageManager": "pnpm@8.6.3"
+  "packageManager": "pnpm@8.6.5"
 }
