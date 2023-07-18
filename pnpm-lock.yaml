@@ -48,8 +48,8 @@ dependencies:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
   react-globe.gl:
-    specifier: 2.24.1
-    version: 2.24.1(react@18.2.0)
+    specifier: 2.24.2
+    version: 2.24.2(react@18.2.0)
   react-lottie-player:
     specifier: 1.5.4
     version: 1.5.4(react@18.2.0)
@@ -8956,8 +8956,8 @@ packages:
       react: 18.2.0
       scheduler: 0.23.0
 
-  /react-globe.gl@2.24.1(react@18.2.0):
-    resolution: {integrity: sha512-Wi6TqqGOv2senptRjaDyoLKk6bHlubDySEHTESE3XNEu1BSnwuGIhTU8y35Ws6Gl1iVrsl8+C9P2ZqRKlHbASA==}
+  /react-globe.gl@2.24.2(react@18.2.0):
+    resolution: {integrity: sha512-0Od3kOnLRb/LH3axYy5IG3bJJM4rd/w+5NDBYCEs8iL8rfR8ZQ+mlfQCkI46BKbKvqRDkOK0y8EFC3LDAXf7Uw==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '*'
