@@ -1,7 +1,7 @@
 import { marked } from 'marked';
+import { format } from 'prettier';
 import { Highlight } from 'prism-react-renderer';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { format } from 'prettier';
 
 import linkStyles from '../components/link/link.module.scss';
 
@@ -46,11 +46,11 @@ renderer.code = (code, options: string) => {
 
   if (!raw) {
     try {
-      formattedCode = format(code, {
+      formattedCode = void format(code, {
         semi: false,
         singleQuote: true,
         parser: language === 'jsx' ? 'babel' : language
-      });
+      }) as unknown as string;
       // eslint-disable-next-line no-empty
     } catch (e) {} // Don't really mind if it fails
   }
