@@ -128,8 +128,8 @@ devDependencies:
     specifier: 4.1.8
     version: 4.1.8(next@13.4.7)
   open-graph-scraper:
-    specifier: 6.2.1
-    version: 6.2.1
+    specifier: 6.2.2
+    version: 6.2.2
   postcss-flexbugs-fixes:
     specifier: 5.0.2
     version: 5.0.2(postcss@8.4.24)
@@ -8175,8 +8175,8 @@ packages:
       mimic-fn: 4.0.0
     dev: true
 
-  /open-graph-scraper@6.2.1:
-    resolution: {integrity: sha512-DNznPjv7D4/GlMbuIFUME2tVw6Qez0grRNGu7fA4g80S83M47Gwe/nRuw7+8PN0MpG9E4zbWCkMvgv5B3HscKw==}
+  /open-graph-scraper@6.2.2:
+    resolution: {integrity: sha512-cQO0c0HF9ZMhSoIEOKMyxbSYwKn6qWBDEdQeCvZnAVwKCxSWj2DV8AwC1J4JCiwZbn/C4grGCJXpvmlAyTXrBg==}
     engines: {node: '>=18.0.0'}
     dependencies:
       chardet: 1.6.0
