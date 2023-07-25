@@ -119,8 +119,8 @@ devDependencies:
     specifier: 6.0.1
     version: 6.0.1
   marked:
-    specifier: 5.1.1
-    version: 5.1.1
+    specifier: 5.1.2
+    version: 5.1.2
   next-sitemap:
     specifier: 4.1.8
     version: 4.1.8(next@13.4.10)
@@ -7334,9 +7334,9 @@ packages:
     dev: false
     optional: true
 
-  /marked@5.1.1:
-    resolution: {integrity: sha512-bTmmGdEINWmOMDjnPWDxGPQ4qkDLeYorpYbEtFOXzOruTwUE671q4Guiuchn4N8h/v6NGd7916kXsm3Iz4iUSg==}
-    engines: {node: '>= 18'}
+  /marked@5.1.2:
+    resolution: {integrity: sha512-ahRPGXJpjMjwSOlBoTMZAK7ATXkli5qCPxZ21TG44rx1KEo44bii4ekgTDQPNRQ4Kh7JMb9Ub1PVk1NxRSsorg==}
+    engines: {node: '>= 16'}
     hasBin: true
     dev: true
 
