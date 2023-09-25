@@ -122,8 +122,8 @@ devDependencies:
     specifier: 5.1.2
     version: 5.1.2
   next-sitemap:
-    specifier: 4.1.8
-    version: 4.1.8(next@13.5.2)
+    specifier: 4.2.3
+    version: 4.2.3(next@13.5.2)
   open-graph-scraper:
     specifier: 6.2.2
     version: 6.2.2
@@ -2338,10 +2338,6 @@ packages:
       lodash: 4.17.21
     dev: false
     optional: true
-
-  /@next/env@13.4.7:
-    resolution: {integrity: sha512-ZlbiFulnwiFsW9UV1ku1OvX/oyIPLtMk9p/nnvDSwI0s7vSoZdRtxXNsaO+ZXrLv/pMbXVGq4lL8TbY9iuGmVw==}
-    dev: true
 
   /@next/env@13.5.2:
     resolution: {integrity: sha512-dUseBIQVax+XtdJPzhwww4GetTjlkRSsXeQnisIJWBaHsnxYcN2RGzsPHi58D6qnkATjnhuAtQTJmR1hKYQQPg==}
@@ -7935,15 +7931,15 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: false
 
-  /next-sitemap@4.1.8(next@13.5.2):
-    resolution: {integrity: sha512-XAXpBHX4o89JfMgvrm0zimlZwpu2iBPXHpimJMUrqOZSc4C2oB1Lv89mxuVON9IE8HOezaM+w4GjJxcYCuGPTQ==}
+  /next-sitemap@4.2.3(next@13.5.2):
+    resolution: {integrity: sha512-vjdCxeDuWDzldhCnyFCQipw5bfpl4HmZA7uoo3GAaYGjGgfL4Cxb1CiztPuWGmS+auYs7/8OekRS8C2cjdAsjQ==}
     engines: {node: '>=14.18'}
     hasBin: true
     peerDependencies:
       next: '*'
     dependencies:
       '@corex/deepmerge': 4.0.43
-      '@next/env': 13.4.7
+      '@next/env': 13.5.2
       fast-glob: 3.2.12
       minimist: 1.2.8
       next: 13.5.2(@babel/core@7.22.1)(react-dom@18.2.0)(react@18.2.0)(sass@1.66.1)
