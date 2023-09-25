@@ -71,8 +71,8 @@ devDependencies:
     specifier: 13.4.10
     version: 13.4.10
   '@types/geojson':
-    specifier: 7946.0.10
-    version: 7946.0.10
+    specifier: 7946.0.11
+    version: 7946.0.11
   '@types/lodash.debounce':
     specifier: 4.0.7
     version: 4.0.7
@@ -3520,8 +3520,8 @@ packages:
       '@types/serve-static': 1.15.1
     dev: false
 
-  /@types/geojson@7946.0.10:
-    resolution: {integrity: sha512-Nmh0K3iWQJzniTuPRcJn5hxXkfB1T1pgB89SBig5PlJQU5yocazeu4jATJlaA0GYFKWMqDdvYemoSnF2pXgLVA==}
+  /@types/geojson@7946.0.11:
+    resolution: {integrity: sha512-L7A0AINMXQpVwxHJ4jxD6/XjZ4NDufaRlUJHjNIFKYUFBH1SvOW+neaqb0VTRSLW5suSrSu19ObFEFnfNcr+qg==}
     dev: true
 
   /@types/glob@8.1.0:
