@@ -1,4 +1,4 @@
-import { A11y, Autoplay, Pagination, Scrollbar } from 'swiper';
+import { A11y, Autoplay, Pagination, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { IConcert } from '../interfaces/music';
 import Entry from './entry';
