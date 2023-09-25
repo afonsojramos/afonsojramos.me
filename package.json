@@ -63,7 +63,7 @@
     "prism-react-renderer": "2.0.6",
     "prompts": "2.4.2",
     "rss": "1.2.2",
-    "typescript": "5.1.6"
+    "typescript": "5.2.2"
   },
   "renovate": {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
