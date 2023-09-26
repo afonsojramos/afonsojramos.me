@@ -60,7 +60,7 @@
     "postcss-hover-media-feature": "1.0.2",
     "postcss-preset-env": "9.1.4",
     "prettier": "3.0.3",
-    "prism-react-renderer": "2.0.6",
+    "prism-react-renderer": "2.1.0",
     "prompts": "2.4.2",
     "rss": "1.2.2",
     "typescript": "5.2.2"
