@@ -29,7 +29,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-lottie-player": "1.5.5",
-    "react-spring": "9.7.2",
+    "react-spring": "9.7.3",
     "sass": "1.68.0",
     "swiper": "10.3.0",
     "swr": "2.2.4",
