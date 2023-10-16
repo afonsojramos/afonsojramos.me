@@ -69,9 +69,8 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "platform": "github",
     "rangeStrategy": "pin",
-    "extends": [
-      "config:base"
-    ]
+    "extends": ["config:recommended"],
+    "schedule": ["monthly"]
   },
   "packageManager": "pnpm@8.9.2"
 }
