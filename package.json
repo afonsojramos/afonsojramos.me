@@ -19,7 +19,7 @@
     "classnames": "2.3.2",
     "cmdk": "0.2.0",
     "cobe": "0.6.3",
-    "firebase-admin": "11.10.1",
+    "firebase-admin": "11.11.0",
     "intersection-observer": "0.12.2",
     "lodash.debounce": "4.0.8",
     "lottie-colorify": "0.8.0",
