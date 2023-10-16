@@ -39,7 +39,7 @@
     "@next/eslint-plugin-next": "13.5.3",
     "@types/geojson": "7946.0.11",
     "@types/lodash.debounce": "4.0.7",
-    "@types/marked": "5.0.1",
+    "@types/marked": "5.0.2",
     "@types/nprogress": "0.2.1",
     "@types/prettier": "2.7.3",
     "@types/react": "18.2.22",
