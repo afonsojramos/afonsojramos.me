@@ -23,7 +23,7 @@
     "intersection-observer": "0.12.2",
     "lodash.debounce": "4.0.8",
     "lottie-colorify": "0.8.0",
-    "next": "13.5.3",
+    "next": "13.5.5",
     "next-themes": "0.2.1",
     "nprogress": "0.2.0",
     "react": "18.2.0",
@@ -36,7 +36,7 @@
     "tinykeys": "2.1.0"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "13.5.3",
+    "@next/eslint-plugin-next": "13.5.5",
     "@types/geojson": "7946.0.11",
     "@types/lodash.debounce": "4.0.7",
     "@types/marked": "5.0.2",
@@ -47,7 +47,7 @@
     "@typescript-eslint/eslint-plugin": "6.8.0",
     "@typescript-eslint/parser": "6.8.0",
     "eslint": "8.50.0",
-    "eslint-config-next": "13.5.3",
+    "eslint-config-next": "13.5.5",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-prettier": "5.0.0",
     "gray-matter": "4.0.3",
