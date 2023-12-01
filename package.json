@@ -52,7 +52,7 @@
     "eslint-plugin-prettier": "5.0.1",
     "gray-matter": "4.0.3",
     "husky": "8.0.3",
-    "lowdb": "6.0.1",
+    "lowdb": "6.1.1",
     "marked": "5.1.2",
     "next-sitemap": "4.2.3",
     "open-graph-scraper": "6.2.2",
