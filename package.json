@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "13.5.5",
-    "@types/geojson": "7946.0.11",
+    "@types/geojson": "7946.0.14",
     "@types/lodash.debounce": "4.0.7",
     "@types/marked": "5.0.2",
     "@types/nprogress": "0.2.1",
