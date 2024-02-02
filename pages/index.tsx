@@ -1,9 +1,9 @@
-import { Ensico, NewDay, YLD } from 'components/icons';
+import { NewDay, YLD } from 'components/icons';
 import iconStyles from 'components/icons/icons.module.scss';
-import linkStyles from 'components/link/link.module.scss';
 import Link from 'components/link';
 import NowPlaying from 'components/now-playing';
 import Page from 'components/page';
+import Status from 'components/status';
 import ViewCounter from 'components/view-counter';
 
 const Home = () => {
@@ -50,18 +50,11 @@ const Home = () => {
           </Link>{' '}
           grow and fulfill their mission.
         </p>
-
-        <p>
-          Bringing accessible coding lessons to 5th to 9th grade students at{' '}
-          <Link href="https://www.ensico.pt/" external>
-            <Ensico className={iconStyles.inline} />{' '}
-            <span className={linkStyles.underlink}>Ensico</span>
-          </Link>{' '}
-          .
-        </p>
       </article>
       <NowPlaying />
       <ViewCounter slug={'home'} string={false} />
+
+      <Status />
     </Page>
   );
 };
