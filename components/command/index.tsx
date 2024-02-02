@@ -200,8 +200,8 @@ const CommandMenu = () => {
                 page === PageGroup.Themes
                   ? 'Select a theme...'
                   : page === PageGroup.Blog
-                  ? 'Search for posts...'
-                  : 'Type a command or search...'
+                    ? 'Search for posts...'
+                    : 'Type a command or search...'
               }
             />
             <Command.List>
