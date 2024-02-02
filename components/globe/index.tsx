@@ -1,7 +1,7 @@
+import { useSpring } from '@react-spring/web';
 import createGlobe from 'cobe';
 import { useTheme } from 'next-themes';
 import { useEffect, useRef } from 'react';
-import { useSpring } from 'react-spring';
 
 import styles from './globe.module.scss';
 
