@@ -3,7 +3,6 @@ import iconStyles from 'components/icons/icons.module.scss';
 import Link from 'components/link';
 import NowPlaying from 'components/now-playing';
 import Page from 'components/page';
-import Status from 'components/status';
 import ViewCounter from 'components/view-counter';
 
 const Home = () => {
@@ -53,8 +52,6 @@ const Home = () => {
       </article>
       <NowPlaying />
       <ViewCounter slug={'home'} string={false} />
-
-      <Status />
     </Page>
   );
 };
