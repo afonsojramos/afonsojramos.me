@@ -66,7 +66,7 @@
     "prism-react-renderer": "2.3.1",
     "prompts": "2.4.2",
     "rss": "1.2.2",
-    "tailwindcss": "3.4.3",
+    "tailwindcss": "3.4.17",
     "typescript": "5.3.3"
   },
   "renovate": {
