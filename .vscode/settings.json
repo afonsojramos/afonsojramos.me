@@ -1,0 +1,15 @@
+{
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "always",
+    "quickfix.biome": "always",
+    "source.organizeImports": "never",
+    "source.fixAll": "always"
+  },
+  "[jsonc|javascript|typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  }
+}
