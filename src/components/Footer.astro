@@ -2,6 +2,7 @@
 import BackToTop from "@components/BackToTop.astro";
 import Container from "@components/Container.astro";
 import { SITE } from "@consts";
+import Link from "./Link.astro";
 ---
 
 <footer class="animate">
@@ -16,6 +17,8 @@ import { SITE } from "@consts";
         &copy; {new Date().getFullYear()}
         {`|`}
         {SITE.name}
+        {`|`}
+        <Link href="https://status.afonsojramos.me/">status page</Link>
       </div>
       <div class="flex flex-wrap gap-1 items-center print:hidden">
         <button
