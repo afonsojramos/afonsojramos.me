@@ -39,6 +39,11 @@ export const SOCIALS: Socials = [
     value: "/in/afonsojramos",
   },
   {
+    name: "meet me",
+    href: "https://cal.com/afonsojramos",
+    value: "cal.com/afonsojramos",
+  },
+  {
     name: "bluesky",
     href: "https://bsky.app/profile/afonsojramos.me",
     value: "@afonsojramos.me",

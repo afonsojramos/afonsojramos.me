@@ -107,6 +107,7 @@ const projects = await Promise.all(
       <div class="flex flex-col gap-2">
         {
           SOCIALS.map((contact) => {
+            if (contact.name === "book a meeting") return;
             return (
               <div class="flex">
                 <div class="mr-8 max-w-[100px] w-full">{contact.name}</div>
