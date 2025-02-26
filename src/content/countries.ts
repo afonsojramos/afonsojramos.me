@@ -1,0 +1,20 @@
+export const countries = {
+  visited: [
+    "CZ",
+    "HU",
+    "DE",
+    "FR",
+    "DO",
+    "CH",
+    "IT",
+    "NL",
+    "BE",
+    "AT",
+    "GB",
+    "BA",
+    "SI",
+    "SK",
+    "DK",
+  ],
+  lived: ["PT", "ES"],
+};
