@@ -1,0 +1,144 @@
+---
+import { getCollection } from "astro:content";
+import ArrowCard from "@components/ArrowCard.astro";
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
+import { HOME, SITE, SOCIALS } from "@consts";
+import PageLayout from "@layouts/PageLayout.astro";
+import { dateRange, sortByDate, sortByDateRange } from "@lib/utils";
+
+const blog = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
+  .sort(sortByDate)
+  .slice(0, SITE.numPostsOnHomepage);
+
+const allwork = (await getCollection("work"))
+  .sort(sortByDateRange)
+  .slice(0, SITE.numWorksOnHomepage);
+
+const work = await Promise.all(
+  allwork.map(async (item) => {
+    const { Content } = await item.render();
+    return { ...item, Content };
+  }),
+);
+---
+
+<PageLayout {...HOME}>
+  <Container>
+    <h4 class="animate font-semibold text-black dark:text-white">
+      Heyo <span class="text-xl">👋</span>
+    </h4>
+    <div class="space-y-16">
+      <section>
+        <article class="space-y-4">
+          <p class="animate">
+            I'm a product-minded software engineer,
+            <Link
+              href="https://github.com/markhorn-dev/astro-sphere"
+              aria-label="Astro Sphere on Github"
+              external
+            >
+              open-source enthusiast
+            </Link>, music lover, and front-row concertgoer. A
+            <Link
+              href="https://github.com/markhorn-dev/astro-sphere"
+              aria-label="Astro Sphere on Github"
+              external
+            >
+              craft beer afficionado
+            </Link>
+            and natural wanderer, always exploring new ideas and experiences.
+          </p>
+          <p class="animate">
+            Currently working at
+            <Link href="https://www.bpp.com" aria-label="BPP website" external>
+              BPP
+            </Link>
+            (via
+            <Link href="https://www.yld.io" aria-label="YLD website" external>
+              YLD
+            </Link>) to help them bring their new mobile app to life.
+          </p>
+        </article>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+          <h5 class="font-semibold text-black dark:text-white">Latest posts</h5>
+          <Link href="/blog"> See all posts </Link>
+        </div>
+        <ul class="flex flex-col gap-4">
+          {
+            blog.map((post) => (
+              <li>
+                <ArrowCard entry={post} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+          <h5 class="font-semibold text-black dark:text-white">
+            Work Experience
+          </h5>
+          <Link href="/work"> See all work </Link>
+        </div>
+        <ul class="flex flex-col space-y-4">
+          {
+            work.map((entry) => (
+              <li>
+                <div class="text-sm opacity-75">
+                  {dateRange(entry.data.dateStart, entry.data.dateEnd).join(
+                    " - "
+                  )}
+                </div>
+                <div class="font-semibold text-black dark:text-white">
+                  {entry.data.company}
+                </div>
+                <div class="text-sm opacity-75">{entry.data.role}</div>
+                <div class="text-sm">{entry.data.shortDescription}</div>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="animate space-y-4">
+        <h5 class="font-semibold text-black dark:text-white">Let's Connect</h5>
+        <article>
+          <p>
+            If you want to get in touch with me about something or just to say
+            hi, reach out on social media or send me an email.
+          </p>
+        </article>
+        <ul class="flex flex-wrap gap-2">
+          {
+            SOCIALS.map((SOCIAL) => (
+              <li class="flex gap-x-2 text-nowrap">
+                <Link
+                  href={SOCIAL.href}
+                  external
+                  aria-label={`${SITE.name} on ${SOCIAL.name}`}
+                >
+                  {SOCIAL.name}
+                </Link>
+                {"/"}
+              </li>
+            ))
+          }
+          <li class="line-clamp-1">
+            <Link
+              href={`mailto:${SITE.email}`}
+              aria-label={`Email ${SITE.name}`}
+            >
+              {SITE.email}
+            </Link>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </Container>
+</PageLayout>
