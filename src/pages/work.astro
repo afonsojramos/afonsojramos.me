@@ -1,0 +1,130 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import Avatar from "@assets/afonso.jpg";
+import Container from "@components/Container.astro";
+import Block from "@components/entries/Block.astro";
+import EducationEntry from "@components/entries/Education.astro";
+import ProjectEntry from "@components/entries/Project.astro";
+import WorkEntry from "@components/entries/Work.astro";
+import { SITE, SOCIALS, WORK } from "@consts";
+import PageLayout from "@layouts/PageLayout.astro";
+import { sortByDate, sortByDateRange } from "@lib/utils";
+
+const workCollection = (await getCollection("work")).sort(sortByDateRange);
+
+const eduCollection = (await getCollection("education")).sort(sortByDateRange);
+
+const projectsCollection = (await getCollection("projects"))
+  .filter((post) => !post.data.draft)
+  .sort(sortByDate);
+
+const work = await Promise.all(
+  workCollection.map(async (item) => {
+    const { Content } = await item.render();
+    return { ...item, Content };
+  }),
+);
+
+const education = await Promise.all(
+  eduCollection.map(async (item) => {
+    const { Content } = await item.render();
+    return { ...item, Content };
+  }),
+);
+
+const projects = await Promise.all(
+  projectsCollection.map(async (item) => {
+    const { Content } = await item.render();
+    return { ...item, Content };
+  }),
+);
+---
+
+<PageLayout {...WORK}>
+  <Container>
+    <section class="flex items-center">
+      <Image
+        alt={SITE.name + "'s curriculum photo"}
+        src={Avatar}
+        width={500}
+        height={500}
+        class="rounded-full object-cover size-24"
+      />
+      <div class="ml-4">
+        <h1 class="mb-0.5 text-xl">
+          {SITE.name}
+        </h1>
+        <p class="text-sm">
+          {SITE.jobTitle}
+        </p>
+        {
+          SITE.website && (
+            <span class="text-sm">
+              <a
+                href={SITE.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:underline"
+              >
+                {SITE.website.replace(/(^\w+:|^)\/\//, "").replace("www.", "")}
+              </a>
+            </span>
+          )
+        }
+      </div>
+    </section>
+    <section class="my-9 text-sm print:my-2">
+      <h3 class="mb-1">About</h3>
+      <div class="space-y-2">
+        {SITE.about.map((paragraph: string) => <p>{paragraph}</p>)}
+      </div>
+    </section>
+    <Block title="Work Experience">
+      {
+        work.map((entry) => {
+          return <WorkEntry entry={entry} />;
+        })
+      }
+    </Block>
+    <Block title="Education">
+      {
+        education.map((entry) => {
+          return <EducationEntry entry={entry} />;
+        })
+      }
+    </Block>
+    <Block title="Projects">
+      {
+        projects.map((entry) => {
+          return <ProjectEntry entry={entry} />;
+        })
+      }
+    </Block>
+
+    <section class="text-sm print:hidden">
+      <h3 class="mb-6">Contact</h3>
+      <div class="flex flex-col gap-2">
+        {
+          SOCIALS.map((contact) => {
+            return (
+              <div class="flex">
+                <div class="mr-8 max-w-[100px] w-full">{contact.name}</div>
+                <div class="flex flex-col flex-1">
+                  <a
+                    href={contact.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline inline-flex"
+                  >
+                    {contact.value}
+                  </a>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+    </section>
+  </Container>
+</PageLayout>
