@@ -1,0 +1,22 @@
+---
+interface Props {
+  tags?: string[];
+}
+
+const { tags } = Astro.props;
+---
+
+{
+  tags && (
+    <div class="flex flex-wrap mt-2 gap-2">
+      {tags.map((tag, index) => (
+        <>
+          {index !== 0 && (
+            <span class="text-xs text-stone-400 dark:text-stone-400">•</span>
+          )}
+          <span class="text-xs text-stone-400 dark:text-stone-400">{tag}</span>
+        </>
+      ))}
+    </div>
+  )
+}
