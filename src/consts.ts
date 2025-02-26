@@ -1,0 +1,46 @@
+import type { Metadata, Site, Socials } from "types/site";
+
+export const SITE: Site = {
+  name: "afonso jorge ramos",
+  jobTitle: "Product-Minded Software Engineer",
+  email: "afonsojramos@gmail.com",
+  website: "https://afonsojramos.me",
+  about: [
+    "Product-minded Software Engineer, passionate about crafting the best products and experiences. Deeply committed to open source - not just as code, but as a philosophy of knowledge sharing, mentorship, and collective growth. This collaborative mindset and dedication to continuous learning defines both my professional work and personal approach to life.",
+  ],
+  numPostsOnHomepage: 3,
+  numWorksOnHomepage: 2,
+};
+
+export const HOME: Metadata = {
+  title: "Home",
+  description: "Astro Nano is a minimal and lightweight blog and portfolio.",
+};
+
+export const BLOG: Metadata = {
+  title: "Blog",
+  description: "A collection of articles on topics I am passionate about.",
+};
+
+export const WORK: Metadata = {
+  title: "Curriculum",
+  description: "Where I have worked and what I have done.",
+};
+
+export const SOCIALS: Socials = [
+  {
+    name: "github",
+    href: "https://github.com/afonsojramos",
+    value: "@afonsojramos",
+  },
+  {
+    name: "linkedin",
+    href: "https://www.linkedin.com/in/afonsojramos",
+    value: "/in/afonsojramos",
+  },
+  {
+    name: "bluesky",
+    href: "https://bsky.app/profile/afonsojramos.me",
+    value: "@afonsojramos.me",
+  },
+];
