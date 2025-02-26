@@ -1,0 +1,80 @@
+---
+import type { CollectionEntry } from "astro:content";
+import LinkIcon from "@assets/icons/link.svg";
+import Link from "@components/Link.astro";
+import Tags from "@components/entries/Tags.astro";
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+
+interface Props {
+  entry: CollectionEntry<"projects"> & {
+    Content: AstroComponentFactory;
+  };
+}
+
+const { entry } = Astro.props;
+---
+
+<div class="flex">
+  <div
+    class="max-w-[100px] w-full text-stone-400 dark:text-stone-400 flex flex-col"
+  >
+    {
+      entry.data.date && (
+        <p>
+          {entry.data.date.toLocaleDateString("en-US", { year: "numeric" })}
+        </p>
+      )
+    }
+  </div>
+  <div class="flex flex-col flex-1">
+    <Link
+      href={`/${entry.collection}/${entry.slug}`}
+      class="group inline-flex relative group flex-nowrap gap-1"
+    >
+      <h4>{entry.data.title}</h4>
+
+      <LinkIcon />
+
+      <div class="flex flex-row">
+        {
+          entry.data.demoURL && (
+            <Link
+              href={entry.data.demoURL}
+              external
+              simple
+              class="text-stone-600 dark:text-stone-400 hover:underline"
+              underline={false}
+            >
+              {entry.data.demoURL.replace(/(^\w+:|^)\/\//, "")}
+            </Link>
+          )
+        }
+        {
+          entry.data.demoURL && entry.data.repoURL && (
+            <span class="text-stone-600 dark:text-stone-400 mx-1">/</span>
+          )
+        }
+        {
+          entry.data.repoURL && (
+            <Link
+              href={entry.data.repoURL}
+              external
+              simple
+              class="text-stone-600 dark:text-stone-400 hover:underline"
+              underline={false}
+            >
+              {entry.data.repoURL
+                .replace(/(^\w+:|^)\/\//, "")
+                .replace("github.com/", "")}
+            </Link>
+          )
+        }
+      </div>
+    </Link>
+    <p class="content">
+      {entry.data.description}
+    </p>
+
+    <Tags tags={entry.data.tags} />
+  </div>
+</div>
