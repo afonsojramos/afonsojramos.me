@@ -1,0 +1,50 @@
+---
+import type { CollectionEntry } from "astro:content";
+import LinkIcon from "@assets/icons/link.svg";
+import Link from "@components/Link.astro";
+import Tags from "@components/entries/Tags.astro";
+import { dateRange } from "@lib/utils";
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+
+interface Props {
+  entry: CollectionEntry<"work"> & {
+    Content: AstroComponentFactory;
+  };
+}
+
+const { entry } = Astro.props;
+---
+
+<div class="flex">
+  <div
+    class="max-w-[100px] w-full text-stone-400 dark:text-stone-400 flex flex-col"
+  >
+    {
+      dateRange(entry.data.dateStart, entry.data.dateEnd).map((date) => (
+        <p>{date}</p>
+      ))
+    }
+  </div>
+  <div class="flex flex-col flex-1">
+    {
+      entry.data.url ? (
+        <Link href={entry.data.url} external>
+          <h4>{entry.data.company}</h4>
+          <LinkIcon />
+        </Link>
+      ) : (
+        <h4>{entry.data.company}</h4>
+      )
+    }
+
+    <p class="text-stone-600 dark:text-stone-400">
+      {entry.data.role}
+    </p>
+
+    <div class="content">
+      <entry.Content />
+    </div>
+
+    <Tags tags={entry.data.tags} />
+  </div>
+</div>
