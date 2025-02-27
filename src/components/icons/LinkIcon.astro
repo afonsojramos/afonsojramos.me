@@ -1,7 +1,19 @@
+---
+
+type Props = {
+  class?: string;
+};
+
+const { class: className }: Props = Astro.props;
+---
+
 <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 24 24"
-  class="self-center size-4 stroke-2 fill-none stroke-current"
+  class:list={[
+    "self-center size-4 stroke-2 fill-none stroke-current",
+    className,
+  ]}
 >
   <line
     x1="5"

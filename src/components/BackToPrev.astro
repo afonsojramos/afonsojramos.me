@@ -1,14 +1,12 @@
 ---
-import LinkIcon from "@assets/icons/link.svg";
+import LinkIcon from "@components/icons/LinkIcon.astro";
 ---
 
 <button
-  class="relative group w-fit flex pl-7 pr-3 py-1.5 flex-nowrap rounded-sm border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out hover:cursor-pointer"
+  class="relative group w-fit flex px-3 gap-2 py-1.5 flex-nowrap rounded-sm border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out hover:cursor-pointer"
   id="back-to-prev"
 >
-  <LinkIcon
-    class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-180"
-  />
+  <LinkIcon class="rotate-180" />
   <div class="text-sm">
     <slot />
   </div>

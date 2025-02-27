@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import LinkIcon from "@assets/icons/link.svg";
 import Link from "@components/Link.astro";
 import Tags from "@components/entries/Tags.astro";
 import { dateRange } from "@lib/utils";
@@ -30,7 +29,6 @@ const { entry } = Astro.props;
       entry.data.url ? (
         <Link href={entry.data.url} external>
           <h4>{entry.data.company}</h4>
-          <LinkIcon />
         </Link>
       ) : (
         <h4>{entry.data.company}</h4>
