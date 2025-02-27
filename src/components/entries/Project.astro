@@ -30,6 +30,7 @@ const { entry } = Astro.props;
     <Link
       href={`/${entry.collection}/${entry.slug}`}
       class="group inline-flex relative group flex-nowrap gap-1"
+      aria-label={`Link to ${entry.data.title}`}
     >
       <h4>{entry.data.title}</h4>
 
