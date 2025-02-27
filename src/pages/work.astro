@@ -45,11 +45,12 @@ const projects = await Promise.all(
   <Container>
     <section class="flex items-center">
       <Image
-        alt={SITE.name + "'s curriculum photo"}
+        alt={SITE.name + "'s curriculum"}
         src={Avatar}
         width={500}
         height={500}
         class="rounded-full object-cover size-24"
+        loading="eager"
       />
       <div class="ml-4">
         <h1 class="mb-0.5 text-xl">
