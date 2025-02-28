@@ -9,7 +9,4 @@ export default defineConfig({
   vite: {
     plugins: [tailwind()],
   },
-  experimental: {
-    svg: true,
-  },
 });
