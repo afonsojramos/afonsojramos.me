@@ -43,7 +43,7 @@ const projects = await Promise.all(
 
 <PageLayout {...WORK}>
   <Container>
-    <section class="flex items-center">
+    <section class="flex items-center animate">
       <Image
         alt={SITE.name + "'s curriculum"}
         src={Avatar}
@@ -75,7 +75,7 @@ const projects = await Promise.all(
         }
       </div>
     </section>
-    <section class="my-9 text-sm print:my-2">
+    <section class="my-9 text-sm print:my-2 animate">
       <h3 class="mb-1">About</h3>
       <div class="space-y-2">
         {SITE.about.map((paragraph: string) => <p>{paragraph}</p>)}
