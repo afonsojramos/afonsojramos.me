@@ -14,31 +14,34 @@ interface Props {
 const { entry } = Astro.props;
 ---
 
-<div class="flex animate">
-  <div
-    class="max-w-[100px] w-full text-stone-400 dark:text-stone-400 flex flex-col"
-  >
-    {
-      dateRange(entry.data.dateStart, entry.data.dateEnd).map((date) => (
-        <p>{date}</p>
-      ))
-    }
-  </div>
-  <div class="flex flex-col flex-1">
-    {
-      entry.data.url ? (
-        <Link href={entry.data.url} external>
+<div>
+  <div class="flex animate">
+    <div
+      class="max-w-[100px] w-full text-stone-400 dark:text-stone-400 flex flex-col"
+    >
+      {
+        dateRange(entry.data.dateStart, entry.data.dateEnd).map((date) => (
+          <p>{date}</p>
+        ))
+      }
+    </div>
+    <div class="flex flex-col flex-1">
+      {
+        entry.data.url ? (
+          <Link href={entry.data.url} external>
+            <h4>{entry.data.company}</h4>
+          </Link>
+        ) : (
           <h4>{entry.data.company}</h4>
-        </Link>
-      ) : (
-        <h4>{entry.data.company}</h4>
-      )
-    }
+        )
+      }
 
-    <p class="text-stone-600 dark:text-stone-400">
-      {entry.data.role}
-    </p>
-
+      <p class="text-stone-600 dark:text-stone-400">
+        {entry.data.role}
+      </p>
+    </div>
+  </div>
+  <div class="flex flex-col pl-[100px] animate">
     <div class="content">
       <entry.Content />
     </div>
