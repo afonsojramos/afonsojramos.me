@@ -16,7 +16,10 @@ const { title, description } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
-    <Head title={`${title} | ${SITE.name}`} description={description} />
+    <Head
+      title={title === "home" ? SITE.name : `${title} | ${SITE.name}`}
+      description={description}
+    />
   </head>
   <body>
     <Header />

@@ -13,17 +13,17 @@ export const SITE: Site = {
 };
 
 export const HOME: Metadata = {
-  title: "Home",
-  description: "Astro Nano is a minimal and lightweight blog and portfolio.",
+  title: "home",
+  description: SITE.about[0],
 };
 
 export const BLOG: Metadata = {
-  title: "Blog",
+  title: "blog",
   description: "A collection of articles on topics I am passionate about.",
 };
 
 export const WORK: Metadata = {
-  title: "Curriculum",
+  title: "work",
   description: "Where I have worked and what I have done.",
 };
 
