@@ -194,4 +194,14 @@ const { title, description, image = "/nano.png" } = Astro.props;
   document.addEventListener("DOMContentLoaded", () => init());
   document.addEventListener("astro:after-swap", () => init());
   preloadTheme();
+
+  const pageTitle = document.title;
+  window.addEventListener("beforeprint", () => {
+    if (document.title.includes("work")) {
+      document.title = "Afonso Jorge Ramos - CV";
+    }
+  });
+  window.addEventListener("afterprint", () => {
+    document.title = pageTitle;
+  });
 </script>
