@@ -3,7 +3,7 @@ import type { Metadata, Site, Socials } from "types/site";
 export const SITE: Site = {
   name: "afonso jorge ramos",
   jobTitle: "Product-Minded Software Engineer",
-  email: "afonsojramos@gmail.com",
+  email: "afonsojorgeramos@gmail.com",
   website: "https://afonsojramos.me",
   about: [
     "Product-minded Software Engineer, passionate about crafting the best products and experiences. Deeply committed to open source - not just as code, but as a philosophy of knowledge sharing, mentorship, and collective growth. This collaborative mindset and dedication to continuous learning defines both my professional work and personal approach to life.",
