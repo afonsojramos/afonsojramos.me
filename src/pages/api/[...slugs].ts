@@ -1,7 +1,5 @@
 import { Elysia, t } from "elysia";
 
-export const prerender = false;
-
 const app = new Elysia({ prefix: "/api" })
   .get("/", () => "hi")
   .post("/", ({ body }) => body, {
