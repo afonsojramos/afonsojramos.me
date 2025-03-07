@@ -2,6 +2,7 @@
 title: "The Future of AI Computing: WASM and GenAI"
 description: "My long term bet on Web Assembly (WASM) and Generative AI (GenAI) to power the future of AI computing."
 date: "2024-02-12"
+slug: "wasm-genai"
 ---
 
 While Generative AI (GenAI) has taken centre stage, Web Assembly (WASM) works in the background, complementing GenAI by shifting how we approach performance, portability, and security in web and cross-platform applications.
