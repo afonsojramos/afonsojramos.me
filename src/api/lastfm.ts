@@ -1,5 +1,5 @@
 import type { Context } from "@/pages/api/[...slugs]";
-import type { LastFmRecentTracks, LastFmTopTracks, LastFmTrack } from "@/types/lastfm";
+import type { LastFmNowPlaying, LastFmRecentTracks, LastFmTopTracks } from "@/types/lastfm";
 
 const USERNAME = "ephons";
 const LASTFM_API_ROOT = "https://ws.audioscrobbler.com/2.0/";
@@ -9,7 +9,7 @@ const RECENT_TRACKS_ENDPOINT = (c: Context) => {
 };
 
 const TOP_TRACKS_ENDPOINT = (c: Context) => {
-  return `${LASTFM_API_ROOT}?method=user.gettoptracks&user=${USERNAME}&api_key=${c.env.LASTFM_API_KEY}&format=json&limit=10&period=1month`;
+  return `${LASTFM_API_ROOT}?method=user.gettoptracks&user=${USERNAME}&api_key=${c.env.LASTFM_API_KEY}&format=json&limit=10&period=1year`;
 };
 
 export const getNowPlaying = async (c: Context) => {
@@ -30,6 +30,8 @@ export const getNowPlaying = async (c: Context) => {
     }
 
     const latestTrack = tracks[0];
+
+    console.log(latestTrack);
     const isPlaying = latestTrack["@attr"]?.nowplaying === "true";
 
     const largeImage = latestTrack.image.find(
@@ -40,7 +42,7 @@ export const getNowPlaying = async (c: Context) => {
     return c.json({
       isPlaying,
       title: latestTrack.name,
-      artist: latestTrack.artist.name,
+      artist: latestTrack.artist["#text"],
       album: latestTrack.album?.["#text"] || "",
       albumImage: albumImageUrl,
       songUrl: latestTrack.url,
@@ -61,7 +63,11 @@ export const getTopTracks = async (c: Context) => {
     }
 
     const data = (await response.json()) as LastFmTopTracks;
-    const tracks = data.toptracks.track.map((track: LastFmTrack) => {
+
+    console.log(data);
+
+    const tracks = data.toptracks.track.map((track) => {
+      // console.log(track);
       const largeImage = track.image.find(
         (img: { size: string; "#text": string }) => img.size === "large",
       );
@@ -70,7 +76,6 @@ export const getTopTracks = async (c: Context) => {
       return {
         title: track.name,
         artist: track.artist.name,
-        album: track.album?.["#text"] || "",
         albumImage: albumImageUrl,
         songUrl: track.url,
       };

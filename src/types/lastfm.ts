@@ -1,19 +1,16 @@
-export type LastFmArtist = {
+export type LastFmNowPlaying = {
   name: string;
-  url: string;
-  mbid?: string;
-};
-
-export type LastFmTrack = {
-  name: string;
-  artist: LastFmArtist;
-  url: string;
-  image: { size: string; "#text": string }[];
-  album?: {
+  artist: {
     "#text": string;
     mbid?: string;
   };
-  date?: {
+  url: string;
+  image: { size: string; "#text": string }[];
+  album: {
+    "#text": string;
+    mbid?: string;
+  };
+  date: {
     uts: string;
     "#text": string;
   };
@@ -22,9 +19,20 @@ export type LastFmTrack = {
   };
 };
 
+export type LastFmTopTrack = {
+  mbid: string;
+  name: string;
+  image: { size: string; "#text": string }[];
+  artist: { url: string; name: string; mbid: string };
+  url: string;
+  duration: string;
+  "@attr": { rank: string };
+  playcount: string;
+};
+
 export type LastFmRecentTracks = {
   recenttracks: {
-    track: LastFmTrack[];
+    track: LastFmNowPlaying[];
     "@attr": {
       user: string;
       totalPages: string;
@@ -37,7 +45,7 @@ export type LastFmRecentTracks = {
 
 export type LastFmTopTracks = {
   toptracks: {
-    track: LastFmTrack[];
+    track: LastFmTopTrack[];
     "@attr": {
       user: string;
       totalPages: string;
