@@ -1,27 +1,32 @@
+import type { Context } from "@/pages/api/[...slugs]";
 import type { LastFmRecentTracks, LastFmTopTracks, LastFmTrack } from "@/types/lastfm";
-import type { Context } from "elysia";
 
-const API_KEY = import.meta.env.LASTFM_API_KEY;
 const USERNAME = "ephons";
-
 const LASTFM_API_ROOT = "https://ws.audioscrobbler.com/2.0/";
-const RECENT_TRACKS_ENDPOINT = `${LASTFM_API_ROOT}?method=user.getrecenttracks&user=${USERNAME}&api_key=${API_KEY}&format=json&limit=1`;
-const TOP_TRACKS_ENDPOINT = `${LASTFM_API_ROOT}?method=user.gettoptracks&user=${USERNAME}&api_key=${API_KEY}&format=json&limit=10&period=1month`;
 
-export const getNowPlaying = async ({ set }: Context) => {
-  set.headers["Cache-Control"] = "public, max-age=60, stale-while-revalidate=30";
+const RECENT_TRACKS_ENDPOINT = (c: Context) => {
+  return `${LASTFM_API_ROOT}?method=user.getrecenttracks&user=${USERNAME}&api_key=${c.env.LASTFM_API_KEY}&format=json&limit=1`;
+};
+
+const TOP_TRACKS_ENDPOINT = (c: Context) => {
+  return `${LASTFM_API_ROOT}?method=user.gettoptracks&user=${USERNAME}&api_key=${c.env.LASTFM_API_KEY}&format=json&limit=10&period=1month`;
+};
+
+export const getNowPlaying = async (c: Context) => {
+  console.log(c);
+  c.header("Cache-Control", "public, max-age=60, stale-while-revalidate=30");
   try {
-    const response = await fetch(RECENT_TRACKS_ENDPOINT);
+    const response = await fetch(RECENT_TRACKS_ENDPOINT(c));
 
     if (!response.ok) {
-      return { isPlaying: false, error: `API error: ${response.status}` };
+      return c.json({ isPlaying: false, error: `API error: ${response.status}` });
     }
 
     const data = (await response.json()) as LastFmRecentTracks;
     const tracks = data.recenttracks.track;
 
     if (tracks.length === 0) {
-      return { isPlaying: false };
+      return c.json({ isPlaying: false });
     }
 
     const latestTrack = tracks[0];
@@ -32,27 +37,27 @@ export const getNowPlaying = async ({ set }: Context) => {
     );
     const albumImageUrl = largeImage ? largeImage["#text"] : "";
 
-    return {
+    return c.json({
       isPlaying,
       title: latestTrack.name,
       artist: latestTrack.artist.name,
       album: latestTrack.album?.["#text"] || "",
       albumImage: albumImageUrl,
       songUrl: latestTrack.url,
-    };
+    });
   } catch (error) {
     console.error("Error fetching now playing:", error);
-    return { isPlaying: false, error: "Failed to fetch data from Last.fm" };
+    return c.json({ isPlaying: false, error: "Failed to fetch data from Last.fm" });
   }
 };
 
-export const getTopTracks = async ({ set }: Context) => {
-  set.headers["Cache-Control"] = "public, s-maxage=60, stale-while-revalidate=30";
+export const getTopTracks = async (c: Context) => {
+  c.header("Cache-Control", "public, s-maxage=60, stale-while-revalidate=30");
   try {
-    const response = await fetch(TOP_TRACKS_ENDPOINT);
+    const response = await fetch(TOP_TRACKS_ENDPOINT(c));
 
     if (!response.ok) {
-      return { tracks: [], error: `API error: ${response.status}` };
+      return c.json({ tracks: [], error: `API error: ${response.status}` });
     }
 
     const data = (await response.json()) as LastFmTopTracks;
@@ -71,9 +76,9 @@ export const getTopTracks = async ({ set }: Context) => {
       };
     });
 
-    return { tracks };
+    return c.json({ tracks });
   } catch (error) {
     console.error("Error fetching top tracks:", error);
-    return { tracks: [], error: "Failed to fetch data from Last.fm" };
+    return c.json({ tracks: [], error: "Failed to fetch data from Last.fm" });
   }
 };

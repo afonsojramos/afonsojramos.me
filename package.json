@@ -24,7 +24,7 @@
     "@tailwindcss/vite": "^4.0.9",
     "astro": "^5.4.0",
     "clsx": "^2.1.1",
-    "elysia": "^1.2.25",
+    "hono": "^4.7.4",
     "marked": "^15.0.7",
     "sharp": "^0.33.5",
     "tailwind-merge": "^3.0.2",
