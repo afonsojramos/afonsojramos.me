@@ -5,5 +5,5 @@
 
   personal website and blog. designed with a focus on minimalism, ui interactions, and typography.
 
-  recently rebuilt with [astro](https://astro.build) and styled with [tailwind css](https://tailwindcss.com). the focus for this second iteration has been to make the site more accessible and easier to maintain, one thing astro does very well, while achieving perfect lighthouse scores.
+  recently rebuilt with [astro](https://astro.build) and styled with [tailwind css](https://tailwindcss.com). features [last.fm](https://www.last.fm/) integration for music data and [hono](https://hono.dev/) for api routes. the focus for this second iteration has been to make the site more accessible and easier to maintain, one thing astro does very well, while achieving perfect lighthouse scores.
 </div>
