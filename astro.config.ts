@@ -12,7 +12,9 @@ export default defineConfig({
     plugins: [tailwind()],
   },
 
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: "compile",
+  }),
 
   output: "server",
 });
