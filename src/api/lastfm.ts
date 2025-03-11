@@ -1,0 +1,79 @@
+import type { LastFmRecentTracks, LastFmTopTracks, LastFmTrack } from "@/types/lastfm";
+import type { Context } from "elysia";
+
+const API_KEY = import.meta.env.LASTFM_API_KEY;
+const USERNAME = "ephons";
+
+const LASTFM_API_ROOT = "https://ws.audioscrobbler.com/2.0/";
+const RECENT_TRACKS_ENDPOINT = `${LASTFM_API_ROOT}?method=user.getrecenttracks&user=${USERNAME}&api_key=${API_KEY}&format=json&limit=1`;
+const TOP_TRACKS_ENDPOINT = `${LASTFM_API_ROOT}?method=user.gettoptracks&user=${USERNAME}&api_key=${API_KEY}&format=json&limit=10&period=1month`;
+
+export const getNowPlaying = async ({ set }: Context) => {
+  set.headers["Cache-Control"] = "public, max-age=60, stale-while-revalidate=30";
+  try {
+    const response = await fetch(RECENT_TRACKS_ENDPOINT);
+
+    if (!response.ok) {
+      return { isPlaying: false, error: `API error: ${response.status}` };
+    }
+
+    const data = (await response.json()) as LastFmRecentTracks;
+    const tracks = data.recenttracks.track;
+
+    if (tracks.length === 0) {
+      return { isPlaying: false };
+    }
+
+    const latestTrack = tracks[0];
+    const isPlaying = latestTrack["@attr"]?.nowplaying === "true";
+
+    const largeImage = latestTrack.image.find(
+      (img: { size: string; "#text": string }) => img.size === "large",
+    );
+    const albumImageUrl = largeImage ? largeImage["#text"] : "";
+
+    return {
+      isPlaying,
+      title: latestTrack.name,
+      artist: latestTrack.artist.name,
+      album: latestTrack.album?.["#text"] || "",
+      albumImage: albumImageUrl,
+      songUrl: latestTrack.url,
+    };
+  } catch (error) {
+    console.error("Error fetching now playing:", error);
+    return { isPlaying: false, error: "Failed to fetch data from Last.fm" };
+  }
+};
+
+export const getTopTracks = async ({ set }: Context) => {
+  set.headers["Cache-Control"] = "public, s-maxage=60, stale-while-revalidate=30";
+  try {
+    const response = await fetch(TOP_TRACKS_ENDPOINT);
+
+    if (!response.ok) {
+      return { tracks: [], error: `API error: ${response.status}` };
+    }
+
+    const data = (await response.json()) as LastFmTopTracks;
+    const tracks = data.toptracks.track.map((track: LastFmTrack) => {
+      const largeImage = track.image.find(
+        (img: { size: string; "#text": string }) => img.size === "large",
+      );
+      const albumImageUrl = largeImage ? largeImage["#text"] : "";
+
+      return {
+        title: track.name,
+        artist: track.artist.name,
+        album: track.album?.["#text"] || "",
+        albumImage: albumImageUrl,
+        songUrl: track.url,
+      };
+    });
+
+    return { tracks };
+  } catch (error) {
+    console.error("Error fetching top tracks:", error);
+    return { tracks: [], error: "Failed to fetch data from Last.fm" };
+  }
+};

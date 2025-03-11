@@ -1,12 +1,8 @@
-import { Elysia, t } from "elysia";
+import { getNowPlaying, getTopTracks } from "@/api/lastfm";
+import { Elysia } from "elysia";
+const app = new Elysia({ prefix: "/api", aot: false });
 
-const app = new Elysia({ prefix: "/api", aot: false })
-  .get("/", () => "hi")
-  .post("/", ({ body }) => body, {
-    body: t.Object({
-      name: t.String(),
-    }),
-  });
+app.get("/now-playing", getNowPlaying).get("/top-tracks", getTopTracks);
 
 const handle = ({ request }: { request: Request }) => app.handle(request);
 
