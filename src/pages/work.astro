@@ -105,28 +105,25 @@ const projects = await Promise.all(
       }
     </Block>
 
-    <section class="text-sm print:hidden">
+    <section class="text-sm print:hidden animate">
       <h3 class="mb-6">Contact</h3>
       <div class="flex flex-col gap-2">
         {
-          SOCIALS.map((contact) => {
-            if (contact.name === "book a meeting") return;
-            return (
-              <div class="flex">
-                <div class="mr-8 max-w-[100px] w-full">{contact.name}</div>
-                <div class="flex flex-col flex-1">
-                  <a
-                    href={contact.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="hover:underline inline-flex"
-                  >
-                    {contact.value}
-                  </a>
-                </div>
+          SOCIALS.map((contact) => (
+            <div class="flex">
+              <div class="mr-8 max-w-[100px] w-full">{contact.name}</div>
+              <div class="flex flex-col flex-1">
+                <a
+                  href={contact.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:underline inline-flex"
+                >
+                  {contact.value}
+                </a>
               </div>
-            );
-          })
+            </div>
+          ))
         }
       </div>
     </section>

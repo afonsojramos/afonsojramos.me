@@ -118,7 +118,7 @@ const work = await Promise.all(
         </article>
         <ul class="flex flex-wrap gap-2">
           {
-            SOCIALS.map((SOCIAL) => (
+            SOCIALS.map((SOCIAL, index) => (
               <li class="flex gap-x-2 text-nowrap">
                 <Link
                   href={SOCIAL.href}
@@ -127,18 +127,10 @@ const work = await Promise.all(
                 >
                   {SOCIAL.name}
                 </Link>
-                {"/"}
+                {index !== SOCIALS.length - 1 && " / "}
               </li>
             ))
           }
-          <li class="line-clamp-1">
-            <Link
-              href={`mailto:${SITE.email}`}
-              aria-label={`Email ${SITE.name}`}
-            >
-              {SITE.email}
-            </Link>
-          </li>
         </ul>
       </section>
     </div>

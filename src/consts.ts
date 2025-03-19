@@ -29,6 +29,11 @@ export const WORK: Metadata = {
 
 export const SOCIALS: Socials = [
   {
+    name: "email",
+    href: `mailto:${SITE.email}`,
+    value: SITE.email,
+  },
+  {
     name: "github",
     href: "https://github.com/afonsojramos",
     value: "@afonsojramos",
