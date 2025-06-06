@@ -7,7 +7,7 @@ export function getTemplate({
 }): string {
   return `
   <!DOCTYPE html>
-  <html lang="en" class="dark">
+  <html lang="en">
     <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -50,6 +50,30 @@ export function getTemplate({
           transform: translateY(0);
         }
       </style>
+
+      <script>
+        // Theme detection - matches main site logic
+        function preloadTheme() {
+          const userTheme = localStorage.theme;
+          
+          if (userTheme === "light" || userTheme === "dark") {
+            toggleTheme(userTheme === "dark");
+          } else {
+            toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+          }
+        }
+
+        function toggleTheme(dark) {
+          if (dark) {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        }
+
+        // Apply theme immediately to prevent flash
+        preloadTheme();
+      </script>
     </head>
 
     <body
@@ -139,24 +163,12 @@ export function getTemplate({
           }
         });
 
-        // Dark mode detection and application
-        if (
-          window.matchMedia &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches
-        ) {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-
-        // Listen for system theme changes
+        // Listen for system theme changes (only if using system theme)
         window
           .matchMedia("(prefers-color-scheme: dark)")
           .addEventListener("change", (e) => {
-            if (e.matches) {
-              document.documentElement.classList.add("dark");
-            } else {
-              document.documentElement.classList.remove("dark");
+            if (!localStorage.theme || localStorage.theme === "system") {
+              toggleTheme(e.matches);
             }
           });
       </script>
