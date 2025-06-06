@@ -16,7 +16,7 @@ Let me be honest upfront - I didn't strictly *need* a framework for my simple AP
 My journey began with Elysia, a framework that promises "sub-millisecond" performance and a delightful developer experience. Setting up API routes in Astro with Elysia is straightforward:
 
 ```typescript
-import { getTopTracks } from "@/api/lastfm";
+import { getTopTracks } from "~/api/lastfm";
 import type { APIRoute } from "astro";
 import { Elysia } from "elysia";
 
@@ -53,7 +53,7 @@ Now, being aware of the problem at hand, I was quick to discover that Hono does 
 
 ```typescript
 // [...slugs].ts
-import { getNowPlaying, getTopTracks } from "@/api/lastfm";
+import { getNowPlaying, getTopTracks } from "~/api/lastfm";
 import type { APIRoute } from "astro";
 import { Hono, type Context as HonoContext } from "hono";
 import type { BlankInput } from "hono/types";
