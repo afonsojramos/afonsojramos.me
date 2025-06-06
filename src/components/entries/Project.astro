@@ -1,9 +1,9 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import Link from "@components/Link.astro";
-import Tags from "@components/entries/Tags.astro";
-import LinkIcon from "@components/icons/LinkIcon.astro";
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+import Link from "~/components/Link.astro";
+import Tags from "~/components/entries/Tags.astro";
+import LinkIcon from "~/components/icons/LinkIcon.astro";
 
 interface Props {
   entry: CollectionEntry<"projects"> & {

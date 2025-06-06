@@ -14,7 +14,7 @@ export type Country = {
 
 export type Concert = {
   title: string;
-  festival: string;
+  location: string;
   image: string;
 };
 

@@ -1,7 +1,7 @@
 import type { APIRoute } from "astro";
 import { Hono, type Context as HonoContext } from "hono";
 import type { BlankInput } from "hono/types";
-import { getNowPlaying, getTopTracks } from "~//api/lastfm";
+import { getNowPlaying, getTopTracks } from "~/api/lastfm";
 
 type Bindings = {
   LASTFM_API_KEY: string;
