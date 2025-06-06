@@ -61,7 +61,7 @@ const renderNowPlaying = ({
 export default function NowPlaying(props: { topTracks: TopTracksResponse["tracks"] }): JSX.Element {
   const fetchNowPlaying = async (): Promise<NowPlayingData> => {
     try {
-      const apiUrl = "http://localhost:4322/api/now-playing";
+      const apiUrl = "https://afonsojramos.com/api/now-playing";
 
       const response = await fetch(apiUrl);
 
