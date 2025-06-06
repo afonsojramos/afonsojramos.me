@@ -99,7 +99,7 @@ const projects = await Promise.all(
         })
       }
     </Block>
-    <Block title="Projects">
+    <Block title="Projects" class="print:hidden">
       {
         projects.map((entry) => {
           return <ProjectEntry entry={entry} />;
