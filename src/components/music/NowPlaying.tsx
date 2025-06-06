@@ -32,23 +32,26 @@ export default function NowPlaying(): JSX.Element {
 
   const [data] = createResource<NowPlayingData>(fetchNowPlaying);
 
-  const result = data() || { isPlaying: false };
-  const { isPlaying, title, artist, album, albumImage, songUrl } = result;
-
   return (
     <Show
-      when={isPlaying}
+      when={data()?.isPlaying}
       fallback={
-        <div class="text-gray-500 dark:text-gray-400 text-sm mt-4 mb-6">
-          Not playing anything right now
-        </div>
+        <Show when={data()}>
+          <div class="text-gray-500 dark:text-gray-400 text-sm mt-4 mb-6">
+            Not playing anything right now
+          </div>
+        </Show>
       }
     >
       <div class="flex items-center mt-4 mb-6">
-        <Show when={albumImage}>
+        <Show when={data()?.albumImage}>
           <div class="mr-4 flex-shrink-0">
-            <a href={songUrl} target="_blank" rel="noopener noreferrer">
-              <img src={albumImage} alt={`${title} by ${artist}`} class="rounded-md w-24 h-24" />
+            <a href={data()?.songUrl} target="_blank" rel="noopener noreferrer">
+              <img
+                src={data()?.albumImage}
+                alt={`${data()?.title} by ${data()?.artist}`}
+                class="rounded-md w-24 h-24"
+              />
             </a>
           </div>
         </Show>
@@ -60,15 +63,15 @@ export default function NowPlaying(): JSX.Element {
             </span>
           </div>
           <a
-            href={songUrl}
+            href={data()?.songUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="text-lg font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 truncate max-w-xs"
           >
-            {title}
+            {data()?.title}
           </a>
-          <p class="text-gray-600 dark:text-gray-300">{artist}</p>
-          {album && <p class="text-gray-500 dark:text-gray-400 text-sm">{album}</p>}
+          <p class="text-gray-600 dark:text-gray-300">{data()?.artist}</p>
+          {data()?.album && <p class="text-gray-500 dark:text-gray-400 text-sm">{data()?.album}</p>}
         </div>
       </div>
     </Show>
