@@ -61,9 +61,13 @@ const projects = await Promise.all(
         <p class="text-sm">
           {SITE.jobTitle}
         </p>
-        {
-          SITE.website && (
-            <span class="text-sm">
+        <p class="text-sm">
+          <a href={`mailto:${SITE.email}`} class="hover:underline">
+            {SITE.email.split("@")[0] + " @ " + SITE.email.split("@")[1]}
+          </a>
+        </p>
+
+        <p class="text-sm">
               <a
                 href={SITE.website}
                 target="_blank"
@@ -72,9 +76,7 @@ const projects = await Promise.all(
               >
                 {SITE.website.replace(/(^\w+:|^)\/\//, "").replace("www.", "")}
               </a>
-            </span>
-          )
-        }
+        </p>
       </div>
     </section>
     <section class="my-9 text-sm print:my-2 animate">
