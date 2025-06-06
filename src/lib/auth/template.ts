@@ -54,6 +54,23 @@ export function getTemplate({
     </head>
 
     <body class="bg-stone-100 dark:bg-stone-900 text-black/50 dark:text-white/75 font-sans antialiased flex flex-col min-h-screen">
+      <header class="print:hidden fixed top-0 left-0 right-0 z-50 py-5 bg-stone-100/75 dark:bg-stone-900/0 backdrop-blur-md saturate-200">
+        <div class="mx-auto max-w-2xl px-5 print:p-0">
+          <div class="flex flex-wrap gap-y-2 justify-between">
+            <a href="/" class="font-semibold text-black dark:text-white hover:text-black/75 dark:hover:text-white/75 transition-colors">
+              afonso jorge ramos
+            </a>
+            <nav class="flex gap-1">
+              <a href="/blog" class="text-black/50 dark:text-white/75 hover:text-black dark:hover:text-white transition-colors">blog</a>
+              <span>/</span>
+              <a href="/work" class="text-black/50 dark:text-white/75 hover:text-black dark:hover:text-white transition-colors">work</a>
+              <span>/</span>
+              <a href="/music" class="text-black/50 dark:text-white/75 hover:text-black dark:hover:text-white transition-colors">music</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+      
       <main class="flex-1 py-32">
         <div class="mx-auto max-w-xl px-5">
           <div class="animate space-y-6">
