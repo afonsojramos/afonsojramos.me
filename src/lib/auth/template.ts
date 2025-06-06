@@ -62,7 +62,7 @@ export function getTemplate({
                 Password
               </h1>
               <h2 class="text-black/75 dark:text-white/75">
-                Please enter your password for this site.
+                Please enter your password for this page.
               </h2>
             </div>
             
