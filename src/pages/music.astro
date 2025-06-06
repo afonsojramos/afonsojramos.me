@@ -1,0 +1,105 @@
+---
+import { Image } from "astro:assets";
+import Container from "~/components/Container.astro";
+import NowPlaying from "~/components/music/NowPlaying";
+import OptimizedConcertCarousel from "~/components/music/OptimizedConcertCarousel.astro";
+import YearHeading from "~/components/music/YearHeading";
+import { MUSIC } from "~/consts";
+import { music } from "~/content/music";
+import PageLayout from "~/layouts/PageLayout.astro";
+---
+
+<PageLayout {...MUSIC}>
+  <Container>
+    <section class="animate">
+      <h1>Music</h1>
+      <NowPlaying bigPicture={true} client:load/>
+    </section>
+
+    <div class="flex mt-6 smoot">
+      <!-- Desktop Year Selector (Sidebar) -->
+      <div class="hidden md:block fixed inset-y-2/12 transform -translate-x-[120%] w-24 rounded-lg overflow-y-auto">
+        <div class="flex flex-col gap-4 p-4 bg-gray-300/30 dark:bg-background/10">
+          {
+            music.map((year) => (
+              <a
+                href={`#${year.year}`}
+                class="text-gray-800 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+              >
+                {year.year}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <section class="animate flex-1">
+        {
+          music.map((year) => (
+            <div class="mb-12">
+              <h2 class="invisible h-0" id={year.year}>{year.year}</h2>
+              <YearHeading 
+                currentYear={year.year} 
+                allYears={music} 
+                description={year.description}
+                client:load 
+              />
+
+              {/* Concerts Carousel */}
+              {year.concerts && year.concerts.length > 0 && (
+                <div class="aspect-21/9 w-full rounded-lg">
+                  <OptimizedConcertCarousel concerts={year.concerts} />
+                </div>
+              )}
+
+              {/* Albums Grid */}
+              {year.albums && year.albums.length > 0 && (
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
+                  {year.albums.map((album) => (
+                    <a href={album.url} target="_blank" rel="noopener noreferrer" class="album-entry block transition-transform hover:scale-105">
+                      <div class="relative overflow-hidden rounded-lg group cursor-pointer">
+                        <Image
+                          src={album.image}
+                          alt={album.title}
+                          class="w-full aspect-square object-cover"
+                          width={300}
+                          height={300}
+                        />
+                        <div class="absolute inset-0 bg-black/30 dark:bg-black/50 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 flex items-end">
+                          <div class="p-4">
+                            <h4 class="text-white font-bold text-sm mb-1">{album.title}</h4>
+                            <p class="text-white text-xs">{album.artist}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))
+        }
+      </section>
+    </div>
+  </Container>
+</PageLayout>
+
+<script>
+  const desktopYearLinks = document.querySelectorAll('.hidden.md\\:block a[href^="#"]');
+  desktopYearLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
+      if (href) {
+        const targetYear = href.substring(1);
+        const targetSection = document.getElementById(targetYear);
+        if (targetSection) {
+          window.scrollTo({ top: targetSection.offsetTop, behavior: 'smooth' });
+          window.history.pushState(null, '', href);
+        }
+      }
+    });
+  });
+</script>
