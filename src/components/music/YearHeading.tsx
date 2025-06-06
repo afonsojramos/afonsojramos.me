@@ -41,12 +41,12 @@ const YearHeading: Component<YearHeadingProps> = (props) => {
   return (
     <div class="flex flex-col gap-4 pb-4">
       {/* Desktop */}
-      <h2 class="hidden md:block text-black font-bold text-2xl dark:text-white">
+      <h2 class="hidden lg:block text-black font-bold text-2xl dark:text-white">
         {props.currentYear}
       </h2>
 
       {/* Mobile */}
-      <div class="block md:hidden">
+      <div class="block lg:hidden">
         <Portal>
           <div
             class={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${

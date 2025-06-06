@@ -77,7 +77,7 @@ const topTracks = await fetchTopTracks();
                           width={300}
                           height={300}
                         />
-                        <div class="absolute inset-0 bg-black/30 dark:bg-black/50 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 flex items-end">
+                        <div class="absolute inset-0 bg-black/30 dark:bg-black/50 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 flex items-end">
                           <div class="p-4">
                             <h4 class="text-white font-bold text-sm mb-1">{album.title}</h4>
                             <p class="text-white text-xs">{album.artist}</p>
@@ -97,7 +97,7 @@ const topTracks = await fetchTopTracks();
 </PageLayout>
 
 <script>
-  const desktopYearLinks = document.querySelectorAll('.hidden.md\\:block a[href^="#"]');
+  const desktopYearLinks = document.querySelectorAll('.hidden.lg\\:block a[href^="#"]');
   desktopYearLinks.forEach((link) => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
