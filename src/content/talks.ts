@@ -1,4 +1,4 @@
-import type { Talk } from "types/content";
+import type { Talk } from "~/types/content";
 
 export const talks: Talk[] = [
   {

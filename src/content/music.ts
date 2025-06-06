@@ -1,4 +1,4 @@
-import type { Year } from "types/content";
+import type { Year } from "~/types/content";
 
 export const music: Year[] = [
   {

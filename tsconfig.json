@@ -4,8 +4,9 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@*": ["./src/*"],
-      "types/*": ["./src/types/*"]
-    }
+      "~/*": ["./src/*"]
+    },
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
   }
 }

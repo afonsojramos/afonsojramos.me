@@ -2,10 +2,10 @@
 export const prerender = true;
 
 import { type CollectionEntry, getCollection } from "astro:content";
-import ArrowCard from "@components/ArrowCard.astro";
-import Container from "@components/Container.astro";
-import { BLOG } from "@consts";
-import PageLayout from "@layouts/PageLayout.astro";
+import ArrowCard from "~/components/ArrowCard.astro";
+import Container from "~/components/Container.astro";
+import { BLOG } from "~/consts";
+import PageLayout from "~/layouts/PageLayout.astro";
 
 const data = (await getCollection("blog"))
   .filter((post) => !post.data.draft)

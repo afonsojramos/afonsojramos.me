@@ -2,12 +2,12 @@
 export const prerender = true;
 
 import { getCollection } from "astro:content";
-import ArrowCard from "@components/ArrowCard.astro";
-import Container from "@components/Container.astro";
-import Link from "@components/Link.astro";
-import { HOME, SITE, SOCIALS } from "@consts";
-import PageLayout from "@layouts/PageLayout.astro";
-import { dateRange, sortByDate, sortByDateRange } from "@lib/utils";
+import ArrowCard from "~/components/ArrowCard.astro";
+import Container from "~/components/Container.astro";
+import Link from "~/components/Link.astro";
+import { HOME, SITE, SOCIALS } from "~/consts";
+import PageLayout from "~/layouts/PageLayout.astro";
+import { dateRange, sortByDate, sortByDateRange } from "~/lib/utils";
 
 const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft)

@@ -1,4 +1,4 @@
-import type { Metadata, Site, Socials } from "types/site";
+import type { Metadata, Site, Socials } from "~/types/site";
 
 export const SITE: Site = {
   name: "afonso jorge ramos",

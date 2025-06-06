@@ -2,12 +2,12 @@
 export const prerender = true;
 
 import { type CollectionEntry, getCollection } from "astro:content";
-import BackToPrev from "@components/BackToPrev.astro";
-import Container from "@components/Container.astro";
-import FormattedDate from "@components/FormattedDate.astro";
-import Link from "@components/Link.astro";
-import PageLayout from "@layouts/PageLayout.astro";
-import { readingTime } from "@lib/utils";
+import BackToPrev from "~/components/BackToPrev.astro";
+import Container from "~/components/Container.astro";
+import FormattedDate from "~/components/FormattedDate.astro";
+import Link from "~/components/Link.astro";
+import PageLayout from "~/layouts/PageLayout.astro";
+import { readingTime } from "~/lib/utils";
 
 export async function getStaticPaths() {
   const projects = (await getCollection("projects"))

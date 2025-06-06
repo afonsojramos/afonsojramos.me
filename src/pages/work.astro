@@ -3,15 +3,15 @@ export const prerender = true;
 
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-import Avatar from "@assets/afonso.jpg";
-import Container from "@components/Container.astro";
-import Block from "@components/entries/Block.astro";
-import EducationEntry from "@components/entries/Education.astro";
-import ProjectEntry from "@components/entries/Project.astro";
-import WorkEntry from "@components/entries/Work.astro";
-import { SITE, SOCIALS, WORK } from "@consts";
-import PageLayout from "@layouts/PageLayout.astro";
-import { sortByDate, sortByDateRange } from "@lib/utils";
+import Avatar from "~/assets/afonso.jpg";
+import Container from "~/components/Container.astro";
+import Block from "~/components/entries/Block.astro";
+import EducationEntry from "~/components/entries/Education.astro";
+import ProjectEntry from "~/components/entries/Project.astro";
+import WorkEntry from "~/components/entries/Work.astro";
+import { SITE, SOCIALS, WORK } from "~/consts";
+import PageLayout from "~/layouts/PageLayout.astro";
+import { sortByDate, sortByDateRange } from "~/lib/utils";
 
 const workCollection = (await getCollection("work")).sort(sortByDateRange);
 

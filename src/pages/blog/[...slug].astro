@@ -2,11 +2,11 @@
 export const prerender = true;
 
 import { type CollectionEntry, getCollection } from "astro:content";
-import BackToPrev from "@components/BackToPrev.astro";
-import Container from "@components/Container.astro";
-import FormattedDate from "@components/FormattedDate.astro";
-import PageLayout from "@layouts/PageLayout.astro";
-import { readingTime, sortByDate } from "@lib/utils";
+import BackToPrev from "~/components/BackToPrev.astro";
+import Container from "~/components/Container.astro";
+import FormattedDate from "~/components/FormattedDate.astro";
+import PageLayout from "~/layouts/PageLayout.astro";
+import { readingTime, sortByDate } from "~/lib/utils";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog")).filter((post) => !post.data.draft).sort(sortByDate);

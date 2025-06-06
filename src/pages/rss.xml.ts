@@ -2,7 +2,7 @@ export const prerender = true;
 
 import { getCollection } from "astro:content";
 import rss from "@astrojs/rss";
-import { HOME } from "@consts";
+import { HOME } from "~/consts";
 
 type Context = {
   site: string;
