@@ -8,4 +8,5 @@ tags: ["Java", "SQL", "Apache Kafka", "Kubernetes", "Linux", "Google Cloud Platf
 url: "https://www.edreamsodigeo.com/"
 ---
 
-As a Backend Software Engineer at one of Europe's largest online travel companies, I developed and maintained critical backend services, including the most critical one, the search engine, using **Java** and **SQL**. I've helped architect event-driven systems with Apache Kafka for real-time data processing, while managing infrastructure deployments through Kubernetes on Google Cloud Platform (GCP).
+- Developed and maintained crucial backend services such as the search engine, utilizing Java and SQL.
+- Contributed to designing event-driven systems using Apache Kafka for real-time data processing and managed infrastructure deployments on Google Cloud Platform (GCP) with Kubernetes.
