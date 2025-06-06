@@ -19,7 +19,14 @@ interface NowPlayingProps {
 export default function NowPlaying(props: NowPlayingProps): JSX.Element {
   const fetchNowPlaying = async (): Promise<NowPlayingData> => {
     try {
-      const response = await fetch(`${import.meta.env.SITE}/api/now-playing`);
+      const apiUrl = `${window.location.origin}/api/now-playing`;
+
+      const response = await fetch(apiUrl);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const data = await response.json();
       return data as NowPlayingData;
     } catch (error) {
@@ -30,7 +37,8 @@ export default function NowPlaying(props: NowPlayingProps): JSX.Element {
 
   const [data] = createResource<NowPlayingData>(fetchNowPlaying);
 
-  const { isPlaying, title, artist, album, albumImage, songUrl } = data() || {};
+  const result = data() || { isPlaying: false };
+  const { isPlaying, title, artist, album, albumImage, songUrl } = result;
 
   return (
     <div class={`now-playing ${props.bigPicture ? "big-picture" : ""}`}>
