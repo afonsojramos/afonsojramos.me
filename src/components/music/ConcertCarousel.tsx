@@ -1,5 +1,5 @@
 import Autoplay from "embla-carousel-autoplay";
-import { type Component, For, Show } from "solid-js";
+import { type Component, For } from "solid-js";
 import {
   Carousel,
   CarouselContent,
