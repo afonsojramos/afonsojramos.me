@@ -15,4 +15,4 @@ url: "https://www.bpp.com"
 
 - Architected a robust navigation system using **TanStack Router** and **React Navigation**, enabling **instant view transitions** while maintaining a **clean, maintainable codebase structure** that scales with the application's growth.
 
-- Successfully **launched the unified BPP Hub application** on both major mobile platforms: iOS ([BPP Hub - App Store](https://apps.apple.com/us/app/bpp-hub/id1564410731)) and Android ([BPP Hub - Play Store](https://play.google.com/store/apps/details?id=com.bpp.hub))
+- Delivered and launched the unified BPP Hub app to 30k+ users on iOS ([BPP Hub - App Store](https://apps.apple.com/us/app/bpp-hub/id1564410731)) and Android ([BPP Hub - Play Store](https://play.google.com/store/apps/details?id=com.bpp.hub)) within 3 months, improving average session duration by 100% and reducing crash rate to a near-zero level.
