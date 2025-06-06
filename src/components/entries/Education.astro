@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { dateRange } from "@lib/utils";
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+import { dateRange } from "~/lib/utils";
 
 interface Props {
   entry: CollectionEntry<"education"> & {
@@ -29,7 +29,7 @@ const { entry } = Astro.props;
       {entry.data.degree}
     </p>
 
-    <div class="content">
+    <div class="content print:hidden">
       <entry.Content />
     </div>
   </div>
