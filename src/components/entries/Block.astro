@@ -1,12 +1,15 @@
 ---
+import { cn } from "~/lib/utils";
+
 interface Props {
   title: string;
+  class?: string;
 }
 
-const { title } = Astro.props;
+const { title, class: className } = Astro.props;
 ---
 
-<section class="my-8 print:my-4 text-sm animate">
+<section class={cn("my-8 print:my-4 text-sm animate", className)}>
   <h3 class="mb-6 print:mb-2">
     {title}
   </h3>
