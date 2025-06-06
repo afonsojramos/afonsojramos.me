@@ -2,12 +2,13 @@ import type { APIRoute } from "astro";
 import { CFP_COOKIE_MAX_AGE } from "../lib/auth/constants";
 import { getCookieKeyValue, sha256 } from "../lib/auth/utils";
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, locals }) => {
   const formData = await request.formData();
   const password = formData.get("password")?.toString() || "";
   const redirect = formData.get("redirect")?.toString() || "/";
+  const { env } = locals.runtime;
 
-  const cfpPassword = import.meta.env.CFP_PASSWORD || process.env.CFP_PASSWORD;
+  const cfpPassword = env.CFP_PASSWORD || process.env.CFP_PASSWORD;
 
   if (!cfpPassword) {
     return new Response("", {

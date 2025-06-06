@@ -8,15 +8,15 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const { pathname, searchParams } = url;
   const { error } = Object.fromEntries(searchParams);
   const cookie = request.headers.get("cookie") || "";
+  const { env } = context.locals.runtime;
 
-  const password = import.meta.env.CFP_PASSWORD || process.env.CFP_PASSWORD;
+  const password = env.CFP_PASSWORD || process.env.CFP_PASSWORD;
 
   if (!password) {
     return next();
   }
 
   const cookieKeyValue = await getCookieKeyValue(password);
-  console.log(pathname);
 
   if (
     cookie.includes(cookieKeyValue) ||
