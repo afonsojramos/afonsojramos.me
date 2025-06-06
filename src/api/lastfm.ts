@@ -1,5 +1,5 @@
-import type { Context } from "@/pages/api/[...slugs]";
-import type { LastFmNowPlaying, LastFmRecentTracks, LastFmTopTracks } from "@/types/lastfm";
+import type { Context } from "~/pages/api/[...slugs]";
+import type { LastFmRecentTracks, LastFmTopTracks } from "~/types/lastfm";
 
 const USERNAME = "ephons";
 const LASTFM_API_ROOT = "https://ws.audioscrobbler.com/2.0/";
@@ -13,7 +13,6 @@ const TOP_TRACKS_ENDPOINT = (c: Context) => {
 };
 
 export const getNowPlaying = async (c: Context) => {
-  console.log(c);
   c.header("Cache-Control", "public, max-age=60, stale-while-revalidate=30");
   try {
     const response = await fetch(RECENT_TRACKS_ENDPOINT(c));
@@ -67,7 +66,6 @@ export const getTopTracks = async (c: Context) => {
     console.log(data);
 
     const tracks = data.toptracks.track.map((track) => {
-      // console.log(track);
       const largeImage = track.image.find(
         (img: { size: string; "#text": string }) => img.size === "large",
       );
