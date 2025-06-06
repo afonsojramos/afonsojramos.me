@@ -16,6 +16,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   }
 
   const cookieKeyValue = await getCookieKeyValue(password);
+  console.log(pathname);
 
   if (
     cookie.includes(cookieKeyValue) ||
