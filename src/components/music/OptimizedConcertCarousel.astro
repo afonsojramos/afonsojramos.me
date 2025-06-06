@@ -14,7 +14,6 @@ const optimizedConcerts = concerts
   ? await Promise.all(
       concerts.map(async (concert) => {
         try {
-          // Use getImage to process the image at build time
           const optimizedImage = await getImage({
             src: concert.image,
             width: 960,
