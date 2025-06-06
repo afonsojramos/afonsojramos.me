@@ -1,0 +1,129 @@
+export function getTemplate({
+  redirectPath,
+  withError,
+}: {
+  redirectPath: string;
+  withError: boolean;
+}): string {
+  return `
+  <!doctype html>
+  <html lang="en" class="dark">
+
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Password Protected Site</title>
+      <meta name="description" content="This site is password protected.">
+      <link rel="shortcut icon" href="https://picocss.com/favicon.ico">
+
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+        tailwind.config = {
+          darkMode: 'class',
+          theme: {
+            extend: {
+              fontFamily: {
+                sans: ['Inter Tight', 'ui-sans-serif', 'system-ui', 'sans-serif']
+              },
+              colors: {
+                stone: {
+                  100: '#f5f5f4',
+                  800: '#292524',
+                  900: '#1c1917'
+                }
+              }
+            }
+          }
+        }
+      </script>
+
+      <style>
+        body {
+          font-family: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
+        }
+        .animate {
+          opacity: 0;
+          transform: translateY(12px);
+          transition: all 0.7s ease-out;
+        }
+        .animate.show {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      </style>
+    </head>
+
+    <body class="bg-stone-100 dark:bg-stone-900 text-black/50 dark:text-white/75 font-sans antialiased flex flex-col min-h-screen">
+      <main class="flex-1 py-32">
+        <div class="mx-auto max-w-xl px-5">
+          <div class="animate space-y-6">
+            <div class="space-y-1">
+              <h1 class="text-2xl font-semibold text-black dark:text-white">
+                Password
+              </h1>
+              <h2 class="text-black/75 dark:text-white/75">
+                Please enter your password for this site.
+              </h2>
+            </div>
+            
+            ${
+              withError
+                ? `<div class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 text-red-800 dark:text-red-200 text-sm">
+              Incorrect password, please try again.
+            </div>`
+                : ""
+            }
+            
+            <form method="post" action="/cfp_login" class="space-y-4">
+              <input type="hidden" name="redirect" value="${redirectPath}" />
+              <input 
+                type="password" 
+                name="password" 
+                placeholder="Password" 
+                aria-label="Password" 
+                autocomplete="current-password" 
+                required 
+                autofocus
+                class="w-full px-4 py-3 rounded-lg border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 text-black dark:text-white placeholder-stone-400 dark:placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-stone-300 dark:focus:ring-stone-600 transition-colors"
+              >
+              <button 
+                type="submit" 
+                class="w-full px-4 py-3 bg-black dark:bg-white text-white dark:text-black font-medium rounded-lg hover:bg-stone-800 dark:hover:bg-stone-100 transition-colors duration-300 ease-in-out"
+              >
+                Login
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+
+      <script>
+        // Add animation on load
+        window.addEventListener('load', function() {
+          const animateElement = document.querySelector('.animate');
+          if (animateElement) {
+            animateElement.classList.add('show');
+          }
+        });
+
+        // Dark mode detection and application
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+          if (e.matches) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        });
+      </script>
+    </body>
+
+  </html>
+  `;
+}
