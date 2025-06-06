@@ -6,57 +6,57 @@ export const music: Year[] = [
     concerts: [
       {
         title: "Extrazen",
-        festival: "Plano B - Porto",
+        location: "Plano B - Porto",
         image: "https://res.cloudinary.com/afonsojramos/image/upload/v1678628187/extrazen.jpg",
       },
       {
         title: "L'Imperatrice",
-        festival: "Paredes de Coura",
+        location: "Paredes de Coura",
         image:
           "https://res.cloudinary.com/afonsojramos/image/upload/v1678628799/imperatrice_p2xhos.jpg",
       },
       {
         title: "IDLES",
-        festival: "Paredes de Coura",
+        location: "Paredes de Coura",
         image: "https://res.cloudinary.com/afonsojramos/image/upload/v1678628884/idles_pc2dkd.jpg",
       },
       {
         title: "Bad Bad Not Good - MF Doom Tribute",
-        festival: "Paredes de Coura",
+        location: "Paredes de Coura",
         image: "https://res.cloudinary.com/afonsojramos/image/upload/v1678629092/bbng_lgwllo.jpg",
       },
       {
         title: "Floating Points",
-        festival: "Apollo - Barcelona",
+        location: "Apollo - Barcelona",
         image:
           "https://res.cloudinary.com/afonsojramos/image/upload/v1678631782/IMG_20220703_022506_tj3rzo.jpg",
       },
       {
         title: "Little Simz",
-        festival: "Primavera Sound Porto",
+        location: "Primavera Sound Porto",
         image: "https://res.cloudinary.com/afonsojramos/image/upload/v1678629518/simby_ufdvkf.png",
       },
       {
         title: "Squid",
-        festival: "Primavera Sound Porto",
+        location: "Primavera Sound Porto",
         image:
           "https://res.cloudinary.com/afonsojramos/image/upload/v1678629986/IMG_20220612_012505_ptnywj.jpg",
       },
       {
         title: "Caroline Polachek",
-        festival: "Primavera Sound Porto",
+        location: "Primavera Sound Porto",
         image:
           "https://res.cloudinary.com/afonsojramos/image/upload/v1678630518/IMG_20220610_004541_eb2ryd.jpg",
       },
       {
         title: "Black Midi",
-        festival: "Primavera Sound Porto",
+        location: "Primavera Sound Porto",
         image:
           "https://res.cloudinary.com/afonsojramos/image/upload/v1678630771/IMG_20220609_223634_pplben.jpg",
       },
       {
         title: "Bala Desejo",
-        festival: "Hotel Mouco",
+        location: "Hotel Mouco",
         image:
           "https://res.cloudinary.com/afonsojramos/image/upload/v1678630939/IMG_20220601_220217_v0hzcw.jpg",
       },
@@ -189,13 +189,13 @@ export const music: Year[] = [
     concerts: [
       {
         title: "Sensible Soccers",
-        festival: "Manoel Debut - Serralves",
+        location: "Manoel Debut - Serralves",
         image:
           "https://res.cloudinary.com/afonsojramos/image/upload/v1634508619/IMG_20210919_195845_bd1c6c.jpg",
       },
       {
         title: "Raquel Martins",
-        festival: "Hot Five Uptown - Porto",
+        location: "Hot Five Uptown - Porto",
         image:
           "https://res.cloudinary.com/afonsojramos/image/upload/v1624204742/IMG_20210617_205016_cmwbqy.jpg",
       },
@@ -334,25 +334,25 @@ export const music: Year[] = [
     concerts: [
       {
         title: "Salvador e Luísa Sobral",
-        festival: "Teatro Sá da Bandeira - Porto",
+        location: "Teatro Sá da Bandeira - Porto",
         image:
           "https://res.cloudinary.com/afonsojramos/image/upload/v1623665579/IMG_20201222_202731_w7umv5.jpg",
       },
       {
         title: "Manel Cruz",
-        festival: "Teatro Sá da Bandeira - Porto",
+        location: "Teatro Sá da Bandeira - Porto",
         image:
           "https://res.cloudinary.com/afonsojramos/image/upload/v1623665578/IMG_20201029_225346_jvpfgq.jpg",
       },
       {
         title: "André Henriques",
-        festival: "Teatro Cinema - Fafe",
+        location: "Teatro Cinema - Fafe",
         image:
           "https://res.cloudinary.com/afonsojramos/image/upload/v1623665576/IMG_20201009_215125_ma7vop.jpg",
       },
       {
         title: "Fugly",
-        festival: "Concertos de Bolso (Feira do Livro) - Porto",
+        location: "Concertos de Bolso (Feira do Livro) - Porto",
         image:
           "https://res.cloudinary.com/afonsojramos/image/upload/v1623665140/IMG_20200909_192536_sopswt.jpg",
       },
@@ -450,7 +450,7 @@ export const music: Year[] = [
     concerts: [
       {
         title: "King Gizzard and the Lizzard Wizzard",
-        festival: "Razzmatazz - Barcelona",
+        location: "Razzmatazz - Barcelona",
         image:
           "https://res.cloudinary.com/afonsojramos/image/upload/v1623664751/IMG_20191019_213217_xkheor.jpg",
       },
