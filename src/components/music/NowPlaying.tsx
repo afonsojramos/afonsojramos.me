@@ -1,5 +1,7 @@
 import { Show, createResource } from "solid-js";
 import type { JSX } from "solid-js";
+import { cn } from "~/lib/utils";
+import type { TopTracksResponse } from "~/types/lastfm";
 
 interface NowPlayingData {
   isPlaying: boolean;
@@ -11,10 +13,55 @@ interface NowPlayingData {
   error?: string;
 }
 
-export default function NowPlaying(): JSX.Element {
+const renderNowPlaying = ({
+  isPlaying,
+  nowPlaying,
+  title,
+  artist,
+  album,
+  albumImage,
+  songUrl,
+}: NowPlayingData & { nowPlaying: string }) => {
+  return (
+    <div class="flex items-center mt-4 mb-6">
+      <Show when={albumImage}>
+        <div class="mr-4 flex-shrink-0">
+          <a href={songUrl} target="_blank" rel="noopener noreferrer">
+            <img src={albumImage} alt={`${title} by ${artist}`} class="rounded-md w-24 h-24" />
+          </a>
+        </div>
+      </Show>
+      <div class="flex flex-col">
+        <div class="flex items-center">
+          <div
+            class={cn(
+              "w-2 h-2 rounded-full mr-2 animate-pulse",
+              isPlaying ? "bg-green-500" : "bg-red-400",
+            )}
+          />
+          <span class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 text-ellipsis overflow-hidden whitespace-nowrap max-w-40 sm:max-w-none">
+            {nowPlaying}
+          </span>
+        </div>
+        <a
+          href={songUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-lg font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 truncate max-w-xs"
+        >
+          {title}
+        </a>
+        <p class="text-gray-600 dark:text-gray-300">{artist}</p>
+        {album && <p class="text-gray-500 dark:text-gray-400 text-sm">{album}</p>}
+      </div>
+    </div>
+  );
+};
+
+export default function NowPlaying(props: { topTracks: TopTracksResponse["tracks"] }): JSX.Element {
   const fetchNowPlaying = async (): Promise<NowPlayingData> => {
     try {
-      const apiUrl = "https://afonsojramos.me/api/now-playing";
+      const apiUrl = "http://localhost:4322/api/now-playing";
 
       const response = await fetch(apiUrl);
 
@@ -31,49 +78,52 @@ export default function NowPlaying(): JSX.Element {
   };
 
   const [data] = createResource<NowPlayingData>(fetchNowPlaying);
+  const randomTopTrack = props.topTracks[Math.floor(Math.random() * props.topTracks.length)];
 
   return (
     <Show
       when={data()?.isPlaying}
       fallback={
-        <Show when={data()}>
-          <div class="text-gray-500 dark:text-gray-400 text-sm mt-4 mb-6">
-            Not playing anything right now
-          </div>
+        <Show
+          when={data()}
+          fallback={
+            <div class="flex items-center mt-4 mb-6">
+              <div class="mr-4 flex-shrink-0">
+                <div class="rounded-md w-24 h-24 bg-gray-200 dark:bg-gray-700 animate-pulse" />
+              </div>
+              <div class="flex flex-col space-y-2">
+                <div class="flex items-center">
+                  <div class="w-2 h-2 bg-gray-300 dark:bg-gray-600 rounded-full mr-2" />
+                  <div class="h-3 w-20 bg-gray-200 dark:bg-gray-700 rounded animate-pulse" />
+                </div>
+                <div class="h-5 w-32 bg-gray-200 dark:bg-gray-700 rounded animate-pulse" />
+                <div class="h-4 w-24 bg-gray-200 dark:bg-gray-700 rounded animate-pulse" />
+                <div class="h-3 w-28 bg-gray-200 dark:bg-gray-700 rounded animate-pulse" />
+              </div>
+            </div>
+          }
+        >
+          {renderNowPlaying({
+            isPlaying: false,
+            nowPlaying: "Not playing anything right now, but if I was it would be:",
+            title: randomTopTrack.title,
+            artist: randomTopTrack.artist,
+            album: `#${randomTopTrack.rank} in the past month`,
+            albumImage: randomTopTrack.albumImage,
+            songUrl: randomTopTrack.songUrl,
+          })}
         </Show>
       }
     >
-      <div class="flex items-center mt-4 mb-6">
-        <Show when={data()?.albumImage}>
-          <div class="mr-4 flex-shrink-0">
-            <a href={data()?.songUrl} target="_blank" rel="noopener noreferrer">
-              <img
-                src={data()?.albumImage}
-                alt={`${data()?.title} by ${data()?.artist}`}
-                class="rounded-md w-24 h-24"
-              />
-            </a>
-          </div>
-        </Show>
-        <div class="flex flex-col">
-          <div class="flex items-center">
-            <div class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
-            <span class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">
-              Now Playing
-            </span>
-          </div>
-          <a
-            href={data()?.songUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-lg font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 truncate max-w-xs"
-          >
-            {data()?.title}
-          </a>
-          <p class="text-gray-600 dark:text-gray-300">{data()?.artist}</p>
-          {data()?.album && <p class="text-gray-500 dark:text-gray-400 text-sm">{data()?.album}</p>}
-        </div>
-      </div>
+      {renderNowPlaying({
+        isPlaying: data()?.isPlaying ?? false,
+        nowPlaying: "Now playing:",
+        title: data()?.title,
+        artist: data()?.artist,
+        album: data()?.album,
+        albumImage: data()?.albumImage,
+        songUrl: data()?.songUrl,
+      })}
     </Show>
   );
 }

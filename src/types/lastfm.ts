@@ -55,3 +55,23 @@ export type LastFmTopTracks = {
     };
   };
 };
+
+export type TopTracksResponse = {
+  tracks: {
+    title: string;
+    artist: string;
+    albumImage: string;
+    songUrl: string;
+    rank: string;
+  }[];
+};
+
+export type NowPlayingResponse = {
+  isPlaying: boolean;
+  title?: string;
+  artist?: string;
+  album?: string;
+  albumImage?: string;
+  songUrl?: string;
+  error?: string;
+};

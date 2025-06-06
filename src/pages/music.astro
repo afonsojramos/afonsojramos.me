@@ -9,18 +9,27 @@ import YearHeading from "~/components/music/YearHeading";
 import { MUSIC } from "~/consts";
 import { music } from "~/content/music";
 import PageLayout from "~/layouts/PageLayout.astro";
+import type { TopTracksResponse } from "~/types/lastfm";
+
+const fetchTopTracks = async () => {
+  const response = await fetch("http://localhost:4322/api/top-tracks");
+  const data = (await response.json()) as TopTracksResponse;
+  return data.tracks;
+};
+
+const topTracks = await fetchTopTracks();
 ---
 
 <PageLayout {...MUSIC}>
   <Container>
     <section class="animate">
       <div class="font-semibold text-black dark:text-white">Music</div>
-      <NowPlaying client:only="solid-js" />
+      <NowPlaying client:only="solid-js" topTracks={topTracks} />
     </section>
 
     <div class="flex mt-6 smoot">
       <!-- Desktop Year Selector (Sidebar) -->
-      <div class="hidden md:block fixed inset-y-2/12 transform -translate-x-[120%] w-24 rounded-lg overflow-y-auto">
+      <div class="hidden lg:block fixed inset-y-2/12 transform -translate-x-[120%] w-24 rounded-lg overflow-y-auto">
         <div class="flex flex-col gap-4 p-4 bg-gray-300/30 dark:bg-background/10">
           {
             music.map((year) => (
