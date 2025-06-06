@@ -1,0 +1,47 @@
+---
+import { getImage } from "astro:assets";
+import type { Concert } from "~/types/content";
+import ConcertCarousel from "./ConcertCarousel.tsx";
+
+interface Props {
+  concerts?: Concert[];
+}
+
+const { concerts } = Astro.props;
+
+// Generate optimized images at build time
+const optimizedConcerts = concerts
+  ? await Promise.all(
+      concerts.map(async (concert) => {
+        try {
+          // Use getImage to process the image at build time
+          const optimizedImage = await getImage({
+            src: concert.image,
+            width: 960,
+            height: 540,
+            format: "webp",
+            quality: 80,
+          });
+
+          return {
+            ...concert,
+            optimizedImage: optimizedImage.src,
+            width: optimizedImage.attributes.width,
+            height: optimizedImage.attributes.height,
+          };
+        } catch (error) {
+          // Fallback to original image if optimization fails
+          console.warn(`Failed to optimize image ${concert.image}:`, error);
+          return {
+            ...concert,
+            optimizedImage: concert.image,
+            width: 960,
+            height: 540,
+          };
+        }
+      }),
+    )
+  : [];
+---
+
+<ConcertCarousel concerts={optimizedConcerts} client:only="solid-js" />
