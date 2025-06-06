@@ -8,4 +8,5 @@ tags: ["Computer Science", "Haskell", "Teaching", "Digital Literacy", "Computati
 url: "https://ensico.pt/pt/"
 ---
 
-Collaborated with school teachers to integrate computational thinking into the curriculum for students aged 10-13 across multiple schools, promoting digital literacy and ethics as core components of computer science education. Contributed to ENSICO's mission of making computational thinking accessible to all students while utilizing Haskell and other programming tools to introduce fundamental computer science concepts in an engaging manner.
+- Collaborated with school teachers to incorporate computational thinking in the curriculum for students aged 10-13, emphasizing digital literacy and ethics as key aspects of computer science education across various schools.
+- Supported ENSICO's goal of democratizing computational thinking for students by using Haskell and other programming tools to teach foundational computer science ideas in an interactive way.
