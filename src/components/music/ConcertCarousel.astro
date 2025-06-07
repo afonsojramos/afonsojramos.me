@@ -1,7 +1,7 @@
 ---
 import { getImage } from "astro:assets";
 import type { Concert } from "~/types/content";
-import ConcertCarousel from "./ConcertCarousel.tsx";
+import ConcertCarouselSolid from "./ConcertCarousel.tsx";
 
 interface Props {
   concerts?: Concert[];
@@ -43,4 +43,4 @@ const optimizedConcerts = concerts
   : [];
 ---
 
-<ConcertCarousel concerts={optimizedConcerts} client:only="solid-js" />
+<ConcertCarouselSolid concerts={optimizedConcerts} client:only="solid-js" />
