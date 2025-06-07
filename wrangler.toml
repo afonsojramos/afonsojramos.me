@@ -9,3 +9,10 @@ directory = "./dist"
 
 [observability]
 enabled = true
+
+[env.production]
+name = "afonsojramos-me"
+route = { pattern = "afonsojramos.me", custom_domain = true }
+
+[env.preview]
+name = "afonsojramos-me-preview"
