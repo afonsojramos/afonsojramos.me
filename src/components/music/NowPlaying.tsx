@@ -58,12 +58,10 @@ const renderNowPlaying = ({
   );
 };
 
-export default function NowPlaying(props: { topTracks: TopTracksResponse["tracks"] }): JSX.Element {
+export default function NowPlaying(): JSX.Element {
   const fetchNowPlaying = async (): Promise<NowPlayingData> => {
     try {
-      const apiUrl = "https://afonsojramos.com/api/now-playing";
-
-      const response = await fetch(apiUrl);
+      const response = await fetch("/api/now-playing");
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -77,15 +75,31 @@ export default function NowPlaying(props: { topTracks: TopTracksResponse["tracks
     }
   };
 
-  const [data] = createResource<NowPlayingData>(fetchNowPlaying);
-  const randomTopTrack = props.topTracks[Math.floor(Math.random() * props.topTracks.length)];
+  const fetchTopTracks = async (): Promise<TopTracksResponse["tracks"]> => {
+    try {
+      const response = await fetch("/api/top-tracks");
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = (await response.json()) as TopTracksResponse;
+      return data.tracks;
+    } catch (error) {
+      console.error("Failed to fetch top tracks data:", error);
+      return [];
+    }
+  };
+
+  const [nowPlayingData] = createResource<NowPlayingData>(fetchNowPlaying);
+  const [topTracksData] = createResource<TopTracksResponse["tracks"]>(fetchTopTracks);
 
   return (
     <Show
-      when={data()?.isPlaying}
+      when={nowPlayingData()?.isPlaying}
       fallback={
         <Show
-          when={data()}
+          when={nowPlayingData() && topTracksData()}
           fallback={
             <div class="flex items-center mt-4 mb-6">
               <div class="mr-4 flex-shrink-0">
@@ -103,27 +117,42 @@ export default function NowPlaying(props: { topTracks: TopTracksResponse["tracks
             </div>
           }
         >
-          {renderNowPlaying({
-            isPlaying: false,
-            nowPlaying: "Not playing anything right now, but if I was it would be:",
-            title: randomTopTrack.title,
-            artist: randomTopTrack.artist,
-            album: `#${randomTopTrack.rank} in the past month`,
-            albumImage: randomTopTrack.albumImage,
-            songUrl: randomTopTrack.songUrl,
-          })}
+          {(() => {
+            const tracks = topTracksData();
+            const randomTopTrack =
+              tracks && tracks.length > 0
+                ? tracks[Math.floor(Math.random() * tracks.length)]
+                : null;
+
+            if (!randomTopTrack) return null;
+
+            return renderNowPlaying({
+              isPlaying: false,
+              nowPlaying: "Not playing anything right now, but if I was it would be:",
+              title: randomTopTrack.title,
+              artist: randomTopTrack.artist,
+              album: `#${randomTopTrack.rank} in the past month`,
+              albumImage: randomTopTrack.albumImage,
+              songUrl: randomTopTrack.songUrl,
+            });
+          })()}
         </Show>
       }
     >
-      {renderNowPlaying({
-        isPlaying: data()?.isPlaying ?? false,
-        nowPlaying: "Now playing:",
-        title: data()?.title,
-        artist: data()?.artist,
-        album: data()?.album,
-        albumImage: data()?.albumImage,
-        songUrl: data()?.songUrl,
-      })}
+      {(() => {
+        const data = nowPlayingData();
+        if (!data) return null;
+
+        return renderNowPlaying({
+          isPlaying: data.isPlaying,
+          nowPlaying: "Now playing:",
+          title: data.title,
+          artist: data.artist,
+          album: data.album,
+          albumImage: data.albumImage,
+          songUrl: data.songUrl,
+        });
+      })()}
     </Show>
   );
 }

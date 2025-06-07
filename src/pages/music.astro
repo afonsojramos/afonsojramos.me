@@ -3,34 +3,29 @@ export const prerender = true;
 
 import { Image } from "astro:assets";
 import Container from "~/components/Container.astro";
+import ConcertCarousel from "~/components/music/ConcertCarousel.astro";
 import NowPlaying from "~/components/music/NowPlaying";
-import OptimizedConcertCarousel from "~/components/music/OptimizedConcertCarousel.astro";
 import YearHeading from "~/components/music/YearHeading";
 import { MUSIC } from "~/consts";
 import { music } from "~/content/music";
 import PageLayout from "~/layouts/PageLayout.astro";
-import type { TopTracksResponse } from "~/types/lastfm";
-
-const fetchTopTracks = async () => {
-  const response = await fetch("https://afonsojramos.com/api/top-tracks");
-  const data = (await response.json()) as TopTracksResponse;
-  return data.tracks;
-};
-
-const topTracks = await fetchTopTracks();
 ---
 
 <PageLayout {...MUSIC}>
   <Container>
     <section class="animate">
       <div class="font-semibold text-black dark:text-white">Music</div>
-      <NowPlaying client:only="solid-js" topTracks={topTracks} />
+      <NowPlaying client:only="solid-js" />
     </section>
 
     <div class="flex mt-6 smoot">
       <!-- Desktop Year Selector (Sidebar) -->
-      <div class="hidden lg:block fixed inset-y-2/12 transform -translate-x-[120%] w-24 rounded-lg overflow-y-auto">
-        <div class="flex flex-col gap-4 p-4 bg-gray-300/30 dark:bg-background/10">
+      <div
+        class="hidden lg:block fixed inset-y-2/12 transform -translate-x-[120%] w-24 rounded-lg overflow-y-auto"
+      >
+        <div
+          class="flex flex-col gap-4 p-4 bg-gray-300/30 dark:bg-background/10"
+        >
           {
             music.map((year) => (
               <a
@@ -49,18 +44,21 @@ const topTracks = await fetchTopTracks();
         {
           music.map((year) => (
             <div class="mb-12">
-              <h2 class="invisible h-0" id={year.year}>{year.year}</h2>
-              <YearHeading 
-                currentYear={year.year} 
-                allYears={music} 
-                description={year.description}
-                client:only="solid-js"
-              />
+              <h2 class="invisible h-0" id={year.year} />
+
+              <div class="h-12">
+                <YearHeading
+                  currentYear={year.year}
+                  allYears={music}
+                  description={year.description}
+                  client:only="solid-js"
+                />
+              </div>
 
               {/* Concerts Carousel */}
               {year.concerts && year.concerts.length > 0 && (
                 <div class="aspect-21/9 w-full rounded-lg">
-                  <OptimizedConcertCarousel concerts={year.concerts} />
+                  <ConcertCarousel concerts={year.concerts} />
                 </div>
               )}
 
@@ -68,7 +66,12 @@ const topTracks = await fetchTopTracks();
               {year.albums && year.albums.length > 0 && (
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-6">
                   {year.albums.map((album) => (
-                    <a href={album.url} target="_blank" rel="noopener noreferrer" class="album-entry block transition-transform hover:scale-105">
+                    <a
+                      href={album.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="album-entry block transition-transform hover:scale-105"
+                    >
                       <div class="relative overflow-hidden rounded-lg group cursor-pointer">
                         <Image
                           src={album.image}
@@ -79,7 +82,9 @@ const topTracks = await fetchTopTracks();
                         />
                         <div class="absolute inset-0 bg-black/30 dark:bg-black/50 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 flex items-end">
                           <div class="p-4">
-                            <h4 class="text-white font-bold text-sm mb-1">{album.title}</h4>
+                            <h4 class="text-white font-bold text-sm mb-1">
+                              {album.title}
+                            </h4>
                             <p class="text-white text-xs">{album.artist}</p>
                           </div>
                         </div>
@@ -97,18 +102,20 @@ const topTracks = await fetchTopTracks();
 </PageLayout>
 
 <script>
-  const desktopYearLinks = document.querySelectorAll('.hidden.lg\\:block a[href^="#"]');
+  const desktopYearLinks = document.querySelectorAll(
+    '.hidden.lg\\:block a[href^="#"]'
+  );
   desktopYearLinks.forEach((link) => {
-    link.addEventListener('click', (e) => {
+    link.addEventListener("click", (e) => {
       e.preventDefault();
-      
-      const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
+
+      const href = (e.currentTarget as HTMLAnchorElement).getAttribute("href");
       if (href) {
         const targetYear = href.substring(1);
         const targetSection = document.getElementById(targetYear);
         if (targetSection) {
-          window.scrollTo({ top: targetSection.offsetTop, behavior: 'smooth' });
-          window.history.pushState(null, '', href);
+          window.scrollTo({ top: targetSection.offsetTop, behavior: "smooth" });
+          window.history.pushState(null, "", href);
         }
       }
     });
