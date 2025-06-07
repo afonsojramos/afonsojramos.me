@@ -86,9 +86,11 @@ export function getTemplate({
           <div class="flex flex-wrap gap-y-2 justify-between">
             <a
               href="/"
-              class="font-semibold text-black dark:text-white hover:text-black/75 dark:hover:text-white/75 transition-colors"
+              class="decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
             >
-              afonso jorge ramos
+              <div class="font-semibold">
+                afonso jorge ramos
+              </div>
             </a>
             <nav class="flex gap-1">
               <a

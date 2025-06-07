@@ -1,0 +1,11 @@
+name = "afonsojramos-me"
+main = "./dist/_worker.js/index.js"
+compatibility_flags = [ "nodejs_compat" ]
+compatibility_date = "2025-03-25"
+
+[assets]
+binding = "ASSETS"
+directory = "./dist"
+
+[observability]
+enabled = true
