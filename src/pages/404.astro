@@ -1,0 +1,46 @@
+---
+export const prerender = true;
+
+import Container from "~/components/Container.astro";
+import Link from "~/components/Link.astro";
+import { NOT_FOUND } from "~/consts";
+import PageLayout from "~/layouts/PageLayout.astro";
+---
+
+<PageLayout {...NOT_FOUND}>
+  <Container>
+    <div class="space-y-16">
+      <section class="animate text-center space-y-6">
+        <div class="space-y-4">
+          <h1 class="text-xl font-bold text-black dark:text-white">404</h1>
+          <h2 class="text-lg font-semibold text-black dark:text-white">
+            Page Not Found
+          </h2>
+          <p class="opacity-75 max-w-md mx-auto">
+            Oops! The page you're looking for doesn't exist. It might have been moved, deleted, or you may have mistyped the URL.
+          </p>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Link href="/">
+            ← Back to Home
+          </Link>
+          <span class="text-sm opacity-50 hidden sm:inline">or</span>
+          <Link href="/blog">
+            Check out the Blog
+          </Link>
+        </div>
+      </section>
+
+      <section class="animate text-center">
+        <p class="text-sm opacity-75">
+          If you believe this is an error, feel free to 
+          <Link href="mailto:afonsojorgeramos@gmail.com" external>
+            reach out
+          </Link>
+          and let me know.
+        </p>
+      </section>
+    </div>
+  </Container>
+</PageLayout> 

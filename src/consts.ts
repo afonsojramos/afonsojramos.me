@@ -32,6 +32,11 @@ export const MUSIC: Metadata = {
   description: "Collection of favorite albums and concerts throughout the years.",
 };
 
+export const NOT_FOUND: Metadata = {
+  title: "404",
+  description: "Page not found. The page you're looking for doesn't exist.",
+};
+
 export const SOCIALS: Socials = [
   {
     name: "email",
