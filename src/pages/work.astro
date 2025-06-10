@@ -2,7 +2,6 @@
 export const prerender = false;
 
 import { getCollection } from "astro:content";
-import AvatarImage from "~/components/AvatarImage.astro";
 import Container from "~/components/Container.astro";
 import Block from "~/components/entries/Block.astro";
 import EducationEntry from "~/components/entries/Education.astro";
@@ -45,7 +44,11 @@ const projects = await Promise.all(
 <PageLayout {...WORK}>
   <Container>
     <section class="flex items-center animate">
-      <AvatarImage />
+      <img
+        alt={SITE.name + "'s curriculum"}
+        src="/afonso.jpg"
+        class="rounded-full object-cover size-24"
+      />
       <div class="ml-4">
         <h1 class="mb-0.5 text-xl">
           {SITE.name}
