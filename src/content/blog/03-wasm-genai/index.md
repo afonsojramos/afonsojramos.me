@@ -35,20 +35,20 @@ GenAI models are computationally intensive, making them difficult to deploy in r
 
 However, despite these limitations, GenAI makes an excellent candidate for optimisation through WASM because WASM can make AI applications more accessible across a range of devices. While WASM offers a lightweight and portable execution environment, its ability to address GenAI challenges largely depend on the specific use case and optimisation strategies. Here are some key points to consider:
 
-1. Portability: GenAI models compiled into WASM modules can run across platforms like browsers and edge devices. However, achieving smooth operation may require significant optimisations and adjustments for each environment.
-2. Efficiency: WASM can improve inference performance in local setups, but the benefits may be limited for larger GenAI models or more complex workloads due to WASM’s current hardware limitations.
-3. Scalability: Serverless platforms adopting WASM can simplify GenAI model deployment.
-4. Privacy: WASM can help prioritise privacy by enabling GenAI models to run locally, but this approach may involve trade-offs in terms of model complexity and computational overhead.
+1. **Portability**: GenAI models compiled into WASM modules can run across platforms like browsers and edge devices. However, achieving smooth operation may require significant optimisations and adjustments for each environment.
+2. **Efficiency**: WASM can improve inference performance in local setups, but the benefits may be limited for larger GenAI models or more complex workloads due to WASM’s current hardware limitations.
+3. **Scalability**: Serverless platforms adopting WASM can simplify GenAI model deployment.
+4. **Privacy**: WASM can help prioritise privacy by enabling GenAI models to run locally, but this approach may involve trade-offs in terms of model complexity and computational overhead.
 
 For example, a WASM module could host a language model directly in a web browser, enabling offline chatbots without needing server connectivity. While tools like Ollama already offer similar functionality, WASM allows for browser-based deployment, which brings the flexibility that comes with the browser.
 
 ## Real-world use cases
 
-In the real world, we’re already seeing examples of WASM and GenAI working together, like Whisper running directly in the browser. This hybrid approach allows users to choose the model and adjust performance according to their needs. There are exciting possibilities on the horizon where WASM and GenAI could combine to create innovative solutions. Here are a few examples: 
+In the real world, we’re already seeing examples of WASM and GenAI working together, like [Whisper running directly in the browser](https://whisper.ggerganov.com/). This hybrid approach allows users to choose the model and adjust performance according to their needs. There are exciting possibilities on the horizon where WASM and GenAI could combine to create innovative solutions. Here are a few examples: 
 
-- In-Browser AI Assistants: Deploy lightweight GenAI models directly in browsers using WASM, providing real-time assistance without network latency.
-- Edge Device Applications: Run WASM-optimised GenAI models on IoT devices for tasks like image recognition or anomaly detection.
-- Serverless AI APIs: Host GenAI models as WASM modules on serverless platforms, reducing operational costs while improving scalability.
+- **In-Browser AI Assistants**: Deploy lightweight GenAI models directly in browsers using WASM, providing real-time assistance without network latency.
+- **Edge Device Applications**: Run WASM-optimised GenAI models on IoT devices for tasks like image recognition or anomaly detection.
+- **Serverless AI APIs**: Host GenAI models as WASM modules on serverless platforms, reducing operational costs while improving scalability.
 
 These use cases demonstrate how WASM empowers GenAI to operate efficiently in diverse environments, from cloud servers to smaller edge devices.
 
@@ -56,9 +56,9 @@ These use cases demonstrate how WASM empowers GenAI to operate efficiently in di
 
 While the combination of WASM and GenAI promises a lot of great things, several challenges must be addressed:
 
-- GPU Limitations: WASM currently lacks native GPU support, making it difficult to accelerate GenAI workloads that rely on parallel processing, a critical feature for handling large-scale AI tasks.
-- Memory Constraints: This compute boundary is a significant hurdle for WASM when working with AI workloads requiring high levels of parallelism. Furthermore, large GenAI models often exceed WASM’s default memory limits, necessitating careful optimisation to fit these constraints. 
-- Early-stage Ecosystem: While WASM is evolving rapidly, tools and libraries for integrating WASM with AI frameworks are still maturing, highlighting the ecosystem’s early-stage nature.
+- **GPU Limitations**: WASM currently lacks native GPU support, making it difficult to accelerate GenAI workloads that rely on parallel processing, a critical feature for handling large-scale AI tasks.
+- **Memory Constraints**: This compute boundary is a significant hurdle for WASM when working with AI workloads requiring high levels of parallelism. Furthermore, large GenAI models often exceed WASM’s default memory limits, necessitating careful optimisation to fit these constraints. 
+- **Early-stage Ecosystem**: While WASM is evolving rapidly, tools and libraries for integrating WASM with AI frameworks are still maturing, highlighting the ecosystem’s early-stage nature.
 
 Emerging tools like WebLLM and platforms such as Turso are addressing some of these limitations in innovative ways. For example, WebLLM demonstrates the feasibility of running large language models directly in the browser by leveraging WebGPU for acceleration. It’s important to note that WebGPU is still an experimental API, and its integration with WASM for AI workloads is in its early stages, requiring further development and testing. 
 
@@ -68,10 +68,10 @@ Similarly, Turso, a distributed database built on libSQL, has introduced feature
 
 Looking ahead, advancements in both WASM and GenAI promise to deepen their integration through the following ways:
 
-1. WebGPU Support: Introducing WebGPU to WASM environments will enable hardware acceleration for AI workloads. However, it's worth noting that WebGPU is still an experimental API, and its integration with WASM for AI workloads is in the early stages, requiring further development and testing.
-2. Model Optimisation: Techniques like quantisation and pruning will make it easier to deploy GenAI models within WASM’s constraints.
-Standardised Toolchains: Improved tooling will simplify the process of compiling and deploying GenAI models as WASM modules.
-3. Private Personal Assistants: Having the model run locally will open up the possibilities to protect the end user from endless data-sharing, one that is a given if the benefits of using AI keep increasing.
+1. **WebGPU Support**: Introducing WebGPU to WASM environments will enable hardware acceleration for AI workloads. However, it's worth noting that [WebGPU is still an experimental API](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API), and its integration with WASM for AI workloads is in the early stages, requiring further development and testing.
+2. **Model Optimisation**: Techniques like quantisation and pruning will make it easier to deploy GenAI models within WASM’s constraints.
+3. **Standardised Toolchains**: Improved tooling will simplify the process of compiling and deploying GenAI models as WASM modules.
+4. **Private Personal Assistants**: Having the model run locally will open up the possibilities to protect the end user from endless data-sharing, one that is a given if the benefits of using AI keep increasing.
 
 These developments are set to enable real-time, AI-driven applications that are fast, portable, and accessible to a wide range of users.
 
