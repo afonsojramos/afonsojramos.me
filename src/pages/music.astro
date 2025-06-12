@@ -42,7 +42,7 @@ import PageLayout from "~/layouts/PageLayout.astro";
       <!-- Main Content -->
       <section class="animate flex-1">
         {
-          music.map((year) => (
+          music.map((year, index) => (
             <div class="mb-12">
               <h2 class="invisible h-0" id={year.year} />
 
@@ -79,6 +79,7 @@ import PageLayout from "~/layouts/PageLayout.astro";
                           class="w-full aspect-square object-cover"
                           width={300}
                           height={300}
+                          loading={index === 0 ? "eager" : "lazy"}
                         />
                         <div class="absolute inset-0 bg-black/30 dark:bg-black/50 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 flex items-end">
                           <div class="p-4">
