@@ -124,6 +124,47 @@ const { title, description, image = "/nano.png" } = Astro.props;
         }
       });
 
+    document.addEventListener("keydown", (event) => {
+      // Only trigger shortcuts if not typing in an input field
+      if (
+        !["INPUT", "TEXTAREA", "SELECT"].includes(
+          document.activeElement?.tagName
+        )
+      ) {
+        switch (event.key) {
+          case "t":
+            event.preventDefault();
+            cycleTheme();
+            break;
+          case "h":
+            event.preventDefault();
+            window.location.href = "/";
+            break;
+          case "b":
+            event.preventDefault();
+            window.location.href = "/blog";
+            break;
+          case "m":
+            event.preventDefault();
+            window.location.href = "/music";
+            break;
+          case "c":
+            event.preventDefault();
+            // Only scroll to contacts if we're on the home page
+            if (window.location.pathname === "/") {
+              const contactsSection = document.getElementById("contacts");
+              if (contactsSection) {
+                contactsSection.scrollIntoView({ behavior: "smooth" });
+              }
+            } else {
+              // If not on home page, go to home page and then scroll to contacts
+              window.location.href = "/#contacts";
+            }
+            break;
+        }
+      }
+    });
+
     document.addEventListener("scroll", onScroll);
   }
 
@@ -151,6 +192,30 @@ const { title, description, image = "/nano.png" } = Astro.props;
       top: 0,
       behavior: "smooth",
     });
+  }
+
+  function cycleTheme() {
+    const currentTheme = localStorage.theme || "system";
+    let nextTheme;
+
+    switch (currentTheme) {
+      case "light":
+        nextTheme = "dark";
+        localStorage.setItem("theme", "dark");
+        toggleTheme(true);
+        break;
+      case "dark":
+        nextTheme = "system";
+        localStorage.setItem("theme", "system");
+        toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+        break;
+      case "system":
+      default:
+        nextTheme = "light";
+        localStorage.setItem("theme", "light");
+        toggleTheme(false);
+        break;
+    }
   }
 
   function toggleTheme(dark) {
