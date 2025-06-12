@@ -5,7 +5,7 @@ date: 3 March 2025
 slug: prompt-engineering
 ---
 
-> This article was also published on the **CNCF blog** [here](https://www.cncf.io/blog/2025/01/03/optimising-prompt-engineering-for-better-ai-outputs/) and on the **YLD blog** [here](https://www.yld.io/blog/the-key-to-building-smarter-scalable-ai-powered-applications).
+> This article was also published on the **CNCF blog** [here](https://www.cncf.io/blog/2025/01/03/optimising-prompt-engineering-for-better-ai-outputs/) and on the **YLD blog** [here](https://www.yld.io/blog/optimising-prompt-engineering-for-better-ai-outputs).
 
 Remember when searching for information online involved typing in a few keywords and sifting through pages of results? Thankfully, those days are long gone. 
 
