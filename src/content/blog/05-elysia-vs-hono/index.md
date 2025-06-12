@@ -1,6 +1,6 @@
 ---
 title: "Elysia vs Hono: API Handlers in Astro with Cloudflare"
-description: "Exploring the nuances of API frameworks in Astro when deployed to Cloudflare Pages and the challenges of accessing environment variables"
+description: Exploring the nuances of API frameworks in Astro when deployed to Cloudflare Pages and the challenges of accessing environment variables
 slug: elysia-vs-hono-astro-cloudflare
 date: 11 March 2025
 ---
