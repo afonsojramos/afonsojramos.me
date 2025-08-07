@@ -25,7 +25,7 @@
     "@markdoc/markdoc": "^0.5.2",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.8",
-    "astro": "5.9.1",
+    "astro": "5.12.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-autoplay": "^8.6.0",
