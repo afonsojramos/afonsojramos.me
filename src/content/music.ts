@@ -2,6 +2,294 @@ import type { Year } from "~/types/content";
 
 export const music: Year[] = [
   {
+    year: "2025",
+    concerts: [
+      {
+        title: "Capicua",
+        location: "Casa da Música",
+        image:
+          "https://res.cloudinary.com/afonsojramos/image/upload/v1754701256/capicua_akerxu.jpg",
+      },
+      {
+        title: "Clarissa Connelly",
+        location: "Tremor",
+        image:
+          "https://res.cloudinary.com/afonsojramos/image/upload/v1754701528/clarissa_swfz76.jpg",
+      },
+    ],
+    albums: [
+      {
+        title: "Virgin",
+        artist: "Lorde",
+        image: "https://i.scdn.co/image/ab67616d00001e0223d41bf736920a032e222a78",
+        url: "https://open.spotify.com/album/28bHj2enHkHVFLwuWmkwlQ",
+      },
+      {
+        title: "Dog Eared",
+        artist: "Billie Marten",
+        image: "https://i.scdn.co/image/ab67616d00001e027c3ce9ae88d705279dc0a11d",
+        url: "https://open.spotify.com/album/79zQn0JeZ9tVX2T0VvpDGi",
+      },
+      {
+        title: "hopefully !",
+        artist: "Loyle Carner",
+        image: "https://i.scdn.co/image/ab67616d00001e02acd29a44bbbf9d4543b859c4",
+        url: "https://open.spotify.com/album/3QiiMhk65fgCPOKThjZ8iK",
+      },
+      {
+        title: "Lotus",
+        artist: "Little Simz",
+        image: "https://i.scdn.co/image/ab67616d00001e02d0e17539a0ac5b32b6db47bb",
+        url: "https://open.spotify.com/album/0ofdTvYtx4LpsVjemJt71X",
+      },
+      {
+        title: "MARAVILHOSAMENTE BEM",
+        artist: "Julia Mestre",
+        image: "https://i.scdn.co/image/ab67616d00001e02d865e6a6348ddad7c49c4b62",
+        url: "https://open.spotify.com/album/6hKQF3IhyBlr6LE5K2nkYY",
+      },
+      {
+        title: "NEVER ENOUGH",
+        artist: "Turnstile",
+        image: "https://i.scdn.co/image/ab67616d00001e028386e4a4fb9d20e5008f4d71",
+        url: "https://open.spotify.com/album/52yD51X7yDinwlg6tbCtpP",
+      },
+      {
+        title: "EUSEXUA",
+        artist: "FKA twigs",
+        image: "https://i.scdn.co/image/ab67616d00001e02bd5d937814595eeb925ab03f",
+        url: "https://open.spotify.com/album/3o1TOhMkU5FFMSJMDhXfdF",
+      },
+    ],
+  },
+  {
+    year: "2024",
+    concerts: [
+      {
+        title: "MASS OF THE FERMENTING DREGS",
+        location: "Hard Club",
+        image: "https://res.cloudinary.com/afonsojramos/image/upload/v1754700422/mass_izzalj.jpg",
+      },
+      {
+        title: "Patrick Watson",
+        location: "Hard Club",
+        image:
+          "https://res.cloudinary.com/afonsojramos/image/upload/v1754700569/patrick_qfdqr9.jpg",
+      },
+      {
+        title: "Blowfuse",
+        location: "Woodstock 69",
+        image:
+          "https://res.cloudinary.com/afonsojramos/image/upload/v1754700671/blowfuse_d02zli.jpg",
+      },
+      {
+        title: "Sereias",
+        location: "FAUP Fest",
+        image:
+          "https://res.cloudinary.com/afonsojramos/image/upload/v1754700780/sereias_atdj8c.jpg",
+      },
+      {
+        title: "The Last Dinner Party",
+        location: "Primavera Sound",
+        image:
+          "https://res.cloudinary.com/afonsojramos/image/upload/v1754701054/lastdinnerparty_diw1fm.jpg",
+      },
+    ],
+    albums: [
+      {
+        title: "She Reaches Out To She Reaches Out To She",
+        artist: "Chelsea Wolfe",
+        image: "https://i.scdn.co/image/ab67616d00001e026634208732069aec16ea810d",
+        url: "https://open.spotify.com/album/4uJMF1xAEk9IgPA5UbwNA6",
+      },
+      {
+        title: "Prelude to Ecstasy",
+        artist: "The Last Dinner Party",
+        image: "https://i.scdn.co/image/ab67616d00001e02aaa10f339ed589b84c51137d",
+        url: "https://open.spotify.com/album/1ycq58KRtWt3wFtbuIkvLn",
+      },
+      {
+        title: "World of Work",
+        artist: "Clarissa Connelly",
+        image: "https://i.scdn.co/image/ab67616d00001e028d2d3aaa5be9915fb5975de3",
+        url: "https://open.spotify.com/album/7r1cQPyAwQfhQIw9H9eGB5",
+      },
+      {
+        title: "TANGK",
+        artist: "IDLES",
+        image: "https://i.scdn.co/image/ab67616d00001e02838fbd7f0f3d02d2235cd121",
+        url: "https://open.spotify.com/album/6U11VNHZAfYY3E9V4oFB2p",
+      },
+      {
+        title: "The New Sound",
+        artist: "Geordie Greep",
+        image: "https://i.scdn.co/image/ab67616d00001e025d59daf2d1c0baa6bd7c60ac",
+        url: "https://open.spotify.com/album/07YS7ooqYtvPZLlW59MHY5",
+      },
+      {
+        title: "“NO TITLE AS OF 13 FEBRUARY 2024 28,340 DEAD”",
+        artist: "Godspeed You! Black Emperor",
+        image: "https://i.scdn.co/image/ab67616d00001e02a2f349fdb4ad68258a974af1",
+        url: "https://open.spotify.com/album/1qG30zCAZ30hsmA5wAlaQ3",
+      },
+      {
+        title: "Imaginal Disk",
+        artist: "Magdalena Bay",
+        image: "https://i.scdn.co/image/ab67616d00001e025a2ff617de4e51a9a214b56a",
+        url: "https://open.spotify.com/album/4HTy9WFTYooRjE9giTmzAF",
+      },
+      {
+        title: "Samurai",
+        artist: "Lupe Fiasco",
+        image: "https://i.scdn.co/image/ab67616d00001e02afd65b04748aff25b77071f4",
+        url: "https://open.spotify.com/album/1O6d4cNuUV78GeXv7hgr4e",
+      },
+      {
+        title: "Enciclopédia",
+        artist: "Pangema",
+        image: "https://i.scdn.co/image/ab67616d00001e02097925d604694ecbe01ea9f5",
+        url: "https://open.spotify.com/album/3WsfjEXj9TN4aTuX0yCqsN",
+      },
+      {
+        title: "BRAT",
+        artist: "Charli xcx",
+        image: "https://i.scdn.co/image/ab67616d00001e02c5c6772d1d98b2d0f3a69e37",
+        url: "https://open.spotify.com/album/2lIZef4lzdvZkiiCzvPKj7",
+      },
+      {
+        title: "Glimmer of God",
+        artist: "Jean Dawson",
+        image: "https://i.scdn.co/image/ab67616d00001e0260cac8c2d78f2c4e45f10c37",
+        url: "https://open.spotify.com/album/2sdEcm60h3HBZkd5k7SkRh",
+      },
+    ],
+  },
+  {
+    year: "2023",
+    concerts: [
+      {
+        title: "Billy Woods",
+        location: "Galeria Zé dos Bois",
+        image:
+          "https://res.cloudinary.com/afonsojramos/image/upload/v1754699543/PXL_20230202_232141992_edmsus.jpg",
+      },
+      {
+        title: "José Cid",
+        location: "Casa da Música",
+        image:
+          "https://res.cloudinary.com/afonsojramos/image/upload/v1754699709/PXL_20230408_204719318_txl4q9.jpg",
+      },
+      {
+        title: "Fred Again..",
+        location: "Primavera Sound",
+        image:
+          "https://res.cloudinary.com/afonsojramos/image/upload/v1754699813/IMG_0466_zl6imu.jpg",
+      },
+      {
+        title: "Jockstrap",
+        location: "Primavera Sound",
+        image: "https://res.cloudinary.com/afonsojramos/image/upload/v1754699898/jock_cyi7n0.jpg",
+      },
+      {
+        title: "MÁQUINA.",
+        location: "concertos que nunca existiram",
+        image:
+          "https://res.cloudinary.com/afonsojramos/image/upload/v1754700006/maquina_gyqk9r.jpg",
+      },
+      {
+        title: "Weyes Blood",
+        location: "Hard Club",
+        image: "https://res.cloudinary.com/afonsojramos/image/upload/v1754700148/weyes_fa8set.jpg",
+      },
+      {
+        title: "Despirited Spirits",
+        location: "Maus Hábitos",
+        image:
+          "https://res.cloudinary.com/afonsojramos/image/upload/v1754700310/despirited_kgzv4z.jpg",
+      },
+    ],
+    albums: [
+      {
+        title: "Me Chama De Gato Que Eu Sou Sua",
+        artist: "Ana Frango Elétrico",
+        image: "https://i.scdn.co/image/ab67616d00001e02dfa82523de5ab6b5508d7aa5",
+        url: "https://open.spotify.com/album/6UZpK4jB5MYVYJpwwi2mbP",
+      },
+      {
+        title: "DIRTY TRACKS FOR CLUBBING",
+        artist: "MAQUINA.",
+        image: "https://i.scdn.co/image/ab67616d00001e0229cf4288ef8ebd12aca1dfc2",
+        url: "https://open.spotify.com/album/7vCLEizWTP0lqwuG3GHihu",
+      },
+      {
+        title: "Afro Fado",
+        artist: "Slow J",
+        image: "https://i.scdn.co/image/ab67616d00001e02f19929189af1ce50e3df2c50",
+        url: "https://open.spotify.com/album/0GcsYtidlr4azVnuTjD3KI",
+      },
+      {
+        title: "The Land Is Inhospitable and So Are We",
+        artist: "Mitski",
+        image: "https://i.scdn.co/image/ab67616d00001e0234f21d3047d85440dfa37f10",
+        url: "https://open.spotify.com/album/2Cn1d2KgbkAqbZCJ1RzdkA",
+      },
+      {
+        title: "Javelin",
+        artist: "Sufjan Stevens",
+        image: "https://i.scdn.co/image/ab67616d00001e0232a8498ea892ccd4fcf3f6cf",
+        url: "https://open.spotify.com/album/2KqSL3vLfyVO7rrZJL9tUs",
+      },
+      {
+        title: "Desire, I Want To Turn Into You",
+        artist: "Caroline Polachek",
+        image: "https://i.scdn.co/image/ab67616d00001e02de17893c581b6f4fbeba51e1",
+        url: "https://open.spotify.com/album/22PkV1Le9P3X4RY4xtmK0q",
+      },
+      {
+        title: "The Redshift Blues",
+        artist: "Dispirited Spirits",
+        image: "https://i.scdn.co/image/ab67616d00001e020ee572e320e939f1dab4e362",
+        url: "https://open.spotify.com/album/5X0zmtiglsalNjS6uJj6iI",
+      },
+      {
+        title: "Let’s Start Here.",
+        artist: "Lil Yachty",
+        image: "https://i.scdn.co/image/ab67616d00001e026f578b21bce56056473da7e6",
+        url: "https://open.spotify.com/album/6Per97deaWqrJlKQNX8RGK",
+      },
+      {
+        title: "Wait Til I Get Over",
+        artist: "Durand Jones",
+        image: "https://i.scdn.co/image/ab67616d00001e02499e9edcf3f4d040d237d01c",
+        url: "https://open.spotify.com/album/3t5PKVYlbYXIiLIRDPPkp4",
+      },
+      {
+        title: "Space Heavy",
+        artist: "King Krule",
+        image: "https://i.scdn.co/image/ab67616d00001e02bfa61775cf5123e2c88b4fe1",
+        url: "https://open.spotify.com/album/36tUlc8fGxaUTv4cLmC9UJ",
+      },
+      {
+        title: "Lucifer Pool Party",
+        artist: "Lucifer Pool Party",
+        image: "https://i.scdn.co/image/ab67616d00001e02ad723aec90fe687b8dbedf4a",
+        url: "https://open.spotify.com/album/6nZ5GLdXcXIE2yyFgkgLCG",
+      },
+      {
+        title: "Dogsbody",
+        artist: "Model/Actriz",
+        image: "https://i.scdn.co/image/ab67616d00001e027326419d8f46f9c657c481fc",
+        url: "https://open.spotify.com/album/1DWLFwBZxTSBWw7G9uhpok",
+      },
+      {
+        title: "Knocknarea",
+        artist: "Maruja",
+        image: "https://i.scdn.co/image/ab67616d00001e027c1b00a2f6b6980a6723e1d3",
+        url: "https://open.spotify.com/album/1hb0fuPRhbd1uStttAaalz",
+      },
+    ],
+  },
+  {
     year: "2022",
     concerts: [
       {
@@ -181,6 +469,12 @@ export const music: Year[] = [
         artist: "Freddie Gibbs",
         image: "https://i.scdn.co/image/ab67616d0000b2739f301e3a4d5f25d1888585b1",
         url: "https://open.spotify.com/album/3PZx4Vntcp5T7UgdfjnFDa",
+      },
+      {
+        title: "hugo",
+        artist: "Loyle Carner",
+        image: "https://i.scdn.co/image/ab67616d00001e020d7bd8c43a71910b53126b09",
+        url: "https://open.spotify.com/album/3McfY0EGNjsrVdYa9ZnoSH",
       },
     ],
   },
@@ -454,6 +748,11 @@ export const music: Year[] = [
         image:
           "https://res.cloudinary.com/afonsojramos/image/upload/v1623664751/IMG_20191019_213217_xkheor.jpg",
       },
+      {
+        title: "The National",
+        location: "Paredes de Coura",
+        image: "https://res.cloudinary.com/afonsojramos/image/upload/v1754701160/matt_kjuvvz.jpg",
+      },
     ],
     albums: [
       {
@@ -712,6 +1011,18 @@ export const music: Year[] = [
         artist: "JPEGMAFIA",
         image: "https://i.scdn.co/image/ab67616d00001e029a8fce763b8a58d7d3e4a7f2",
         url: "https://open.spotify.com/album/22LKdgY3vLsAsWrOafwCM3",
+      },
+      {
+        title: "Jassbusters",
+        artist: "Connan Mockasin",
+        image: "https://i.scdn.co/image/ab67616d00001e02877126950d18ffcf40d0caaf",
+        url: "https://open.spotify.com/album/5ZP4lqYPHwINHourSdZvYr",
+      },
+      {
+        title: "Lost & Found",
+        artist: "Jorja Smith",
+        image: "https://i.scdn.co/image/ab67616d00001e0278378dcaccec9e965e0d6351",
+        url: "https://open.spotify.com/album/3AlSuZnX4ZCab8eoWnnfbm",
       },
     ],
   },
