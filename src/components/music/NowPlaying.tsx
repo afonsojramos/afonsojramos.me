@@ -1,5 +1,5 @@
-import { Show, createResource } from "solid-js";
 import type { JSX } from "solid-js";
+import { createResource, Show } from "solid-js";
 import { cn } from "~/lib/utils";
 import type { TopTracksResponse } from "~/types/lastfm";
 

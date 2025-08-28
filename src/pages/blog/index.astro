@@ -24,7 +24,7 @@ const posts = data.reduce((acc: Acc, post) => {
   return acc;
 }, {});
 
-const years = Object.keys(posts).sort((a, b) => Number.parseInt(b) - Number.parseInt(a));
+const years = Object.keys(posts).sort((a, b) => Number.parseInt(b, 10) - Number.parseInt(a, 10));
 ---
 
 <PageLayout {...BLOG}>

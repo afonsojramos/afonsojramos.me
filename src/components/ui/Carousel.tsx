@@ -108,12 +108,10 @@ const Carousel: Component<CarouselProps & ComponentProps<"div">> = (rawProps) =>
       return;
     }
 
-    // biome-ignore lint/style/noNonNullAssertion:
+    // biome-ignore lint/style/noNonNullAssertion: API has been validated.
     onSelect(api()!);
-    // biome-ignore lint/style/noNonNullAssertion:
-    api()!.on("reInit", onSelect);
-    // biome-ignore lint/style/noNonNullAssertion:
-    api()!.on("select", onSelect);
+    api()?.on("reInit", onSelect);
+    api()?.on("select", onSelect);
 
     return () => {
       api()?.off("select", onSelect);
@@ -136,10 +134,10 @@ const Carousel: Component<CarouselProps & ComponentProps<"div">> = (rawProps) =>
 
   return (
     <CarouselContext.Provider value={value}>
+      {/** biome-ignore lint/a11y/useSemanticElements: This is a carousel */}
       <div
         onKeyDown={handleKeyDown}
         class={cn("relative", local.class)}
-        // biome-ignore lint/a11y/useSemanticElements: This is a carousel
         role="region"
         aria-roledescription="carousel"
         {...others}
@@ -169,6 +167,7 @@ const CarouselItem: Component<ComponentProps<"div">> = (props) => {
   const { orientation } = useCarousel();
 
   return (
+    // biome-ignore lint/a11y/useSemanticElements: This is a carousel
     <div
       role="group"
       aria-roledescription="slide"
