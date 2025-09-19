@@ -1,4 +1,11 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g')
 
-bun lint
+# Run format on staged files and stage any fixes
+if [ -n "$STAGED_FILES" ]; then
+  bun format $STAGED_FILES --no-errors-on-unmatched
+  git add $STAGED_FILES
+fi
+
+# Run lint check (should pass now after formatting)
+bun lint $STAGED_FILES --no-errors-on-unmatched
+bun tsc --noEmit

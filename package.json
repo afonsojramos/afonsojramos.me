@@ -9,7 +9,8 @@
     "preview": "wrangler pages dev ./dist --port 4321",
     "preview:network": "astro preview --host",
     "lint": "biome check",
-    "lint:fix": "biome check --write"
+    "format": "biome check --write",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -31,6 +32,7 @@
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-solid": "^8.6.0",
     "hono": "^4.9.4",
+    "husky": "^9.1.7",
     "marked": "^16.2.1",
     "sharp": "^0.34.3",
     "tailwind-merge": "^3.3.1",
