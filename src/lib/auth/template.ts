@@ -13,7 +13,7 @@ export function getTemplate({
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>work (password protected) | afonso jorge ramos</title>
       <meta name="description" content="This page is password protected. Please contact me for access." />
-      <link rel="shortcut icon" href="https://afonsojramos.me/favicon.ico" />
+      <link rel="icon" type="image/x-icon" href="/favicon.svg" />
 
       <script src="https://cdn.tailwindcss.com"></script>
       <script>
@@ -55,7 +55,7 @@ export function getTemplate({
         // Theme detection - matches main site logic
         function preloadTheme() {
           const userTheme = localStorage.theme;
-          
+
           if (userTheme === "light" || userTheme === "dark") {
             toggleTheme(userTheme === "dark");
           } else {
