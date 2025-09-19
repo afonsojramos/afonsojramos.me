@@ -51,7 +51,19 @@ blockquote {
   header {
     @apply fixed top-0 left-0 right-0 z-50 py-5;
     @apply bg-stone-100/75 dark:bg-stone-900/0;
-    @apply backdrop-blur-xs saturate-200;
+    @apply backdrop-blur-3xl;
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.85) 70%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.85) 70%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
   }
 
   main {
