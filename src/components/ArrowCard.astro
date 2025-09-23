@@ -14,10 +14,10 @@ const { entry } = Astro.props;
   class="relative group flex flex-nowrap py-3 px-4 gap-2 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
 >
   <div class="flex flex-col flex-1 truncate">
-    <div class="font-semibold">
+    <div class="font-semibold truncate sm:max-w-10/12">
       {entry.data.title}
     </div>
-    <div class="text-sm truncate max-w-9/12">
+    <div class="text-sm truncate sm:max-w-11/12">
       {entry.data.description}
     </div>
   </div>
