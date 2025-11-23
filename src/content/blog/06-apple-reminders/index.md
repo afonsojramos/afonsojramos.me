@@ -11,21 +11,19 @@ The problem? I also use an Android phone. And Apple Reminders doesn't exactly pl
 
 So here's my situation: I'm completely sold on the workflow that reminders-menubar provides on my Mac. It's become part of how I think about task management - quick capture, always visible and with number that I hold myself accountable to. But when I pick up my Android phone, those reminders might as well not exist, or I might need to mimic them in another app - which was Google Keep for a while, but I kept forgetting to check it.
 
-Let me be honest upfront - the solution I'm about to share isn't perfect. It does involve using Microsoft as a middleman, but if you're committed to staying with Apple Reminders because of `reminders-menubar` - like I am - this is currently your best option for Android access.
+Fair warning, the solution I'm about to share isn't perfect, as it does involve having a middleman, Microsoft, but after you try the `reminders-menubar` workflow, I'm pretty confident you'll embrace it, like I have, as this is currently your best option when needing Android access.
 
 ## Why Reminders-Menubar Changes Everything
 
-Before we dive into the Android sync solution, let me explain why I'm going through this trouble instead of just switching to Todoist or Microsoft To Do.
+But before we dive into the Android sync solution, let me explain why I'm going through this trouble instead of just switching to multi-platform tool such as Todoist or TickTick.
 
-Reminders-menubar is a lightweight Mac app that lives in your menubar and gives you instant access to Apple Reminders. Hit Option-Command-R (or whatever shortcut you configure), type "call mom tomorrow at 2pm," hit enter, and you're done. No opening apps, no clicking through menus, no friction.
+Reminders-menubar is a lightweight menubar Mac app that expands on Apple Reminders by gives you instant access to it through the menubar, or a quick keyboard shortcut. No opening apps, no clicking through menus, no friction.
 
-The magic is that it uses Apple's native EventKit framework, so everything syncs perfectly with iCloud. Your reminders appear instantly on your iPhone, iPad, and Apple Watch (even if in my case I only have my Mac). At the end of the day, it's free, it's fast, and it just works. Which is exactly why I don't want to give it up just so I can have the same ToDos on my phone.
+The magic is that it uses Apple's native EventKit framework, so everything syncs perfectly with iCloud. Your reminders appear instantly on your iPhone, iPad, and Apple Watch (even if in my case I only have my Mac). At the end of the day, it's free, it's fast, and it just works. Which is exactly why I don't want to give it up just so I can have the same ToDos on my phone. I tend to avoid paid subscriptions when free alternatives exist, even if they aren't quite as polished and require a bit more tinkering.
 
 ## The Microsoft Bridge Solution
 
-Here's the workaround: we're going to use Microsoft's ecosystem to bridge Apple and Android. Microsoft Outlook can sync with Apple Reminders on iOS, and Microsoft To Do can access those same reminders on Android.
-
-Think of Microsoft as the translator standing between two ecosystems that refuse to talk to each other.
+Here's the workaround: it is actually quite simple, we're going to use Microsoft's ecosystem to bridge Apple and Android. Microsoft Outlook can sync with Apple Reminders on iOS, and Microsoft To Do can access those same reminders on Android. Plus Microsoft To Do has a pretty nice widget.
 
 ## Setting It Up
 
@@ -50,7 +48,7 @@ On your iPhone or iPad:
 4. Ensure the "Reminders" toggle is ON
 5. That's it! Nothing else to configure here.
 
-This creates the bridge so that reminders created through reminders-menubar (or the native Reminders app) sync to Microsoft's servers.
+This creates the bridge so that reminders created through `reminders-menubar` (or the native Reminders app) sync to Microsoft's servers.
 
 #### On Your Android Device
 
@@ -64,7 +62,7 @@ Set a reminder for 3 PM, and at 3 PM both your iPhone and Android buzz. Dismiss 
 
 This happens because each platform maintains its own notification state. The reminder data syncs perfectly, but the "I've handled this" status doesn't.
 
-But here's the thing - I've actually started to appreciate this "bug" as a feature. It's pretty hard to miss an important reminder when two devices are insisting you pay attention to it. For truly important deadlines or time-sensitive tasks, having that redundant notification system isn't the worst thing in the world - we're talking about reminders, after all.
+But here's the thing - I've actually started to appreciate this "bug" as a feature. It's pretty hard to miss an important reminder when two devices are insisting you pay attention to it. Now, I hear you, notifications can be annoying. But for truly important deadlines or time-sensitive tasks, having that redundant notification system isn't the worst thing in the world - we're talking about reminders, after all.
 
 ## The Bigger Picture
 
