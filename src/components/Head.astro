@@ -196,22 +196,18 @@ const { title, description, image = "/nano.png" } = Astro.props;
 
   function cycleTheme() {
     const currentTheme = localStorage.theme || "system";
-    let nextTheme;
 
     switch (currentTheme) {
       case "light":
-        nextTheme = "dark";
         localStorage.setItem("theme", "dark");
         toggleTheme(true);
         break;
       case "dark":
-        nextTheme = "system";
         localStorage.setItem("theme", "system");
         toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
         break;
       case "system":
       default:
-        nextTheme = "light";
         localStorage.setItem("theme", "light");
         toggleTheme(false);
         break;
