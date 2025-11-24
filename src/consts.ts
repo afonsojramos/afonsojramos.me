@@ -2,7 +2,7 @@ import type { Metadata, Site, Socials } from "~/types/site";
 
 export const SITE: Site = {
   name: "afonso jorge ramos",
-  jobTitle: "Product-Minded Software Engineer",
+  jobTitle: "Senior Product-Minded Software Engineer",
   email: "afonsojorgeramos@gmail.com",
   website: "https://afonsojramos.me",
   about: [
