@@ -1,0 +1,30 @@
+---
+import Container from "~/components/Container.astro";
+import { LoginForm } from "~/components/LoginForm";
+import PageLayout from "~/layouts/PageLayout.astro";
+
+const url = Astro.url;
+const redirect = url.searchParams.get("redirect") || "/";
+---
+
+<PageLayout title="Login" description="Password protected page">
+  <Container>
+    <div class="flex items-center justify-center min-h-[60vh]">
+      <div class="flex flex-col gap-6 w-full px-12">
+        <div class="flex flex-col gap-1">
+          <h1 class="text-2xl font-semibold text-black dark:text-white">
+            Password
+          </h1>
+          <p class="text-black/75 dark:text-white/75">
+            Please enter your password for this page.
+          </p>
+          <p class="text-black/75 dark:text-white/75">
+            If you don't have the password, feel free to contact me.
+          </p>
+        </div>
+
+        <LoginForm client:load redirectPath={redirect} />
+      </div>
+    </div>
+  </Container>
+</PageLayout>
