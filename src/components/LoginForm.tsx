@@ -51,7 +51,7 @@ export const LoginForm: Component<LoginFormProps> = (props) => {
         shakeInput();
         setLoading(false);
       }
-    } catch (err) {
+    } catch {
       setError(true);
       setPassword("");
       shakeInput();
