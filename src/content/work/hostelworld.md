@@ -8,4 +8,8 @@ tags: ["Full-Stack", "React", "SQL", "Linux", "NextJS", "Elastic Stack (ELK)", "
 url: "https://www.hostelworld.com/"
 ---
 
-As a Junior Software Engineer at Hostelworld Group, I played a key role in developing the Experiences Hub greenfield project - a new product enabling travelers to discover and book local activities. The frontend and backend were architected using **NextJS** and **TypeScript**, with a **NestJS** backend service that managed data through a **Oracle SQL database** via **Sequelize ORM**. A major contribution was designing and building a **robust data ingestion pipeline** using **Elasticsearch** and the **Adapter Pattern**, which allowed seamless integration of experience data from multiple third-party providers while maintaining consistent data structures and performant search capabilities. Also partook in a major migration to **OpenID Connect** for authentication and authorization, using **Auth0**, which improved security and user experience.
+- Played a key role in developing the **Experiences Hub** greenfield project, a new product enabling travelers to discover and book local activities, architected using **NextJS** and **TypeScript** on the frontend with a **NestJS** backend service managing data through an **Oracle SQL database** via **Sequelize ORM**.
+
+- Designed and built a **data ingestion pipeline** using **Elasticsearch** and the **Adapter Pattern**, enabling seamless integration of experience data from multiple third-party providers while maintaining consistent data structures and performant search capabilities.
+
+- Contributed to a major migration to **OpenID Connect** for authentication and authorization using **Auth0**, improving security and user experience across the platform.

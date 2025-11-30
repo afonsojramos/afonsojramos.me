@@ -2,7 +2,7 @@
 company: "Faculdade de Engenharia da Universidade do Porto"
 dateEnd: "2023-08-31"
 dateStart: "2023-03-01"
-role: "Assistant Lecturer"
+role: "Assistant Lecturer (Part-Time)"
 shortDescription: "Instructed a 2nd-year course on Agile project management, 'Software Engineering', providing supplemental education, guidance during lab sessions and group assignments, while also assessing and grading students' projects and exams."
 tags: ["Training", "University Teaching", "Git", "Agile", "Teaching"]
 url: "https://www.fe.up.pt/"

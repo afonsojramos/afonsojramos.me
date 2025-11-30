@@ -2,15 +2,13 @@
 company: "YLD"
 dateStart: "2022-09-01"
 role: "Senior Full-Stack Software Engineer"
-shortDescription: "Serving as a multifaceted professional, overseeing line management responsibilities, helping with recruitment efforts to build dynamic teams, and actively contributing to software engineering tasks, while also working on great client teams."
-tags: ["Full-Stack Development", "Leadership", "Team Management", "Microfrontends", "Recruitment", "DevRel"]
+shortDescription: "Engineering consultant balancing line management of 5 engineers with hands-on technical delivery for enterprise clients, conducting performance reviews, leading recruitment efforts, and contributing to large-scale React and Node.js projects."
+tags: ["Full-Stack Development", "Leadership", "Team Management", "Microfrontends", "Recruitment", "DevRel", "Performance Management"]
 url: "https://www.yld.io/"
 ---
 
-- Hosted the company’s Engineering Forum, a monthly knowledge-sharing initiative that increased cross-team collaboration and technical alignment.
-- Served as **line manager** for 5 engineers, providing structured career development plans, regular feedback sessions, and mentorship opportunities.
-- Played a key role in recruitment, **conducting technical interviews** and helping to grow the engineering team by over 80% while maintaining high quality standards.
-- Collaborated directly with **client stakeholders to translate business requirements into technical solutions**, often serving as the technical bridge between teams.
-- Contributed to **architectural decision-making** for large-scale client projects, offering ongoing guidance and support to the client's engineering team.
-- Delivered **technical workshops and training sessions** for both internal teams and clients, focusing on modern JavaScript frameworks and the latest industry trends.
-- Represented YLD at industry events and conferences, strengthening the company's reputation as a technical thought leader in the JavaScript ecosystem.
+- Served as **line manager** for 5 engineers, conducting **bi-annual performance reviews**, providing structured career development plans, and maintaining accountability for team growth and retention, while playing a key role in recruitment and helping to **triple the engineering team**.
+
+- Delivered hands-on technical contributions for client engagements (NewDay, BPP), serving as **Tech Lead** on large-scale React, TypeScript, and Node.js projects while contributing to architectural decision-making through code reviews, **ADR authoring**, and technical strategy sessions.
+
+- Hosted the company's Engineering Forum, delivered technical workshops for internal teams and clients, and represented YLD at industry events and conferences, strengthening the company's reputation as a technical thought leader in the JavaScript ecosystem.

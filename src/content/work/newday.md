@@ -8,12 +8,10 @@ tags: ["Octopus", "Microsoft Azure", "React", "TypeScript", "Gatsby", "Astro", "
 url: "https://www.newday.co.uk/"
 ---
 
-- Established and enforced good engineering practices across the organisation through a **React-based Developer Portal** that acts as a gatekeeper for API guidelines and documentation, that would then manage API Access, API Keys, change subscriptions, etc.
+- Established and enforced engineering practices across the organisation through a **React-based Developer Portal** that manages API access, API keys, webhook subscriptions, and developer onboarding workflows, while developing **reusable GitHub Actions and Workflows** to automate CI/CD pipelines deploying to Microsoft Azure via Octopus Deploy.
 
-- Developed **reusable GitHub Actions and complex GitHub Workflows** to automate and standardize development processes, while deploying to Microsoft Azure via Octopus.
+- Led a migration from **Chakra UI** to **Tailwind CSS & Radix UI**, maintaining UI consistency while improving developer experience, accessibility compliance, and component reusability.
 
-- Led a migration from **Chakra UI** to **Tailwind CSS & Radix UI**, while maintaining UI consistency across the project and greatly improving the developer experience & accessibility.
+- Promoted to **Tech Lead** in November 2023, taking ownership of roadmap planning, sprint prioritization, and stakeholder alignment while authoring **Architecture Decision Records (ADRs)** to document framework migrations, API design patterns, and infrastructure choices.
 
-- Promoted to a Tech Lead role on November 2023 to start leading the team and driving the technical strategy.
-
-- Developed and implemented strategic plans to drive big architectural changes to the codebase, improving engineering processes, code quality, and team productivity.
+- Developed strategic plans to drive architectural changes to the codebase, improving engineering processes, code quality, team productivity, and system scalability.

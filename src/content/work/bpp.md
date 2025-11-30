@@ -1,18 +1,14 @@
 ---
 company: "BPP (via YLD)"
 dateStart: "2024-09-01"
-role: "Mobile Software Engineer - Tech Lead"
-shortDescription: "Leading the Mobile App team at BPP in a major modernisation effort, replacing legacy mobile apps with a unified React Native app, successfully delivering feature parity within one quarter."
-tags: ["React Native", "Expo", "TanStack Router", "CI/CD", "Team Leadership", "Mobile Development"]
+role: "Principal Software Engineer - Tech Lead"
+shortDescription: "Leading technical modernization efforts at BPP, including a unified React Native mobile app, multi-platform communication service, and full-stack tutor portal, while inheriting and maintaining critical backend services."
+tags: ["React Native", "Expo", "TanStack Router", "Full-Stack", "System Architecture", "CI/CD", "Team Leadership", "Mobile Development"]
 url: "https://www.bpp.com"
 ---
 
-- Led the Mobile App team at BPP in a major modernisation effort, successfully unifying separate iOS and Android codebases into a **single React Native with Expo application** within one quarter, achieving **full feature parity**.
+- Led mobile modernization effort, unifying iOS and Android codebases into a **single React Native with Expo application** within two quarters, achieving full feature parity through roadmap planning and collaboration with designers and product stakeholders, while architecting navigation with **TanStack Router and React Navigation**, establishing **CI/CD pipelines** with automated App Store and Play Store deployments, implementing comprehensive testing strategies and mobile development best practices documented through **Architecture Decision Records (ADRs)**, and delivering to **30k+ users** with **100%** session duration improvement and near-zero crash rate.
 
-- Collaborated extensively with designers and product stakeholders to ensure a **seamless migration** while significantly improving app **performance**, **accessibility**, and overall **user experience**.
+- Architected and delivered a **full-stack tutor portal** and **multi-platform communication service** from the ground up, enabling real-time notifications, in-app messaging, and cross-platform synchronization while managing student interactions, scheduling, and teaching resources.
 
-- Established and implemented **mobile development best practices**, including comprehensive testing strategies, optimized **CI/CD pipelines** with automated deployments, steered towards **mobile patterns** and fostered a culture of **code review** and **knowledge sharing**.
-
-- Architected a robust navigation system using **TanStack Router** and **React Navigation**, enabling **instant view transitions** while maintaining a **clean, maintainable codebase structure** that scales with the application's growth.
-
-- Delivered and launched the unified BPP Hub app to 30k+ users on iOS ([BPP Hub - App Store](https://apps.apple.com/us/app/bpp-hub/id1564410731)) and Android ([BPP Hub - Play Store](https://play.google.com/store/apps/details?id=com.bpp.hub)) within 3 months, improving average session duration by 100% and reducing crash rate to a near-zero level.
+- Inherited ownership of critical backend services (**my-account-service**, **my-calendar-service**), modernizing legacy codebases, improving test coverage and performance, and ensuring seamless integration with new platform features.
