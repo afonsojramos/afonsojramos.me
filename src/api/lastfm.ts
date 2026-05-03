@@ -25,7 +25,9 @@ const getAlbumArtwork = async (artist: string, track: string, album?: string): P
       return "";
     }
 
-    const data = await response.json();
+    const data = (await response.json()) as {
+      results?: Array<{ artworkUrl100?: string }>;
+    };
 
     if (data.results && data.results.length > 0) {
       const artwork = data.results[0].artworkUrl100;

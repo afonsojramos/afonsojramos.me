@@ -39,7 +39,7 @@ export const LoginForm: Component<LoginFormProps> = (props) => {
         body: formData,
       });
 
-      const data = await response.json();
+      const data = (await response.json()) as { success?: boolean; redirect?: string };
 
       if (response.ok && data.success) {
         // Success - redirect to the target page
