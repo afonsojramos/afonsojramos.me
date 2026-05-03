@@ -5,6 +5,7 @@ import "@fontsource/inter-tight/600.css";
 import { ClientRouter } from "astro:transitions";
 import interTight400 from "@fontsource/inter-tight/files/inter-tight-latin-400-normal.woff2";
 import interTight600 from "@fontsource/inter-tight/files/inter-tight-latin-600-normal.woff2";
+import { SITE } from "~/consts";
 
 interface Props {
   title: string;
@@ -58,13 +59,13 @@ const { title, description, image = "/nano.png" } = Astro.props;
 <link
   rel="alternate"
   type="application/rss+xml"
-  title="Afonso Jorge Ramos"
+  title={SITE.name}
   href={new URL("/rss.xml", Astro.site)}
 />
 <link
   rel="alternate"
   type="application/atom+xml"
-  title="Afonso Jorge Ramos"
+  title={SITE.name}
   href={new URL("/atom.xml", Astro.site)}
 />
 

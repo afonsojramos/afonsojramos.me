@@ -43,7 +43,7 @@ export async function GET(context: Context) {
 
   const body = `<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>${escapeXml(HOME.title)}</title>
+  <title>${escapeXml(SITE.name)}</title>
   <subtitle>${escapeXml(HOME.description)}</subtitle>
   <link href="${siteUrl}/atom.xml" rel="self"/>
   <link href="${siteUrl}/"/>

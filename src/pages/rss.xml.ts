@@ -2,7 +2,7 @@ export const prerender = true;
 
 import { getCollection } from "astro:content";
 import rss from "@astrojs/rss";
-import { HOME } from "~/consts";
+import { HOME, SITE } from "~/consts";
 
 type Context = {
   site: string;
@@ -18,7 +18,7 @@ export async function GET(context: Context) {
   );
 
   return rss({
-    title: HOME.title,
+    title: SITE.name,
     description: HOME.description,
     site: context.site,
     items: items.map((item) => ({
