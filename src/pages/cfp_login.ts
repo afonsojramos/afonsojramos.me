@@ -1,10 +1,11 @@
+import { env } from "cloudflare:workers";
 import type { APIRoute } from "astro";
 import { CFP_COOKIE_MAX_AGE } from "../lib/auth/constants";
 import { getCookieKeyValue, sha256 } from "../lib/auth/utils";
 
 export const prerender = false;
 
-export const POST: APIRoute = async ({ request, redirect, locals }) => {
+export const POST: APIRoute = async ({ request, redirect }) => {
   const formData = await request.formData();
   const password = formData.get("password")?.toString();
   const redirectPath = formData.get("redirect")?.toString() || "/";
@@ -26,8 +27,7 @@ export const POST: APIRoute = async ({ request, redirect, locals }) => {
     return redirect(`/login?error=1&redirect=${encodeURIComponent(redirectPath)}`);
   }
 
-  // Access environment variable from Cloudflare runtime or build-time fallback
-  const cfpPassword = locals.runtime?.env?.CFP_PASSWORD || process.env.CFP_PASSWORD;
+  const cfpPassword = env.CFP_PASSWORD || process.env.CFP_PASSWORD;
 
   if (!cfpPassword) {
     return redirect(redirectPath);

@@ -1,9 +1,10 @@
 import { defineMiddleware } from "astro:middleware";
+import { env } from "cloudflare:workers";
 import { CFP_COOKIE_MAX_AGE, CFP_GATED_PATHS } from "~/lib/auth/constants";
 import { getCookieKeyValue, sha256 } from "~/lib/auth/utils";
 
 export const onRequest = defineMiddleware(async (context, next) => {
-  const { request, url, redirect, locals } = context;
+  const { request, url, redirect } = context;
   const pathname = url.pathname;
   const cookie = request.headers.get("cookie") || "";
 
@@ -16,8 +17,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
     return next();
   }
 
-  // Access environment variable from Cloudflare runtime or build-time fallback
-  const cfpPassword = locals.runtime?.env?.CFP_PASSWORD || process.env.CFP_PASSWORD;
+  const cfpPassword = env.CFP_PASSWORD || process.env.CFP_PASSWORD;
 
   if (!cfpPassword) {
     return next();

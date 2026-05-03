@@ -1,8 +1,9 @@
-type Runtime = import("@astrojs/cloudflare").Runtime<Env>;
-
 /// <reference path="../.astro/types.d.ts" />
 /// <reference types="astro/client" />
 
-declare namespace App {
-  interface Locals extends Runtime {}
+declare namespace Cloudflare {
+  interface Env {
+    CFP_PASSWORD?: string;
+    LASTFM_API_KEY?: string;
+  }
 }

@@ -1,3 +1,4 @@
+import { env } from "cloudflare:workers";
 import type { APIRoute } from "astro";
 import { Hono, type Context as HonoContext } from "hono";
 import type { BlankInput } from "hono/types";
@@ -15,8 +16,7 @@ app
   .get("/now-playing", async (c) => getNowPlaying(c))
   .get("/top-tracks", async (c) => getTopTracks(c));
 
-const handle: APIRoute = async ({ request, locals }) =>
-  app.fetch(request, { ...locals.runtime.env });
+const handle: APIRoute = async ({ request }) => app.fetch(request, { ...env });
 
 export const GET = handle;
 export const POST = handle;
