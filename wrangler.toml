@@ -1,5 +1,5 @@
 name = "afonsojramos-me"
-main = "./dist/_worker.js/index.js"
+main = "@astrojs/cloudflare/entrypoints/server"
 compatibility_flags = [ "nodejs_compat" ]
 compatibility_date = "2025-03-25"
 
