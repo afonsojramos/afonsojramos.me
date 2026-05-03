@@ -265,4 +265,4 @@ const CarouselNext: Component<CarouselButtonProps> = (rawProps) => {
   );
 };
 
-export { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext };
+export { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious };
