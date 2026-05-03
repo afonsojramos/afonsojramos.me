@@ -11,6 +11,7 @@ export default defineConfig({
 
   redirects: {
     "/rss": "/rss.xml",
+    "/atom": "/atom.xml",
   },
 
   vite: {
