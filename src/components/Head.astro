@@ -54,12 +54,18 @@ const { title, description, image = "/nano.png" } = Astro.props;
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
-<!-- RSS Feed -->
+<!-- Feeds -->
 <link
   rel="alternate"
   type="application/rss+xml"
   title="Afonso Jorge Ramos"
   href={new URL("/rss.xml", Astro.site)}
+/>
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Afonso Jorge Ramos"
+  href={new URL("/atom.xml", Astro.site)}
 />
 
 <!-- Primary Meta Tags -->
