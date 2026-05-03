@@ -6,7 +6,7 @@ import { HOME, SITE } from "~/consts";
 import { renderEntryToHtml } from "~/lib/feed";
 
 type Context = {
-  site: string;
+  site: URL;
 };
 
 export async function GET(context: Context) {
@@ -18,16 +18,20 @@ export async function GET(context: Context) {
     (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
   );
 
-  return rss({
-    title: SITE.name,
-    description: HOME.description,
-    site: context.site,
-    items: items.map((item) => ({
+  const renderedItems = await Promise.all(
+    items.map(async (item) => ({
       title: item.data.title,
       description: item.data.description,
       pubDate: item.data.date,
       link: `/${item.collection}/${item.id}/`,
-      content: renderEntryToHtml(item),
+      content: await renderEntryToHtml(item, context.site),
     })),
+  );
+
+  return rss({
+    title: SITE.name,
+    description: HOME.description,
+    site: context.site,
+    items: renderedItems,
   });
 }

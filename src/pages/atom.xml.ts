@@ -27,12 +27,14 @@ export async function GET(context: Context) {
   const updated = items[0]?.data.date ?? new Date();
   const siteUrl = context.site.href.replace(/\/$/, "");
 
-  const entries = items
-    .map((item) => {
-      const link = `${siteUrl}/${item.collection}/${item.id}/`;
-      const date = new Date(item.data.date).toISOString();
-      const content = renderEntryToHtml(item).replace(/]]>/g, "]]]]><![CDATA[>");
-      return `  <entry>
+  const entries = (
+    await Promise.all(
+      items.map(async (item) => {
+        const link = `${siteUrl}/${item.collection}/${item.id}/`;
+        const date = new Date(item.data.date).toISOString();
+        const html = await renderEntryToHtml(item, context.site);
+        const content = html.replace(/]]>/g, "]]]]><![CDATA[>");
+        return `  <entry>
     <title>${escapeXml(item.data.title)}</title>
     <link href="${link}"/>
     <id>${link}</id>
@@ -41,8 +43,9 @@ export async function GET(context: Context) {
     <summary>${escapeXml(item.data.description)}</summary>
     <content type="html"><![CDATA[${content}]]></content>
   </entry>`;
-    })
-    .join("\n");
+      }),
+    )
+  ).join("\n");
 
   const body = `<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
