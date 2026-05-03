@@ -2,6 +2,7 @@ export const prerender = true;
 
 import { getCollection } from "astro:content";
 import { HOME, SITE } from "~/consts";
+import { renderEntryToHtml } from "~/lib/feed";
 
 type Context = {
   site: URL;
@@ -30,6 +31,7 @@ export async function GET(context: Context) {
     .map((item) => {
       const link = `${siteUrl}/${item.collection}/${item.id}/`;
       const date = new Date(item.data.date).toISOString();
+      const content = renderEntryToHtml(item).replace(/]]>/g, "]]]]><![CDATA[>");
       return `  <entry>
     <title>${escapeXml(item.data.title)}</title>
     <link href="${link}"/>
@@ -37,6 +39,7 @@ export async function GET(context: Context) {
     <updated>${date}</updated>
     <published>${date}</published>
     <summary>${escapeXml(item.data.description)}</summary>
+    <content type="html"><![CDATA[${content}]]></content>
   </entry>`;
     })
     .join("\n");

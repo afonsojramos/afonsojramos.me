@@ -3,6 +3,7 @@ export const prerender = true;
 import { getCollection } from "astro:content";
 import rss from "@astrojs/rss";
 import { HOME, SITE } from "~/consts";
+import { renderEntryToHtml } from "~/lib/feed";
 
 type Context = {
   site: string;
@@ -26,6 +27,7 @@ export async function GET(context: Context) {
       description: item.data.description,
       pubDate: item.data.date,
       link: `/${item.collection}/${item.id}/`,
+      content: renderEntryToHtml(item),
     })),
   });
 }
