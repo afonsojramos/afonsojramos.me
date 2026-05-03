@@ -9,6 +9,10 @@ export default defineConfig({
   site: "https://afonsojramos.me",
   integrations: [mdx(), sitemap(), solid()],
 
+  redirects: {
+    "/rss": "/rss.xml",
+  },
+
   vite: {
     plugins: [tailwind()],
   },
