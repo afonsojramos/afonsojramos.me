@@ -1,7 +1,7 @@
 ---
 export const prerender = true;
 
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import BackToPrev from "~/components/BackToPrev.astro";
 import Container from "~/components/Container.astro";
 import FormattedDate from "~/components/FormattedDate.astro";
@@ -14,14 +14,14 @@ export async function getStaticPaths() {
     .filter((post) => !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   return projects.map((project) => ({
-    params: { slug: project.slug },
+    params: { slug: project.id },
     props: project,
   }));
 }
 type Props = CollectionEntry<"projects">;
 
 const project = Astro.props;
-const { Content } = await project.render();
+const { Content } = await render(project);
 ---
 
 <PageLayout title={project.data.title} description={project.data.description}>

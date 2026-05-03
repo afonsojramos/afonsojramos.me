@@ -1,7 +1,7 @@
 ---
 export const prerender = true;
 
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import ArrowCard from "~/components/ArrowCard.astro";
 import Container from "~/components/Container.astro";
 import Link from "~/components/Link.astro";
@@ -20,7 +20,7 @@ const allwork = (await getCollection("work"))
 
 const work = await Promise.all(
   allwork.map(async (item) => {
-    const { Content } = await item.render();
+    const { Content } = await render(item);
     return { ...item, Content };
   }),
 );

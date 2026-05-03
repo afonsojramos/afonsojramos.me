@@ -1,7 +1,7 @@
 ---
 export const prerender = true;
 
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import BackToPrev from "~/components/BackToPrev.astro";
 import Container from "~/components/Container.astro";
 import FormattedDate from "~/components/FormattedDate.astro";
@@ -11,14 +11,14 @@ import { readingTime, sortByDate } from "~/lib/utils";
 export async function getStaticPaths() {
   const posts = (await getCollection("blog")).filter((post) => !post.data.draft).sort(sortByDate);
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: post,
   }));
 }
 type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <PageLayout title={post.data.title} description={post.data.description}>

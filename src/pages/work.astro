@@ -1,7 +1,7 @@
 ---
 export const prerender = false;
 
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Container from "~/components/Container.astro";
 import Block from "~/components/entries/Block.astro";
 import EducationEntry from "~/components/entries/Education.astro";
@@ -21,21 +21,21 @@ const projectsCollection = (await getCollection("projects"))
 
 const work = await Promise.all(
   workCollection.map(async (item) => {
-    const { Content } = await item.render();
+    const { Content } = await render(item);
     return { ...item, Content };
   }),
 );
 
 const education = await Promise.all(
   eduCollection.map(async (item) => {
-    const { Content } = await item.render();
+    const { Content } = await render(item);
     return { ...item, Content };
   }),
 );
 
 const projects = await Promise.all(
   projectsCollection.map(async (item) => {
-    const { Content } = await item.render();
+    const { Content } = await render(item);
     return { ...item, Content };
   }),
 );
