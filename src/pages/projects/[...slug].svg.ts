@@ -4,19 +4,12 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import { SITE } from "~/consts";
 import { buildCoverSvg } from "~/lib/cover";
 
-type CoverableEntry = CollectionEntry<"blog"> | CollectionEntry<"projects">;
-
 export async function getStaticPaths() {
-  const blog = (await getCollection("blog")).filter((post) => !post.data.draft);
   const projects = (await getCollection("projects")).filter((project) => !project.data.draft);
-
-  return [...blog, ...projects].map((entry) => ({
-    params: { collection: entry.collection, slug: entry.id },
-    props: entry,
-  }));
+  return projects.map((project) => ({ params: { slug: project.id }, props: project }));
 }
 
-export async function GET({ props }: { props: CoverableEntry }) {
+export async function GET({ props }: { props: CollectionEntry<"projects"> }) {
   const svg = buildCoverSvg({
     title: props.data.title,
     description: props.data.description,
