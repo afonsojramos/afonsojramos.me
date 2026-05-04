@@ -21,7 +21,11 @@ const post = Astro.props;
 const { Content } = await render(post);
 ---
 
-<PageLayout title={post.data.title} description={post.data.description}>
+<PageLayout
+  title={post.data.title}
+  description={post.data.description}
+  image={`/covers/${post.collection}/${post.id}.svg`}
+>
   <Container>
     <div class="animate">
       <BackToPrev> Back </BackToPrev>
