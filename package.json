@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "dev:network": "astro dev --host",
-    "build": "astro check && astro build",
+    "build": "astro check && astro build && bun scripts/rasterize-covers.ts",
     "preview": "wrangler pages dev ./dist --port 4321",
     "preview:network": "astro preview --host",
     "lint": "biome check",
@@ -39,6 +39,7 @@
     "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20260503.1"
+    "@cloudflare/workers-types": "^4.20260503.1",
+    "@resvg/resvg-js": "^2.6.2"
   }
 }
