@@ -33,6 +33,7 @@
       "devDependencies": {
         "@cloudflare/workers-types": "^4.20260503.1",
         "@resvg/resvg-js": "^2.6.2",
+        "wawoff2": "^2.0.1",
       },
     },
   },
@@ -1242,6 +1243,8 @@
     "vscode-nls": ["vscode-nls@5.2.0", "", {}, "sha512-RAaHx7B14ZU04EU31pT+rKz2/zSl7xMsfIZuo8pd+KZO6PXtQmpevpq3vxvWNcrGbdmhM/rr5Uw5Mz+NBfhVng=="],
 
     "vscode-uri": ["vscode-uri@3.1.0", "", {}, "sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ=="],
+
+    "wawoff2": ["wawoff2@2.0.1", "", { "dependencies": { "argparse": "^2.0.1" }, "bin": { "woff2_compress.js": "bin/woff2_compress.js", "woff2_decompress.js": "bin/woff2_decompress.js" } }, "sha512-r0CEmvpH63r4T15ebFqeOjGqU4+EgTx4I510NtK35EMciSdcTxCw3Byy3JnBonz7iyIFZ0AbVo0bbFpEVuhCYA=="],
 
     "web-namespaces": ["web-namespaces@2.0.1", "", {}, "sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ=="],
 

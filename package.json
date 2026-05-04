@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20260503.1",
-    "@resvg/resvg-js": "^2.6.2"
+    "@resvg/resvg-js": "^2.6.2",
+    "wawoff2": "^2.0.1"
   }
 }
