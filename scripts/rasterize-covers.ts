@@ -5,7 +5,7 @@ import { Resvg } from "@resvg/resvg-js";
 // @ts-expect-error - wawoff2 has no types
 import wawoff from "wawoff2";
 
-const COVERS_DIR = "dist/client/covers";
+const SCAN_DIRS = ["dist/client/blog", "dist/client/projects"];
 const FONT_WEIGHTS = [400, 500, 700];
 const FONT_SOURCE = (weight: number) =>
   `node_modules/@fontsource/inter-tight/files/inter-tight-latin-${weight}-normal.woff2`;
@@ -40,7 +40,7 @@ async function findSvgs(dir: string): Promise<string[]> {
 }
 
 const fontFiles = await prepareFonts();
-const svgs = await findSvgs(COVERS_DIR);
+const svgs = (await Promise.all(SCAN_DIRS.map(findSvgs))).flat();
 console.log(`Rasterizing ${svgs.length} cover SVGs to PNG...`);
 
 await Promise.all(
