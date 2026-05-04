@@ -49,15 +49,35 @@ const { Content } = await render(project);
           {project.data.title}
         </div>
         {
-          project.data.icon && (
-            <Image
-              src={project.data.icon}
-              alt=""
-              width={40}
-              height={40}
-              class="ml-auto rounded-md shrink-0"
-            />
-          )
+          project.data.icon &&
+            (() => {
+              const isSvg = project.data.icon.format === "svg";
+              const inner = isSvg ? (
+                <img
+                  src={project.data.icon.src}
+                  alt=""
+                  width={project.data.iconBackground ? 32 : 40}
+                  height={project.data.iconBackground ? 32 : 40}
+                />
+              ) : (
+                <Image
+                  src={project.data.icon}
+                  alt=""
+                  width={project.data.iconBackground ? 32 : 40}
+                  height={project.data.iconBackground ? 32 : 40}
+                />
+              );
+              return project.data.iconBackground ? (
+                <div
+                  class="ml-auto flex items-center justify-center rounded-md shrink-0 size-10"
+                  style={`background: ${project.data.iconBackground}`}
+                >
+                  {inner}
+                </div>
+              ) : (
+                <div class="ml-auto rounded-md shrink-0 overflow-hidden">{inner}</div>
+              );
+            })()
         }
       </div>
       {

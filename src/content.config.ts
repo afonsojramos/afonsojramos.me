@@ -67,6 +67,7 @@ const projects = defineCollection({
       repoURL: z.string().optional(),
       tags: z.array(z.string()).optional(),
       icon: image().optional(),
+      iconBackground: z.string().optional(),
     }),
 });
 
