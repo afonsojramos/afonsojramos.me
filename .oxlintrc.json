@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "import"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "perf": "warn",
+    "style": "off"
+  },
+  "rules": {
+    "import/no-unassigned-import": "off",
+    "typescript/triple-slash-reference": "off",
+    "no-unused-expressions": "off",
+    "no-unassigned-vars": "off",
+    "no-shadow": "off"
+  }
+}

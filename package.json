@@ -1,15 +1,17 @@
 {
   "name": "afonsojramos.me",
-  "type": "module",
   "version": "2.0.0",
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "dev:network": "astro dev --host",
     "build": "astro check && astro build && bun scripts/rasterize-covers.ts",
     "preview": "wrangler pages dev ./dist --port 4321",
     "preview:network": "astro preview --host",
-    "lint": "biome check",
-    "format": "biome check --write",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
     "prepare": "husky"
   },
   "dependencies": {
@@ -19,7 +21,6 @@
     "@astrojs/rss": "4.0.18",
     "@astrojs/sitemap": "3.7.2",
     "@astrojs/solid-js": "6.0.1",
-    "@biomejs/biome": "^2.4.14",
     "@fontsource/inter-tight": "^5.2.7",
     "@kobalte/core": "^0.13.11",
     "@kobalte/tailwindcss": "^0.9.0",
@@ -41,6 +42,8 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20260503.1",
     "@resvg/resvg-js": "^2.6.2",
+    "oxfmt": "^0.47.0",
+    "oxlint": "^1.62.0",
     "wawoff2": "^2.0.1"
   }
 }

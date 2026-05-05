@@ -1,11 +1,16 @@
 STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g')
 
-# Run format on staged files and stage any fixes
-if [ -n "$STAGED_FILES" ]; then
-  bun format $STAGED_FILES --no-errors-on-unmatched
-  git add $STAGED_FILES
+if [ -z "$STAGED_FILES" ]; then
+  exit 0
 fi
 
-# Run lint check (should pass now after formatting)
-bun lint $STAGED_FILES --no-errors-on-unmatched
+# Format staged files and re-stage any fixes
+bun oxfmt --no-error-on-unmatched-pattern $STAGED_FILES
+git add $STAGED_FILES
+
+# Lint staged files (auto-fix where possible, then re-stage)
+bun oxlint --fix --no-error-on-unmatched-pattern $STAGED_FILES
+git add $STAGED_FILES
+
+# Type-check the whole project
 bun tsc --noEmit
