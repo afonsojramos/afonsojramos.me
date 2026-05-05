@@ -1,6 +1,6 @@
 ---
 title: "gitify"
-description: "A menubar app for GitHub notifications — PR reviews, mentions, issue updates, and CI failures as an unread count, with one click into the thread."
+description: "A menubar app for GitHub notifications - PR reviews, mentions, issue updates, and CI failures as an unread count, with one click into the thread."
 date: "2023-05-12"
 demoURL: "https://gitify.io"
 repoURL: "https://github.com/gitify-app/gitify"
