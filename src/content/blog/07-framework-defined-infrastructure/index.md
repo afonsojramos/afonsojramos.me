@@ -11,7 +11,7 @@ Every major leap in software development has followed the same pattern: we abstr
 
 In the 1950s, programmers wrote in machine code, toggling switches to represent binary instructions. Assembly language abstracted machine code. High-level languages like C abstracted assembly. Garbage collection abstracted memory management. Virtual machines abstracted operating systems. Cloud computing abstracted physical hardware.
 
-Each abstraction faced resistance. *"Real programmers"* supposedly needed direct memory access. Garbage collection was *"too slow"* for serious applications. Virtual machines added *"unnecessary overhead."* Cloud computing meant *"losing control."*
+Each abstraction faced resistance. _"Real programmers"_ supposedly needed direct memory access. Garbage collection was _"too slow"_ for serious applications. Virtual machines added _"unnecessary overhead."_ Cloud computing meant _"losing control."_
 
 In each case, the abstraction became dominant, though not universal. Not because it was perfect, but because it let most developers solve most problems at a higher level. Assembly still exists for embedded systems, manual memory management remains critical for certain performance-sensitive applications, and some organizations still run their own data centers. The question was never whether to abstract completely, but when the abstraction became **good enough** to trust **for the majority of use cases**.
 
@@ -25,11 +25,11 @@ Yet deployment remains stubbornly manual. We've moved beyond FTPing files to ser
 
 This translation layer is where things break down. As the evolution of Platform as a Service (PaaS) has shown, [the progression from bare metal to virtualized infrastructure represents "the evolutionary nature" of modern software](https://dzone.com/articles/platform-as-a-service-paas-origins-and-architectur). Yet even with traditional PaaS offerings, developers still face somewhat of a gap between application code and infra configuration.
 
-With traditional Infrastructure as Code (IaC) approaches, you write a server-side rendering function in your framework, then spend hours configuring the serverless function, its memory limits, timeout settings, IAM roles, and API Gateway integration. The gap between framework concept and infrastructure primitive remains stubbornly manual. Terraform fatigue is real. 
+With traditional Infrastructure as Code (IaC) approaches, you write a server-side rendering function in your framework, then spend hours configuring the serverless function, its memory limits, timeout settings, IAM roles, and API Gateway integration. The gap between framework concept and infrastructure primitive remains stubbornly manual. Terraform fatigue is real.
 
 ## Framework-Defined Infrastructure Closes the Gap
 
-Framework-defined infrastructure eliminates this translation layer by making the framework itself the interface for infrastructure decisions. As [Vercel describes it](https://vercel.com/blog/framework-defined-infrastructure), *"the deployment environment automatically provisions infrastructure derived from the framework and the applications written in it."* The platform reads your framework code and provisions infrastructure automatically based on what it understands your code needs.
+Framework-defined infrastructure eliminates this translation layer by making the framework itself the interface for infrastructure decisions. As [Vercel describes it](https://vercel.com/blog/framework-defined-infrastructure), _"the deployment environment automatically provisions infrastructure derived from the framework and the applications written in it."_ The platform reads your framework code and provisions infrastructure automatically based on what it understands your code needs.
 
 This isn't an entirely new concept. In fact, the roots trace back to 2006 when Zimki introduced what Simon Wardley called ["framework-as-a-service"](https://en.wikipedia.org/wiki/Platform_as_a_service), a fascinating early attempt that could have made [Canon one of the first major cloud providers](https://www.porter.run/blog/history-of-paas-how-canon-almost-became-a-major-cloud-provider) before the industry settled on the term Platform as a Service. Though Zimki ultimately closed, [Heroku launched in 2007](https://www.heroku.com/about/) and successfully commercialized this vision with their mantra that developers should "focus on what they do best: building great apps" while the platform handles infrastructure. Heroku's architecture was designed to [remove obstacles so developers can focus on building](https://www.heroku.com/about/) rather than managing servers.
 
@@ -66,7 +66,7 @@ This echoes Heroku's original insight: by [abstracting away the underlying infra
 
 This eliminates an entire class of problems. You don't need to maintain separate local development simulators like LocalStack or Wrangler. You don't need to keep IaC configurations in sync with application changes. You don't need platform-specific tooling that only half-works on your operating system.
 
-Tools like [SST](https://sst.dev/) represent an interesting middle ground—they use framework conventions to *generate* IaC (CloudFormation/Terraform) rather than bypassing it entirely. This hybrid approach still requires maintaining infrastructure code, but reduces the manual translation burden by inferring infrastructure needs from your application code.
+Tools like [SST](https://sst.dev/) represent an interesting middle ground—they use framework conventions to _generate_ IaC (CloudFormation/Terraform) rather than bypassing it entirely. This hybrid approach still requires maintaining infrastructure code, but reduces the manual translation burden by inferring infrastructure needs from your application code.
 
 ## Abstraction Enables Specialization
 

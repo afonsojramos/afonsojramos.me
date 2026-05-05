@@ -3,7 +3,16 @@ company: "YLD"
 dateStart: "2022-09-01"
 role: "Senior Full-Stack Software Engineer"
 shortDescription: "Engineering consultant balancing line management of 5 engineers with hands-on technical delivery for enterprise clients, conducting performance reviews, leading recruitment efforts, and contributing to large-scale React and Node.js projects."
-tags: ["Full-Stack Development", "Leadership", "Team Management", "Microfrontends", "Recruitment", "DevRel", "Performance Management"]
+tags:
+  [
+    "Full-Stack Development",
+    "Leadership",
+    "Team Management",
+    "Microfrontends",
+    "Recruitment",
+    "DevRel",
+    "Performance Management",
+  ]
 url: "https://www.yld.io/"
 ---
 

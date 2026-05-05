@@ -3,7 +3,17 @@ company: "BPP (via YLD)"
 dateStart: "2024-09-01"
 role: "Principal Software Engineer - Tech Lead"
 shortDescription: "Leading technical modernization efforts at BPP, including a unified React Native mobile app, multi-platform communication service, and full-stack tutor portal, while inheriting and maintaining critical backend services."
-tags: ["React Native", "Expo", "TanStack Router", "Full-Stack", "System Architecture", "CI/CD", "Team Leadership", "Mobile Development"]
+tags:
+  [
+    "React Native",
+    "Expo",
+    "TanStack Router",
+    "Full-Stack",
+    "System Architecture",
+    "CI/CD",
+    "Team Leadership",
+    "Mobile Development",
+  ]
 url: "https://www.bpp.com"
 ---
 

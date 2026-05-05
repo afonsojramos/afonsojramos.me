@@ -4,7 +4,16 @@ dateEnd: "2022-09-30"
 dateStart: "2021-08-01"
 role: "Backend Software Engineer"
 shortDescription: "Developed and maintained high-scale backend services on the Search Engineering team, handling 100M+ requests per day across distributed systems with Java, Apache Kafka, and Google Cloud Platform."
-tags: ["Java", "SQL", "Apache Kafka", "Kubernetes", "Linux", "Google Cloud Platform (GCP)", "Microservices"]
+tags:
+  [
+    "Java",
+    "SQL",
+    "Apache Kafka",
+    "Kubernetes",
+    "Linux",
+    "Google Cloud Platform (GCP)",
+    "Microservices",
+  ]
 url: "https://www.edreamsodigeo.com/"
 ---
 

@@ -11,7 +11,7 @@ I recently went through the process of migrating (on the same day 😅) from [El
 
 ## The Initial Setup: Elysia
 
-Let me be honest upfront - I didn't strictly *need* a framework for my simple API routes. Astro's built-in API functionality would have been perfectly adequate for my use case. But as developers, we often choose technologies not just for practical reasons, but also for the sake of experimentation and learning. I wanted to try something new and see what these Bun-optimized frameworks had to offer.
+Let me be honest upfront - I didn't strictly _need_ a framework for my simple API routes. Astro's built-in API functionality would have been perfectly adequate for my use case. But as developers, we often choose technologies not just for practical reasons, but also for the sake of experimentation and learning. I wanted to try something new and see what these Bun-optimized frameworks had to offer.
 
 My journey began with Elysia, a framework that promises "sub-millisecond" performance and a delightful developer experience. Setting up API routes in Astro with Elysia is straightforward:
 
@@ -100,6 +100,7 @@ export const getTopTracks = async (c: Context) => {
 ```
 
 This approach has several advantages:
+
 1. Improved type safety for environment variables
 2. Access to Cloudflare-specific features
 3. Cleaner separation of concerns

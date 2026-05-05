@@ -7,7 +7,7 @@ repoURL: "https://github.com/afonsojramos/critical-mass"
 tags: ["Astro", "TailwindCSS", "i18n", "Cloudflare", "Civic"]
 ---
 
-[Critical Mass](https://en.wikipedia.org/wiki/Critical_Mass_(cycling)) is a worldwide movement, born in San Francisco in 1992, where cyclists meet on the last Friday of every month and ride together through city streets. Not a protest, a celebration - and an obvious-once-you-see-it argument that bicycles are real urban transportation, not toys. In Portugal it runs in Porto, Lisboa, Coimbra, and a growing list of smaller cities, organised entirely by volunteers, and until recently every chapter ran on its own scattered Instagram pages and WhatsApp groups.
+[Critical Mass](<https://en.wikipedia.org/wiki/Critical_Mass_(cycling)>) is a worldwide movement, born in San Francisco in 1992, where cyclists meet on the last Friday of every month and ride together through city streets. Not a protest, a celebration - and an obvious-once-you-see-it argument that bicycles are real urban transportation, not toys. In Portugal it runs in Porto, Lisboa, Coimbra, and a growing list of smaller cities, organised entirely by volunteers, and until recently every chapter ran on its own scattered Instagram pages and WhatsApp groups.
 
 ![Cyclists at Critical Mass Portugal 2025](critical-mass-2025.jpg)
 

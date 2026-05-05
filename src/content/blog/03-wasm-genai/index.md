@@ -23,7 +23,7 @@ WASM is a low-level, portable binary instruction format designed for safe, effic
 - Portability as a universal execution target
 - Security through its sandboxed environment (especially in browsers)
 
-By decoupling code execution from specific platforms or architectures, WASM allows developers to build once and deploy anywhere, making this function an ideal approach to developing modern, distributed applications. 
+By decoupling code execution from specific platforms or architectures, WASM allows developers to build once and deploy anywhere, making this function an ideal approach to developing modern, distributed applications.
 
 The rise of Vercel-like WASM-focused companies highlights the growing adoption of WASM’s unique benefits for developers. With WASM, developers gain greater autonomy and flexibility, enabling them to build and deploy high-performance applications without being tied to specific platforms. Additionally, companies using WASM can optimise performance while minimising resource usage, making the process of building and deploying applications much more efficient.
 
@@ -44,7 +44,7 @@ For example, a WASM module could host a language model directly in a web browser
 
 ## Real-world use cases
 
-In the real world, we’re already seeing examples of WASM and GenAI working together, like [Whisper running directly in the browser](https://whisper.ggerganov.com/). This hybrid approach allows users to choose the model and adjust performance according to their needs. There are exciting possibilities on the horizon where WASM and GenAI could combine to create innovative solutions. Here are a few examples: 
+In the real world, we’re already seeing examples of WASM and GenAI working together, like [Whisper running directly in the browser](https://whisper.ggerganov.com/). This hybrid approach allows users to choose the model and adjust performance according to their needs. There are exciting possibilities on the horizon where WASM and GenAI could combine to create innovative solutions. Here are a few examples:
 
 - **In-Browser AI Assistants**: Deploy lightweight GenAI models directly in browsers using WASM, providing real-time assistance without network latency.
 - **Edge Device Applications**: Run WASM-optimised GenAI models on IoT devices for tasks like image recognition or anomaly detection.
@@ -57,10 +57,10 @@ These use cases demonstrate how WASM empowers GenAI to operate efficiently in di
 While the combination of WASM and GenAI promises a lot of great things, several challenges must be addressed:
 
 - **GPU Limitations**: WASM currently lacks native GPU support, making it difficult to accelerate GenAI workloads that rely on parallel processing, a critical feature for handling large-scale AI tasks.
-- **Memory Constraints**: This compute boundary is a significant hurdle for WASM when working with AI workloads requiring high levels of parallelism. Furthermore, large GenAI models often exceed WASM’s default memory limits, necessitating careful optimisation to fit these constraints. 
+- **Memory Constraints**: This compute boundary is a significant hurdle for WASM when working with AI workloads requiring high levels of parallelism. Furthermore, large GenAI models often exceed WASM’s default memory limits, necessitating careful optimisation to fit these constraints.
 - **Early-stage Ecosystem**: While WASM is evolving rapidly, tools and libraries for integrating WASM with AI frameworks are still maturing, highlighting the ecosystem’s early-stage nature.
 
-Emerging tools like WebLLM and platforms such as Turso are addressing some of these limitations in innovative ways. For example, WebLLM demonstrates the feasibility of running large language models directly in the browser by leveraging WebGPU for acceleration. It’s important to note that WebGPU is still an experimental API, and its integration with WASM for AI workloads is in its early stages, requiring further development and testing. 
+Emerging tools like WebLLM and platforms such as Turso are addressing some of these limitations in innovative ways. For example, WebLLM demonstrates the feasibility of running large language models directly in the browser by leveraging WebGPU for acceleration. It’s important to note that WebGPU is still an experimental API, and its integration with WASM for AI workloads is in its early stages, requiring further development and testing.
 
 Similarly, Turso, a distributed database built on libSQL, has introduced features like native vector search and 1-bit quantisation for vector embeddings. These advancements make it easier to deploy AI applications that prioritise local-first processing and efficient resource usage. However, both WebLLM and Turso highlight the gaps in WASM’s ecosystem, such as the need for GPU integration and optimised toolchains for AI workloads. Addressing these challenges will be key to unlocking the full potential of this pairing.
 

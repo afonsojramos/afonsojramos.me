@@ -4,7 +4,22 @@ dateEnd: "2024-09-30"
 dateStart: "2022-10-01"
 role: "Full-Stack Software Engineer - Tech Lead"
 shortDescription: "Established and enforced good engineering practices across the organisation through a React-based Developer Portal that acts as a gatekeeper for API guidelines, documentation and much more using reusable GitHub Actions and complex GitHub Workflows."
-tags: ["Octopus", "Microsoft Azure", "React", "TypeScript", "Gatsby", "Astro", "GitHub Actions", "CI/CD", "Project Management", "Team Management", "Mentoring", "Strategic Planning", "Stakeholder Management"]
+tags:
+  [
+    "Octopus",
+    "Microsoft Azure",
+    "React",
+    "TypeScript",
+    "Gatsby",
+    "Astro",
+    "GitHub Actions",
+    "CI/CD",
+    "Project Management",
+    "Team Management",
+    "Mentoring",
+    "Strategic Planning",
+    "Stakeholder Management",
+  ]
 url: "https://www.newday.co.uk/"
 ---
 
