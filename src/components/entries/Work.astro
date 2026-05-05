@@ -15,7 +15,7 @@ const { entry } = Astro.props;
 ---
 
 <div class="flex">
-  <div class="max-w-[100px] w-full text-stone-400 dark:text-stone-400">
+  <div class="w-25 shrink-0 text-stone-400 dark:text-stone-400">
     {
       dateRange(entry.data.dateStart, entry.data.dateEnd).map((date) => (
         <p>{date}</p>
