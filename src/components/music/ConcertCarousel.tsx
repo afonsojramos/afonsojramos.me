@@ -30,7 +30,7 @@ const ConcertCarousel: Component<ConcertCarouselProps> = (props) => {
                 />
                 <div class="absolute inset-0 bg-black/30 dark:bg-black/50 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 flex items-end">
                   <div class="p-4 w-full">
-                    <h3 class="text-lg font-bold mb-1 text-white">{concert.title}</h3>
+                    <h3 class="normal-case text-lg font-bold mb-1 text-white">{concert.title}</h3>
                     <p class="text-sm text-gray-200">{concert.location}</p>
                   </div>
                 </div>
