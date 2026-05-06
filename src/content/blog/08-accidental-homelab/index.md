@@ -1,6 +1,7 @@
 ---
 title: "The Accidental Homelab"
 description: "Nine years of self-hosting media, from Plex on a gaming PC to TrueNAS with 5×18TB raidz2 and ~30 apps. Built one budget at a time."
+slug: "accidental-homelab"
 date: "5 May 2026"
 ---
 
