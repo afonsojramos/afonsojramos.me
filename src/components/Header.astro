@@ -2,6 +2,10 @@
 import Container from "~/components/Container.astro";
 import Link from "~/components/Link.astro";
 import { SITE } from "~/consts";
+
+const path = Astro.url.pathname;
+const isActive = (prefix: string) => path === prefix || path.startsWith(`${prefix}/`);
+const activeClass = "text-black dark:text-white";
 ---
 
 <header class="print:hidden">
@@ -13,15 +17,15 @@ import { SITE } from "~/consts";
         </div>
       </Link>
       <nav class="flex gap-1">
-        <Link href="/blog"> blog </Link>
+        <Link href="/blog" class={isActive("/blog") ? activeClass : ""}> blog </Link>
         <span>
           {`/`}
         </span>
-        <Link href="/work"> work </Link>
+        <Link href="/work" class={isActive("/work") ? activeClass : ""}> work </Link>
         <span>
           {`/`}
         </span>
-        <Link href="/music"> music </Link>
+        <Link href="/music" class={isActive("/music") ? activeClass : ""}> music </Link>
       </nav>
     </div>
   </Container>
