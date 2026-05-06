@@ -73,6 +73,31 @@ blockquote {
     @apply py-5 text-sm;
   }
 
+  /* Lowercase rendering across the board.
+     Source preserves Title Case so RSS/OG/SEO get the proper casing;
+     this only affects on-screen display. */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .title-render {
+    text-transform: lowercase;
+  }
+
+  /* Inside lowercased blocks, links keep their source casing
+     (so brand names like BPP/YLD stay uppercase). */
+  .title-render a {
+    text-transform: none;
+  }
+
+  /* Lowercase only the first letter of a paragraph
+     (keeps body brand names like BPP / React Native intact). */
+  .lowercase-first::first-letter {
+    text-transform: lowercase;
+  }
+
   .content {
     @apply mt-2;
   }
