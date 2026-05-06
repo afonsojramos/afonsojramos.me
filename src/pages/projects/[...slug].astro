@@ -35,7 +35,7 @@ const { Content } = await render(project);
       <BackToPrev href="/work"> Back to work </BackToPrev>
     </div>
     <div class="space-y-1 my-10">
-      <div class="animate flex items-center gap-1.5">
+      <div class="title-render animate flex items-center gap-1.5">
         <div class="font-base text-sm">
           <FormattedDate date={project.data.date} />
         </div>
@@ -45,7 +45,7 @@ const { Content } = await render(project);
         </div>
       </div>
       <div class="animate flex items-center gap-3">
-        <div class="text-2xl font-semibold text-black dark:text-white">
+        <div class="title-render text-2xl font-semibold text-black dark:text-white">
           {project.data.title}
         </div>
         {

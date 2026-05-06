@@ -14,14 +14,14 @@ const className =
   href ? (
     <a href={href} class={className} id="back-to-prev">
       <LinkIcon class="rotate-180" />
-      <div class="text-sm">
+      <div class="title-render text-sm">
         <slot />
       </div>
     </a>
   ) : (
     <button type="button" class={className} id="back-to-prev">
       <LinkIcon class="rotate-180" />
-      <div class="text-sm">
+      <div class="title-render text-sm">
         <slot />
       </div>
     </button>
