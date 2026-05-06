@@ -15,7 +15,7 @@ const { entry } = Astro.props;
 ---
 
 <div class="flex">
-  <div class="w-25 shrink-0 text-stone-400 dark:text-stone-400">
+  <div class="title-render w-25 shrink-0 text-stone-400 dark:text-stone-400">
     {
       dateRange(entry.data.dateStart, entry.data.dateEnd).map((date) => (
         <p>{date}</p>
@@ -27,15 +27,15 @@ const { entry } = Astro.props;
       {
         entry.data.url ? (
           <Link href={entry.data.url} external>
-            <h4>{entry.data.company}</h4>
+            <h4 class="normal-case">{entry.data.company}</h4>
           </Link>
         ) : (
-          <h4>{entry.data.company}</h4>
+          <h4 class="normal-case">{entry.data.company}</h4>
         )
       }
 
       <p
-        class="text-stone-800 dark:text-stone-100 print:text-stone-800 dark:print:text-stone-800"
+        class="title-render text-stone-800 dark:text-stone-100 print:text-stone-800 dark:print:text-stone-800"
       >
         {entry.data.role}
       </p>
