@@ -4,7 +4,13 @@ import { z } from "astro/zod";
 
 const stripIndex = (path: string) => path.replace(/\/index$/, "");
 
-const generateId = ({ entry }: { entry: string }) => stripIndex(entry.replace(/\.(md|mdx)$/, ""));
+// Prefer frontmatter `slug` when present (matches the pre-May-2026 routing
+// inherited from Astro's legacy `type: "content"` collections — keeps old
+// URLs and external links alive). Fall back to the file-path-derived id.
+const generateId = ({ entry, data }: { entry: string; data: Record<string, unknown> }) => {
+  if (typeof data.slug === "string" && data.slug.length > 0) return data.slug;
+  return stripIndex(entry.replace(/\.(md|mdx)$/, ""));
+};
 
 const blog = defineCollection({
   loader: glob({
