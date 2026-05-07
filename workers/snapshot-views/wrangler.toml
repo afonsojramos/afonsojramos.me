@@ -1,0 +1,22 @@
+name = "afonsojramos-me-snapshot-views"
+main = "index.ts"
+compatibility_date = "2025-03-25"
+
+# Daily at 02:30 UTC. Pulls "yesterday" from CF Analytics, so we want the cron
+# to fire after the day has fully closed and CF has the final numbers.
+[triggers]
+crons = ["30 2 * * *"]
+
+# Same D1 the main site reads from. The database_id must match wrangler.toml
+# at the repo root after `wrangler d1 create afonsojramos-me-views`.
+[[d1_databases]]
+binding = "VIEWS_DB"
+database_name = "afonsojramos-me-views"
+database_id = "REPLACE_AFTER_WRANGLER_D1_CREATE"
+migrations_dir = "../../migrations"
+
+[observability]
+enabled = true
+
+# Manual snapshot: `wrangler dev --test-scheduled` then curl /__scheduled?cron=*
+# Production: `wrangler deploy` from this directory.
