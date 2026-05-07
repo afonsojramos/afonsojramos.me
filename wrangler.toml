@@ -10,7 +10,7 @@ directory = "./dist"
 [[d1_databases]]
 binding = "VIEWS_DB"
 database_name = "afonsojramos-me-views"
-database_id = "REPLACE_AFTER_WRANGLER_D1_CREATE"
+database_id = "c4f8f8bd-736a-478a-8363-b9caa8ccd693"
 migrations_dir = "./migrations"
 
 [observability]
