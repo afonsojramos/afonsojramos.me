@@ -116,7 +116,7 @@ export const getViews = async (c: Context) => {
     fetchTodayFromCloudflare(c, path),
   ]);
 
-  return c.json({ views: lifetime + today, lifetime, today, source: "merged" }, 200, {
+  return c.json({ views: lifetime + today, lifetime, today }, 200, {
     "cache-control": "public, max-age=300, s-maxage=300",
   });
 };
