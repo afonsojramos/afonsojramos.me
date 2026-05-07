@@ -5,6 +5,7 @@ import { type CollectionEntry, getCollection, render } from "astro:content";
 import BackToPrev from "~/components/BackToPrev.astro";
 import Container from "~/components/Container.astro";
 import FormattedDate from "~/components/FormattedDate.astro";
+import ViewCount from "~/components/ViewCount.astro";
 import PageLayout from "~/layouts/PageLayout.astro";
 import { readingTime, sortByDate } from "~/lib/utils";
 
@@ -39,6 +40,7 @@ const { Content } = await render(post);
         <div class="font-base text-sm">
           {readingTime(post.body)}
         </div>
+        <ViewCount slug={`blog/${post.id}/`} />
       </div>
       <div class="title-render animate text-2xl font-semibold text-black dark:text-white">
         {post.data.title}

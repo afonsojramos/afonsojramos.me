@@ -7,6 +7,12 @@ compatibility_date = "2025-03-25"
 binding = "ASSETS"
 directory = "./dist"
 
+[[d1_databases]]
+binding = "VIEWS_DB"
+database_name = "afonsojramos-me-views"
+database_id = "REPLACE_AFTER_WRANGLER_D1_CREATE"
+migrations_dir = "./migrations"
+
 [observability]
 enabled = true
 

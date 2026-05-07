@@ -1,0 +1,38 @@
+---
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+---
+
+<span class="contents" data-view-count data-slug={slug} hidden>
+  &bull;
+  <span class="font-base text-sm" data-view-count-value>…</span>
+</span>
+
+<script>
+  // Fetch view counts for any <ViewCount> on the page.
+  // /api/views/<slug> hits Cloudflare GraphQL Analytics, edge-cached for 5min.
+  // The wrapper is rendered hidden; we reveal it only once we have a non-zero
+  // count, so failed fetches and zero-view posts leave no orphan separator.
+  const els = document.querySelectorAll<HTMLElement>("[data-view-count]");
+  await Promise.all(
+    Array.from(els).map(async (el) => {
+      const slug = el.dataset.slug;
+      if (!slug) return;
+      try {
+        const res = await fetch(`/api/views/${slug}`);
+        if (!res.ok) return;
+        const data = (await res.json()) as { views: number };
+        if (data.views <= 0) return;
+        const valueEl = el.querySelector<HTMLElement>("[data-view-count-value]");
+        if (!valueEl) return;
+        valueEl.textContent = `${data.views.toLocaleString()} views`;
+        el.hidden = false;
+      } catch {
+        // Stay hidden on any failure.
+      }
+    }),
+  );
+</script>

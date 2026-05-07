@@ -7,6 +7,7 @@ import BackToPrev from "~/components/BackToPrev.astro";
 import Container from "~/components/Container.astro";
 import FormattedDate from "~/components/FormattedDate.astro";
 import Link from "~/components/Link.astro";
+import ViewCount from "~/components/ViewCount.astro";
 import PageLayout from "~/layouts/PageLayout.astro";
 import { readingTime } from "~/lib/utils";
 
@@ -43,6 +44,7 @@ const { Content } = await render(project);
         <div class="font-base text-sm">
           {readingTime(project.body)}
         </div>
+        <ViewCount slug={`projects/${project.id}/`} />
       </div>
       <div class="animate flex items-center gap-3">
         <div class="title-render text-2xl font-semibold text-black dark:text-white">
