@@ -57,18 +57,18 @@ If you have ten differently-sized drives accumulated over a decade, get Unraid. 
 
 Today the pool is five 18 TB Seagate IronWolf Pros in a single raidz2 vdev: two-disk redundancy, ~40 TiB usable today (currently ~79% full), with about 7 TiB stuck behind a legacy parity layout that I only noticed while writing this post - more on that further down. Single-vdev is fine here because the IOPS-sensitive apps run on a separate pool - ZFS scales IOPS per vdev, so a 5-disk raidz2 has the random-read throughput of roughly one disk, which doesn't matter for sequential media streaming. Most of the drives came from [ServerPartDeals](https://serverpartdeals.com), a recertified-disk shop that ships enterprise drives at a meaningful discount over new. Worked out at roughly half of new-IronWolf-Pro pricing, the trade-off being that the 5-year warranty runs from manufacture date rather than purchase date.
 
-The host is on a UPS that easily handles half an hour of operation. Tailscale handles all remote access; nothing's port-forwarded anymore. The stack, in rough shape:
+The host is on a UPS that easily handles half an hour of operation. Nothing's port-forwarded anymore: family-facing apps come in through a Cloudflare Tunnel at `*.afonsojramos.me` (no exposed home IP, TLS handled at the edge), and everything admin - the \*arrs, qBittorrent, dashboards, the lot - stays behind Tailscale. Two access tiers, one running it, the other consuming it. The stack, in rough shape:
 
 - storage: 5×18TB raidz2 plus a separate `apps` pool for fast app state
 - media: Plex (1,400+ movies, 21 TB of TV, 874 GB of music), Jellyfin alongside it for redundancy (and external downloads, since the Plex Pass only allows Home User downloads), Tautulli for stats, Maintainerr for retention rules
 - photos: Immich
 - cloud: Seafile, plus Filebrowser and SMB shares for the unencrypted stuff
-- auth: Authentik does SSO across all ~30 apps. That one's a future blog post in itself
+- auth: Authentik fronts SSO across the public apps and gates the admin tools behind a `homelab-admins` group; Wizarr at `invite.afonsojramos.me` is the family onboarding door, bootstrapping both Plex and Jellyfin from a single invite
 - plumbing: Sonarr, Radarr, Bazarr, Overseerr, qBittorrent, Dockge, Glance, plus a handful of custom Dockge stacks for things the catalog doesn't ship
 
 ## The Drive Failure (Which Is Why raidz2)
 
-A few weeks ago, one of the recertified IronWolf Pros - `/dev/sdd`, 8,682 power-on hours (roughly a year of always-on), 18 TB - started throwing UNC errors and growing self-test failures. It's still online, but the pool reports `READ=1` against it. The drive is firmly dying.
+A few weeks ago, [Scrutiny](https://github.com/AnalogJ/scrutiny) - the SMART dashboard I have watching the pool - lit up with UNC errors against `/dev/sdd`, one of the recertified IronWolf Pros (8,682 power-on hours, roughly a year of always-on, 18 TB), and a failed extended self-test soon after. It's still online, but the pool reports `READ=1` against it. The drive is firmly dying.
 
 This is why raidz2 exists. With raidz1 (single-disk redundancy) you can lose another disk during a 4–6 day resilver window, which is a real risk: large drives mean long resilvers, the resilver itself stresses the remaining disks, and those remaining disks are also a year old and also from the same recertified batch. With raidz2 I can lose this one and another during the resilver and still be fine. The math on a five-disk pool of 18 TB drives wants two parity disks.
 
