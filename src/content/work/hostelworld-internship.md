@@ -8,7 +8,7 @@ tags: ["Chatbot Development", "Dialogflow", "JavaScript", "NLP", "NLU"]
 url: "https://www.hostelworld.com/"
 ---
 
-- Researched and evaluated multiple **Natural Language Processing (NLP)** and **Natural Language Understanding (NLU)** JavaScript libraries to determine the optimal solution for building a voice assistant integration for Hostelworld's booking platform.
+- Researched and evaluated multiple Natural Language Processing (NLP) and Natural Language Understanding (NLU) JavaScript libraries to determine the optimal solution for building a voice assistant integration for Hostelworld's booking platform.
 
 - Designed and delivered a production-ready **Dialogflow-based conversational chatbot** that enabled users to search for hostels, check availability, and initiate bookings through natural language voice commands, creating a more accessible and hands-free user experience.
 

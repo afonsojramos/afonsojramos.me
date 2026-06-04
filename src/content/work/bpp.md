@@ -17,8 +17,10 @@ tags:
 url: "https://www.bpp.com"
 ---
 
-- Led mobile modernization effort, unifying iOS and Android codebases into a **single React Native with Expo application** within two quarters, achieving full feature parity through roadmap planning and collaboration with designers and product stakeholders, while architecting navigation with **TanStack Router and React Navigation**, establishing **CI/CD pipelines** with automated App Store and Play Store deployments, implementing comprehensive testing strategies and mobile development best practices documented through **Architecture Decision Records (ADRs)**, and delivering to **30k+ users** with **100%** session duration improvement and near-zero crash rate.
+- Led the mobile modernization, replacing BPP's legacy Hub app with a single React Native and Expo app for **30k+ learners** to view course information, register attendance, and manage their profiles. Unified the iOS and Android codebases in two quarters, working with designers and product to sequence what learners needed first rather than chasing feature parity for its own sake, and delivered a **150% session-duration improvement** by reworking some of the core navigation to make the app more intuitive and crash-free.
 
-- Architected and delivered a **full-stack tutor portal** and **multi-platform communication service** from the ground up, enabling real-time notifications, in-app messaging, and cross-platform synchronization while managing student interactions, scheduling, and teaching resources.
+- Built the **Tutor Portal** from the ground up so tutors could track student attendance in one place, replacing a manual, error-prone process. Shaped scope directly with tutors and product stakeholders, prioritising the attendance flows they relied on daily over a broad, unfocused feature set. Now, we sit on a fully fledged platform for managing student attendance.
 
-- Inherited ownership of critical backend services (**my-account-service**, **my-calendar-service**), modernizing legacy codebases, improving test coverage and performance, and ensuring seamless integration with new platform features.
+- Designed and delivered a **multi-platform communications service** powering real-time notifications and in-app messaging across the mobile app and portals, so learners and tutors receive timely updates, such as attendance and schedule changes, on whatever device they are using.
+
+- Took ownership of two inherited backend services in the Student Experience domain, serverless GraphQL backed by DynamoDB and EventBridge, modernising legacy code and improving reliability so account and schedule data stayed accurate across the new learner and tutor apps.

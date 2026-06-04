@@ -23,10 +23,10 @@ tags:
 url: "https://www.newday.co.uk/"
 ---
 
-- Established and enforced engineering practices across the organisation through a **React-based Developer Portal** that manages API access, API keys, webhook subscriptions, and developer onboarding workflows, while developing **reusable GitHub Actions and Workflows** to automate CI/CD pipelines deploying to Microsoft Azure via Octopus Deploy.
+- Owned a **React-based Developer Portal** as an internal product, treating the developers who built against NewDay's APIs as its users: self-serve API access, key management, webhook subscriptions, and onboarding that cut the back-and-forth needed to get a new integration live. Built reusable GitHub Actions and Workflows behind it to automate CI/CD deploys to Microsoft Azure via Octopus Deploy.
 
-- Led a migration from **Chakra UI** to **Tailwind CSS & Radix UI**, maintaining UI consistency while improving developer experience, accessibility compliance, and component reusability.
+- Led a migration from Chakra UI to **Tailwind CSS & Radix UI**, improving accessibility and consistency for the portal's users while making components faster to build and reuse.
 
-- Promoted to **Tech Lead** in November 2023, taking ownership of roadmap planning, sprint prioritization, and stakeholder alignment while authoring **Architecture Decision Records (ADRs)** to document framework migrations, API design patterns, and infrastructure choices.
+- Promoted to **Tech Lead** in November 2023, owning roadmap and sprint prioritisation: deciding what shipped based on what unblocked teams across the organisation, aligning stakeholders, and documenting the trade-offs in Architecture Decision Records (ADRs).
 
-- Developed strategic plans to drive architectural changes to the codebase, improving engineering processes, code quality, team productivity, and system scalability.
+- Set technical strategy for the platform, driving architectural changes that improved code quality, team productivity, and scalability as the portal's usage grew.

@@ -17,8 +17,8 @@ tags:
 url: "https://www.edreamsodigeo.com/"
 ---
 
-- Developed and maintained critical backend services for the **Search Engineering team**, including the core search engine that processed **100M+ requests per day** across distributed microservices architecture, utilizing Java and SQL to deliver fast and reliable travel search results.
+- Developed and maintained critical backend services for the Search Engineering team, including the core search engine that processed **100M+ requests per day** across distributed microservices architecture, utilizing Java and SQL to deliver fast and reliable travel search results.
 
-- Contributed to designing and implementing **event-driven systems using Apache Kafka** for real-time data processing and search index updates, ensuring data consistency across multiple services while maintaining high availability and fault tolerance.
+- Contributed to designing and implementing event-driven systems using **Apache Kafka** for real-time data processing and search index updates, ensuring data consistency across multiple services while maintaining high availability and fault tolerance.
 
 - Managed infrastructure deployments on **Google Cloud Platform with Kubernetes**, optimizing containerized workloads for performance and cost-efficiency while troubleshooting performance bottlenecks and implementing monitoring solutions to maintain service reliability.
