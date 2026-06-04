@@ -4,6 +4,7 @@ export type Site = {
   email: string;
   website: string;
   about: string[];
+  skills: { category: string; items: string[] }[];
   numPostsOnHomepage: number;
   numWorksOnHomepage: number;
 };

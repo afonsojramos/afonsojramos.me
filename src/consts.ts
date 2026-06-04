@@ -2,11 +2,63 @@ import type { Metadata, Site, Socials } from "~/types/site";
 
 export const SITE: Site = {
   name: "afonso jorge ramos",
-  jobTitle: "Senior Product-Minded Software Engineer",
+  jobTitle: "senior product-minded software engineer",
   email: "afonsojorgeramos@gmail.com",
   website: "https://afonsojramos.me",
   about: [
-    "Product-minded Software Engineer, passionate about crafting the best products and experiences. Deeply committed to open source - not just as code, but as a philosophy of knowledge sharing, mentorship, and collective growth. This collaborative mindset and dedication to continuous learning defines both my professional work and personal approach to life.",
+    "Product-minded software engineer and tech lead. Most of my work is full-stack TypeScript, and I'm framework-agnostic: most at home in React, but just as comfortable shipping in Svelte, Solid, Vue, or Angular. I ship across languages just as readily: I core-maintain Spicetify, a Go CLI with 20M+ downloads and 23k+ GitHub stars, and I brought macOS support to qbz, a bit-perfect hi-fi audio player written in Rust, upstreaming fixes to it and to the Rust audio crates it builds on, like coreaudio-rs and notify-rust.",
+    "A growing part of how I work is AI-augmented: I ship confidently with AI coding agents, which is how much of my <a href='https://github.com/afonsojramos' class='underline underline-offset-2 hover:no-underline'>recent open-source work</a> gets built, faster and across more languages than I would manage alone. I also write about prompt engineering and GenAI for the CNCF and YLD blogs.",
+    "Deeply committed to open source - not just as code, but as a philosophy of knowledge sharing, mentorship, and collective growth. This collaborative mindset and dedication to continuous learning defines both my professional work and personal approach to life.",
+  ],
+  skills: [
+    {
+      category: "languages",
+      items: ["TypeScript", "JavaScript", "Go", "Rust", "Java", "SQL"],
+    },
+    {
+      category: "frontend",
+      items: [
+        "React",
+        "React Native",
+        "Next.js",
+        "Svelte",
+        "Solid",
+        "Vue",
+        "Angular",
+        "Astro",
+        "TanStack",
+        "Tailwind",
+      ],
+    },
+    {
+      category: "backend",
+      items: ["Node.js", "NestJS", "Apache Kafka", "Microservices"],
+    },
+    {
+      category: "platform",
+      items: ["AWS", "GCP", "Azure", "Kubernetes", "Terraform", "Cloudflare", "CI/CD", "Docker"],
+    },
+    {
+      category: "ai engineering",
+      items: [
+        "RAG",
+        "Embeddings / vector search",
+        "Agentic systems & tool use",
+        "WASM / edge inference",
+        "Prompt engineering",
+      ],
+    },
+    {
+      category: "ai workflow",
+      items: [
+        "AI coding agents",
+        "Subagents",
+        "Git worktrees",
+        "MCP",
+        "Spec-driven dev",
+        "AI code review",
+      ],
+    },
   ],
   numPostsOnHomepage: 3,
   numWorksOnHomepage: 2,

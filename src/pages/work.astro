@@ -77,7 +77,22 @@ const projects = await Promise.all(
     <section class="my-9 text-sm print:my-2 animate">
       <h3 class="mb-1">About</h3>
       <div class="space-y-2">
-        {SITE.about.map((paragraph: string) => <p>{paragraph}</p>)}
+        {SITE.about.map((paragraph: string) => <p set:html={paragraph} />)}
+      </div>
+    </section>
+    <section class="my-9 text-sm print:my-2 animate">
+      <h3 class="mb-1">Skills</h3>
+      <div class="flex flex-col gap-2">
+        {
+          SITE.skills.map((group) => (
+            <div class="flex">
+              <div class="mr-8 max-w-25 w-full text-stone-400 dark:text-stone-400">
+                {group.category}
+              </div>
+              <div class="flex-1">{group.items.join(", ")}</div>
+            </div>
+          ))
+        }
       </div>
     </section>
     <Block title="Work Experience">
@@ -94,7 +109,7 @@ const projects = await Promise.all(
         })
       }
     </Block>
-    <Block title="Projects" class="print:hidden">
+    <Block title="Projects">
       {
         projects.map((entry) => {
           return <ProjectEntry entry={entry} />;
