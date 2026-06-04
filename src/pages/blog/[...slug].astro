@@ -11,15 +11,25 @@ import { readingTime, sortByDate } from "~/lib/utils";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog")).filter((post) => !post.data.draft).sort(sortByDate);
-  return posts.map((post) => ({
+  return posts.map((post, index) => ({
     params: { slug: post.id },
-    props: post,
+    props: {
+      post,
+      newerPost: index > 0 ? posts[index - 1] : undefined,
+      olderPost: index < posts.length - 1 ? posts[index + 1] : undefined,
+    },
   }));
 }
-type Props = CollectionEntry<"blog">;
+type Props = {
+  post: CollectionEntry<"blog">;
+  newerPost?: CollectionEntry<"blog">;
+  olderPost?: CollectionEntry<"blog">;
+};
 
-const post = Astro.props;
+const { post, newerPost, olderPost } = Astro.props;
 const { Content } = await render(post);
+const newerUrl = newerPost ? `/blog/${newerPost.id}` : undefined;
+const olderUrl = olderPost ? `/blog/${olderPost.id}` : undefined;
 ---
 
 <PageLayout
@@ -28,6 +38,7 @@ const { Content } = await render(post);
   image={`/${post.collection}/${post.id}.png`}
 >
   <Container>
+    <div id="post-nav" data-newer={newerUrl} data-older={olderUrl} hidden></div>
     <div class="animate">
       <BackToPrev> Back </BackToPrev>
     </div>

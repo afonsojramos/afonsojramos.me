@@ -175,6 +175,24 @@ const { title, description, image = "/nano.png" } = Astro.props;
               window.location.href = "/#contacts";
             }
             break;
+          case "ArrowLeft":
+          case "ArrowRight": {
+            // Navigate between adjacent blog posts (left = newer, right = older).
+            // Skip when a modifier is held so browser back/forward keeps working.
+            if (event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) {
+              break;
+            }
+            const postNav = document.getElementById("post-nav");
+            const target =
+              event.key === "ArrowLeft"
+                ? postNav?.dataset.newer
+                : postNav?.dataset.older;
+            if (target) {
+              event.preventDefault();
+              window.location.href = target;
+            }
+            break;
+          }
         }
       }
     });
