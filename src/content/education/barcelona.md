@@ -2,7 +2,7 @@
 school: "Informatics Faculty of Barcelona at Universitat Politècnica de Catalunya"
 degree: "Erasmus"
 dateStart: "2019-09-01"
-dateEnd: "2019-02-28"
+dateEnd: "2020-02-28"
 ---
 
 - Completed an ERASMUS exchange semester at one of Europe's top Computer Science institutions, the Informatics Faculty of Barcelona at UPC
