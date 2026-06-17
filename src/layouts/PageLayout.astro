@@ -9,9 +9,10 @@ type Props = {
   title: string;
   description: string;
   image?: string;
+  noindex?: boolean;
 };
 
-const { title, description, image } = Astro.props;
+const { title, description, image, noindex } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,6 +22,7 @@ const { title, description, image } = Astro.props;
       title={title === "home" ? SITE.name : `${title} | ${SITE.name}`}
       description={description}
       image={image}
+      noindex={noindex}
     />
   </head>
   <body>

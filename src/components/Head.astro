@@ -11,11 +11,12 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  noindex?: boolean;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/nano.png" } = Astro.props;
+const { title, description, image = "/nano.png", noindex = false } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -35,6 +36,7 @@ const { title, description, image = "/nano.png" } = Astro.props;
 />
 <link rel="icon" type="image/x-icon" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
 
 <!-- Font preloads -->
 <link

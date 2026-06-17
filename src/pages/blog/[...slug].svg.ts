@@ -5,7 +5,7 @@ import { SITE } from "~/consts";
 import { buildCoverSvg } from "~/lib/cover";
 
 export async function getStaticPaths() {
-  const posts = (await getCollection("blog")).filter((post) => !post.data.draft);
+  const posts = await getCollection("blog");
   return posts.map((post) => ({ params: { slug: post.id }, props: post }));
 }
 

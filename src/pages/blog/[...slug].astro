@@ -10,15 +10,21 @@ import PageLayout from "~/layouts/PageLayout.astro";
 import { readingTime, sortByDate } from "~/lib/utils";
 
 export async function getStaticPaths() {
-  const posts = (await getCollection("blog")).filter((post) => !post.data.draft).sort(sortByDate);
-  return posts.map((post, index) => ({
-    params: { slug: post.id },
-    props: {
-      post,
-      newerPost: index > 0 ? posts[index - 1] : undefined,
-      olderPost: index < posts.length - 1 ? posts[index + 1] : undefined,
-    },
-  }));
+  const posts = (await getCollection("blog")).sort(sortByDate);
+  // Drafts are generated and reachable by URL, but kept out of prev/next navigation.
+  const published = posts.filter((post) => !post.data.draft);
+  return posts.map((post) => {
+    const index = published.findIndex((p) => p.id === post.id);
+    return {
+      params: { slug: post.id },
+      props: {
+        post,
+        newerPost: index > 0 ? published[index - 1] : undefined,
+        olderPost:
+          index !== -1 && index < published.length - 1 ? published[index + 1] : undefined,
+      },
+    };
+  });
 }
 type Props = {
   post: CollectionEntry<"blog">;
@@ -36,6 +42,7 @@ const olderUrl = olderPost ? `/blog/${olderPost.id}` : undefined;
   title={post.data.title}
   description={post.data.description}
   image={`/${post.collection}/${post.id}.png`}
+  noindex={post.data.draft}
 >
   <Container>
     <div id="post-nav" data-newer={newerUrl} data-older={olderUrl} hidden></div>
