@@ -127,9 +127,16 @@ blockquote {
   }
 
   article {
-    @apply max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto prose-sm;
+    @apply max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-8 prose-base;
     @apply prose-headings:font-semibold prose-p:font-sans;
     @apply prose-headings:text-black dark:prose-headings:text-white;
+    @apply prose-headings:mt-14 prose-headings:text-base;
+    @apply prose-blockquote:my-8;
+  }
+
+  /* Intro paragraph: full-contrast text with extra breathing room below. */
+  article.post > p:first-of-type {
+    @apply text-black dark:text-white mb-10;
   }
 }
 
