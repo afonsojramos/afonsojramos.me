@@ -66,6 +66,8 @@ The host is on a UPS that easily handles half an hour of operation. Nothing's po
 - auth: Authentik fronts SSO across the public apps and gates the admin tools behind a `homelab-admins` group; Wizarr at `invite.afonsojramos.me` is the family onboarding door, bootstrapping both Plex and Jellyfin from a single invite
 - plumbing: Sonarr, Radarr, Bazarr, Overseerr, qBittorrent, Dockge, Glance, plus a handful of custom Dockge stacks for things the catalog doesn't ship
 
+![Grafana dashboard showing 83 running containers across the homelab at 0.481 CPU cores and 16.3 GiB of memory, with zero restarts and per-service CPU, memory, network, and restart breakdowns.](./grafana.png)
+
 ## The Drive Failure (Which Is Why raidz2)
 
 A few weeks ago, [Scrutiny](https://github.com/AnalogJ/scrutiny) - the SMART dashboard I have watching the pool - lit up with UNC errors against `/dev/sdd`, one of the recertified IronWolf Pros (8,682 power-on hours, roughly a year of always-on, 18 TB), and a failed extended self-test soon after. It's still online, but the pool reports `READ=1` against it. The drive is firmly dying.
@@ -101,6 +103,6 @@ A few opinions that have held up, regardless of when you start:
 - Storage Spaces is fine until it isn't. Use it, then leave it before your library makes the migration scary.
 - Don't run Plex on your gaming PC. The moment your library has more than a couple of viewers, it deserves its own machine.
 - Recertified enterprise drives are great once you trust the supplier. ServerPartDeals' IronWolf Pros land at roughly half the price of new for the warranty trade-off.
-- Pay for Plex Pass when it goes on sale. The 50%-off lifetime promos come around. Best deal in self-hosting. (**Edit (29 May 2026):** turns out, this was an even better deal than I thought, since from July 2026, [Plex Pass will be available for 750$](https://9to5mac.com/2026/05/19/plex-increasing-lifetime-plex-pass-cost-to-whopping-750/))
+- Pay for Plex Pass when it goes on sale. The 50%-off lifetime promos come around. Best deal in self-hosting. (Edit (29 May 2026): turns out, this was an even better deal than I thought, since from July 2026, [Plex Pass will be available for 750$](https://9to5mac.com/2026/05/19/plex-increasing-lifetime-plex-pass-cost-to-whopping-750/))
 
 The thing the homelab guides on YouTube don't tell you is that it never actually starts as a homelab. It starts as one Plex install on whatever's nearest, and a few years later you catch yourself reading about ECC memory on a Sunday afternoon.
