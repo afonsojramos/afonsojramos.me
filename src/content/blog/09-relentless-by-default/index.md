@@ -15,7 +15,7 @@ The fix, in the end, was two lines of CSS. The session cost about $12.
 
 A comment I saw summed up a reaction I've seen a lot: this is evidence none of these models are actually intelligent, because any junior dev would have fixed it faster and with far less ceremony.
 
-I think that's backwards.
+I think it shows the opposite.
 
 ## Looking at what it actually did
 
