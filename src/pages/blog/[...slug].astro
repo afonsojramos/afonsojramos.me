@@ -47,7 +47,7 @@ const olderUrl = olderPost ? `/blog/${olderPost.id}` : undefined;
   <Container>
     <div id="post-nav" data-newer={newerUrl} data-older={olderUrl} hidden></div>
     <div class="animate">
-      <BackToPrev> Back </BackToPrev>
+      <BackToPrev href="/blog"> Back </BackToPrev>
     </div>
     <div class="space-y-1 my-10">
       <div class="title-render animate flex items-center gap-1.5">
