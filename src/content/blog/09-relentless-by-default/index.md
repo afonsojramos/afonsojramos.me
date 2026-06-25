@@ -3,7 +3,6 @@ title: "Relentless by Default"
 description: "Claude Fable went to absurd lengths to fix a trivial CSS bug. The gap isn't intelligence, it's proportion, and that relentlessness is mostly a feature. What actually matters now is who gets to decide which model answers you, and whether anyone tells you when they do."
 slug: "relentless-by-default"
 date: "17 June 2026"
-draft: true
 ---
 
 Simon Willison wrote up [a debugging session with Claude Fable 5](https://simonwillison.net/2026/Jun/11/fable-is-relentlessly-proactive/) that's been rattling around in my head. He noticed a stray horizontal scrollbar in a chat input, took a screenshot, and gave the model one line: "Look at dependencies to help figure out why there is a horizontal scrollbar here."
@@ -22,9 +21,15 @@ I think that's backwards.
 
 No junior developer would have actually chained that together. And it is not because these individual tricks are black magic. Grabbing screenshots of windows is something [AltTab](https://alttab.io/) and [DockDoor](https://github.com/ejbills/DockDoor) already do, so the technique is out there. Deriving the whole pipeline from a one-line prompt is the part that isn't.
 
+![Artificial Analysis Intelligence Index bar chart with Claude Fable 5 ranked first at 64.9, just ahead of Claude Opus 4.8 at 61.4 and GPT-5.5 at 60.2.](./fable-5-intelligence-index.png)
+
+_This is not a dim model overreaching. Fable launched at the top of [Artificial Analysis](https://artificialanalysis.ai/articles/claude-fable-5-mythos-intelligence-index)' Intelligence Index, with Opus 4.8 (the model it later falls back to) the closest thing behind it._
+
 Obviously, a senior who needed those computed styles would simply open DevTools. Fable built a web server instead.
 
-That is not what unintelligent looks like, necessarily, but it is what intelligence with no sense of scale looks like, which is not necessarily a bad thing, if the goal is to get the job done quickly and efficiently. What is more expensive, the model or the human?
+That is not what unintelligent looks like, necessarily, but it is what intelligence with no sense of scale looks like, which is not necessarily a bad thing, if the goal is to get the job done quickly and efficiently. What is more expensive, the model or the human? More often than we admit, the answer is the human, which makes even an overzealous model the cheaper way to get the job done.
+
+> **An uncomfortable aside.** It is worth sitting with what that sentence quietly assumes. The moment a model is reliably cheaper than the person who used to do the work, the question stops being about productivity and starts being about replacement, and that is a far easier trade to celebrate when it is your own time being freed up than when it is your salary on the other side of it. We are optimising hard for the case where the machine wins that comparison, without having really decided, as a society, what we owe the people it wins against.
 
 ## A ten-cent job, a twelve-dollar answer
 
@@ -37,6 +42,10 @@ But, to be fair, it worked. Fable found the bug, tested a fix, and verified it. 
 And it's that last part, the checking its own work, that I don't want to skip past. Early on, you had to babysit these models into doing it. You'd end a prompt with "now write a test and actually run it," or "are you sure? go back and double-check," because left to themselves they'd hand you something plausible and call it done. Fable closed that loop on its own, unprompted. That's a genuine shift in how much you can trust the thing: you can hand it a task, wander off like Simon did, and come back to an answer it has already tried to break itself. The same relentlessness that overshoots on a scrollbar is what makes it check its own work without being told, and honestly, I'll take that trade most days.
 
 Of course, the spending cuts both ways. For Anthropic, a model this eager sells more tokens today, and that suits the company doing the billing just fine. For the rest of us, $12 is nothing next to an hour of a senior engineer's time, so maybe you genuinely don't care. But a model that can't tell a ten-cent job from a twelve-dollar one is also exactly what makes people call it dumb in the first place.
+
+![Artificial Analysis scatter of intelligence against blended price per million tokens. Claude Fable 5 sits alone on the far right near $7.70, while a green "most attractive quadrant" holds a cluster of nearly-as-capable models, including Claude Opus 4.8 at roughly half the price.](./intelligence-vs-price.png)
+
+_The proportion problem, drawn out. Fable is the lone dot stranded on the far right, paying frontier prices, while a whole quadrant of models gets you most of the intelligence for a fraction of the cost. Source: [Artificial Analysis](https://artificialanalysis.ai/)._
 
 ## The industry is already building the governor
 
@@ -61,6 +70,10 @@ But that's not the argument they think it is. Taking a strong open base and spec
 ### GPT-5's router: the cautionary version
 
 OpenAI tried the same idea, only at scale, and got badly burned on the framing. The [GPT-5 launch in August 2025](https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/) replaced the model picker with an automatic router that decided, per prompt, which model should answer you. Then on launch day the autoswitcher broke. Altman himself admitted GPT-5 "seemed way dumber" and that OpenAI had "totally screwed up some things on the rollout." People were convinced their prompts were being quietly shunted off to weaker, cheaper models, and whether or not that was the intent, that's exactly how it landed. OpenAI walked it back fast: GPT-4o came back for paying users, the explicit Auto / Fast / Thinking controls showed up, and the company promised to be clearer about which model was actually answering.
+
+![OpenAI's GPT-5 launch chart for SWE-bench Verified, in which the 52.8% bar for GPT-5 without thinking is drawn taller than the 69.1% bar for OpenAI o3, and GPT-4o's 30.8% bar is nearly as tall as o3's.](./gpt5-chart-crime.png)
+
+_It did not help that the launch itself shipped the now-infamous "chart crime": GPT-5's 52.8 drawn taller than o3's 69.1. Source: OpenAI's GPT-5 livestream, via [TechCrunch](https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/)._
 
 And it's the same underlying mechanism as Fable's silent switch to Opus, automatic and per-prompt, only here it landed the complete opposite way. The routing itself was never really the problem. Not being able to see it happen was. On a product you're paying for, an invisible downgrade just reads as a breach of trust rather than a feature.
 
