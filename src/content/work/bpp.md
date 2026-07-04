@@ -13,14 +13,18 @@ tags:
     "CI/CD",
     "Team Leadership",
     "Mobile Development",
+    "Terraform",
+    "Observability",
   ]
 url: "https://www.bpp.com"
 ---
 
-- Led the mobile modernization, replacing BPP's legacy Hub app with a single React Native and Expo app for **30k+ learners** to view course information, register attendance, and manage their profiles. Unified the iOS and Android codebases in two quarters, working with designers and product to sequence what learners needed first rather than chasing feature parity for its own sake, and delivered a **150% session-duration improvement** by reworking some of the core navigation to make the app more intuitive and crash-free.
+- Led the mobile modernization, replacing BPP's legacy Hub app with a single React Native and Expo app for **30k+ learners** to view course information, register attendance, and manage their profiles. Unified the iOS and Android codebases in two quarters and delivered a **150% session-duration improvement** by reworking core navigation for a more intuitive, crash-free experience.
 
-- Built the **Tutor Portal** from the ground up so tutors could track student attendance in one place, replacing a manual, error-prone process. Shaped scope directly with tutors and product stakeholders, prioritising the attendance flows they relied on daily over a broad, unfocused feature set. Now, we sit on a fully fledged platform for managing student attendance.
+- Built the **Tutor Portal** from the ground up, turning a manual, error-prone attendance process into a full platform: a Next.js app with **QR-code check-in** for in-person sessions and automated online-classroom capture, stitched together by event-driven serverless pipelines (EventBridge, SQS, Lambda) that reconcile records and post attendance back to Salesforce.
 
-- Designed and delivered a **multi-platform communications service** powering real-time notifications and in-app messaging across the mobile app and portals, so learners and tutors receive timely updates, such as attendance and schedule changes, on whatever device they are using.
+- Spotted a major opportunity in the mobile **timetable**, so I built [**super-calendar**](https://super-calendar.afonsojramos.me) on my own time, a gesture-driven React Native and web calendar with pinch-to-zoom and virtualized rendering, then brought it into BPP as the app's calendar engine and open-sourced it.
 
-- Took ownership of two inherited backend services in the Student Experience domain, serverless GraphQL backed by DynamoDB and EventBridge, modernising legacy code and improving reliability so account and schedule data stayed accurate across the new learner and tutor apps.
+- Delivered a **multi-platform communications service** for real-time notifications and in-app messaging across the app and portals, and took ownership of inherited serverless GraphQL backends (DynamoDB, EventBridge), shipping the **academic appeals** flow end to end while modernising legacy code for reliability.
+
+- Drove a platform-wide **reliability and delivery** push: New Relic dashboards and alerts codified as Terraform, self-hosted **expo-updates** infrastructure for over-the-air releases, PII redaction, diagnosable queue failures, and CI hardening (SHA-pinned actions, yarn-to-pnpm and jest-to-vitest migrations, ephemeral-env reapers).
