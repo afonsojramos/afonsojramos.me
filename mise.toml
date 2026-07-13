@@ -1,0 +1,5 @@
+# Local toolchain. Cloudflare reads .node-version and installs the repo-local
+# @nubjs/nub dependency before running the build.
+[tools]
+node = "24.18.0"
+"npm:@nubjs/nub" = "0.4.11"

@@ -19,7 +19,7 @@ jobs:
       - run: nub scripts/update-contributions.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: nubx oxfmt src/content/contributions.ts
+      - run: nubx -y oxfmt@0.58.0 src/content/contributions.ts
       - name: Commit changes
         run: |
           if git diff --quiet -- src/content/contributions.ts; then
