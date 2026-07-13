@@ -31,5 +31,31 @@ const { title, description, image, noindex } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <script>
+      import { BlockRate } from "blockrate";
+
+      // Measures which analytics providers ad blockers block for visitors of
+      // this site and reports to the same-origin /api/block-rate route (which
+      // forwards server-side to blockrate.app). Consent-free: no cookies, no
+      // storage, no identifiers — see https://blockrate.app.
+      new BlockRate({
+        providers: [
+          "amplitude",
+          "ga4",
+          "gtm",
+          "hotjar",
+          "intercom",
+          "meta-pixel",
+          "mixpanel",
+          "optimizely",
+          "posthog",
+          "segment",
+        ],
+        service: "afonsojramos.me",
+        reporter: (result) => {
+          navigator.sendBeacon("/api/block-rate", JSON.stringify(result));
+        },
+      }).check();
+    </script>
   </body>
 </html>
