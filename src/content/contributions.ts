@@ -11,49 +11,49 @@ export const contributions: Contribution[] = [
   {
     repository: "vercel/next.js",
     url: "https://github.com/vercel/next.js",
-    stars: 141000,
+    stars: 141051,
     mergedPullRequests: 1,
   },
   {
     repository: "microsoft/TypeScript",
     url: "https://github.com/microsoft/TypeScript",
-    stars: 109885,
+    stars: 109890,
     mergedPullRequests: 1,
   },
   {
     repository: "axios/axios",
     url: "https://github.com/axios/axios",
-    stars: 109105,
+    stars: 109106,
     mergedPullRequests: 1,
   },
   {
     repository: "facebook/docusaurus",
     url: "https://github.com/facebook/docusaurus",
-    stars: 65605,
+    stars: 65609,
     mergedPullRequests: 1,
   },
   {
     repository: "DefinitelyTyped/DefinitelyTyped",
     url: "https://github.com/DefinitelyTyped/DefinitelyTyped",
-    stars: 51340,
+    stars: 51342,
     mergedPullRequests: 1,
   },
   {
     repository: "files-community/Files",
     url: "https://github.com/files-community/Files",
-    stars: 44286,
+    stars: 44289,
     mergedPullRequests: 1,
   },
   {
     repository: "biomejs/biome",
     url: "https://github.com/biomejs/biome",
-    stars: 25407,
+    stars: 25412,
     mergedPullRequests: 1,
   },
   {
     repository: "spicetify/cli",
     url: "https://github.com/spicetify/cli",
-    stars: 23734,
+    stars: 23735,
     mergedPullRequests: 36,
   },
   {
@@ -65,13 +65,13 @@ export const contributions: Contribution[] = [
   {
     repository: "decaporg/decap-cms",
     url: "https://github.com/decaporg/decap-cms",
-    stars: 19231,
+    stars: 19233,
     mergedPullRequests: 1,
   },
   {
     repository: "electron-userland/electron-builder",
     url: "https://github.com/electron-userland/electron-builder",
-    stars: 14618,
+    stars: 14619,
     mergedPullRequests: 1,
   },
   {
@@ -83,7 +83,7 @@ export const contributions: Contribution[] = [
   {
     repository: "emdash-cms/emdash",
     url: "https://github.com/emdash-cms/emdash",
-    stars: 11135,
+    stars: 11139,
     mergedPullRequests: 1,
   },
   {
@@ -107,7 +107,7 @@ export const contributions: Contribution[] = [
   {
     repository: "spicetify/spicetify-themes",
     url: "https://github.com/spicetify/spicetify-themes",
-    stars: 6000,
+    stars: 6001,
     mergedPullRequests: 7,
   },
   {
@@ -137,7 +137,7 @@ export const contributions: Contribution[] = [
   {
     repository: "homarr-labs/homarr",
     url: "https://github.com/homarr-labs/homarr",
-    stars: 4299,
+    stars: 4300,
     mergedPullRequests: 9,
   },
   {
@@ -155,7 +155,7 @@ export const contributions: Contribution[] = [
   {
     repository: "withastro/docs",
     url: "https://github.com/withastro/docs",
-    stars: 1700,
+    stars: 1659,
     mergedPullRequests: 2,
   },
   {
@@ -167,7 +167,7 @@ export const contributions: Contribution[] = [
   {
     repository: "marmelo/tech-companies-in-portugal",
     url: "https://github.com/marmelo/tech-companies-in-portugal",
-    stars: 1511,
+    stars: 1510,
     mergedPullRequests: 57,
   },
   {
@@ -209,7 +209,7 @@ export const contributions: Contribution[] = [
   {
     repository: "vicrodh/qbz",
     url: "https://github.com/vicrodh/qbz",
-    stars: 560,
+    stars: 559,
     mergedPullRequests: 33,
   },
   {
