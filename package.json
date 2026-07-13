@@ -4,9 +4,9 @@
   "type": "module",
   "scripts": {
     "db:migrate:local": "wrangler d1 migrations apply afonsojramos-me-views --local",
-    "dev": "bun run db:migrate:local && astro dev",
-    "dev:network": "bun run db:migrate:local && astro dev --host",
-    "build": "astro check && astro build && bun scripts/rasterize-covers.ts",
+    "dev": "nub run db:migrate:local && astro dev",
+    "dev:network": "nub run db:migrate:local && astro dev --host",
+    "build": "astro check && astro build && nub scripts/rasterize-covers.ts",
     "preview": "wrangler pages dev ./dist --port 4321",
     "preview:network": "astro preview --host",
     "lint": "oxlint",
