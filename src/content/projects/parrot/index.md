@@ -2,6 +2,7 @@
 title: "parrot"
 description: "A hassle-free, highly performant, host-it-yourself Discord music bot built with Serenity in Rust, powered by yt-dlp."
 tags: ["Rust", "Discord", "Serenity", "yt-dlp"]
+relationship: "contributor"
 repoURL: "https://github.com/aquelemiguel/parrot"
 date: "2022"
 ---

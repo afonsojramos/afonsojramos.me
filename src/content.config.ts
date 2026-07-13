@@ -72,6 +72,7 @@ const projects = defineCollection({
       demoURL: z.string().optional(),
       repoURL: z.string().optional(),
       tags: z.array(z.string()).optional(),
+      relationship: z.enum(["owned", "maintainer", "contributor"]).optional(),
       icon: image().optional(),
       iconBackground: z.string().optional(),
     }),

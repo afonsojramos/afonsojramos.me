@@ -5,6 +5,7 @@ date: "2023-05-12"
 demoURL: "https://gitify.io"
 repoURL: "https://github.com/gitify-app/gitify"
 tags: ["TypeScript", "Electron", "React", "Tailwind CSS"]
+relationship: "maintainer"
 icon: "./icon.svg"
 iconBackground: "linear-gradient(135deg, #ffffff, #c7c7c7)"
 ---

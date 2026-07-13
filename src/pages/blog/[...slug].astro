@@ -5,6 +5,7 @@ import { type CollectionEntry, getCollection, render } from "astro:content";
 import BackToPrev from "~/components/BackToPrev.astro";
 import Container from "~/components/Container.astro";
 import FormattedDate from "~/components/FormattedDate.astro";
+import SubscribeToRss from "~/components/SubscribeToRss.astro";
 import ViewCount from "~/components/ViewCount.astro";
 import PageLayout from "~/layouts/PageLayout.astro";
 import { readingTime, sortByDate } from "~/lib/utils";
@@ -68,4 +69,5 @@ const olderUrl = olderPost ? `/blog/${olderPost.id}` : undefined;
       <Content />
     </article>
   </Container>
+  <SubscribeToRss slot="footer-action" />
 </PageLayout>

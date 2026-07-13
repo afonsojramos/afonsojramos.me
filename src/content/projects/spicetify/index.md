@@ -5,6 +5,7 @@ date: "2021-06-16"
 demoURL: "https://spicetify.app"
 repoURL: "https://github.com/spicetify/cli"
 tags: ["Go", "TypeScript", "Spotify", "Open Source"]
+relationship: "maintainer"
 icon: "./icon.png"
 ---
 

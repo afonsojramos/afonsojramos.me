@@ -1,0 +1,32 @@
+name: Update open-source contributions
+
+on:
+  schedule:
+    - cron: "0 8 1,15 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.0
+      - uses: nubjs/setup-nub@v0
+        with:
+          nub-version: latest
+      - run: nub scripts/update-contributions.ts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: nubx oxfmt src/content/contributions.ts
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- src/content/contributions.ts; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/content/contributions.ts
+          git commit -m "chore: refresh open-source contributions"
+          git push

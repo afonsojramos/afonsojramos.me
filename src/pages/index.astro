@@ -4,7 +4,9 @@ export const prerender = true;
 import { getCollection, render } from "astro:content";
 import ArrowCard from "~/components/ArrowCard.astro";
 import Container from "~/components/Container.astro";
+import ContributionEntry from "~/components/entries/Contribution.astro";
 import Link from "~/components/Link.astro";
+import { featuredRepositories } from "~/content/featured-repositories";
 import { HOME, SITE, SOCIALS } from "~/consts";
 import PageLayout from "~/layouts/PageLayout.astro";
 import { dateRange, sortByDate, sortByDateRange } from "~/lib/utils";
@@ -53,14 +55,15 @@ const work = await Promise.all(
             and natural wanderer, always exploring new ideas and experiences.
           </p>
           <p class="title-render animate">
-            Currently working at{" "}
+            Currently leading{" "}
             <Link href="https://www.bpp.com" aria-label="BPP website" external>
-              BPP
+              BPP's
             </Link>{" "}
-            (via{" "}
+            mobile modernisation (via{" "}
             <Link href="https://www.yld.io" aria-label="YLD website" external>
               YLD
-            </Link>) to help them bring their new mobile app to life.
+            </Link>), rebuilding how 30,000+ learners access their courses through a new
+            React Native app, tutor platform, and the services behind them.
           </p>
         </article>
       </section>
@@ -102,6 +105,22 @@ const work = await Promise.all(
                 </div>
                 <div class="title-render text-sm opacity-75 mb-2">{entry.data.role}</div>
                 <div class="lowercase-first text-sm">{entry.data.shortDescription}</div>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+          <h5 class="font-semibold text-black dark:text-white">Open source</h5>
+          <Link href="/work#open-source" class="title-render"> See all contributions </Link>
+        </div>
+        <ul class="grid grid-cols-1 min-[420px]:grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-1">
+          {
+            featuredRepositories.map((entry) => (
+              <li class="min-w-0">
+                <ContributionEntry entry={entry} />
               </li>
             ))
           }

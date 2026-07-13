@@ -8,6 +8,9 @@ import Link from "./Link.astro";
 <footer class="animate">
   <Container>
     <div class="relative print:hidden">
+      <div class="absolute left-0 -top-20">
+        <slot name="action" />
+      </div>
       <div class="absolute right-0 -top-20">
         <BackToTop />
       </div>

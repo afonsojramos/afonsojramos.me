@@ -5,6 +5,7 @@ date: "2026-04-04"
 repoURL: "https://github.com/vicrodh/qbz"
 demoURL: "https://qbz.lol"
 tags: ["Rust", "Tauri", "macOS", "CoreAudio", "Audio"]
+relationship: "contributor"
 ---
 
 [qbz](https://qbz.lol) is a native, bit-perfect hi-fi player for [Qobuz](https://www.qobuz.com), built in **Rust** on top of **Tauri**. It started life as a Linux-only app. I brought it to **macOS**.

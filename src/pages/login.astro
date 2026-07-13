@@ -1,10 +1,14 @@
 ---
 import Container from "~/components/Container.astro";
 import { LoginForm } from "~/components/LoginForm";
+import { SOCIALS } from "~/consts";
 import PageLayout from "~/layouts/PageLayout.astro";
 
 const url = Astro.url;
 const redirect = url.searchParams.get("redirect") || "/";
+const messageLinks = SOCIALS.filter(
+  (contact) => contact.name === "linkedin" || contact.name === "email",
+).sort((contact) => (contact.name === "linkedin" ? -1 : 1));
 ---
 
 <PageLayout title="Login" description="Password protected page">
@@ -19,11 +23,38 @@ const redirect = url.searchParams.get("redirect") || "/";
             Please enter your password for this page.
           </p>
           <p class="text-black/75 dark:text-white/75">
-            If you don't have the password, feel free to contact me.
+            If you don't have the password, send me a message and I'll help you
+            out.
           </p>
         </div>
 
         <LoginForm client:load redirectPath={redirect} />
+
+        <div class="flex items-center gap-3" aria-hidden="true">
+          <span class="h-px flex-1 bg-black/10 dark:bg-white/15"></span>
+          <span class="text-sm text-black/50 dark:text-white/50">or</span>
+          <span class="h-px flex-1 bg-black/10 dark:bg-white/15"></span>
+        </div>
+
+        <div class="flex flex-col gap-3 sm:flex-row">
+          {
+            messageLinks.map((contact) => (
+              <a
+                href={contact.href}
+                target={contact.name === "linkedin" ? "_blank" : undefined}
+                rel={contact.name === "linkedin" ? "noopener noreferrer" : undefined}
+                class="inline-flex min-h-10 flex-1 items-center justify-center rounded-lg border border-black/15 px-4 py-2.5 text-sm font-medium text-black transition-[color,background-color,transform] duration-300 ease-in-out hover:bg-black/5 active:scale-[0.96] dark:border-white/20 dark:text-white dark:hover:bg-white/5"
+                aria-label={
+                  contact.name === "linkedin"
+                    ? "Send me a message on LinkedIn"
+                    : "Send me an email"
+                }
+              >
+                {contact.name === "linkedin" ? "Message me on LinkedIn" : "Send me an email"}
+              </a>
+            ))
+          }
+        </div>
       </div>
     </div>
   </Container>
