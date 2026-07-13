@@ -1,0 +1,12 @@
+minimumReleaseAgeExclude:
+  - "@nubjs/nub@0.4.11"
+  - "@nubjs/nub-darwin-arm64@0.4.11"
+  - "@nubjs/nub-darwin-x64@0.4.11"
+  - "@nubjs/nub-linux-arm64@0.4.11"
+  - "@nubjs/nub-linux-arm64-musl@0.4.11"
+  - "@nubjs/nub-linux-x64@0.4.11"
+  - "@nubjs/nub-linux-x64-musl@0.4.11"
+  - "@nubjs/nub-win32-arm64@0.4.11"
+  - "@nubjs/nub-win32-x64@0.4.11"
+allowBuilds:
+  "@nubjs/nub": true
