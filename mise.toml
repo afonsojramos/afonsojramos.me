@@ -1,6 +1,0 @@
-# Dev toolchain, managed by mise (https://mise.jdx.dev).
-# nub (https://nubjs.com) is the installer and script runner; it reads/writes the
-# existing bun.lock, so nothing migrates. `mise install` provisions node + nub.
-[tools]
-node = "24"
-"npm:@nubjs/nub" = "0.4.11"
