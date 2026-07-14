@@ -141,11 +141,20 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
       });
 
     document.addEventListener("keydown", (event) => {
-      // Only trigger shortcuts if not typing in an input field
+      const activeElement = document.activeElement;
+      const isEditing =
+        activeElement instanceof HTMLElement &&
+        (activeElement.isContentEditable ||
+          ["INPUT", "TEXTAREA", "SELECT"].includes(activeElement.tagName));
+
+      // Site shortcuts are bare keys. Preserve copy/paste, browser shortcuts,
+      // and normal typing in form fields or contenteditable elements.
       if (
-        !["INPUT", "TEXTAREA", "SELECT"].includes(
-          document.activeElement?.tagName
-        )
+        !isEditing &&
+        !event.metaKey &&
+        !event.ctrlKey &&
+        !event.altKey &&
+        !event.shiftKey
       ) {
         switch (event.key) {
           case "t":
@@ -180,10 +189,6 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
           case "ArrowLeft":
           case "ArrowRight": {
             // Navigate between adjacent blog posts (left = newer, right = older).
-            // Skip when a modifier is held so browser back/forward keeps working.
-            if (event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) {
-              break;
-            }
             const postNav = document.getElementById("post-nav");
             const target =
               event.key === "ArrowLeft"
