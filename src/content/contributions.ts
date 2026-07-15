@@ -11,67 +11,67 @@ export const contributions: Contribution[] = [
   {
     repository: "vercel/next.js",
     url: "https://github.com/vercel/next.js",
-    stars: 141051,
+    stars: 141102,
     mergedPullRequests: 1,
   },
   {
     repository: "microsoft/TypeScript",
     url: "https://github.com/microsoft/TypeScript",
-    stars: 109890,
+    stars: 109923,
     mergedPullRequests: 1,
   },
   {
     repository: "axios/axios",
     url: "https://github.com/axios/axios",
-    stars: 109106,
+    stars: 109108,
     mergedPullRequests: 1,
   },
   {
     repository: "facebook/docusaurus",
     url: "https://github.com/facebook/docusaurus",
-    stars: 65609,
+    stars: 65631,
     mergedPullRequests: 1,
   },
   {
     repository: "DefinitelyTyped/DefinitelyTyped",
     url: "https://github.com/DefinitelyTyped/DefinitelyTyped",
-    stars: 51342,
+    stars: 51341,
     mergedPullRequests: 1,
   },
   {
     repository: "files-community/Files",
     url: "https://github.com/files-community/Files",
-    stars: 44289,
+    stars: 44304,
     mergedPullRequests: 1,
   },
   {
     repository: "biomejs/biome",
     url: "https://github.com/biomejs/biome",
-    stars: 25412,
+    stars: 25411,
     mergedPullRequests: 1,
   },
   {
     repository: "spicetify/cli",
     url: "https://github.com/spicetify/cli",
-    stars: 23735,
+    stars: 23751,
     mergedPullRequests: 36,
   },
   {
     repository: "Homebrew/homebrew-cask",
     url: "https://github.com/Homebrew/homebrew-cask",
-    stars: 22112,
+    stars: 22113,
     mergedPullRequests: 3,
   },
   {
     repository: "decaporg/decap-cms",
     url: "https://github.com/decaporg/decap-cms",
-    stars: 19233,
+    stars: 19239,
     mergedPullRequests: 1,
   },
   {
     repository: "electron-userland/electron-builder",
     url: "https://github.com/electron-userland/electron-builder",
-    stars: 14619,
+    stars: 14620,
     mergedPullRequests: 1,
   },
   {
@@ -83,31 +83,31 @@ export const contributions: Contribution[] = [
   {
     repository: "emdash-cms/emdash",
     url: "https://github.com/emdash-cms/emdash",
-    stars: 11139,
+    stars: 11159,
     mergedPullRequests: 1,
   },
   {
     repository: "microsoft/winget-pkgs",
     url: "https://github.com/microsoft/winget-pkgs",
-    stars: 10821,
+    stars: 10826,
     mergedPullRequests: 107,
   },
   {
     repository: "raineorshine/npm-check-updates",
     url: "https://github.com/raineorshine/npm-check-updates",
-    stars: 10277,
+    stars: 10275,
     mergedPullRequests: 1,
   },
   {
     repository: "t3-oss/create-t3-turbo",
     url: "https://github.com/t3-oss/create-t3-turbo",
-    stars: 6079,
+    stars: 6081,
     mergedPullRequests: 1,
   },
   {
     repository: "spicetify/spicetify-themes",
     url: "https://github.com/spicetify/spicetify-themes",
-    stars: 6001,
+    stars: 6004,
     mergedPullRequests: 7,
   },
   {
@@ -131,20 +131,26 @@ export const contributions: Contribution[] = [
   {
     repository: "dubzzz/fast-check",
     url: "https://github.com/dubzzz/fast-check",
-    stars: 5059,
+    stars: 5061,
     mergedPullRequests: 1,
   },
   {
     repository: "homarr-labs/homarr",
     url: "https://github.com/homarr-labs/homarr",
-    stars: 4300,
+    stars: 4306,
     mergedPullRequests: 9,
   },
   {
     repository: "mozilla/web-ext",
     url: "https://github.com/mozilla/web-ext",
-    stars: 3102,
+    stars: 3103,
     mergedPullRequests: 1,
+  },
+  {
+    repository: "nubjs/nub",
+    url: "https://github.com/nubjs/nub",
+    stars: 2914,
+    mergedPullRequests: 2,
   },
   {
     repository: "jpudysz/react-native-unistyles",
@@ -155,7 +161,7 @@ export const contributions: Contribution[] = [
   {
     repository: "withastro/docs",
     url: "https://github.com/withastro/docs",
-    stars: 1659,
+    stars: 1660,
     mergedPullRequests: 2,
   },
   {
@@ -185,19 +191,19 @@ export const contributions: Contribution[] = [
   {
     repository: "apisyouwonthate/openapi.tools",
     url: "https://github.com/apisyouwonthate/openapi.tools",
-    stars: 839,
+    stars: 840,
     mergedPullRequests: 1,
   },
   {
     repository: "Comfy-Themes/Spicetify",
     url: "https://github.com/Comfy-Themes/Spicetify",
-    stars: 796,
+    stars: 795,
     mergedPullRequests: 3,
   },
   {
     repository: "oven-sh/setup-bun",
     url: "https://github.com/oven-sh/setup-bun",
-    stars: 705,
+    stars: 706,
     mergedPullRequests: 1,
   },
   {
@@ -209,8 +215,8 @@ export const contributions: Contribution[] = [
   {
     repository: "vicrodh/qbz",
     url: "https://github.com/vicrodh/qbz",
-    stars: 559,
-    mergedPullRequests: 33,
+    stars: 562,
+    mergedPullRequests: 47,
   },
   {
     repository: "auth0/react-native-auth0",
@@ -221,7 +227,7 @@ export const contributions: Contribution[] = [
   {
     repository: "axelmarciano/expo-open-ota",
     url: "https://github.com/axelmarciano/expo-open-ota",
-    stars: 388,
+    stars: 391,
     mergedPullRequests: 3,
   },
   {
