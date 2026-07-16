@@ -38,6 +38,7 @@
     "embla-carousel-solid": "^8.6.0",
     "hono": "^4.12.27",
     "husky": "^9.1.7",
+    "prismjs": "1.30.0",
     "sharp": "^0.35.3",
     "solid-js": "^1.9.14",
     "tailwind-merge": "^3.6.0",

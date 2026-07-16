@@ -71,6 +71,9 @@ importers:
       husky:
         specifier: ^9.1.7
         version: 9.1.7
+      prismjs:
+        specifier: 1.30.0
+        version: 1.30.0
       sharp:
         specifier: ^0.35.3
         version: 0.35.3(@types/node@24.13.3)
