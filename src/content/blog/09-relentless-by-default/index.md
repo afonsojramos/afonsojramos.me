@@ -29,7 +29,9 @@ Obviously, a senior who needed those computed styles would simply open DevTools.
 
 That is not what unintelligent looks like, necessarily, but it is what intelligence with no sense of scale looks like, which is not necessarily a bad thing, if the goal is to get the job done quickly and efficiently. What is more expensive, the model or the human? More often than we admit, the answer is the human, which makes even an overzealous model the cheaper way to get the job done.
 
-> **An uncomfortable aside.** It is worth sitting with what that sentence quietly assumes. The moment a model is reliably cheaper than the person who used to do the work, the question stops being about productivity and starts being about replacement, and that is a far easier trade to celebrate when it is your own time being freed up than when it is your salary on the other side of it. We are optimising hard for the case where the machine wins that comparison, without having really decided, as a society, what we owe the people it wins against.
+:::note[An uncomfortable aside]
+It is worth sitting with what that sentence quietly assumes. The moment a model is reliably cheaper than the person who used to do the work, the question stops being about productivity and starts being about replacement, and that is a far easier trade to celebrate when it is your own time being freed up than when it is your salary on the other side of it. We are optimising hard for the case where the machine wins that comparison, without having really decided, as a society, what we owe the people it wins against.
+:::
 
 ## A ten-cent job, a twelve-dollar answer
 
@@ -93,6 +95,8 @@ Point that same relentlessness at a large, genuinely ambiguous problem with no o
 
 Just make the routing something I can actually see. I'd much rather pick the right tool myself than find out, after the fact, that one quietly got picked for me.
 
-> **Update, 17 June.** I spent this whole post on who gets to decide which model you run: the model, the platform, a router. I missed a candidate. On 12 June, three days after Fable went public, [the US government issued an export-control directive](https://www.anthropic.com/news/fable-mythos-access) citing national security, and Anthropic disabled Fable 5 and Mythos 5 for everyone within roughly ninety minutes. The directive technically only bars foreign nationals, but since nobody can check your nationality mid-prompt, every customer lost access. The reported trigger was a claimed jailbreak that unlocked the vulnerability-finding skill Anthropic had once called too dangerous to ship, though Anthropic says the technique only surfaced minor, already-known bugs that other public models find anyway.
->
-> It's meant to be temporary, and Anthropic says it's working to restore access. But for now the relentless model isn't quietly downgrading itself to Opus. It's just gone, and this time not one of us got a say.
+:::note[Update — 17 June]
+I spent this whole post on who gets to decide which model you run: the model, the platform, a router. I missed a candidate. On 12 June, three days after Fable went public, [the US government issued an export-control directive](https://www.anthropic.com/news/fable-mythos-access) citing national security, and Anthropic disabled Fable 5 and Mythos 5 for everyone within roughly ninety minutes. The directive technically only bars foreign nationals, but since nobody can check your nationality mid-prompt, every customer lost access. The reported trigger was a claimed jailbreak that unlocked the vulnerability-finding skill Anthropic had once called too dangerous to ship, though Anthropic says the technique only surfaced minor, already-known bugs that other public models find anyway.
+
+It's meant to be temporary, and Anthropic says it's working to restore access. But for now the relentless model isn't quietly downgrading itself to Opus. It's just gone, and this time not one of us got a say.
+:::

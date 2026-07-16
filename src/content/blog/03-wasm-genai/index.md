@@ -5,7 +5,9 @@ date: 2 December 2024
 slug: wasm-genai
 ---
 
-> This article was also published on the YLD blog [here](https://www.yld.io/blog/the-key-to-building-smarter-scalable-ai-powered-applications).
+:::note[Also published elsewhere]
+This article was also published on the YLD blog [here](https://www.yld.io/blog/the-key-to-building-smarter-scalable-ai-powered-applications).
+:::
 
 While Generative AI (GenAI) has taken centre stage, Web Assembly (WASM) works in the background, complementing GenAI by shifting how we approach performance, portability, and security in web and cross-platform applications.
 
