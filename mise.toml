@@ -2,4 +2,4 @@
 # @nubjs/nub dependency before running the build.
 [tools]
 node = "24.18.0"
-"npm:@nubjs/nub" = "0.4.11"
+"npm:@nubjs/nub" = "0.4.13"
