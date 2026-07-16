@@ -1,13 +1,25 @@
 import cloudflare from "@astrojs/cloudflare";
+import { satteri, satteriHeadingIdsPlugin } from "@astrojs/markdown-satteri";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import solid from "@astrojs/solid-js";
 import tailwind from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
+import calloutsPlugin from "./src/lib/satteri-callouts";
+import headingAnchorsPlugin from "./src/lib/satteri-heading-anchors";
+import imageCaptionsPlugin from "./src/lib/satteri-image-captions";
 
 export default defineConfig({
   site: "https://afonsojramos.me",
   integrations: [mdx(), sitemap(), solid()],
+
+  markdown: {
+    processor: satteri({
+      features: { directive: true },
+      mdastPlugins: [calloutsPlugin],
+      hastPlugins: [satteriHeadingIdsPlugin(), imageCaptionsPlugin, headingAnchorsPlugin],
+    }),
+  },
 
   redirects: {
     "/atom.xml": "/rss.xml",

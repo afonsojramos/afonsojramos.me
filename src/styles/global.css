@@ -138,6 +138,77 @@ blockquote {
   article.post > p:first-of-type {
     @apply text-black dark:text-white mb-10;
   }
+
+  article.post figure {
+    @apply my-8;
+  }
+
+  article.post figure > a {
+    @apply block;
+  }
+
+  article.post figure img {
+    @apply my-0;
+  }
+
+  article.post figcaption {
+    @apply mt-3 text-center font-sans text-xs leading-snug text-black/50 dark:text-white/60;
+    text-wrap: pretty;
+  }
+
+  article.post :is(h2, h3, h4, h5, h6) > .heading-anchor {
+    @apply ml-1 inline-flex size-10 items-center justify-center align-middle;
+    @apply text-black/25 no-underline opacity-0 dark:text-white/30;
+    @apply transition-opacity duration-300 ease-in-out;
+    margin-block: -0.75rem;
+  }
+
+  article.post :is(h2, h3, h4, h5, h6):hover > .heading-anchor,
+  article.post .heading-anchor:focus-visible {
+    @apply opacity-100;
+  }
+
+  article.post .callout {
+    @apply my-8 rounded-lg px-5 py-4 font-sans not-italic;
+    box-shadow:
+      0 2px 8px rgb(0 0 0 / 0.05),
+      0 1px 3px rgb(0 0 0 / 0.04),
+      inset 3px 0 rgb(120 113 108 / 0.4);
+  }
+
+  article.post .callout-note {
+    @apply bg-black/3 dark:bg-white/5;
+  }
+
+  article.post .callout-tip {
+    @apply bg-emerald-500/6;
+    box-shadow:
+      0 2px 8px rgb(0 0 0 / 0.05),
+      0 1px 3px rgb(0 0 0 / 0.04),
+      inset 3px 0 rgb(16 185 129 / 0.55);
+  }
+
+  article.post .callout-warning {
+    @apply bg-amber-500/7;
+    box-shadow:
+      0 2px 8px rgb(0 0 0 / 0.05),
+      0 1px 3px rgb(0 0 0 / 0.04),
+      inset 3px 0 rgb(245 158 11 / 0.65);
+  }
+
+  article.post .callout-title {
+    @apply mb-2 font-semibold text-black dark:text-white;
+  }
+
+  article.post .callout > :last-child {
+    @apply mb-0;
+  }
+}
+
+@media (hover: none) {
+  article.post :is(h2, h3, h4, h5, h6) > .heading-anchor {
+    @apply opacity-50;
+  }
 }
 
 @layer utilities {
