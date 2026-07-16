@@ -2,6 +2,7 @@ name = "afonsojramos-me"
 main = "@astrojs/cloudflare/entrypoints/server"
 compatibility_flags = ["nodejs_compat"]
 compatibility_date = "2025-03-25"
+route = { pattern = "afonsojramos.me", custom_domain = true }
 
 [assets]
 binding = "ASSETS"
@@ -15,10 +16,3 @@ migrations_dir = "./migrations"
 
 [observability]
 enabled = true
-
-[env.production]
-name = "afonsojramos-me"
-route = { pattern = "afonsojramos.me", custom_domain = true }
-
-[env.preview]
-name = "afonsojramos-me-preview"

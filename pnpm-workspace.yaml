@@ -1,5 +1,10 @@
 packages:
   - "."
 
+packageExtensions:
+  "@astrojs/cloudflare@*":
+    dependencies:
+      prismjs: "1.30.0"
+
 onlyBuiltDependencies:
   - "@nubjs/nub"
