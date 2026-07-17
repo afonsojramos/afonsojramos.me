@@ -2,7 +2,7 @@
 title: "Yet Another Package Manager"
 description: "I was fully prepared to dismiss nub, but its global store really piqued my interest and I ended up with commits in the thing so that my repos fully support it."
 slug: "yet-another-package-manager"
-date: "15 July 2026"
+date: "17 July 2026"
 ---
 
 When [nub](https://nubjs.com) showed up on my radar, my first reaction was the [xkcd standards comic](https://xkcd.com/927/). I already had a working split: bun for the personal sites, pnpm for the serious apps, mise pinning versions across machines. The Node ecosystem does not have a package manager shortage. It has a package manager surplus with a discovery problem.
