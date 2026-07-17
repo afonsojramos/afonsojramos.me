@@ -2,6 +2,7 @@ import { env } from "cloudflare:workers";
 import type { APIRoute } from "astro";
 import { CFP_COOKIE_MAX_AGE } from "../lib/auth/constants";
 import { getCookieKeyValue, sha256 } from "../lib/auth/utils";
+import { PRIVATE_RESPONSE_HEADERS } from "../lib/http/private-response";
 
 export const prerender = false;
 
@@ -43,7 +44,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
       headers: {
         "Content-Type": "application/json",
         "Set-Cookie": `${cookieKeyValue}; Max-Age=${CFP_COOKIE_MAX_AGE}; Path=/; SameSite=Strict; HttpOnly; Secure`,
-        "Cache-Control": "no-cache",
+        ...PRIVATE_RESPONSE_HEADERS,
         Location: redirectPath,
       },
     });
@@ -53,7 +54,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     status: 401,
     headers: {
       "Content-Type": "application/json",
-      "Cache-Control": "no-cache",
+      ...PRIVATE_RESPONSE_HEADERS,
     },
   });
 };

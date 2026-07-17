@@ -12,7 +12,16 @@ import tableOfContentsPlugin from "./src/lib/satteri-table-of-contents";
 
 export default defineConfig({
   site: "https://afonsojramos.me",
-  integrations: [mdx(), sitemap(), solid()],
+  integrations: [
+    mdx(),
+    sitemap({
+      filter: (page) => {
+        const pathname = new URL(page).pathname.replace(/\/+$/, "") || "/";
+        return !["/login", "/work"].includes(pathname);
+      },
+    }),
+    solid(),
+  ],
 
   markdown: {
     processor: satteri({

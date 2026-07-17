@@ -1,55 +1,42 @@
 import { defineMiddleware } from "astro:middleware";
 import { env } from "cloudflare:workers";
-import { CFP_COOKIE_MAX_AGE, CFP_GATED_PATHS } from "~/lib/auth/constants";
-import { getCookieKeyValue, sha256 } from "~/lib/auth/utils";
+import { getCookieKeyValue } from "~/lib/auth/utils";
+import {
+  isGatedPath,
+  isPrivateResponsePath,
+  withPrivateResponseHeaders,
+} from "~/lib/http/private-response";
 
 export const onRequest = defineMiddleware(async (context, next) => {
   const { request, url, redirect } = context;
   const pathname = url.pathname;
   const cookie = request.headers.get("cookie") || "";
 
-  // Check if this path requires authentication
-  const isGatedPath = CFP_GATED_PATHS.some(
-    (path) => pathname === path || pathname.startsWith(`${path}/`),
-  );
+  const gatedPath = isGatedPath(pathname);
+  const privateResponse = isPrivateResponsePath(pathname);
 
-  if (!isGatedPath || pathname === "/cfp_login" || pathname === "/login") {
-    return next();
+  const nextWithResponsePolicy = async () => {
+    const response = await next();
+    return privateResponse ? withPrivateResponseHeaders(response) : response;
+  };
+
+  if (!gatedPath) {
+    return nextWithResponsePolicy();
   }
 
   const cfpPassword = env.CFP_PASSWORD || process.env.CFP_PASSWORD;
 
   if (!cfpPassword) {
-    return next();
+    return nextWithResponsePolicy();
   }
 
   const cookieKeyValue = await getCookieKeyValue(cfpPassword);
 
   // Check if already authenticated via cookie
   if (cookie.includes(cookieKeyValue)) {
-    return next();
-  }
-
-  // Check if password provided in URL parameter
-  const passwordParam = url.searchParams.get("password");
-  if (passwordParam) {
-    const hashedPassword = await sha256(passwordParam);
-    const hashedCfpPassword = await sha256(cfpPassword);
-
-    if (hashedPassword === hashedCfpPassword) {
-      // Set authentication cookie and redirect to clean URL
-      url.searchParams.delete("password");
-      return new Response(null, {
-        status: 302,
-        headers: {
-          Location: url.pathname + (url.search || ""),
-          "Set-Cookie": `${cookieKeyValue}; Max-Age=${CFP_COOKIE_MAX_AGE}; Path=/; SameSite=Strict; HttpOnly; Secure`,
-          "Cache-Control": "no-cache",
-        },
-      });
-    }
+    return nextWithResponsePolicy();
   }
 
   // Redirect to login page
-  return redirect(`/login?redirect=${encodeURIComponent(pathname)}`);
+  return withPrivateResponseHeaders(redirect(`/login?redirect=${encodeURIComponent(pathname)}`));
 });
