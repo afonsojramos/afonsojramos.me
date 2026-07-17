@@ -163,19 +163,25 @@ blockquote {
     margin-block: -0.75rem;
   }
 
+  article.post :is(h2, h3) {
+    scroll-margin-top: 8rem;
+  }
+
   article.post :is(h2, h3, h4, h5, h6):hover > .heading-anchor,
   article.post .heading-anchor:focus-visible {
     @apply opacity-100;
   }
 
   article.post .table-of-contents {
-    @apply fixed top-32 hidden w-56 overflow-y-auto font-sans text-sm xl:block print:hidden;
-    left: calc(50% + 24rem);
+    @apply fixed top-32 hidden overflow-y-auto font-sans text-sm opacity-0 lg:block print:hidden;
+    left: calc(50% + 22rem);
+    width: min(14rem, calc(50vw - 23rem));
     max-height: calc(100vh - 10rem);
+    transition: opacity 200ms ease-out 700ms;
   }
 
-  article.post .table-of-contents-title {
-    @apply mb-3 text-xs font-semibold text-black/45 dark:text-white/50;
+  article.post.animate.show .table-of-contents {
+    @apply opacity-100;
   }
 
   article.post .table-of-contents ol {
@@ -233,6 +239,10 @@ blockquote {
   }
 }
 
+html:has(article.post .table-of-contents) {
+  scroll-behavior: smooth;
+}
+
 @media (hover: none) {
   article.post :is(h2, h3, h4, h5, h6) > .heading-anchor {
     @apply opacity-50;
@@ -259,12 +269,22 @@ blockquote {
 }
 
 .animate.show {
-  @apply opacity-100 translate-y-0;
+  @apply opacity-100;
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html:has(article.post .table-of-contents) {
+    scroll-behavior: auto;
+  }
+
   .animate {
-    @apply opacity-100 translate-y-0 transition-none;
+    @apply opacity-100 transition-none;
+    transform: none;
+  }
+
+  article.post.animate .table-of-contents {
+    @apply opacity-100 transition-none;
   }
 }
 

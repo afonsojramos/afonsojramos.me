@@ -68,12 +68,6 @@ export default function tableOfContentsPlugin() {
           children: [
             {
               type: "element",
-              tagName: "div",
-              properties: { className: ["table-of-contents-title"] },
-              children: [{ type: "text", value: "on this page" }],
-            },
-            {
-              type: "element",
               tagName: "ol",
               properties: {},
               children: headings.map(tableOfContentsItem),
