@@ -1,7 +1,6 @@
 ---
 export const prerender = true;
 
-import { Image } from "astro:assets";
 import Container from "~/components/Container.astro";
 import ConcertCarousel from "~/components/music/ConcertCarousel.astro";
 import NowPlaying from "~/components/music/NowPlaying";
@@ -73,13 +72,14 @@ import PageLayout from "~/layouts/PageLayout.astro";
                       class="album-entry block transition-transform hover:scale-105"
                     >
                       <div class="relative overflow-hidden rounded-lg group cursor-pointer">
-                        <Image
+                        <img
                           src={album.image}
                           alt={album.title}
                           class="w-full aspect-square object-cover"
                           width={300}
                           height={300}
                           loading={index === 0 ? "eager" : "lazy"}
+                          decoding="async"
                         />
                         <div class="absolute inset-0 bg-black/30 dark:bg-black/50 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 flex items-end">
                           <div class="p-4">

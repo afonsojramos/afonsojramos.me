@@ -27,6 +27,8 @@ const ConcertCarousel: Component<ConcertCarouselProps> = (props) => {
                   class="w-full object-cover aspect-21/9"
                   width={960}
                   height={540}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div class="absolute inset-0 bg-black/30 dark:bg-black/50 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 flex items-end">
                   <div class="p-4 w-full">
