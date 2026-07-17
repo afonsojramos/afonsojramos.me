@@ -70,4 +70,49 @@ const olderUrl = olderPost ? `/blog/${olderPost.id}` : undefined;
     </article>
   </Container>
   <SubscribeToRss slot="footer-action" />
+  <script>
+    let tableOfContentsObserver: IntersectionObserver | undefined;
+
+    const setupTableOfContents = () => {
+      tableOfContentsObserver?.disconnect();
+
+      const tableOfContents = document.querySelector<HTMLElement>(".table-of-contents");
+      if (!tableOfContents) return;
+
+      const links = Array.from(tableOfContents.querySelectorAll<HTMLAnchorElement>("a[href^='#']"));
+      const headings = links.flatMap((link) => {
+        const heading = document.getElementById(decodeURIComponent(link.hash.slice(1)));
+        return heading ? [{ heading, link }] : [];
+      });
+      if (!headings.length) return;
+
+      const setActiveHeading = (activeHeading: HTMLElement) => {
+        for (const { heading, link } of headings) {
+          if (heading === activeHeading) {
+            link.setAttribute("aria-current", "location");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        }
+      };
+
+      const rootFontSize = Number.parseFloat(getComputedStyle(document.documentElement).fontSize);
+      const headingOffset = rootFontSize * 8;
+      const updateActiveHeading = () => {
+        const activeHeading =
+          headings.findLast(
+            ({ heading }) => heading.getBoundingClientRect().top <= headingOffset + 1,
+          )?.heading ?? headings[0].heading;
+        setActiveHeading(activeHeading);
+      };
+
+      updateActiveHeading();
+      tableOfContentsObserver = new IntersectionObserver(updateActiveHeading, {
+        rootMargin: `-${headingOffset}px 0px -65% 0px`,
+      });
+      for (const { heading } of headings) tableOfContentsObserver.observe(heading);
+    };
+
+    document.addEventListener("astro:page-load", setupTableOfContents);
+  </script>
 </PageLayout>

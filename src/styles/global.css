@@ -185,7 +185,7 @@ blockquote {
   }
 
   article.post .table-of-contents ol {
-    @apply m-0 list-none space-y-0.5 p-0;
+    @apply m-0 list-none p-0;
   }
 
   article.post .table-of-contents-item {
@@ -197,9 +197,13 @@ blockquote {
   }
 
   article.post .table-of-contents a {
-    @apply flex min-h-10 items-center text-pretty text-black/55 no-underline decoration-transparent dark:text-white/55;
+    @apply block h-7 truncate leading-7 text-black/55 no-underline decoration-transparent dark:text-white/55;
     @apply transition-colors duration-200 ease-in-out;
     @apply hover:text-black dark:hover:text-white;
+  }
+
+  article.post .table-of-contents a[aria-current="location"] {
+    @apply text-black dark:text-white;
   }
 
   article.post .callout {
@@ -265,12 +269,12 @@ html:has(article.post .table-of-contents) {
 .animate {
   @apply opacity-0 translate-y-3;
   @apply duration-700 ease-out;
-  transition-property: opacity, transform;
+  transition-property: opacity, translate;
 }
 
 .animate.show {
   @apply opacity-100;
-  transform: none;
+  translate: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -280,7 +284,7 @@ html:has(article.post .table-of-contents) {
 
   .animate {
     @apply opacity-100 transition-none;
-    transform: none;
+    translate: none;
   }
 
   article.post.animate .table-of-contents {
