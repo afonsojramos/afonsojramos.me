@@ -199,7 +199,10 @@ blockquote {
   article.post .table-of-contents a {
     @apply block h-7 truncate leading-7 text-black/55 no-underline decoration-transparent dark:text-white/55;
     @apply transition-colors duration-200 ease-in-out;
-    @apply hover:text-black dark:hover:text-white;
+  }
+
+  article.post .table-of-contents a:not([aria-current="location"]):hover {
+    @apply text-black/75 dark:text-white/75;
   }
 
   article.post .table-of-contents a[aria-current="location"] {
