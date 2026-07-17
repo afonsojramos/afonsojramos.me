@@ -8,6 +8,7 @@ import { defineConfig } from "astro/config";
 import calloutsPlugin from "./src/lib/satteri-callouts";
 import headingAnchorsPlugin from "./src/lib/satteri-heading-anchors";
 import imageCaptionsPlugin from "./src/lib/satteri-image-captions";
+import tableOfContentsPlugin from "./src/lib/satteri-table-of-contents";
 
 export default defineConfig({
   site: "https://afonsojramos.me",
@@ -17,7 +18,12 @@ export default defineConfig({
     processor: satteri({
       features: { directive: true },
       mdastPlugins: [calloutsPlugin],
-      hastPlugins: [satteriHeadingIdsPlugin(), imageCaptionsPlugin, headingAnchorsPlugin],
+      hastPlugins: [
+        satteriHeadingIdsPlugin,
+        imageCaptionsPlugin,
+        tableOfContentsPlugin,
+        headingAnchorsPlugin,
+      ],
     }),
   },
 

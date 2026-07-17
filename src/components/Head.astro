@@ -99,112 +99,128 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
 
 <script is:inline>
   function init() {
+    const scrolled = window.scrollY > 0;
+
     preloadTheme();
-    onScroll();
+    updateScrollState(scrolled);
     animate();
 
+    window.siteEventController?.abort();
+    const controller = new AbortController();
+    const { signal } = controller;
+    window.siteEventController = controller;
+
     const backToTop = document.getElementById("back-to-top");
-    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+    backToTop?.addEventListener("click", scrollToTop, { signal });
 
     const backToPrev = document.getElementById("back-to-prev");
-    backToPrev?.addEventListener("click", (event) => {
-      if (window.history.length > 1) {
-        event.preventDefault();
-        window.history.back();
-      }
-    });
+    backToPrev?.addEventListener("click", goBack, { signal });
 
     const lightThemeButton = document.getElementById("light-theme-button");
-    lightThemeButton?.addEventListener("click", () => {
-      localStorage.setItem("theme", "light");
-      toggleTheme(false);
-    });
+    lightThemeButton?.addEventListener("click", useLightTheme, { signal });
 
     const darkThemeButton = document.getElementById("dark-theme-button");
-    darkThemeButton?.addEventListener("click", () => {
-      localStorage.setItem("theme", "dark");
-      toggleTheme(true);
-    });
+    darkThemeButton?.addEventListener("click", useDarkTheme, { signal });
 
     const systemThemeButton = document.getElementById("system-theme-button");
-    systemThemeButton?.addEventListener("click", () => {
-      localStorage.setItem("theme", "system");
-      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
-    });
+    systemThemeButton?.addEventListener("click", useSystemTheme, { signal });
 
     window
       .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", (event) => {
-        if (localStorage.theme === "system") {
-          toggleTheme(event.matches);
-        }
-      });
+      .addEventListener("change", handleSystemThemeChange, { signal });
 
-    document.addEventListener("keydown", (event) => {
-      const activeElement = document.activeElement;
-      const isEditing =
-        activeElement instanceof HTMLElement &&
-        (activeElement.isContentEditable ||
-          ["INPUT", "TEXTAREA", "SELECT"].includes(activeElement.tagName));
+    document.addEventListener("keydown", handleShortcut, { signal });
+    document.addEventListener("scroll", onScroll, { passive: true, signal });
+  }
 
-      // Site shortcuts are bare keys. Preserve copy/paste, browser shortcuts,
-      // and normal typing in form fields or contenteditable elements.
-      if (
-        !isEditing &&
-        !event.metaKey &&
-        !event.ctrlKey &&
-        !event.altKey &&
-        !event.shiftKey
-      ) {
-        switch (event.key) {
-          case "t":
-            event.preventDefault();
-            cycleTheme();
-            break;
-          case "h":
-            event.preventDefault();
-            window.location.href = "/";
-            break;
-          case "b":
-            event.preventDefault();
-            window.location.href = "/blog";
-            break;
-          case "m":
-            event.preventDefault();
-            window.location.href = "/music";
-            break;
-          case "c":
-            event.preventDefault();
-            // Only scroll to contacts if we're on the home page
-            if (window.location.pathname === "/") {
-              const contactsSection = document.getElementById("contacts");
-              if (contactsSection) {
-                contactsSection.scrollIntoView({ behavior: "smooth" });
-              }
-            } else {
-              // If not on home page, go to home page and then scroll to contacts
-              window.location.href = "/#contacts";
-            }
-            break;
-          case "ArrowLeft":
-          case "ArrowRight": {
-            // Navigate between adjacent blog posts (left = newer, right = older).
-            const postNav = document.getElementById("post-nav");
-            const target =
-              event.key === "ArrowLeft"
-                ? postNav?.dataset.newer
-                : postNav?.dataset.older;
-            if (target) {
-              event.preventDefault();
-              window.location.href = target;
-            }
-            break;
-          }
+  function goBack(event) {
+    if (window.history.length > 1) {
+      event.preventDefault();
+      window.history.back();
+    }
+  }
+
+  function useLightTheme() {
+    localStorage.setItem("theme", "light");
+    toggleTheme(false);
+  }
+
+  function useDarkTheme() {
+    localStorage.setItem("theme", "dark");
+    toggleTheme(true);
+  }
+
+  function useSystemTheme() {
+    localStorage.setItem("theme", "system");
+    toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+  }
+
+  function handleSystemThemeChange(event) {
+    if (localStorage.theme === "system") {
+      toggleTheme(event.matches);
+    }
+  }
+
+  function handleShortcut(event) {
+    const activeElement = document.activeElement;
+    const isEditing =
+      activeElement instanceof HTMLElement &&
+      (activeElement.isContentEditable ||
+        ["INPUT", "TEXTAREA", "SELECT"].includes(activeElement.tagName));
+
+    // Site shortcuts are bare keys. Preserve copy/paste, browser shortcuts,
+    // and normal typing in form fields or contenteditable elements.
+    if (
+      isEditing ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.altKey ||
+      event.shiftKey
+    ) {
+      return;
+    }
+
+    switch (event.key) {
+      case "t":
+        event.preventDefault();
+        cycleTheme();
+        break;
+      case "h":
+        event.preventDefault();
+        window.location.href = "/";
+        break;
+      case "b":
+        event.preventDefault();
+        window.location.href = "/blog";
+        break;
+      case "m":
+        event.preventDefault();
+        window.location.href = "/music";
+        break;
+      case "c":
+        event.preventDefault();
+        if (window.location.pathname === "/") {
+          document
+            .getElementById("contacts")
+            ?.scrollIntoView({ behavior: "smooth" });
+        } else {
+          window.location.href = "/#contacts";
         }
+        break;
+      case "ArrowLeft":
+      case "ArrowRight": {
+        const postNav = document.getElementById("post-nav");
+        const target =
+          event.key === "ArrowLeft"
+            ? postNav?.dataset.newer
+            : postNav?.dataset.older;
+        if (target) {
+          event.preventDefault();
+          window.location.href = target;
+        }
+        break;
       }
-    });
-
-    document.addEventListener("scroll", onScroll);
+    }
   }
 
   function animate() {
@@ -218,11 +234,11 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
   }
 
   function onScroll() {
-    if (window.scrollY > 0) {
-      document.documentElement.classList.add("scrolled");
-    } else {
-      document.documentElement.classList.remove("scrolled");
-    }
+    updateScrollState(window.scrollY > 0);
+  }
+
+  function updateScrollState(scrolled) {
+    document.documentElement.classList.toggle("scrolled", scrolled);
   }
 
   function scrollToTop(event) {
@@ -254,31 +270,11 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
   }
 
   function toggleTheme(dark) {
-    const css = document.createElement("style");
-
-    css.appendChild(
-      document.createTextNode(
-        `* {
-             -webkit-transition: none !important;
-             -moz-transition: none !important;
-             -o-transition: none !important;
-             -ms-transition: none !important;
-             transition: none !important;
-          }
-        `
-      )
-    );
-
-    document.head.appendChild(css);
-
-    if (dark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
+    if (document.documentElement.classList.contains("dark") === dark) {
+      return;
     }
 
-    window.getComputedStyle(css).opacity;
-    document.head.removeChild(css);
+    document.documentElement.classList.toggle("dark", dark);
   }
 
   function preloadTheme() {
