@@ -87,6 +87,15 @@ const olderUrl = olderPost ? `/blog/${olderPost.id}` : undefined;
       });
       if (!headings.length) return;
 
+      // Jump without pushing a history entry, so the back button leaves the post
+      for (const { heading, link } of headings) {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          heading.scrollIntoView();
+          window.history.replaceState(null, "", link.hash);
+        });
+      }
+
       const setActiveHeading = (activeHeading: HTMLElement) => {
         for (const { heading, link } of headings) {
           if (heading === activeHeading) {
@@ -109,7 +118,18 @@ const olderUrl = olderPost ? `/blog/${olderPost.id}` : undefined;
       updateActiveHeading();
     };
 
+    const setupHeadingAnchors = () => {
+      for (const anchor of document.querySelectorAll<HTMLAnchorElement>("article.post .heading-anchor")) {
+        anchor.addEventListener("click", (event) => {
+          event.preventDefault();
+          document.getElementById(decodeURIComponent(anchor.hash.slice(1)))?.scrollIntoView();
+          window.history.replaceState(null, "", anchor.hash);
+        });
+      }
+    };
+
     document.addEventListener("astro:page-load", setupTableOfContents);
+    document.addEventListener("astro:page-load", setupHeadingAnchors);
     window.addEventListener(
       "scroll",
       () => {
