@@ -33,7 +33,7 @@ function tableOfContentsItem(heading: MarkdownHeading): HastNode {
       {
         type: "element",
         tagName: "a",
-        properties: { href: `#${heading.slug}` },
+        properties: { href: `#${heading.slug}`, title: heading.text },
         children: [{ type: "text", value: heading.text }],
       },
     ],
@@ -63,7 +63,6 @@ export default function tableOfContentsPlugin() {
           tagName: "nav",
           properties: {
             className: ["table-of-contents"],
-            ariaLabel: "On this page",
           },
           children: [
             {

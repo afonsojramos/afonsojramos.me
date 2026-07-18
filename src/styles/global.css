@@ -185,15 +185,20 @@ blockquote {
   }
 
   article.post .table-of-contents ol {
-    @apply m-0 list-none p-0;
+    @apply m-0 list-none border-l border-black/10 p-0 dark:border-white/10;
   }
 
   article.post .table-of-contents-item {
-    @apply m-0 p-0 leading-snug;
+    @apply m-0 -ml-px border-l border-transparent p-0 pl-3 leading-snug;
+    @apply transition-colors duration-200 ease-in-out;
   }
 
   article.post .table-of-contents-depth-3 {
-    @apply pl-3;
+    @apply pl-6;
+  }
+
+  article.post .table-of-contents-item:has(a[aria-current="location"]) {
+    @apply border-black dark:border-white;
   }
 
   article.post .table-of-contents a {
@@ -205,8 +210,12 @@ blockquote {
     @apply text-black/75 dark:text-white/75;
   }
 
+  article.post .table-of-contents a:focus-visible {
+    @apply rounded-xs text-black outline-2 outline-solid outline-offset-2 outline-black/40 dark:text-white dark:outline-white/40;
+  }
+
   article.post .table-of-contents a[aria-current="location"] {
-    @apply text-black dark:text-white;
+    @apply font-medium text-black dark:text-white;
   }
 
   article.post .callout {
