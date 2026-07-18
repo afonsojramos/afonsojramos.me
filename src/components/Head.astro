@@ -133,8 +133,13 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
     document.addEventListener("scroll", onScroll, { passive: true, signal });
   }
 
+  let siteNavigated = false;
+
   function goBack(event) {
-    if (window.history.length > 1) {
+    const cameFromSite =
+      siteNavigated ||
+      (document.referrer !== "" && new URL(document.referrer).origin === window.location.origin);
+    if (cameFromSite && window.history.length > 1) {
       event.preventDefault();
       window.history.back();
     }
@@ -288,7 +293,10 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
   }
 
   document.addEventListener("DOMContentLoaded", () => init());
-  document.addEventListener("astro:after-swap", () => init());
+  document.addEventListener("astro:after-swap", () => {
+    siteNavigated = true;
+    init();
+  });
   preloadTheme();
 
   const pageTitle = document.title;
