@@ -205,6 +205,10 @@ blockquote {
     @apply text-black/75 dark:text-white/75;
   }
 
+  article.post .table-of-contents a[aria-current="location"] {
+    @apply text-black dark:text-white;
+  }
+
   article.post .callout {
     @apply my-8 rounded-lg px-5 py-4 font-sans not-italic;
     box-shadow:
