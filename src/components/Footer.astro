@@ -1,6 +1,7 @@
 ---
 import BackToTop from "~/components/BackToTop.astro";
 import Container from "~/components/Container.astro";
+import SubscribeToRss from "~/components/SubscribeToRss.astro";
 import { SITE } from "~/consts";
 import Link from "./Link.astro";
 ---
@@ -9,6 +10,7 @@ import Link from "./Link.astro";
   <Container>
     <div class="relative print:hidden">
       <div class="absolute left-0 -top-20">
+        <SubscribeToRss />
         <slot name="action" />
       </div>
       <div class="absolute right-0 -top-20">

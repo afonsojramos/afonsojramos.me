@@ -30,9 +30,7 @@ const { title, description, image, noindex } = Astro.props;
     <main class="print:p-0 print:text-black">
       <slot />
     </main>
-    <Footer>
-      <slot name="footer-action" slot="action" />
-    </Footer>
+    <Footer />
     <script>
       import { BlockRate } from "blockrate";
 

@@ -4,7 +4,6 @@ export const prerender = true;
 import { type CollectionEntry, getCollection } from "astro:content";
 import ArrowCard from "~/components/ArrowCard.astro";
 import Container from "~/components/Container.astro";
-import SubscribeToRss from "~/components/SubscribeToRss.astro";
 import { BLOG } from "~/consts";
 import PageLayout from "~/layouts/PageLayout.astro";
 
@@ -51,5 +50,4 @@ const years = Object.keys(posts).sort((a, b) => Number.parseInt(b, 10) - Number.
       </div>
     </div>
   </Container>
-  <SubscribeToRss slot="footer-action" />
 </PageLayout>
