@@ -1,36 +1,30 @@
 ---
 export const prerender = true;
 
-import { getCollection, render } from "astro:content";
-import ArrowCard from "~/components/ArrowCard.astro";
+import { getCollection } from "astro:content";
 import Container from "~/components/Container.astro";
 import ContributionEntry from "~/components/entries/Contribution.astro";
 import Link from "~/components/Link.astro";
+import PostCard from "~/components/PostCard.astro";
+import WorkCard from "~/components/WorkCard.astro";
 import { featuredRepositories } from "~/content/featured-repositories";
 import { HOME, SITE, SOCIALS } from "~/consts";
 import PageLayout from "~/layouts/PageLayout.astro";
-import { dateRange, sortByDate, sortByDateRange } from "~/lib/utils";
+import { sortByDate, sortByDateRange } from "~/lib/utils";
 
 const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
   .sort(sortByDate)
   .slice(0, SITE.numPostsOnHomepage);
 
-const allwork = (await getCollection("work"))
+const work = (await getCollection("work"))
   .sort(sortByDateRange)
   .slice(0, SITE.numWorksOnHomepage);
-
-const work = await Promise.all(
-  allwork.map(async (item) => {
-    const { Content } = await render(item);
-    return { ...item, Content };
-  }),
-);
 ---
 
 <PageLayout {...HOME}>
-  <Container>
-    <div class="space-y-16">
+  <div class="space-y-16">
+    <Container>
       <section>
         <article class="space-y-4">
           <p class="title-render animate">
@@ -64,91 +58,84 @@ const work = await Promise.all(
           </p>
         </article>
       </section>
+    </Container>
 
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">Latest posts</h5>
-          <Link href="/blog" class="title-render"> See all posts </Link>
-        </div>
-        <ul class="flex flex-col gap-4">
-          {
-            blog.map((post) => (
-              <li>
-                <ArrowCard entry={post} />
-              </li>
-            ))
-          }
-        </ul>
-      </section>
+    <section class="animate mx-auto w-full max-w-5xl space-y-6 px-5">
+      <div class="flex flex-wrap gap-y-2 items-center justify-between">
+        <h5 class="font-semibold text-black dark:text-white">Blog</h5>
+        <Link href="/blog" class="title-render"> See all posts </Link>
+      </div>
+      <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          blog.map((post) => (
+            <li>
+              <PostCard entry={post} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
 
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Work Experience
-          </h5>
-          <Link href="/work" class="title-render"> See all work </Link>
-        </div>
-        <ul class="flex flex-col space-y-4">
-          {
-            work.map((entry) => (
-              <li>
-                <div class="title-render text-sm opacity-75">
-                  {dateRange(entry.data.dateStart, entry.data.dateEnd).join(
-                    " - "
-                  )}
-                </div>
-                <div class="font-semibold text-black dark:text-white">
-                  {entry.data.company}
-                </div>
-                <div class="title-render text-sm opacity-75 mb-2">{entry.data.role}</div>
-                <div class="lowercase-first text-sm">{entry.data.shortDescription}</div>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
+    <Container>
+      <div class="space-y-16">
+        <section class="animate space-y-6">
+          <div class="flex flex-wrap gap-y-2 items-center justify-between">
+            <h5 class="font-semibold text-black dark:text-white">Work</h5>
+            <Link href="/work" class="title-render"> See all experience </Link>
+          </div>
+          <ul class="flex flex-col space-y-4">
+            {
+              work.map((entry) => (
+                <li>
+                  <WorkCard entry={entry} />
+                </li>
+              ))
+            }
+          </ul>
+        </section>
 
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">Open source</h5>
-          <Link href="/work#open-source" class="title-render"> See all contributions </Link>
-        </div>
-        <ul class="grid grid-cols-1 min-[420px]:grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-1">
-          {
-            featuredRepositories.map((entry) => (
-              <li class="min-w-0">
-                <ContributionEntry entry={entry} />
-              </li>
-            ))
-          }
-        </ul>
-      </section>
+        <section class="animate space-y-6">
+          <div class="flex flex-wrap gap-y-2 items-center justify-between">
+            <h5 class="font-semibold text-black dark:text-white">Open source</h5>
+            <Link href="/work#open-source" class="title-render"> See all contributions </Link>
+          </div>
+          <ul class="grid grid-cols-1 min-[420px]:grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-1">
+            {
+              featuredRepositories.map((entry) => (
+                <li class="min-w-0">
+                  <ContributionEntry entry={entry} />
+                </li>
+              ))
+            }
+          </ul>
+        </section>
 
-      <section class="animate space-y-4" id="contacts">
-        <h5 class="font-semibold text-black dark:text-white">Let's Connect</h5>
-        <article>
-          <p class="lowercase-first">
-            If you want to get in touch with me about something or just to say
-            hi, reach out on social media or send me an email.
-          </p>
-        </article>
-        <ul class="flex flex-wrap gap-2">
-          {
-            SOCIALS.map((SOCIAL, index) => (
-              <li class="flex gap-x-2 text-nowrap">
-                <Link
-                  href={SOCIAL.href}
-                  external
-                  aria-label={`${SITE.name} on ${SOCIAL.name}`}
-                >
-                  {SOCIAL.name}
-                </Link>
-                {index !== SOCIALS.length - 1 && " / "}
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-    </div>
-  </Container>
+          <section class="animate space-y-4" id="contacts">
+            <h5 class="font-semibold text-black dark:text-white">Let's Connect</h5>
+            <article>
+              <p class="lowercase-first">
+                If you want to get in touch with me about something or just to say
+                hi, reach out on social media or send me an email.
+              </p>
+            </article>
+            <ul class="flex flex-wrap gap-2">
+              {
+                SOCIALS.map((SOCIAL, index) => (
+                  <li class="flex gap-x-2 text-nowrap">
+                    <Link
+                      href={SOCIAL.href}
+                      external
+                      aria-label={`${SITE.name} on ${SOCIAL.name}`}
+                    >
+                      {SOCIAL.name}
+                    </Link>
+                    {index !== SOCIALS.length - 1 && " / "}
+                  </li>
+                ))
+              }
+            </ul>
+          </section>
+      </div>
+    </Container>
+  </div>
 </PageLayout>

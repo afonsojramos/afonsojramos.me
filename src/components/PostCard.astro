@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { readingTime } from "~/lib/utils";
+
+type Props = {
+  entry: CollectionEntry<"blog">;
+};
+
+const { entry } = Astro.props;
+const tags = entry.data.tags ?? [];
+const visibleTags = tags.slice(0, 2);
+const extraTags = tags.length - visibleTags.length;
+---
+
+<a
+  href={`/blog/${entry.id}`}
+  class="group flex h-full flex-col gap-2 rounded-xl bg-black/5 p-5 no-underline transition-colors duration-300 ease-in-out hover:bg-black/10 hover:text-black dark:bg-white/5 dark:hover:bg-white/10 dark:hover:text-white"
+>
+  <div class="title-render font-semibold text-black dark:text-white">
+    {entry.data.title}
+  </div>
+  <div class="title-render text-sm line-clamp-3">
+    {entry.data.description}
+  </div>
+  <div class="mt-auto flex items-center justify-between gap-2 pt-3 text-xs">
+    <div class="flex gap-1.5">
+      {
+        visibleTags.map((tag) => (
+          <span class="rounded-full bg-white px-2 py-0.5 text-nowrap dark:bg-white/10">
+            {tag}
+          </span>
+        ))
+      }
+      {
+        extraTags > 0 && (
+          <span class="rounded-full bg-white px-2 py-0.5 dark:bg-white/10">+{extraTags}</span>
+        )
+      }
+    </div>
+    <span class="text-nowrap opacity-60">{readingTime(entry.body)}</span>
+  </div>
+</a>

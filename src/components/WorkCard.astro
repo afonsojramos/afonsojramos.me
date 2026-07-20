@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { dateRange } from "~/lib/utils";
+
+type Props = {
+  entry: CollectionEntry<"work">;
+};
+
+const { entry } = Astro.props;
+---
+
+<div class="flex flex-col gap-4 rounded-xl bg-black/5 p-6 dark:bg-white/5">
+  <div class="space-y-1">
+    <div class="font-semibold text-black dark:text-white">
+      {entry.data.company}
+    </div>
+    <p class="text-sm">{entry.data.shortDescription}</p>
+  </div>
+  <div class="mt-auto flex flex-wrap items-center justify-between gap-2 text-sm">
+    <span class="text-black dark:text-white">{entry.data.role}</span>
+    <span class="text-nowrap opacity-60">
+      {dateRange(entry.data.dateStart, entry.data.dateEnd).join(" - ")}
+    </span>
+  </div>
+</div>
