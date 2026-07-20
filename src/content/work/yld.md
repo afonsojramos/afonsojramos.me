@@ -18,6 +18,6 @@ url: "https://www.yld.io/"
 
 - Line manager for 5 engineers, conducting performance reviews, providing structured career development plans, and maintaining accountability for team growth and retention. Active role in recruitment, helping to **triple the engineering team**.
 
-- Hands-on technical contributions across client engagements (NewDay, then BPP, where I am currently **Principal Engineer**) on large-scale React, TypeScript, and Node.js projects, driving architectural decision-making through code reviews, ADR authoring, and technical strategy sessions.
+- Hands-on technical contributions across client engagements (NewDay, then BPP, where I currently consult as **Principal Engineer**) on large-scale React, TypeScript, and Node.js projects, driving architectural decision-making through code reviews, ADR authoring, and technical strategy sessions.
 
 - Hosted the company's Engineering Forum, delivered technical workshops for internal teams and clients, and represented YLD at industry events and conferences, strengthening the company's reputation as a technical thought leader in the JavaScript ecosystem.
