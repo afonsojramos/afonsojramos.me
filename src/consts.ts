@@ -60,7 +60,7 @@ export const SITE: Site = {
       ],
     },
   ],
-  numPostsOnHomepage: 3,
+  numPostsOnHomepage: 4,
   numWorksOnHomepage: 2,
 };
 
