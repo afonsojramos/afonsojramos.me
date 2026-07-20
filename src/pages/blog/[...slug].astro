@@ -5,7 +5,6 @@ import { type CollectionEntry, getCollection, render } from "astro:content";
 import BackToPrev from "~/components/BackToPrev.astro";
 import Container from "~/components/Container.astro";
 import FormattedDate from "~/components/FormattedDate.astro";
-import SubscribeToRss from "~/components/SubscribeToRss.astro";
 import ViewCount from "~/components/ViewCount.astro";
 import PageLayout from "~/layouts/PageLayout.astro";
 import { readingTime, sortByDate } from "~/lib/utils";
@@ -69,7 +68,6 @@ const olderUrl = olderPost ? `/blog/${olderPost.id}` : undefined;
       <Content />
     </article>
   </Container>
-  <SubscribeToRss slot="footer-action" />
   <script>
     let updateActiveHeading: (() => void) | undefined;
     let scrollTicking = false;
@@ -92,7 +90,7 @@ const olderUrl = olderPost ? `/blog/${olderPost.id}` : undefined;
         link.addEventListener("click", (event) => {
           event.preventDefault();
           heading.scrollIntoView();
-          window.history.replaceState(null, "", link.hash);
+          window.history.replaceState(window.history.state, "", link.hash);
         });
       }
 
@@ -123,7 +121,7 @@ const olderUrl = olderPost ? `/blog/${olderPost.id}` : undefined;
         anchor.addEventListener("click", (event) => {
           event.preventDefault();
           document.getElementById(decodeURIComponent(anchor.hash.slice(1)))?.scrollIntoView();
-          window.history.replaceState(null, "", anchor.hash);
+          window.history.replaceState(window.history.state, "", anchor.hash);
         });
       }
     };
