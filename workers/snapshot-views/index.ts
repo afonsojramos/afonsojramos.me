@@ -1,10 +1,14 @@
-// Cron-triggered worker that snapshots yesterday's per-path view counts from
-// Cloudflare's GraphQL Analytics API into D1. Runs daily at 02:30 UTC.
+// Cron-triggered worker that snapshots yesterday's analytics from
+// Cloudflare's GraphQL API into D1. Runs daily at 02:30 UTC. Two snapshots:
 //
-// Idempotent: uses (date, path) as PK and ON CONFLICT REPLACE so a re-run on
-// the same day overwrites yesterday's row with the latest count (CF's
-// analytics can take a couple of hours to finalize, so even a same-day re-run
-// is safe).
+//   1. views: per-path page counts for the view badges.
+//   2. rss_fetches: /rss.xml fetches grouped by user agent, with distinct
+//      client IPs per UA, for the RSS subscriber estimate.
+//
+// Idempotent: both tables use (date, ...) as PK and ON CONFLICT REPLACE so a
+// re-run on the same day overwrites yesterday's rows with the latest counts
+// (CF's analytics can take a couple of hours to finalize, so even a same-day
+// re-run is safe).
 //
 // Path-filtered at write time to keep D1 small — we only care about
 // public-facing pages, not /favicon.ico scans, /admin/ probes, etc.
@@ -39,6 +43,30 @@ query Daily($zoneTag: string!, $start: Time!, $end: Time!) {
   }
 }`;
 
+const RSS_QUERY = `
+query Rss($zoneTag: string!, $start: Time!, $end: Time!) {
+  viewer {
+    zones(filter: { zoneTag: $zoneTag }) {
+      httpRequestsAdaptiveGroups(
+        limit: 5000
+        filter: {
+          datetime_geq: $start
+          datetime_lt: $end
+          clientRequestPath_in: ["/rss.xml", "/rss.xml/"]
+          edgeResponseStatus: 200
+        }
+        orderBy: [count_DESC]
+      ) {
+        count
+        dimensions {
+          userAgent
+          clientIP
+        }
+      }
+    }
+  }
+}`;
+
 interface DailyResponse {
   data?: {
     viewer?: {
@@ -46,6 +74,20 @@ interface DailyResponse {
         httpRequestsAdaptiveGroups?: Array<{
           count: number;
           dimensions: { clientRequestPath: string };
+        }>;
+      }>;
+    };
+  };
+  errors?: Array<{ message: string }>;
+}
+
+interface RssResponse {
+  data?: {
+    viewer?: {
+      zones?: Array<{
+        httpRequestsAdaptiveGroups?: Array<{
+          count: number;
+          dimensions: { userAgent: string; clientIP: string };
         }>;
       }>;
     };
@@ -124,18 +166,89 @@ async function upsertCounts(env: Env, date: string, counts: Map<string, number>)
   return batch.length;
 }
 
-async function snapshot(env: Env, now: Date): Promise<{ date: string; rows: number }> {
+// /rss.xml fetches for yesterday, aggregated per user agent: total fetches
+// plus distinct client IPs. Grouping by (userAgent, clientIP) works around
+// adaptive groups having no uniq-IP aggregate. The 5000-group cap only
+// truncates the long tail of one-off IPs on an unusually hot day, which
+// barely moves the subscriber estimate.
+async function fetchYesterdayRssFetches(
+  env: Env,
+  start: string,
+  end: string,
+): Promise<Map<string, { count: number; ips: Set<string> }>> {
+  const response = await fetch(CF_GRAPHQL_ENDPOINT, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      authorization: `Bearer ${env.CF_ANALYTICS_TOKEN}`,
+    },
+    body: JSON.stringify({
+      query: RSS_QUERY,
+      variables: { zoneTag: env.CF_ZONE_TAG, start, end },
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`CF Analytics HTTP ${response.status}: ${await response.text()}`);
+  }
+
+  const data = (await response.json()) as RssResponse;
+  if (data.errors?.length) {
+    throw new Error(`CF Analytics GraphQL: ${data.errors.map((e) => e.message).join("; ")}`);
+  }
+
+  const groups = data.data?.viewer?.zones?.[0]?.httpRequestsAdaptiveGroups ?? [];
+  const perUa = new Map<string, { count: number; ips: Set<string> }>();
+  for (const group of groups) {
+    const ua = group.dimensions.userAgent ?? "";
+    const entry = perUa.get(ua) ?? { count: 0, ips: new Set<string>() };
+    entry.count += group.count;
+    entry.ips.add(group.dimensions.clientIP);
+    perUa.set(ua, entry);
+  }
+  return perUa;
+}
+
+async function upsertRssFetches(
+  env: Env,
+  date: string,
+  perUa: Map<string, { count: number; ips: Set<string> }>,
+): Promise<number> {
+  if (perUa.size === 0) return 0;
+  const stmt = env.VIEWS_DB.prepare(
+    "INSERT INTO rss_fetches (date, ua, count, unique_ips) VALUES (?1, ?2, ?3, ?4) " +
+      "ON CONFLICT (date, ua) DO UPDATE SET count = excluded.count, unique_ips = excluded.unique_ips",
+  );
+  const batch = Array.from(perUa.entries()).map(([ua, { count, ips }]) =>
+    stmt.bind(date, ua, count, ips.size),
+  );
+  await env.VIEWS_DB.batch(batch);
+  return batch.length;
+}
+
+async function snapshot(
+  env: Env,
+  now: Date,
+): Promise<{ date: string; viewRows: number; rssRows: number }> {
   const { date, start, end } = yesterdayUTC(now);
-  const counts = await fetchYesterdayPathCounts(env, start, end);
-  const rows = await upsertCounts(env, date, counts);
-  return { date, rows };
+  const [counts, rssFetches] = await Promise.all([
+    fetchYesterdayPathCounts(env, start, end),
+    fetchYesterdayRssFetches(env, start, end),
+  ]);
+  const [viewRows, rssRows] = await Promise.all([
+    upsertCounts(env, date, counts),
+    upsertRssFetches(env, date, rssFetches),
+  ]);
+  return { date, viewRows, rssRows };
 }
 
 export default {
   async scheduled(_event: ScheduledEvent, env: Env, ctx: ExecutionContext): Promise<void> {
     ctx.waitUntil(
       snapshot(env, new Date())
-        .then(({ date, rows }) => console.log(`snapshot: ${date} → ${rows} paths`))
+        .then(({ date, viewRows, rssRows }) =>
+          console.log(`snapshot: ${date} → ${viewRows} paths, ${rssRows} rss user agents`),
+        )
         .catch((err) => console.error("snapshot failed:", err)),
     );
   },
