@@ -4,6 +4,7 @@ import { createWebHandler } from "blockrate";
 import { Hono, type Context as HonoContext } from "hono";
 import type { BlankInput } from "hono/types";
 import { getNowPlaying, getTopTracks } from "~/api/lastfm";
+import { getRssSubscribers } from "~/api/rss-subscribers";
 import { getViews } from "~/api/views";
 
 type Bindings = {
@@ -28,6 +29,7 @@ app
   .get("/now-playing", async (c) => getNowPlaying(c))
   .get("/top-tracks", async (c) => getTopTracks(c))
   .get("/views/:slug{.+}", async (c) => getViews(c))
+  .get("/rss-subscribers", async (c) => getRssSubscribers(c))
   .post("/block-rate", async (c) => {
     if (blockRateHandler === undefined) {
       const apiKey = c.env.BLOCKRATE_API_KEY;
