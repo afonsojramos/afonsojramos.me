@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
+    "astro": "astro",
     "contributions:update": "nub scripts/update-contributions.ts",
     "db:migrate:local": "wrangler d1 migrations apply afonsojramos-me-views --local",
     "dev": "nub run db:migrate:local && astro dev",
