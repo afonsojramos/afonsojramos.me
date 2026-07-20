@@ -24,4 +24,6 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# hidden folders
 .gstack/
+.playwright-mcp/
