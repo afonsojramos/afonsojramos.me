@@ -51,7 +51,7 @@ blockquote {
     @apply font-sans antialiased;
     @apply flex flex-col;
     @apply bg-stone-100 dark:bg-stone-900;
-    @apply text-black/50 dark:text-white/75;
+    @apply text-black/60 dark:text-white/75;
   }
 
   header {
