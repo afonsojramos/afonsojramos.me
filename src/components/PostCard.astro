@@ -16,10 +16,7 @@ const extraTags = tags.length - visibleTags.length;
   href={`/blog/${entry.id}`}
   class="group flex h-full flex-col gap-2 rounded-xl bg-white p-5 no-underline transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black dark:bg-white/5 dark:hover:bg-white/10 dark:hover:text-white"
 >
-  <div
-    class="title-render font-semibold text-black dark:text-white"
-    transition:name={`post-title-${entry.id}`}
-  >
+  <div class="title-render font-semibold text-black dark:text-white">
     {entry.data.title}
   </div>
   <div class="title-render text-sm line-clamp-3">
