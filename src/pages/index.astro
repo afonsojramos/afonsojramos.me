@@ -26,7 +26,12 @@ const work = (await getCollection("work"))
   <div class="space-y-16">
     <Container>
       <section>
-        <article class="space-y-4">
+        <img
+          src="/afonso.jpg"
+          alt="Afonso Jorge Ramos"
+          class="animate size-14 rounded-full object-cover"
+        />
+        <article class="mt-4 space-y-4 text-black dark:text-white">
           <p class="title-render animate">
             I'm a product-minded software engineer,{" "}
             <Link
@@ -63,7 +68,12 @@ const work = (await getCollection("work"))
     <section class="animate mx-auto w-full max-w-5xl space-y-6 px-5">
       <div class="flex flex-wrap gap-y-2 items-center justify-between">
         <h5 class="font-semibold text-black dark:text-white">Blog</h5>
-        <Link href="/blog" class="title-render"> See all posts </Link>
+        <Link
+          href="/blog"
+          class="title-render text-[#3b29ff] hover:text-[#2a1fd6] dark:text-[#9b94ff] dark:hover:text-[#b7b1ff]"
+        >
+          See all posts
+        </Link>
       </div>
       <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {
@@ -81,7 +91,12 @@ const work = (await getCollection("work"))
         <section class="animate space-y-6">
           <div class="flex flex-wrap gap-y-2 items-center justify-between">
             <h5 class="font-semibold text-black dark:text-white">Work</h5>
-            <Link href="/work" class="title-render"> See all experience </Link>
+            <Link
+              href="/work"
+              class="title-render text-[#3b29ff] hover:text-[#2a1fd6] dark:text-[#9b94ff] dark:hover:text-[#b7b1ff]"
+            >
+              See all experience
+            </Link>
           </div>
           <ul class="flex flex-col space-y-4">
             {
@@ -96,8 +111,13 @@ const work = (await getCollection("work"))
 
         <section class="animate space-y-6">
           <div class="flex flex-wrap gap-y-2 items-center justify-between">
-            <h5 class="font-semibold text-black dark:text-white">Open source</h5>
-            <Link href="/work#open-source" class="title-render"> See all contributions </Link>
+            <h5 class="font-semibold text-black dark:text-white">Open Source</h5>
+            <Link
+              href="/work#open-source"
+              class="title-render text-[#3b29ff] hover:text-[#2a1fd6] dark:text-[#9b94ff] dark:hover:text-[#b7b1ff]"
+            >
+              See all contributions
+            </Link>
           </div>
           <ul class="grid grid-cols-1 min-[420px]:grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-1">
             {
@@ -111,9 +131,9 @@ const work = (await getCollection("work"))
         </section>
 
           <section class="animate space-y-4" id="contacts">
-            <h5 class="font-semibold text-black dark:text-white">Let's Connect</h5>
+            <h5 class="font-semibold text-black dark:text-white">Get in Touch 👋</h5>
             <article>
-              <p class="lowercase-first">
+              <p>
                 If you want to get in touch with me about something or just to say
                 hi, reach out on social media or send me an email.
               </p>
