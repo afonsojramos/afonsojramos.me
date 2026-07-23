@@ -3,6 +3,7 @@ title: Welcome to my blog
 description: The first post is always the worst
 slug: opening-remarks
 date: 14 June 2021
+tags: ["meta"]
 ---
 
 `println!("Hello World!");`

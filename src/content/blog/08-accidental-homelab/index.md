@@ -3,6 +3,7 @@ title: "The Accidental Homelab"
 description: "Nine years of self-hosting media, from Plex on a gaming PC to TrueNAS with 5×18TB raidz2 and ~30 apps. Built one budget at a time."
 slug: "accidental-homelab"
 date: "5 May 2026"
+tags: ["projects"]
 ---
 
 In 2016, as a university student, I installed Plex on my gaming desktop and started serving local media off it. The desktop was an i7-4770K with a GTX 770, the first PC I'd built myself, back in 2013 at 15. Nine years later, that same Plex install has grown into a TrueNAS server running ~30 self-hosted apps, ~40 TiB of usable storage on a raidz2 pool (with a story behind that number, [see below](#what-writing-this-post-turned-up)), and serving roughly 20 people across a few countries. None of it was planned. Every step came after the previous one started to break, and was paid for whenever the budget caught up.

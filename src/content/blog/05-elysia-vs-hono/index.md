@@ -3,6 +3,7 @@ title: "Hono vs Elysia for Astro on Cloudflare: What I Chose"
 description: "A practical Hono vs Elysia comparison for Astro API routes on Cloudflare, including the new Elysia Cloudflare adapter and why I chose Hono."
 slug: elysia-vs-hono-astro-cloudflare
 date: 11 March 2025
+tags: ["web"]
 ---
 
 When building an Astro application, one of the first decisions you'll face is how to handle API routes. If you value type safety and developer experience, you may have considered Elysia or Hono, two popular TypeScript web frameworks.

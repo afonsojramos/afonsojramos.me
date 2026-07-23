@@ -3,6 +3,7 @@ title: "Quality Is How You Move Fast"
 description: "LLMs did not create software's obsession with speed. They made it cheap enough to expose what we were already willing to sacrifice for it."
 slug: "quality-is-how-you-move-fast"
 date: "16 July 2026"
+tags: ["ai"]
 ---
 
 The recent dispute between Bun creator Jarred Sumner and Zig creator Andrew Kelley made me uncomfortable enough that I went back and [updated an old post](/blog/elysia-vs-hono-astro-cloudflare).

@@ -3,6 +3,7 @@ title: "How to Sync Apple Reminders with Android (When You're Hooked on the Menu
 description: "Learn how to sync Apple Reminders with Android using Microsoft as a bridge solution. Perfect for users committed to reminders-menubar on Mac who need occasional Android access. Includes setup steps, limitations, and honest assessment of sync delays and notification quirks."
 slug: todo-sync-with-apple-reminders-and-outlook
 date: 23 September 2025
+tags: ["projects"]
 ---
 
 If you're like me and have discovered [`reminders-menubar`](https://github.com/DamascenoRafael/reminders-menubar), you know exactly why leaving Apple Reminders isn't an option. This open-source menubar app transforms Apple's basic reminder system into something genuinely great - instant access with a keyboard shortcut, natural language input, and that satisfying feeling of capturing tasks without breaking your flow. And I've looked at other options, but nothing else comes close to the seamlessness of reminders-menubar on macOS, even if you're willing to pay (and I'm not).

@@ -3,6 +3,7 @@ title: "The Future of AI Computing: WASM and GenAI"
 description: My long term bet on Web Assembly (WASM) and Generative AI (GenAI) to power the future of AI computing.
 date: 2 December 2024
 slug: wasm-genai
+tags: ["ai", "web"]
 ---
 
 :::note[Also published elsewhere]

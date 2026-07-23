@@ -3,6 +3,7 @@ title: "Relentless by Default"
 description: "Claude Fable went to absurd lengths to fix a trivial CSS bug. The gap isn't intelligence, it's proportion, and that relentlessness is mostly a feature. What actually matters now is who gets to decide which model answers you, and whether anyone tells you when they do."
 slug: "relentless-by-default"
 date: "17 June 2026"
+tags: ["ai"]
 ---
 
 Simon Willison wrote up [a debugging session with Claude Fable 5](https://simonwillison.net/2026/Jun/11/fable-is-relentlessly-proactive/) that's been rattling around in my head. He noticed a stray horizontal scrollbar in a chat input, took a screenshot, and gave the model one line: "Look at dependencies to help figure out why there is a horizontal scrollbar here."

@@ -3,6 +3,7 @@ title: "The Abstraction Imperative: Why Framework-Defined Infrastructure is the 
 description: "Every major leap in software development has followed the same pattern: we abstract away complexity that no longer needs manual attention. Framework-defined infrastructure isn't just another deployment strategy, it's the continuation of a decades-long trajectory toward letting developers focus on what actually matters."
 slug: framework-defined-infrastructure
 date: 22 November 2025
+tags: ["web"]
 ---
 
 Every major leap in software development has followed the same pattern: we abstract away complexity that no longer needs manual attention. [Framework-defined infrastructure](https://vercel.com/blog/framework-defined-infrastructure) is not merely another deployment strategy; it is the logical continuation of a decades-long trajectory allowing developers to focus on the problem, not the plumbing. At no point in this blog post will I argue that we don't need plumbers. Instead, I will argue that we should worry less about plumbing by trusting well-tested abstractions that others have carefully refined over time.

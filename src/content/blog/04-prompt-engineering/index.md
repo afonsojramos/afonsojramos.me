@@ -3,6 +3,7 @@ title: Optimising prompt engineering for better AI outputs
 description: Learn how well-crafted prompts improve AI performance, user experience, and efficiency.
 date: 3 March 2025
 slug: prompt-engineering
+tags: ["ai"]
 ---
 
 :::note[Also published elsewhere]

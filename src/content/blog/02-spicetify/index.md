@@ -3,6 +3,7 @@ title: Spicetify - An open-source journey
 description: How did I get to be one of the core maintainers of Spicetify? Let's find out!
 slug: spicetify-open-source-journey
 date: 12 December 2022
+tags: ["projects"]
 ---
 
 According to my message history, it all started around February 2020 when I found out about Spicetify through some random Reddit post in the illustrious [r/unixporn](https://www.reddit.com/r/unixporn/) - a subreddit where the highest tier of nerds share their Unix setups and configs - and I was immediately intrigued.
