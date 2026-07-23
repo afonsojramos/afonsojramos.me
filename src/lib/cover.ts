@@ -66,7 +66,7 @@ export function buildCoverSvg({ title, description, date, wordmark }: CoverInput
     .map((l, i) => `<tspan x="80" dy="${i === 0 ? 0 : descLeading}">${escapeXml(l)}</tspan>`)
     .join("");
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="Inter Tight, Inter, system-ui, sans-serif">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="DM Sans, Inter, system-ui, sans-serif">
   <rect width="1200" height="630" fill="#0a0a0a"/>
   <g opacity="0.04" stroke="#ffffff" stroke-width="1">
     <line x1="0" y1="80" x2="1200" y2="80"/>

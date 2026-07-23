@@ -8,7 +8,7 @@ import wawoff from "wawoff2";
 const SCAN_DIRS = ["dist/client/blog", "dist/client/projects"];
 const FONT_WEIGHTS = [400, 500, 700];
 const FONT_SOURCE = (weight: number) =>
-  `node_modules/@fontsource/inter-tight/files/inter-tight-latin-${weight}-normal.woff2`;
+  `node_modules/@fontsource/dm-sans/files/dm-sans-latin-${weight}-normal.woff2`;
 
 // resvg-js 2.x can't read woff/woff2 directly, so decompress the bundled fonts to TTF first.
 async function prepareFonts(): Promise<string[]> {
@@ -17,7 +17,7 @@ async function prepareFonts(): Promise<string[]> {
 
   return Promise.all(
     FONT_WEIGHTS.map(async (weight) => {
-      const ttfPath = join(cacheDir, `inter-tight-${weight}.ttf`);
+      const ttfPath = join(cacheDir, `dm-sans-${weight}.ttf`);
       const woff2 = await readFile(FONT_SOURCE(weight));
       const ttf = await wawoff.decompress(woff2);
       await writeFile(ttfPath, ttf);
@@ -49,13 +49,13 @@ await Promise.all(
     const resvg = new Resvg(svg, {
       font: {
         fontFiles,
-        defaultFontFamily: "Inter Tight",
+        defaultFontFamily: "DM Sans",
         loadSystemFonts: false,
       },
       fitTo: { mode: "original" },
     });
     const png = resvg.render().asPng();
-    await writeFile(svgPath.replace(/\.svg$/, ".png"), png);
+    return writeFile(svgPath.replace(/\.svg$/, ".png"), png);
   }),
 );
 
