@@ -5,6 +5,7 @@ export type Contribution = {
   url: string;
   stars: number;
   mergedPullRequests: number;
+  description?: string;
 };
 
 export const contributions: Contribution[] = [
@@ -13,60 +14,72 @@ export const contributions: Contribution[] = [
     url: "https://github.com/vercel/next.js",
     stars: 141102,
     mergedPullRequests: 1,
+    description: "The React Framework",
   },
   {
     repository: "microsoft/TypeScript",
     url: "https://github.com/microsoft/TypeScript",
     stars: 109923,
     mergedPullRequests: 1,
+    description: "TypeScript is a superset of JavaScript that compiles to clean JavaScript output.",
   },
   {
     repository: "axios/axios",
     url: "https://github.com/axios/axios",
     stars: 109108,
     mergedPullRequests: 1,
+    description: "Promise based HTTP client for the browser and node.js",
   },
   {
     repository: "facebook/docusaurus",
     url: "https://github.com/facebook/docusaurus",
     stars: 65631,
     mergedPullRequests: 1,
+    description: "Easy to maintain open source documentation websites.",
   },
   {
     repository: "DefinitelyTyped/DefinitelyTyped",
     url: "https://github.com/DefinitelyTyped/DefinitelyTyped",
     stars: 51341,
     mergedPullRequests: 1,
+    description: "The repository for high quality TypeScript type definitions.",
   },
   {
     repository: "files-community/Files",
     url: "https://github.com/files-community/Files",
     stars: 44304,
     mergedPullRequests: 1,
+    description: "A modern file manager that helps users organize their files and folders.",
   },
   {
     repository: "biomejs/biome",
     url: "https://github.com/biomejs/biome",
     stars: 25411,
     mergedPullRequests: 1,
+    description: "A toolchain for web projects, aimed to provide functionalities to maintain them.",
   },
   {
     repository: "spicetify/cli",
     url: "https://github.com/spicetify/cli",
     stars: 23751,
     mergedPullRequests: 36,
+    description:
+      "Command-line tool to customize Spotify client. Supports Windows, macOS, and Linux.",
   },
   {
     repository: "Homebrew/homebrew-cask",
     url: "https://github.com/Homebrew/homebrew-cask",
     stars: 22113,
     mergedPullRequests: 3,
+    description:
+      "A CLI workflow for the administration of macOS applications distributed as binaries.",
   },
   {
     repository: "decaporg/decap-cms",
     url: "https://github.com/decaporg/decap-cms",
     stars: 19239,
     mergedPullRequests: 1,
+    description: "A Git-based CMS for Static Site Generators",
   },
   {
     repository: "electron-userland/electron-builder",
@@ -87,12 +100,6 @@ export const contributions: Contribution[] = [
     mergedPullRequests: 1,
   },
   {
-    repository: "microsoft/winget-pkgs",
-    url: "https://github.com/microsoft/winget-pkgs",
-    stars: 10826,
-    mergedPullRequests: 107,
-  },
-  {
     repository: "raineorshine/npm-check-updates",
     url: "https://github.com/raineorshine/npm-check-updates",
     stars: 10275,
@@ -109,6 +116,8 @@ export const contributions: Contribution[] = [
     url: "https://github.com/spicetify/spicetify-themes",
     stars: 6004,
     mergedPullRequests: 7,
+    description:
+      "A community-driven collection of themes for customizing Spotify through Spicetify.",
   },
   {
     repository: "solidjs/solid-start",
@@ -127,6 +136,7 @@ export const contributions: Contribution[] = [
     url: "https://github.com/gitify-app/gitify",
     stars: 5277,
     mergedPullRequests: 109,
+    description: "GitHub notifications on your menu bar.",
   },
   {
     repository: "dubzzz/fast-check",
@@ -139,6 +149,7 @@ export const contributions: Contribution[] = [
     url: "https://github.com/homarr-labs/homarr",
     stars: 4306,
     mergedPullRequests: 9,
+    description: "A modern and easy to use dashboard with 40+ integrations.",
   },
   {
     repository: "mozilla/web-ext",
@@ -175,6 +186,7 @@ export const contributions: Contribution[] = [
     url: "https://github.com/marmelo/tech-companies-in-portugal",
     stars: 1510,
     mergedPullRequests: 57,
+    description: "List of technology companies in Portugal.",
   },
   {
     repository: "hoodie/notify-rust",
@@ -217,6 +229,7 @@ export const contributions: Contribution[] = [
     url: "https://github.com/vicrodh/qbz",
     stars: 562,
     mergedPullRequests: 47,
+    description: "A native, full-featured hi-fi Qobuz desktop player.",
   },
   {
     repository: "auth0/react-native-auth0",
@@ -259,6 +272,7 @@ export const contributions: Contribution[] = [
     url: "https://github.com/spicetify/docs",
     stars: 189,
     mergedPullRequests: 44,
+    description: "Documentation website for spicetify.",
   },
   {
     repository: "Typescript-TDD/jest-ts-auto-mock",
@@ -271,6 +285,7 @@ export const contributions: Contribution[] = [
     url: "https://github.com/aquelemiguel/parrot",
     stars: 154,
     mergedPullRequests: 58,
+    description: "A hassle-free, highly performant, self-hosted Discord music bot.",
   },
   {
     repository: "refstudio/refstudio",

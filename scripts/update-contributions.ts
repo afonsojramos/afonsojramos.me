@@ -19,6 +19,7 @@ type RepositoryResponse = {
   full_name: string;
   html_url: string;
   stargazers_count: number;
+  description: string | null;
 };
 
 type Contribution = {
@@ -26,6 +27,7 @@ type Contribution = {
   url: string;
   stars: number;
   mergedPullRequests: number;
+  description?: string;
 };
 
 async function github<T>(path: string): Promise<T> {
@@ -79,6 +81,7 @@ for (let index = 0; index < candidates.length; index += 10) {
         url: metadata.html_url,
         stars: metadata.stargazers_count,
         mergedPullRequests,
+        ...(metadata.description ? { description: metadata.description } : {}),
       };
     }),
   );
@@ -97,6 +100,7 @@ const source =
   `  url: string;\n` +
   `  stars: number;\n` +
   `  mergedPullRequests: number;\n` +
+  `  description?: string;\n` +
   `};\n\n` +
   `export const contributions: Contribution[] = ${JSON.stringify(visible, null, 2)};\n`;
 
