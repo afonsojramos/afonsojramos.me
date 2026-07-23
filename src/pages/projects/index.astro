@@ -1,0 +1,112 @@
+---
+export const prerender = true;
+
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import Container from "~/components/Container.astro";
+import { PROJECTS } from "~/consts";
+import PageLayout from "~/layouts/PageLayout.astro";
+import { getFaviconUrl } from "~/lib/link-previews";
+
+const projects = (await getCollection("projects"))
+  .filter((project) => !project.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// Icons for projects without one in frontmatter: GitHub repos get the
+// owner's avatar, everything else gets the site's favicon.
+const favicons = new Map(
+  await Promise.all(
+    projects.map(async (project) => {
+      if (project.data.icon) return [project.id, undefined] as const;
+      const url = project.data.demoURL ?? project.data.repoURL;
+      if (!url) return [project.id, undefined] as const;
+      const { hostname, pathname } = new URL(url);
+      const favicon =
+        hostname === "github.com"
+          ? `https://github.com/${pathname.split("/")[1]}.png?size=80`
+          : await getFaviconUrl(url);
+      return [project.id, favicon ?? undefined] as const;
+    }),
+  ),
+);
+
+const domainOf = (project: (typeof projects)[number]) => {
+  const url = project.data.demoURL ?? project.data.repoURL;
+  return url ? new URL(url).hostname.replace(/^www\./, "") : undefined;
+};
+---
+
+<PageLayout {...PROJECTS}>
+  <Container>
+    <div class="space-y-10">
+      <p class="animate">
+        Products, open-source tools, and small experiments I have made over the
+        years. Some useful, some playful, all made with care.
+      </p>
+      <ul class="divide-y divide-black/5 dark:divide-white/5">
+        {
+          projects.map((project) => {
+            const domain = domainOf(project);
+            return (
+              <li class="animate">
+                <a
+                  href={`/projects/${project.id}`}
+                  class="group flex items-start gap-4 py-5 no-underline sm:items-center"
+                >
+                  {project.data.icon?.format === "svg" ? (
+                    <img
+                      src={project.data.icon.src}
+                      alt=""
+                      width={40}
+                      height={40}
+                      loading="lazy"
+                      class="size-10 shrink-0 rounded-lg"
+                      style={
+                        project.data.iconBackground
+                          ? `background: ${project.data.iconBackground}`
+                          : undefined
+                      }
+                    />
+                  ) : project.data.icon ? (
+                    <Image
+                      src={project.data.icon}
+                      alt=""
+                      width={40}
+                      height={40}
+                      class="size-10 shrink-0 rounded-lg"
+                      style={
+                        project.data.iconBackground
+                          ? `background: ${project.data.iconBackground}`
+                          : undefined
+                      }
+                    />
+                  ) : favicons.get(project.id) ? (
+                    <img
+                      src={`/_image?href=${encodeURIComponent(favicons.get(project.id)!)}&w=80&f=webp`}
+                      alt=""
+                      width={40}
+                      height={40}
+                      loading="lazy"
+                      class="size-10 shrink-0 rounded-lg"
+                    />
+                  ) : (
+                    <div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-black/5 font-semibold text-black dark:bg-white/10 dark:text-white">
+                      {project.data.title.charAt(0).toUpperCase()}
+                    </div>
+                  )}
+                  <div class="w-36 shrink-0">
+                    <div class="title-render font-semibold text-black decoration-black/15 underline-offset-2 group-hover:underline dark:text-white dark:decoration-white/30">
+                      {project.data.title}
+                    </div>
+                    {domain && <div class="text-xs">{domain}</div>}
+                  </div>
+                  <p class="min-w-0 flex-1 text-sm">{project.data.description}</p>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </Container>
+</PageLayout>

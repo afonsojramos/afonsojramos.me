@@ -79,6 +79,11 @@ export const WORK: Metadata = {
   description: "Where I have worked and what I have done.",
 };
 
+export const PROJECTS: Metadata = {
+  title: "projects",
+  description: "Products, open-source tools, and small experiments I have made over the years.",
+};
+
 export const MUSIC: Metadata = {
   title: "music",
   description: "Collection of favorite albums and concerts throughout the years.",

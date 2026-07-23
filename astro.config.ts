@@ -59,7 +59,10 @@ export default defineConfig({
   }),
 
   image: {
-    domains: ["i.scdn.co", "res.cloudinary.com"],
+    // Hover-card OG previews and project favicons can come from any linked
+    // site; the /_image endpoint fetches them server-side, dodging hotlink
+    // protection.
+    remotePatterns: [{ protocol: "https" }],
   },
 
   output: "server",

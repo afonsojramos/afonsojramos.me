@@ -25,6 +25,10 @@ const activeClass = "text-black dark:text-white";
         <span>
           {`/`}
         </span>
+        <Link href="/projects" class={isActive("/projects") ? activeClass : ""}> projects </Link>
+        <span>
+          {`/`}
+        </span>
         <Link href="/music" class={isActive("/music") ? activeClass : ""}> music </Link>
       </nav>
     </div>
