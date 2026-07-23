@@ -52,6 +52,7 @@ blockquote {
     @apply flex flex-col;
     @apply bg-stone-100 dark:bg-stone-900;
     @apply text-black/60 dark:text-white/75;
+    line-height: 1.4;
   }
 
   header {
@@ -107,6 +108,7 @@ blockquote {
     @apply prose-headings:text-black dark:prose-headings:text-white;
     @apply prose-headings:mt-14 prose-headings:text-base;
     @apply prose-blockquote:my-8;
+    line-height: 1.55;
   }
 
   /* Intro paragraph: full-contrast text with extra breathing room below. */
