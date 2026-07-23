@@ -1,0 +1,170 @@
+---
+import Link from "~/components/Link.astro";
+import HoverCard from "~/components/hover-card/HoverCard.astro";
+import {
+  getBlueskyProfile,
+  getGitHubStats,
+  getOgPreview,
+} from "~/lib/link-previews";
+
+type Props = {
+  href: string;
+  label?: string;
+};
+
+const { href, label } = Astro.props;
+
+const kind = href.startsWith("mailto:")
+  ? "email"
+  : href.includes("github.com/afonsojramos")
+    ? "github"
+    : href.includes("bsky.app")
+      ? "bluesky"
+      : "preview";
+
+// LinkedIn blocks profile scraping outright (HTTP 999), so its preview is
+// static; the photo is the local avatar.
+const STATIC_PREVIEWS: Record<string, { title: string; domain: string; image?: string }> = {
+  "www.linkedin.com/in/afonsojramos": {
+    title: "Afonso Jorge Ramos | LinkedIn",
+    domain: "linkedin.com",
+    image: "/afonso.jpg",
+  },
+};
+
+const github = kind === "github" ? await getGitHubStats("afonsojramos") : null;
+const bluesky = kind === "bluesky" ? await getBlueskyProfile("afonsojramos.me") : null;
+const preview =
+  kind === "preview"
+    ? ((await getOgPreview(href)) ??
+      STATIC_PREVIEWS[
+        (() => {
+          const url = new URL(href);
+          return `${url.hostname}${url.pathname.replace(/\/$/, "")}`;
+        })()
+      ])
+    : null;
+const hasCard = kind === "email" || !!github || !!bluesky || !!preview;
+const levelColors = [
+  "bg-black/10 dark:bg-white/10",
+  "bg-black/30 dark:bg-white/30",
+  "bg-black/50 dark:bg-white/50",
+  "bg-black/70 dark:bg-white/70",
+  "bg-black dark:bg-white",
+];
+---
+
+{
+  hasCard ? (
+    <HoverCard>
+      <Link href={href} external={!href.startsWith("mailto:")} aria-label={label}>
+        <slot />
+      </Link>
+      <span slot="card">
+        {github && (
+          <span class="block">
+            <span class="grid grid-flow-col grid-rows-7 gap-[2px]">
+              {github.levels.map((level) => (
+                <span class={`size-[9px] rounded-[2px] ${levelColors[level]}`} />
+              ))}
+            </span>
+            <span class="mt-3 flex items-end justify-between gap-2">
+              <span>
+                <span class="font-semibold text-black dark:text-white">
+                  {github.contributions.toLocaleString("en")}
+                </span>{" "}
+                contributions ·
+                <br />
+                <span class="font-semibold text-black dark:text-white">
+                  {github.followers.toLocaleString("en")}
+                </span>{" "}
+                followers
+              </span>
+              <svg viewBox="0 0 24 24" class="size-5 fill-black/70 dark:fill-white/70" aria-hidden="true">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+            </span>
+          </span>
+        )}
+
+        {kind === "email" && (
+          <span
+            class="block rounded-md p-1.5"
+            style="background: repeating-linear-gradient(45deg, #e11d48 0 12px, #ffffff 12px 24px, #3b82f6 24px 36px, #ffffff 36px 48px);"
+          >
+            <span class="relative block rounded-sm bg-white p-3 dark:bg-stone-800">
+              <img
+                src="/afonso.jpg"
+                alt=""
+                class="absolute right-3 top-3 size-10 rotate-3 rounded ring-1 ring-black/10"
+              />
+              <span class="block text-[10px] uppercase tracking-wider text-black/40 dark:text-white/40">
+                From
+              </span>
+              <span class="block font-medium text-black dark:text-white">Afonso Jorge Ramos</span>
+              <span class="block text-xs">Portugal</span>
+              <span class="mt-4 block text-[10px] uppercase tracking-wider text-black/40 dark:text-white/40">
+                To
+              </span>
+              <span class="block font-medium text-black dark:text-white">
+                {href.replace("mailto:", "")}
+              </span>
+            </span>
+          </span>
+        )}
+
+        {bluesky && (
+          <span class="block">
+            <span class="flex items-center gap-2.5">
+              {bluesky.avatar && (
+                <img src={bluesky.avatar} alt="" class="size-10 rounded-full" loading="lazy" />
+              )}
+              <span>
+                <span class="block font-semibold text-black dark:text-white">{bluesky.name}</span>
+                <span class="block text-xs">@{bluesky.handle}</span>
+              </span>
+            </span>
+            {bluesky.description && (
+              <span class="mt-2 line-clamp-4 block">{bluesky.description}</span>
+            )}
+            <span class="mt-2 block text-xs">
+              <span class="font-semibold text-black dark:text-white">
+                {bluesky.following.toLocaleString("en")}
+              </span>{" "}
+              following ·{" "}
+              <span class="font-semibold text-black dark:text-white">
+                {bluesky.followers.toLocaleString("en")}
+              </span>{" "}
+              followers
+            </span>
+          </span>
+        )}
+
+        {preview && (
+          <span class="block">
+            {preview.image && (
+              <img
+                src={
+                  preview.image.startsWith("/")
+                    ? preview.image
+                    : `/_image?href=${encodeURIComponent(preview.image)}&w=512&f=webp`
+                }
+                alt=""
+                class="-m-3 mb-2 w-[calc(100%+1.5rem)] max-w-none rounded-t-xl"
+                loading="lazy"
+              />
+            )}
+            <span class="block text-xs leading-snug">{preview.domain}</span>
+            <span class="block font-medium leading-snug text-black dark:text-white">
+              {preview.title}
+            </span>
+          </span>
+        )}
+      </span>
+    </HoverCard>
+  ) : (
+    <Link href={href} external={!href.startsWith("mailto:")} aria-label={label}>
+      <slot />
+    </Link>
+  )
+}

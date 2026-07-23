@@ -3,11 +3,10 @@ export const prerender = true;
 
 import { getCollection } from "astro:content";
 import Container from "~/components/Container.astro";
-import ContributionEntry from "~/components/entries/Contribution.astro";
+import HoverLink from "~/components/hover-card/HoverLink.astro";
 import Link from "~/components/Link.astro";
 import PostCard from "~/components/PostCard.astro";
 import WorkCard from "~/components/WorkCard.astro";
-import { featuredRepositories } from "~/content/featured-repositories";
 import { HOME, SITE, SOCIALS } from "~/consts";
 import PageLayout from "~/layouts/PageLayout.astro";
 import { sortByDate, sortByDateRange } from "~/lib/utils";
@@ -20,6 +19,9 @@ const blog = (await getCollection("blog"))
 const work = (await getCollection("work"))
   .sort(sortByDateRange)
   .slice(0, SITE.numWorksOnHomepage);
+
+const seeAllClass =
+  "title-render text-[#3b29ff] hover:text-[#2a1fd6] dark:text-[#9b94ff] dark:hover:text-[#b7b1ff]";
 ---
 
 <PageLayout {...HOME}>
@@ -34,49 +36,47 @@ const work = (await getCollection("work"))
         <article class="mt-4 space-y-4 text-black dark:text-white">
           <p class="title-render animate">
             I'm a product-minded software engineer,{" "}
-            <Link
+            <HoverLink
               href="https://github.com/afonsojramos"
-              aria-label="Afonso Ramos on Github"
-              external
+              label="Afonso Ramos on Github"
             >
               open-source enthusiast
-            </Link>, music lover, and front-row concertgoer. A{" "}
-            <Link
+            </HoverLink>, music lover, and front-row concertgoer. A{" "}
+            <HoverLink
               href="https://untappd.com/user/afonsojramos"
-              aria-label="Afonso Ramos on Untappd"
-              external
+              label="Afonso Ramos on Untappd"
             >
               craft beer afficionado
-            </Link>{" "}
+            </HoverLink>{" "}
             and natural wanderer, always exploring new ideas and experiences.
           </p>
           <p class="title-render animate">
             Currently leading{" "}
-            <Link href="https://www.bpp.com" aria-label="BPP website" external>
+            <HoverLink href="https://www.bpp.com" label="BPP website">
               BPP's
-            </Link>{" "}
+            </HoverLink>{" "}
             mobile modernisation (via{" "}
-            <Link href="https://www.yld.io" aria-label="YLD website" external>
+            <HoverLink href="https://www.yld.io" label="YLD website">
               YLD
-            </Link>), rebuilding how 30,000+ learners access their courses through a new
+            </HoverLink>), rebuilding how 30,000+ learners access their courses through a new
             React Native app, tutor platform, and the services behind them.
           </p>
         </article>
       </section>
     </Container>
 
-    <section class="animate mx-auto w-full max-w-5xl space-y-6 px-5">
-      <div class="flex flex-wrap gap-y-2 items-center justify-between">
+    <section class="animate space-y-6">
+      <div class="mx-auto flex w-full max-w-2xl flex-wrap items-center justify-between gap-y-2 px-5">
         <h5 class="font-semibold text-black dark:text-white">Blog</h5>
         <Link
           href="/blog"
           underline={false}
-          class="title-render text-[#3b29ff] hover:text-[#2a1fd6] dark:text-[#9b94ff] dark:hover:text-[#b7b1ff]"
+          class={seeAllClass}
         >
           See all posts
         </Link>
       </div>
-      <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <ul class="mx-auto grid w-full max-w-[1288px] grid-cols-1 gap-4 px-5 sm:grid-cols-2 lg:grid-cols-4">
         {
           blog.map((post) => (
             <li>
@@ -95,7 +95,7 @@ const work = (await getCollection("work"))
             <Link
               href="/work"
               underline={false}
-              class="title-render text-[#3b29ff] hover:text-[#2a1fd6] dark:text-[#9b94ff] dark:hover:text-[#b7b1ff]"
+              class={seeAllClass}
             >
               See all experience
             </Link>
@@ -105,28 +105,6 @@ const work = (await getCollection("work"))
               work.map((entry) => (
                 <li>
                   <WorkCard entry={entry} />
-                </li>
-              ))
-            }
-          </ul>
-        </section>
-
-        <section class="animate space-y-6">
-          <div class="flex flex-wrap gap-y-2 items-center justify-between">
-            <h5 class="font-semibold text-black dark:text-white">Open Source</h5>
-            <Link
-              href="/work#open-source"
-              underline={false}
-              class="title-render text-[#3b29ff] hover:text-[#2a1fd6] dark:text-[#9b94ff] dark:hover:text-[#b7b1ff]"
-            >
-              See all contributions
-            </Link>
-          </div>
-          <ul class="grid grid-cols-1 min-[420px]:grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-1">
-            {
-              featuredRepositories.map((entry) => (
-                <li class="min-w-0">
-                  <ContributionEntry entry={entry} />
                 </li>
               ))
             }
@@ -145,13 +123,9 @@ const work = (await getCollection("work"))
               {
                 SOCIALS.map((SOCIAL, index) => (
                   <li class="flex gap-x-2 text-nowrap">
-                    <Link
-                      href={SOCIAL.href}
-                      external
-                      aria-label={`${SITE.name} on ${SOCIAL.name}`}
-                    >
-                      {SOCIAL.name}
-                    </Link>
+                    <HoverLink href={SOCIAL.href} label={`${SITE.name} on ${SOCIAL.name}`}>
+                    {SOCIAL.name}
+                  </HoverLink>
                     {index !== SOCIALS.length - 1 && " / "}
                   </li>
                 ))
