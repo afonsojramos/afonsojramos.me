@@ -6,9 +6,7 @@ import Container from "~/components/Container.astro";
 import Block from "~/components/entries/Block.astro";
 import EducationEntry from "~/components/entries/Education.astro";
 import ProjectEntry from "~/components/entries/Project.astro";
-import ContributionEntry from "~/components/entries/Contribution.astro";
 import WorkEntry from "~/components/entries/Work.astro";
-import { contributions } from "~/content/contributions";
 import { SITE, SOCIALS, WORK } from "~/consts";
 import PageLayout from "~/layouts/PageLayout.astro";
 import { sortByDate, sortByDateRange } from "~/lib/utils";
@@ -119,19 +117,6 @@ const projects = await Promise.all(
       }
     </Block>
 
-    <div id="open-source" class="scroll-mt-24">
-      <Block title="Open-source contributions">
-        <ul class="grid grid-cols-1 min-[420px]:grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-1">
-          {
-            contributions.map((entry) => (
-              <li class="min-w-0">
-                <ContributionEntry entry={entry} />
-              </li>
-            ))
-          }
-        </ul>
-      </Block>
-    </div>
 
     <section class="text-sm print:hidden animate">
       <h3 class="mb-6">Contact</h3>
