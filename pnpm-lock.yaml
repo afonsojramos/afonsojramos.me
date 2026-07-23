@@ -31,9 +31,9 @@ importers:
       '@astrojs/solid-js':
         specifier: 7.0.1
         version: 7.0.1(@types/node@24.13.3)(solid-js@1.9.14)
-      '@fontsource/inter-tight':
-        specifier: ^5.2.7
-        version: 5.2.7
+      '@fontsource/dm-sans':
+        specifier: ^5.3.0
+        version: 5.3.0
       '@kobalte/core':
         specifier: ^0.13.12
         version: 0.13.12(solid-js@1.9.14)
@@ -656,8 +656,8 @@ packages:
   '@floating-ui/utils@0.2.12':
     resolution: {integrity: sha512-HpCo8tmWzLVad5s2d19EhAz5zqrrQ6s69qd6moPMQvkOuSwDT1YgRfWSVuc4ennqrgv3OHppiOGMQ7oC13yIww==}
 
-  '@fontsource/inter-tight@5.2.7':
-    resolution: {integrity: sha512-44TmSfHdNQus/3MWOMIonUEnbxwQhiaFo2sfBJEGIE4c7TN+GO6kfLzsTH4Nu52BC9HDZFl9fPQ6Cwzp9vYTtQ==}
+  '@fontsource/dm-sans@5.3.0':
+    resolution: {integrity: sha512-lYJtMXXO28q1z+yz+z8XKd0s4hXaa9QdkETzkyD760sidCv5heI86weYA0sx0Nc4pAMAQTUuyf4gO44cYKKS9g==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -3994,7 +3994,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.12': {}
 
-  '@fontsource/inter-tight@5.2.7': {}
+  '@fontsource/dm-sans@5.3.0': {}
 
   '@img/colour@1.1.0': {}
 

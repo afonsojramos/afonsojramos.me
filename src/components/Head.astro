@@ -1,10 +1,10 @@
 ---
 import "../styles/global.css";
-import "@fontsource/inter-tight/400.css";
-import "@fontsource/inter-tight/600.css";
+import "@fontsource/dm-sans/400.css";
+import "@fontsource/dm-sans/600.css";
 import { ClientRouter } from "astro:transitions";
-import interTight400 from "@fontsource/inter-tight/files/inter-tight-latin-400-normal.woff2";
-import interTight600 from "@fontsource/inter-tight/files/inter-tight-latin-600-normal.woff2";
+import dmSans400 from "@fontsource/dm-sans/files/dm-sans-latin-400-normal.woff2";
+import dmSans600 from "@fontsource/dm-sans/files/dm-sans-latin-600-normal.woff2";
 import { SITE } from "~/consts";
 
 interface Props {
@@ -41,14 +41,14 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
 <!-- Font preloads -->
 <link
   rel="preload"
-  href={interTight400}
+  href={dmSans400}
   as="font"
   type="font/woff2"
   crossorigin
 />
 <link
   rel="preload"
-  href={interTight600}
+  href={dmSans600}
   as="font"
   type="font/woff2"
   crossorigin
