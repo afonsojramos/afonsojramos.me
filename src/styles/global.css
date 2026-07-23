@@ -255,6 +255,14 @@ html:has(article.post .table-of-contents) {
   }
 }
 
+/* While the theme flips, per-element transitions are frozen so the view
+   transition cross-fade is the only animation running. */
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition-duration: 0s !important;
+}
+
 .animate {
   @apply opacity-0 translate-y-3;
   @apply duration-700 ease-out;

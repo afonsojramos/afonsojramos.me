@@ -274,21 +274,41 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
     }
   }
 
-  function toggleTheme(dark) {
-    if (document.documentElement.classList.contains("dark") === dark) {
+  function toggleTheme(dark, animate = true) {
+    const root = document.documentElement;
+    if (root.classList.contains("dark") === dark) {
       return;
     }
 
-    document.documentElement.classList.toggle("dark", dark);
+    // Freeze per-element color transitions during the flip so the view
+    // transition's cross-fade is the only animation; otherwise elements with
+    // their own transition-colors lag behind the global fade.
+    root.classList.add("theme-switching");
+    const apply = () => root.classList.toggle("dark", dark);
+    const unfreeze = () => root.classList.remove("theme-switching");
+
+    if (
+      !animate ||
+      !document.startViewTransition ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      apply();
+      requestAnimationFrame(() => requestAnimationFrame(unfreeze));
+      return;
+    }
+
+    document.startViewTransition(apply).finished.finally(unfreeze);
   }
 
   function preloadTheme() {
     const userTheme = localStorage.theme;
 
+    // Synchronous on purpose: this runs before first paint to avoid a theme
+    // flash, and a view transition would defer the class flip past it.
     if (userTheme === "light" || userTheme === "dark") {
-      toggleTheme(userTheme === "dark");
+      toggleTheme(userTheme === "dark", false);
     } else {
-      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches, false);
     }
   }
 
