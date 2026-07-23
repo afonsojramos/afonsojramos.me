@@ -12,6 +12,7 @@
     "preview": "wrangler pages dev ./dist --port 4321",
     "preview:network": "astro preview --host",
     "lint": "oxlint",
+    "music:images": "nub scripts/sync-music-images.ts",
     "lint:fix": "oxlint --fix",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
