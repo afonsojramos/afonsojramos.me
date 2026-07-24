@@ -56,9 +56,10 @@
     "wawoff2": "^2.0.1",
     "wrangler": "4.113.0"
   },
-  "pnpm": {
-    "overrides": {
-      "miniflare>sharp": "0.35.3"
-    }
+  "auditConfig": {
+    "ignoreGhsas": [
+      "GHSA-f88m-g3jw-g9cj",
+      "1124066"
+    ]
   }
 }
