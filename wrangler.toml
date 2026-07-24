@@ -1,7 +1,7 @@
 name = "afonsojramos-me"
 main = "@astrojs/cloudflare/entrypoints/server"
 compatibility_flags = ["nodejs_compat"]
-compatibility_date = "2025-03-25"
+compatibility_date = "2026-07-17"
 route = { pattern = "afonsojramos.me", custom_domain = true }
 
 [assets]

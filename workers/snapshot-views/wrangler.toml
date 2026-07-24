@@ -1,6 +1,6 @@
 name = "afonsojramos-me-snapshot-views"
 main = "index.ts"
-compatibility_date = "2025-03-25"
+compatibility_date = "2026-07-17"
 
 # Daily at 02:30 UTC. Pulls "yesterday" from CF Analytics, so we want the cron
 # to fire after the day has fully closed and CF has the final numbers.
