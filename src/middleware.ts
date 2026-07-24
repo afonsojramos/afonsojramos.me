@@ -1,6 +1,7 @@
 import { defineMiddleware } from "astro:middleware";
 import { env } from "cloudflare:workers";
 import { getCookieKeyValue } from "~/lib/auth/utils";
+import { edgeCacheFetch, isEdgeCacheablePath } from "~/lib/http/edge-cache";
 import {
   isGatedPath,
   isPrivateResponsePath,
@@ -21,6 +22,9 @@ export const onRequest = defineMiddleware(async (context, next) => {
   };
 
   if (!gatedPath) {
+    if (request.method === "GET" && !privateResponse && isEdgeCacheablePath(pathname)) {
+      return edgeCacheFetch(context, nextWithResponsePolicy);
+    }
     return nextWithResponsePolicy();
   }
 
