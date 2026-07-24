@@ -8,3 +8,9 @@ packageExtensions:
 
 onlyBuiltDependencies:
   - "@nubjs/nub"
+
+# miniflare pins sharp 0.34.5 exactly; override until a miniflare release
+# lifts the pin past the libvips CVEs (GHSA-f88m-g3jw-g9cj). Kept in sync
+# with package.json pnpm.overrides for tools that still read it.
+overrides:
+  "miniflare>sharp": 0.35.3

@@ -5,8 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  fast-uri: 3.1.4
-  fast-xml-parser: 5.10.1
   miniflare>sharp: 0.35.3
 
 packageExtensionsChecksum: sha256-lHFeOLf9Qr+yv1uXLQTSSFMS815QZWwkAB1bCmfiBTo=
