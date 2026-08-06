@@ -47,7 +47,12 @@ const projects = await Promise.all(
       <img
         alt={SITE.name + "'s curriculum"}
         src="/afonso.jpg"
-        class="rounded-full object-cover size-24"
+        class="rounded-full object-cover size-24 print:hidden"
+      />
+      <img
+        alt={SITE.name + "'s curriculum"}
+        src="/afonso-print.jpg"
+        class="hidden rounded-full object-cover size-24 print:block"
       />
       <div class="ml-4">
         <h1 class="mb-0.5 text-xl">
