@@ -16,11 +16,9 @@
     "lint:fix": "oxlint --fix",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
-    "prepare": "husky",
-    "check": "astro check"
+    "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.10",
     "@astrojs/cloudflare": "14.2.5",
     "@astrojs/markdown-satteri": "0.3.8",
     "@astrojs/mdx": "7.0.8",
