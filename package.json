@@ -55,6 +55,7 @@
     "wawoff2": "^2.0.1",
     "wrangler": "4.127.0"
   },
+  "packageManager": "pnpm@11.9.0",
   "auditConfig": {
     "ignoreGhsas": [
       "GHSA-f88m-g3jw-g9cj",
