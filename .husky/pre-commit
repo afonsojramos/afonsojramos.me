@@ -5,12 +5,12 @@ if [ -z "$STAGED_FILES" ]; then
 fi
 
 # Format staged files and re-stage any fixes
-bun oxfmt --no-error-on-unmatched-pattern $STAGED_FILES
+nubx oxfmt --no-error-on-unmatched-pattern $STAGED_FILES
 git add $STAGED_FILES
 
 # Lint staged files (auto-fix where possible, then re-stage)
-bun oxlint --fix --no-error-on-unmatched-pattern $STAGED_FILES
+nubx oxlint --fix --no-error-on-unmatched-pattern $STAGED_FILES
 git add $STAGED_FILES
 
 # Type-check the whole project
-bun tsc --noEmit
+nubx tsc --noEmit
