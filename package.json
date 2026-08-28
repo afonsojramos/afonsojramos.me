@@ -8,7 +8,7 @@
     "db:migrate:local": "wrangler d1 migrations apply afonsojramos-me-views --local",
     "dev": "nub run db:migrate:local && astro dev",
     "dev:network": "nub run db:migrate:local && astro dev --host",
-    "build": "astro check && astro build && nub scripts/rasterize-covers.ts",
+    "build": "astro build && nub scripts/rasterize-covers.ts",
     "preview": "wrangler pages dev ./dist --port 4321",
     "preview:network": "astro preview --host",
     "lint": "oxlint",
@@ -16,7 +16,8 @@
     "lint:fix": "oxlint --fix",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
-    "prepare": "husky"
+    "prepare": "husky",
+    "check": "astro check"
   },
   "dependencies": {
     "@astrojs/check": "0.9.10",
