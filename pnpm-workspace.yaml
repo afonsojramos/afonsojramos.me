@@ -8,13 +8,11 @@ packageExtensions:
 
 # pnpm 11 reads allowBuilds; onlyBuiltDependencies kept for older tooling.
 allowBuilds:
-  "@nubjs/nub": true
   esbuild: true
   sharp: true
   workerd: true
 
 onlyBuiltDependencies:
-  - "@nubjs/nub"
   - esbuild
   - sharp
   - workerd

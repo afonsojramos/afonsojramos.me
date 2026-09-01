@@ -13,13 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.0
-      - uses: nubjs/setup-nub@v0
-        with:
-          nub-version: latest
-      - run: nub scripts/update-contributions.ts
+      - uses: jdx/mise-action@v4
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run contributions:update
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: nubx -y oxfmt@0.58.0 src/content/contributions.ts
+      - run: pnpm exec oxfmt src/content/contributions.ts
       - name: Commit changes
         run: |
           if git diff --quiet -- src/content/contributions.ts; then

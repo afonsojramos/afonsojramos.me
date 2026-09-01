@@ -1,5 +1,4 @@
-# Local toolchain. Cloudflare reads .node-version and installs the repo-local
-# @nubjs/nub dependency before running the build.
+# Local toolchain. GitHub Actions installs these tools through jdx/mise-action.
 [tools]
 node = "24"
-"npm:@nubjs/nub" = "latest"
+pnpm = "12"

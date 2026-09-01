@@ -1,3 +1,104 @@
+---
+lockfileVersion: '9.0'
+
+importers:
+
+  .:
+    configDependencies: {}
+    packageManagerDependencies:
+      pnpm:
+        specifier: 12.1.0
+        version: 12.1.0
+
+packages:
+
+  '@pnpm/exe.darwin-arm64@12.1.0':
+    resolution: {integrity: sha512-9K+uSnTsJe9zD/YCMPiQDiwU8IiQRp+ZEE9IyVSr0Ppzfg5/xC0pwet2R320ifDIMroT3WYLkCEolV6XxtSS/g==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@pnpm/exe.darwin-x64@12.1.0':
+    resolution: {integrity: sha512-JcOc77W/KLg5ZZXr7q0WN8UDKirxQTuoaTkqRfMNkGyUHc/4bfNxLwjoZBilRQV6xmhJvU79ZUg++eYohzJhog==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@pnpm/exe.linux-arm64-musl@12.1.0':
+    resolution: {integrity: sha512-RVJlfI4T2l6XXA5s/Wv9HHEq4ztIq79fiZXDVHyHaKEbp+11ZM5k61z0gaGzXCEGUp5anW2Uc3UgQpmjAR+IPw==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+
+  '@pnpm/exe.linux-arm64@12.1.0':
+    resolution: {integrity: sha512-iLEE0ykaRZ3/OBhIjwe/Zo96ac0c7pY7toyf6+jUN8gOsIIwJTS+AqSyOy+U1Zyhuuec8nJiRQ4URl60nRxTwA==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [glibc]
+
+  '@pnpm/exe.linux-x64-musl@12.1.0':
+    resolution: {integrity: sha512-k+NUTRbz2CR9DBvGyAdtXU5HHPXytxi9MQ79uQRYNLF8nr/l1qHo++TvZ0OUuEpRxhg9B3n84Itv6MAHJR7TQQ==}
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+
+  '@pnpm/exe.linux-x64@12.1.0':
+    resolution: {integrity: sha512-GTi1DEM8vwIWpgC8P+xhw3Y2Ko2V88WtKAjbNwdeJAzMpzmcBeE4f0c2QKmeKpvi8/eYarxSIvBhYkTjA1BAcQ==}
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+
+  '@pnpm/exe.win32-arm64@12.1.0':
+    resolution: {integrity: sha512-cK6kklZY8rs3d9gg8akGUgjDenFy65ZSAANXojs98d7Ne7gbzZYzU2joHRRilfpzCfawgG+lpPsh46a4xu55jQ==}
+    cpu: [arm64]
+    os: [win32]
+
+  '@pnpm/exe.win32-x64@12.1.0':
+    resolution: {integrity: sha512-Pk7Lvq3E5PWQFRJLLnLgW2qJAphtgPYCaaODB+FZRRvKksn8IPnF8Aj+/AT4+52GmckiANTbKwCsL18naJhohw==}
+    cpu: [x64]
+    os: [win32]
+
+  pnpm@12.1.0:
+    resolution: {integrity: sha512-2bgnbZf27IbkmBWHf5Hun2PO5h8gY7ME5Dttq4+gfOipr9RtL6zTn5Ieap0Gs8dagTSce4iMLSKIa64CKZAQNw==}
+    engines: {node: '>=18.*'}
+    hasBin: true
+
+snapshots:
+
+  '@pnpm/exe.darwin-arm64@12.1.0':
+    optional: true
+
+  '@pnpm/exe.darwin-x64@12.1.0':
+    optional: true
+
+  '@pnpm/exe.linux-arm64-musl@12.1.0':
+    optional: true
+
+  '@pnpm/exe.linux-arm64@12.1.0':
+    optional: true
+
+  '@pnpm/exe.linux-x64-musl@12.1.0':
+    optional: true
+
+  '@pnpm/exe.linux-x64@12.1.0':
+    optional: true
+
+  '@pnpm/exe.win32-arm64@12.1.0':
+    optional: true
+
+  '@pnpm/exe.win32-x64@12.1.0':
+    optional: true
+
+  pnpm@12.1.0:
+    optionalDependencies:
+      '@pnpm/exe.darwin-arm64': 12.1.0
+      '@pnpm/exe.darwin-x64': 12.1.0
+      '@pnpm/exe.linux-arm64': 12.1.0
+      '@pnpm/exe.linux-arm64-musl': 12.1.0
+      '@pnpm/exe.linux-x64': 12.1.0
+      '@pnpm/exe.linux-x64-musl': 12.1.0
+      '@pnpm/exe.win32-arm64': 12.1.0
+      '@pnpm/exe.win32-x64': 12.1.0
+
+---
 lockfileVersion: '9.0'
 
 settings:
@@ -92,9 +193,6 @@ importers:
       '@cloudflare/workers-types':
         specifier: ^5.20260827.1
         version: 5.20260827.1
-      '@nubjs/nub':
-        specifier: latest
-        version: 0.7.5
       '@resvg/resvg-js':
         specifier: ^2.6.2
         version: 2.6.2
@@ -1002,55 +1100,6 @@ packages:
 
   '@nodable/entities@3.0.0':
     resolution: {integrity: sha512-8L9xFeTYKhm49xfIypoe2W5wV1m/3Z58kT+7kR9A8OyFxcPduI4VmxaUMQyKYrRjUoLLSXv6EKKID5Tvj9cUVw==}
-
-  '@nubjs/nub-darwin-arm64@0.7.5':
-    resolution: {integrity: sha512-7XBzpw5NWdVxbcxyHvR9DHfip7f3Cxe7CUIJRyGq3vfhxZ/VFGavjeuEwsujxkzHInog/ZSviWRZ4JBqm5DJSQ==}
-    cpu: [arm64]
-    os: [darwin]
-
-  '@nubjs/nub-darwin-x64@0.7.5':
-    resolution: {integrity: sha512-f/zXoWBAUYDYr5JPvMvM9/8rxAzi+gJKvSm9ToWcLmQ43fR+8xJdfqhhRThM+FVLInCpv35L9N28lfYiqxw+pw==}
-    cpu: [x64]
-    os: [darwin]
-
-  '@nubjs/nub-linux-arm64-musl@0.7.5':
-    resolution: {integrity: sha512-J33scULMTgPv83LL37gKBrcOOooo6QYdDC6Kz71CDZ96nbOClV2woJjjEQ8cUHkzMxQ9ZBsrIwUsPyqHEHw1NQ==}
-    cpu: [arm64]
-    os: [linux]
-    libc: [musl]
-
-  '@nubjs/nub-linux-arm64@0.7.5':
-    resolution: {integrity: sha512-ffJcXQYsSfoWbC3eDYPs4pkCB0WJsycGnjduVVrWbmKy28U9DK9Jq3VXIK1/eivXilOfypnKLgv1MprxsJdUAA==}
-    cpu: [arm64]
-    os: [linux]
-    libc: [glibc]
-
-  '@nubjs/nub-linux-x64-musl@0.7.5':
-    resolution: {integrity: sha512-5d1sBAlVAjse31gsU9/bTkbfZ2Zlv4V3L4MPDqYU8TPlLjVQb7oUlyFA2I2DePvLhs1rE1y9d6KvnE9LwGD6hw==}
-    cpu: [x64]
-    os: [linux]
-    libc: [musl]
-
-  '@nubjs/nub-linux-x64@0.7.5':
-    resolution: {integrity: sha512-89oVc561kfaBat4J+iRCYqt0c23hr3zIWh9oHlGh1ghvQTKiPwOynup3q2GFRNiPFTF76Hw+SachTUJSlgM4Ug==}
-    cpu: [x64]
-    os: [linux]
-    libc: [glibc]
-
-  '@nubjs/nub-win32-arm64@0.7.5':
-    resolution: {integrity: sha512-4b0VUmXXO/xO5bBMau14s5mad72yN74M2yp13l4M//Ei9KLk9BypcG+eZ3KcTmNtj0j43x40Vr+5yW71z75MtA==}
-    cpu: [arm64]
-    os: [win32]
-
-  '@nubjs/nub-win32-x64@0.7.5':
-    resolution: {integrity: sha512-VRAQWoeHB3K9tUHrSjwctq+UE6CPqNAx2yxSDKcalFMpisCEpkUThsP/459KRAcqQ3To30e2hR12NpSo4aTfAg==}
-    cpu: [x64]
-    os: [win32]
-
-  '@nubjs/nub@0.7.5':
-    resolution: {integrity: sha512-mYU0tWKXjl8pcvULygtLPVOsVMDx2kl3+f0mY/8nJsn8cV1MzJnY/KLM9ecHaouJXZ2W9jsyIarhvS/El0pmiA==}
-    engines: {node: '>=18.19.0'}
-    hasBin: true
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
@@ -4174,41 +4223,6 @@ snapshots:
     optional: true
 
   '@nodable/entities@3.0.0': {}
-
-  '@nubjs/nub-darwin-arm64@0.7.5':
-    optional: true
-
-  '@nubjs/nub-darwin-x64@0.7.5':
-    optional: true
-
-  '@nubjs/nub-linux-arm64-musl@0.7.5':
-    optional: true
-
-  '@nubjs/nub-linux-arm64@0.7.5':
-    optional: true
-
-  '@nubjs/nub-linux-x64-musl@0.7.5':
-    optional: true
-
-  '@nubjs/nub-linux-x64@0.7.5':
-    optional: true
-
-  '@nubjs/nub-win32-arm64@0.7.5':
-    optional: true
-
-  '@nubjs/nub-win32-x64@0.7.5':
-    optional: true
-
-  '@nubjs/nub@0.7.5':
-    optionalDependencies:
-      '@nubjs/nub-darwin-arm64': 0.7.5
-      '@nubjs/nub-darwin-x64': 0.7.5
-      '@nubjs/nub-linux-arm64': 0.7.5
-      '@nubjs/nub-linux-arm64-musl': 0.7.5
-      '@nubjs/nub-linux-x64': 0.7.5
-      '@nubjs/nub-linux-x64-musl': 0.7.5
-      '@nubjs/nub-win32-arm64': 0.7.5
-      '@nubjs/nub-win32-x64': 0.7.5
 
   '@oslojs/encoding@1.1.0': {}
 

@@ -4,15 +4,15 @@
   "type": "module",
   "scripts": {
     "astro": "astro",
-    "contributions:update": "nub scripts/update-contributions.ts",
+    "contributions:update": "node scripts/update-contributions.ts",
     "db:migrate:local": "wrangler d1 migrations apply afonsojramos-me-views --local",
-    "dev": "nub run db:migrate:local && astro dev",
-    "dev:network": "nub run db:migrate:local && astro dev --host",
-    "build": "astro build && nub scripts/rasterize-covers.ts",
+    "dev": "pnpm run db:migrate:local && astro dev",
+    "dev:network": "pnpm run db:migrate:local && astro dev --host",
+    "build": "astro build && node scripts/rasterize-covers.ts",
     "preview": "wrangler pages dev ./dist --port 4321",
     "preview:network": "astro preview --host",
     "lint": "oxlint",
-    "music:images": "nub scripts/sync-music-images.ts",
+    "music:images": "node scripts/sync-music-images.ts",
     "lint:fix": "oxlint --fix",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
@@ -48,14 +48,13 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20260827.1",
-    "@nubjs/nub": "latest",
     "@resvg/resvg-js": "^2.6.2",
     "oxfmt": "^0.65.0",
     "oxlint": "^1.80.0",
     "wawoff2": "^2.0.1",
     "wrangler": "4.127.0"
   },
-  "packageManager": "pnpm@11.9.0",
+  "packageManager": "pnpm@12.1.0",
   "auditConfig": {
     "ignoreGhsas": [
       "GHSA-f88m-g3jw-g9cj",
