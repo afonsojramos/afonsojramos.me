@@ -104,6 +104,7 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
     preloadTheme();
     updateScrollState(scrolled);
     animate();
+    reveal();
 
     window.siteEventController?.abort();
     const controller = new AbortController();
@@ -226,6 +227,60 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
         break;
       }
     }
+  }
+
+  function prefersReducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  // Wraps each word of [data-reveal] elements in a span with a running index
+  // so CSS can stagger them. Links animate as a single unit.
+  function reveal() {
+    const elements = document.querySelectorAll("[data-reveal]:not(.revealed)");
+    if (prefersReducedMotion()) {
+      elements.forEach((element) => element.classList.add("revealed"));
+      return;
+    }
+
+    let index = 0;
+    elements.forEach((element) => {
+      [...element.childNodes].forEach((node) => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          const fragment = document.createDocumentFragment();
+          const previous = node.previousSibling;
+          node.textContent.split(/(\s+)/).forEach((part, i) => {
+            if (!part) return;
+            // Keep punctuation right after a link on the same line as it.
+            if (i === 0 && previous?.classList?.contains("word")) {
+              const unit = document.createElement("span");
+              unit.className = "word whitespace-nowrap";
+              unit.style.setProperty("--i", previous.style.getPropertyValue("--i"));
+              previous.classList.remove("word");
+              previous.replaceWith(unit);
+              unit.append(previous, part);
+              return;
+            }
+            if (/^\s+$/.test(part)) {
+              fragment.append(part);
+              return;
+            }
+            const word = document.createElement("span");
+            word.className = "word";
+            word.style.setProperty("--i", index++);
+            word.textContent = part;
+            fragment.append(word);
+          });
+          node.replaceWith(fragment);
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+          node.classList.add("word");
+          node.style.setProperty("--i", index++);
+        }
+      });
+      element.classList.add("revealed");
+      element.addEventListener("animationend", (event) => {
+        if (event.target.classList.contains("word")) event.target.style.animation = "none";
+      });
+    });
   }
 
   function animate() {
