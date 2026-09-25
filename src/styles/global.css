@@ -326,6 +326,27 @@ html.theme-switching *::after {
   }
 }
 
+/* Cursor-following highlight; --glow-x and --glow-y are set by initGlow() in Head.astro. */
+.glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    240px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    var(--glow),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 400ms ease-out;
+}
+
+.glow:hover::before {
+  opacity: 1;
+}
+
 /* Word-by-word reveal: words are wrapped in spans by the reveal() script in Head.astro. */
 @media (scripting: enabled) {
   [data-reveal]:not(.revealed) {
@@ -436,6 +457,7 @@ html.scrolled #back-to-top {
 :root {
   --link-line: rgb(0 0 0 / 0.15);
   --link-line-hover: rgb(0 0 0 / 0.5);
+  --glow: rgb(0 0 0 / 0.05);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -456,6 +478,7 @@ html.scrolled #back-to-top {
 [data-kb-theme="dark"] {
   --link-line: rgb(255 255 255 / 0.3);
   --link-line-hover: rgb(255 255 255 / 0.75);
+  --glow: rgb(255 255 255 / 0.07);
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);

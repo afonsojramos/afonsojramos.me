@@ -11,7 +11,8 @@ const { entry } = Astro.props;
 
 <a
   href={`/${entry.collection}/${entry.id}`}
-  class="relative group flex flex-nowrap py-3 px-4 gap-2 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+  data-glow
+  class="glow isolate relative group flex flex-nowrap py-3 px-4 gap-2 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
 >
   <div class="flex flex-col flex-1 truncate">
     <div class="title-render font-semibold truncate sm:max-w-10/12">
@@ -21,5 +22,5 @@ const { entry } = Astro.props;
       {entry.data.description}
     </div>
   </div>
-  <LinkIcon class="size-5" />
+  <LinkIcon class="size-5 group-hover:translate-x-1 transition-transform duration-300 ease-out" />
 </a>

@@ -106,6 +106,7 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
     animate();
     reveal();
     initScramble();
+    initGlow();
 
     window.siteEventController?.abort();
     const controller = new AbortController();
@@ -322,6 +323,17 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
 
       trigger.addEventListener("mouseenter", run);
       trigger.addEventListener("focus", run);
+    });
+  }
+
+  // Tracks the pointer inside [data-glow] elements for the .glow highlight.
+  function initGlow() {
+    document.querySelectorAll("[data-glow]").forEach((element) => {
+      element.addEventListener("pointermove", (event) => {
+        const rect = element.getBoundingClientRect();
+        element.style.setProperty("--glow-x", `${event.clientX - rect.left}px`);
+        element.style.setProperty("--glow-y", `${event.clientY - rect.top}px`);
+      });
     });
   }
 
