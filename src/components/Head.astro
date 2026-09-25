@@ -371,6 +371,9 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
     }
   }
 
+  let themeTransition;
+
+  // With `animate`, the new theme wipes in diagonally from the top-left corner.
   function toggleTheme(dark, animate = true) {
     const root = document.documentElement;
     if (root.classList.contains("dark") === dark) {
@@ -394,7 +397,14 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
       return;
     }
 
-    document.startViewTransition(apply).finished.finally(unfreeze);
+    root.classList.add("theme-transition");
+
+    const transition = document.startViewTransition(apply);
+    themeTransition = transition;
+    transition.finished.finally(() => {
+      unfreeze();
+      if (themeTransition === transition) root.classList.remove("theme-transition");
+    });
   }
 
   function preloadTheme() {

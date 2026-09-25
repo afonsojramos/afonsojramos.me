@@ -313,6 +313,28 @@ html.theme-switching *::after {
     animation-name: wave-again;
     animation-delay: 0s;
   }
+
+  html.theme-transition::view-transition-old(root),
+  html.theme-transition::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  /* The new theme's edge sweeps from the top-left corner to the bottom-right. The triangle's
+     long side runs parallel to the viewport's other diagonal and passes the bottom-right
+     corner when the triangle reaches twice the viewport size. */
+  html.theme-transition::view-transition-new(root) {
+    animation: theme-wipe 750ms cubic-bezier(0.7, 0, 0.2, 1) both;
+  }
+}
+
+@keyframes theme-wipe {
+  from {
+    clip-path: polygon(0 0, 0 0, 0 0);
+  }
+  to {
+    clip-path: polygon(0 0, 200% 0, 0 200%);
+  }
 }
 
 @keyframes word-in {
