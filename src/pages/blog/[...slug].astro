@@ -60,7 +60,11 @@ const olderUrl = olderPost ? `/blog/${olderPost.id}` : undefined;
         </div>
         <ViewCount slug={`blog/${post.id}/`} />
       </div>
-      <div class="title-render animate text-2xl font-semibold text-black dark:text-white">
+      <div
+        class="title-render text-2xl font-semibold text-black dark:text-white"
+        transition:name={`title-${post.collection}-${post.id}`}
+        style="view-transition-class: post-title"
+      >
         {post.data.title}
       </div>
     </div>

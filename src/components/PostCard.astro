@@ -17,7 +17,11 @@ const extraTags = tags.length - visibleTags.length;
   data-glow
   class="glow isolate relative group flex h-auto flex-col gap-2 rounded-md bg-white p-5 no-underline transition-colors duration-300 ease-in-out hover:bg-black/5 hover:text-black dark:bg-white/5 dark:hover:bg-white/10 dark:hover:text-white lg:aspect-square"
 >
-  <div class="title-render font-semibold text-black dark:text-white">
+  <div
+    class="title-render font-semibold text-black dark:text-white"
+    transition:name={`title-${entry.collection}-${entry.id}`}
+    style="view-transition-class: card-title"
+  >
     {entry.data.title}
   </div>
   <div class="title-render text-sm line-clamp-5 lg:line-clamp-4">

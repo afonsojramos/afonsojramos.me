@@ -419,6 +419,19 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
     });
   }
 
+  // Shows the .animate containers of view-transition elements immediately, so a morphing
+  // element lands on its final position instead of the container's entrance offset.
+  function showTransitionTargets() {
+    document.querySelectorAll("[data-astro-transition-scope]").forEach((target) => {
+      const container = target.closest(".animate");
+      if (!container) return;
+      container.style.transition = "none";
+      container.classList.add("show");
+      window.getComputedStyle(container).opacity;
+      container.style.transition = "";
+    });
+  }
+
   function preloadTheme() {
     const userTheme = localStorage.theme;
 
@@ -434,6 +447,7 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
   document.addEventListener("DOMContentLoaded", () => init());
   document.addEventListener("astro:after-swap", () => {
     siteNavigated = true;
+    showTransitionTargets();
     init();
   });
   preloadTheme();

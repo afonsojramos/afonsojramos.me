@@ -347,6 +347,88 @@ html.theme-switching *::after {
   opacity: 1;
 }
 
+/* Post titles morph between the cards (16px) and the post heading (24px). Each snapshot keeps its
+   natural size and scales by the font-size ratio while its group moves between the two positions.
+   Both snapshots carry the destination element's view-transition-class. */
+::view-transition-group(*.card-title),
+::view-transition-group(*.post-title) {
+  animation-duration: 450ms;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+::view-transition-old(*.card-title),
+::view-transition-new(*.card-title),
+::view-transition-old(*.post-title),
+::view-transition-new(*.post-title) {
+  inline-size: auto;
+  transform-origin: 0 0;
+  animation-duration: 450ms;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+/* Card to post heading: text grows. */
+::view-transition-old(*.post-title) {
+  animation-name: title-out-grow;
+}
+
+::view-transition-new(*.post-title) {
+  animation-name: title-in-grow;
+}
+
+/* Post heading to card: text shrinks. */
+::view-transition-old(*.card-title) {
+  animation-name: title-out-shrink;
+}
+
+::view-transition-new(*.card-title) {
+  animation-name: title-in-shrink;
+}
+
+@keyframes title-out-grow {
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes title-in-grow {
+  from {
+    opacity: 0;
+    transform: scale(0.6667);
+  }
+  25% {
+    opacity: 0;
+  }
+}
+
+@keyframes title-out-shrink {
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.6667);
+  }
+}
+
+@keyframes title-in-shrink {
+  from {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  25% {
+    opacity: 0;
+  }
+}
+
+html.theme-transition [data-astro-transition-scope] {
+  view-transition-name: none !important;
+}
+
 /* Word-by-word reveal: words are wrapped in spans by the reveal() script in Head.astro. */
 @media (scripting: enabled) {
   [data-reveal]:not(.revealed) {
