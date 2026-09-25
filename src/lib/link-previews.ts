@@ -136,7 +136,9 @@ const isReachable = async (url: string) => {
 /**
  * Best-effort favicon for a site: apple-touch-icon first (highest
  * resolution), then any rel=icon link, then Google's favicon service,
- * which always returns a PNG. Returns null only if the URL is malformed.
+ * which always returns a PNG. Returns https URLs the /_image endpoint can
+ * transform (so .ico files are skipped) or inline data:image URLs, which are
+ * used as-is. Returns null only if the URL is malformed.
  */
 export async function getFaviconUrl(pageUrl: string): Promise<string | null> {
   let hostname: string;
@@ -159,9 +161,14 @@ export async function getFaviconUrl(pageUrl: string): Promise<string | null> {
       )) {
         const href = match[0].match(/href=["']([^"']+)["']/i)?.[1];
         if (!href) continue;
+        const url = new URL(href, response.url);
+        const isInlineImage = url.protocol === "data:" && url.pathname.startsWith("image/");
+        const isTransformable =
+          url.protocol === "https:" && !url.pathname.toLowerCase().endsWith(".ico");
+        if (!isInlineImage && !isTransformable) continue;
         const rel = match[1].toLowerCase();
         candidates.push({
-          href: new URL(href, response.url).href,
+          href: url.href,
           score: rel.includes("apple-touch-icon") ? 0 : rel.includes("svg") ? 1 : 2,
         });
       }

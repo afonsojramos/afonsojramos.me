@@ -82,7 +82,11 @@ const domainOf = (project: (typeof projects)[number]) => {
                     />
                   ) : favicons.get(project.id) ? (
                     <img
-                      src={`/_image?href=${encodeURIComponent(favicons.get(project.id)!)}&w=80&f=webp`}
+                      src={
+                        favicons.get(project.id)!.startsWith("data:")
+                          ? favicons.get(project.id)
+                          : `/_image?href=${encodeURIComponent(favicons.get(project.id)!)}&w=80&f=webp`
+                      }
                       alt=""
                       width={40}
                       height={40}
