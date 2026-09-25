@@ -347,6 +347,35 @@ html.theme-switching *::after {
   opacity: 1;
 }
 
+/* Blog post reading progress, driven by page scroll. */
+.reading-progress {
+  display: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  .reading-progress {
+    display: block;
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 60;
+    height: 2px;
+    background: var(--foreground);
+    opacity: 0.35;
+    transform-origin: left;
+    animation: reading-progress linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@keyframes reading-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
 /* Post titles morph between the cards (16px) and the post heading (24px). Each snapshot keeps its
    natural size and scales by the font-size ratio while its group moves between the two positions.
    Both snapshots carry the destination element's view-transition-class. */

@@ -46,6 +46,7 @@ const olderUrl = olderPost ? `/blog/${olderPost.id}` : undefined;
 >
   <Container>
     <div id="post-nav" data-newer={newerUrl} data-older={olderUrl} hidden></div>
+    <div class="reading-progress print:hidden" aria-hidden="true"></div>
     <div class="animate">
       <BackToPrev href="/blog"> Back </BackToPrev>
     </div>
