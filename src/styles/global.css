@@ -458,6 +458,26 @@ html.theme-transition [data-astro-transition-scope] {
   view-transition-name: none !important;
 }
 
+/* Now playing equalizer bars. */
+@media (prefers-reduced-motion: no-preference) {
+  .eq-bar {
+    transform-origin: bottom;
+    animation: eq 900ms ease-in-out infinite alternate;
+  }
+}
+
+@keyframes eq {
+  0% {
+    transform: scaleY(0.25);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.45);
+  }
+}
+
 /* Word-by-word reveal: words are wrapped in spans by the reveal() script in Head.astro. */
 @media (scripting: enabled) {
   [data-reveal]:not(.revealed) {

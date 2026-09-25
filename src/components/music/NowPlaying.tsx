@@ -1,6 +1,5 @@
 import type { JSX } from "solid-js";
 import { createResource, Show } from "solid-js";
-import { cn } from "~/lib/utils";
 import type { TopTracksResponse } from "~/types/lastfm";
 
 interface NowPlayingData {
@@ -25,7 +24,15 @@ const renderNowPlaying = ({
   return (
     <div class="flex items-center mt-4 mb-6">
       <Show when={albumImage}>
-        <div class="mr-4 flex-shrink-0">
+        <div class="relative isolate mr-4 flex-shrink-0">
+          {isPlaying && (
+            <img
+              src={albumImage}
+              alt=""
+              aria-hidden="true"
+              class="absolute inset-0 -z-10 w-24 h-24 scale-125 blur-xl opacity-80 shadow-none!"
+            />
+          )}
           <a href={songUrl} target="_blank" rel="noopener noreferrer">
             <img src={albumImage} alt={`${title} by ${artist}`} class="rounded-md w-24 h-24" />
           </a>
@@ -33,12 +40,21 @@ const renderNowPlaying = ({
       </Show>
       <div class="flex flex-col">
         <div class="flex items-center">
-          <div
-            class={cn(
-              "w-2 h-2 rounded-full mr-2 animate-pulse",
-              isPlaying ? "bg-green-500" : "bg-red-400",
-            )}
-          />
+          {isPlaying ? (
+            <div class="flex items-end gap-0.5 h-3 mr-2" aria-hidden="true">
+              {[0, 1, 2, 3].map((i) => (
+                <span
+                  class="eq-bar w-0.5 h-full rounded-full bg-green-500"
+                  style={{
+                    "animation-delay": `${i * -0.35}s`,
+                    "animation-duration": `${800 + i * 130}ms`,
+                  }}
+                />
+              ))}
+            </div>
+          ) : (
+            <div class="w-2 h-2 rounded-full mr-2 animate-pulse bg-red-400" />
+          )}
           <span class="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 text-ellipsis overflow-hidden whitespace-nowrap max-w-40 sm:max-w-none">
             {nowPlaying}
           </span>
