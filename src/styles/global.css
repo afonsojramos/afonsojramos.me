@@ -86,9 +86,7 @@ blockquote {
   }
 
   .content a {
-    @apply font-sans text-current underline underline-offset-2;
-    @apply decoration-black/15 dark:decoration-white/30;
-    @apply transition-colors duration-300 ease-in-out;
+    @apply font-sans text-current;
     @apply hover:text-black dark:hover:text-white;
   }
 
@@ -245,13 +243,10 @@ html:has(article.post .table-of-contents) {
 @layer utilities {
   /* biome-ignore lint/style/noDescendingSpecificity: intentional */
   article a {
-    @apply font-sans text-current underline underline-offset-2;
-    @apply decoration-black/15 dark:decoration-white/30;
-    @apply transition-colors duration-300 ease-in-out;
+    @apply font-sans text-current;
   }
   article a:hover {
     @apply text-black dark:text-white;
-    @apply decoration-black/25 dark:decoration-white/50;
   }
 }
 
@@ -286,6 +281,48 @@ html.theme-switching *::after {
 
   article.post.animate .table-of-contents {
     @apply opacity-100 transition-none;
+  }
+}
+
+/* Underline drawn as two background lines: a faint resting line, and a stronger one that
+   sweeps in from the left on hover and leaves to the right. */
+.link-line,
+:where(article, .content) a:not(:is(:has(.link-line, img), .heading-anchor, .table-of-contents a)) {
+  text-decoration: none;
+  background-image:
+    linear-gradient(var(--link-line-hover), var(--link-line-hover)),
+    linear-gradient(var(--link-line), var(--link-line));
+  background-size:
+    0% 1px,
+    100% 1px;
+  background-position:
+    100% 100%,
+    0 100%;
+  background-repeat: no-repeat;
+  transition:
+    background-size 450ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    color 300ms ease-in-out;
+}
+
+.link-line:where(a:hover *, a:focus-visible *),
+:where(article, .content)
+  a:not(:is(:has(.link-line, img), .heading-anchor, .table-of-contents a)):where(
+    :hover,
+    :focus-visible
+  ) {
+  background-size:
+    100% 1px,
+    100% 1px;
+  background-position:
+    0 100%,
+    0 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link-line,
+  :where(article, .content)
+    a:not(:is(:has(.link-line, img), .heading-anchor, .table-of-contents a)) {
+    transition: color 300ms ease-in-out;
   }
 }
 
@@ -397,6 +434,8 @@ html.scrolled #back-to-top {
 }
 
 :root {
+  --link-line: rgb(0 0 0 / 0.15);
+  --link-line-hover: rgb(0 0 0 / 0.5);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -415,6 +454,8 @@ html.scrolled #back-to-top {
 
 .dark,
 [data-kb-theme="dark"] {
+  --link-line: rgb(255 255 255 / 0.3);
+  --link-line-hover: rgb(255 255 255 / 0.75);
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
