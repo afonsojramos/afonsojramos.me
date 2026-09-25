@@ -4,6 +4,7 @@ description: "macOS support for qbz, a native, bit-perfect hi-fi Qobuz desktop p
 date: "2026-04-04"
 repoURL: "https://github.com/vicrodh/qbz"
 demoURL: "https://qbz.lol"
+icon: "./logo.png"
 tags: ["Rust", "Tauri", "macOS", "CoreAudio", "Audio"]
 relationship: "contributor"
 ---
