@@ -302,6 +302,17 @@ html.theme-switching *::after {
     animation: word-in 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
     animation-delay: calc(var(--i) * 20ms + 120ms);
   }
+
+  .wave {
+    display: inline-block;
+    transform-origin: 70% 80%;
+    animation: wave 1.6s ease-in-out 0.5s;
+  }
+
+  :hover > .wave {
+    animation-name: wave-again;
+    animation-delay: 0s;
+  }
 }
 
 @keyframes word-in {
@@ -314,6 +325,44 @@ html.theme-switching *::after {
     opacity: 1;
     filter: none;
     transform: none;
+  }
+}
+
+@keyframes wave {
+  0%,
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10%,
+  30% {
+    transform: rotate(16deg);
+  }
+  20%,
+  40% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes wave-again {
+  0%,
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10%,
+  30% {
+    transform: rotate(16deg);
+  }
+  20%,
+  40% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(10deg);
   }
 }
 
