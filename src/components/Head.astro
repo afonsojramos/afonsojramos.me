@@ -105,6 +105,7 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
     updateScrollState(scrolled);
     animate();
     reveal();
+    initScramble();
 
     window.siteEventController?.abort();
     const controller = new AbortController();
@@ -280,6 +281,47 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
       element.addEventListener("animationend", (event) => {
         if (event.target.classList.contains("word")) event.target.style.animation = "none";
       });
+    });
+  }
+
+  // Decodes the text of [data-scramble] elements left to right through random glyphs.
+  function initScramble() {
+    const glyphs = "abcdefghijklmnopqrstuvwxyz/\\_-·*";
+    document.querySelectorAll("[data-scramble]").forEach((element) => {
+      const text = element.textContent.trim();
+      const trigger = element.closest("a") ?? element;
+      let frame;
+
+      const run = () => {
+        if (prefersReducedMotion()) return;
+        cancelAnimationFrame(frame);
+        element.style.width = "";
+        element.style.width = `${element.offsetWidth}px`;
+        const start = performance.now();
+        const duration = 650;
+
+        const tick = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const settled = Math.floor(progress * text.length);
+          element.textContent = [...text]
+            .map((char, i) =>
+              i < settled || char === " "
+                ? char
+                : glyphs[Math.floor(Math.random() * glyphs.length)]
+            )
+            .join("");
+          if (progress < 1) {
+            frame = requestAnimationFrame(tick);
+          } else {
+            element.textContent = text;
+            element.style.width = "";
+          }
+        };
+        frame = requestAnimationFrame(tick);
+      };
+
+      trigger.addEventListener("mouseenter", run);
+      trigger.addEventListener("focus", run);
     });
   }
 

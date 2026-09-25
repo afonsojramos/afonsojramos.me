@@ -11,8 +11,8 @@ const activeClass = "text-black dark:text-white";
 <header class="print:hidden">
   <Container>
     <div class="flex flex-wrap gap-y-2 justify-between">
-      <Link href="/" underline={false}>
-        <div class="font-semibold">
+      <Link href="/" underline={false} aria-label={SITE.name}>
+        <div class="font-semibold whitespace-nowrap" data-scramble>
           {SITE.name}
         </div>
       </Link>
