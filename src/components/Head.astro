@@ -132,6 +132,18 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
       .matchMedia("(prefers-color-scheme: dark)")
       .addEventListener("change", handleSystemThemeChange, { signal });
 
+    const shortcuts = document.getElementById("shortcuts");
+    document
+      .getElementById("shortcuts-button")
+      ?.addEventListener("click", () => shortcuts?.showModal(), { signal });
+    shortcuts?.addEventListener(
+      "click",
+      (event) => {
+        if (event.target === shortcuts) shortcuts.close();
+      },
+      { signal }
+    );
+
     document.addEventListener("keydown", handleShortcut, { signal });
     document.addEventListener("scroll", onScroll, { passive: true, signal });
   }
@@ -176,14 +188,15 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
       (activeElement.isContentEditable ||
         ["INPUT", "TEXTAREA", "SELECT"].includes(activeElement.tagName));
 
-    // Site shortcuts are bare keys. Preserve copy/paste, browser shortcuts,
-    // and normal typing in form fields or contenteditable elements.
+    // Site shortcuts are bare keys (plus "?", which needs Shift). Preserve copy/paste,
+    // browser shortcuts, and normal typing in form fields or contenteditable elements.
     if (
       isEditing ||
+      document.querySelector("dialog[open]") ||
       event.metaKey ||
       event.ctrlKey ||
       event.altKey ||
-      event.shiftKey
+      (event.shiftKey && event.key !== "?")
     ) {
       return;
     }
@@ -192,6 +205,10 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
       case "t":
         event.preventDefault();
         cycleTheme();
+        break;
+      case "?":
+        event.preventDefault();
+        document.getElementById("shortcuts")?.showModal();
         break;
       case "h":
         event.preventDefault();

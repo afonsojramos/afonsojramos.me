@@ -29,6 +29,15 @@ import Link from "./Link.astro";
       </div>
       <div class="flex flex-wrap gap-1 items-center print:hidden">
         <button
+          id="shortcuts-button"
+          aria-label="Keyboard shortcuts"
+          aria-haspopup="dialog"
+          aria-controls="shortcuts"
+          class="hidden pointer-fine:flex size-8 items-center justify-center rounded-full text-sm hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+        >
+          ?
+        </button>
+        <button
           id="light-theme-button"
           aria-label="Light theme"
           class="group size-8 flex items-center justify-center rounded-full"

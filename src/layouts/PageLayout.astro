@@ -2,6 +2,7 @@
 import Footer from "~/components/Footer.astro";
 import Head from "~/components/Head.astro";
 import Header from "~/components/Header.astro";
+import Shortcuts from "~/components/Shortcuts.astro";
 import { SITE } from "~/consts";
 import "../styles/global.css";
 
@@ -31,6 +32,7 @@ const { title, description, image, noindex } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <Shortcuts />
     <script>
       import { BlockRate } from "blockrate";
 

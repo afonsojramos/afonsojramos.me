@@ -1,0 +1,61 @@
+---
+const shortcuts = [
+  { keys: ["t"], label: "Cycle theme" },
+  { keys: ["h"], label: "Home" },
+  { keys: ["b"], label: "Blog" },
+  { keys: ["m"], label: "Music" },
+  { keys: ["c"], label: "Contacts" },
+  { keys: ["←", "→"], label: "Newer / older post" },
+  { keys: ["?"], label: "Show shortcuts" },
+];
+---
+
+<dialog
+  id="shortcuts"
+  aria-labelledby="shortcuts-title"
+  class="m-auto w-72 max-w-[calc(100%-2rem)] rounded-xl border border-black/15 dark:border-white/20 bg-stone-100 dark:bg-stone-900 p-0 text-black/60 dark:text-white/75 shadow-2xl backdrop:bg-black/20 dark:backdrop:bg-black/50 backdrop:backdrop-blur-sm print:hidden"
+>
+  <div class="p-6">
+    <div class="flex items-center justify-between mb-4">
+      <h2 id="shortcuts-title" class="font-semibold text-black dark:text-white">
+        Keyboard shortcuts
+      </h2>
+      <form method="dialog">
+        <button
+          aria-label="Close"
+          class="size-7 -mr-1.5 flex items-center justify-center rounded-full hover:text-black dark:hover:text-white transition-colors duration-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          >
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <ul class="space-y-2.5 text-sm">
+      {
+        shortcuts.map(({ keys, label }) => (
+          <li class="flex items-center justify-between gap-4">
+            <span class="title-render">{label}</span>
+            <span class="flex gap-1">
+              {keys.map((key) => (
+                <kbd class="min-w-6 h-6 px-1.5 inline-flex items-center justify-center rounded-md border border-black/15 dark:border-white/20 font-sans text-xs text-black dark:text-white">
+                  {key}
+                </kbd>
+              ))}
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</dialog>
