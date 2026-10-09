@@ -251,44 +251,48 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
     return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }
 
-  // Decodes the text of [data-scramble] elements left to right through random glyphs.
+  // Decodes [data-scramble] elements left to right through random glyphs into the
+  // data-scramble value on hover or focus, and back to the original text on leave.
   function initScramble() {
     const glyphs = "abcdefghijklmnopqrstuvwxyz/\\_-·*";
     document.querySelectorAll("[data-scramble]").forEach((element) => {
       const text = element.textContent.trim();
+      const alternate = element.dataset.scramble || text;
       const trigger = element.closest("a") ?? element;
       let frame;
 
-      const run = () => {
-        if (prefersReducedMotion()) return;
+      const run = (target) => {
         cancelAnimationFrame(frame);
-        element.style.width = "";
-        element.style.width = `${element.offsetWidth}px`;
+        if (prefersReducedMotion()) {
+          element.textContent = target;
+          return;
+        }
+        const source = element.textContent;
         const start = performance.now();
         const duration = 650;
 
         const tick = (now) => {
           const progress = Math.min((now - start) / duration, 1);
-          const settled = Math.floor(progress * text.length);
-          element.textContent = [...text]
-            .map((char, i) =>
-              i < settled || char === " "
-                ? char
-                : glyphs[Math.floor(Math.random() * glyphs.length)]
-            )
-            .join("");
+          const length = Math.round(source.length + (target.length - source.length) * progress);
+          const settled = Math.floor(progress * length);
+          element.textContent = Array.from({ length }, (_, i) =>
+            i < settled || target[i] === " "
+              ? target[i]
+              : glyphs[Math.floor(Math.random() * glyphs.length)]
+          ).join("");
           if (progress < 1) {
             frame = requestAnimationFrame(tick);
           } else {
-            element.textContent = text;
-            element.style.width = "";
+            element.textContent = target;
           }
         };
         frame = requestAnimationFrame(tick);
       };
 
-      trigger.addEventListener("mouseenter", run);
-      trigger.addEventListener("focus", run);
+      trigger.addEventListener("mouseenter", () => run(alternate));
+      trigger.addEventListener("focus", () => run(alternate));
+      trigger.addEventListener("mouseleave", () => run(text));
+      trigger.addEventListener("blur", () => run(text));
     });
   }
 
