@@ -1,4 +1,5 @@
 # Local toolchain. GitHub Actions installs these tools through jdx/mise-action.
 [tools]
+hk = "2.6.0"
 node = "24"
 pnpm = "12"

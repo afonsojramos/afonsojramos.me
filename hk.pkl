@@ -1,0 +1,26 @@
+amends "package://github.com/jdx/hk/releases/download/v2.6.0/hk@2.6.0#/Config.pkl"
+
+steps {
+  ["format"] {
+    glob = "**/*.{ts,tsx,js,jsx,mjs,cjs,json,jsonc,css,scss,less,md,mdx,yml,yaml,html}"
+    check = "pnpm exec oxfmt --check --no-error-on-unmatched-pattern {{files}}"
+    fix = "pnpm exec oxfmt --no-error-on-unmatched-pattern {{files}}"
+  }
+  ["lint"] {
+    glob = "**/*.{ts,tsx,js,jsx,mjs,cjs,astro}"
+    check = "pnpm exec oxlint --no-error-on-unmatched-pattern {{files}}"
+    fix = "pnpm exec oxlint --fix --no-error-on-unmatched-pattern {{files}}"
+    depends = "format"
+  }
+  ["typecheck"] {
+    check = "pnpm exec astro sync && pnpm exec tsc --noEmit"
+    depends = List("format", "lint")
+  }
+}
+
+hooks {
+  ["pre-commit"] {
+    fix = true
+    stash = "git"
+  }
+}

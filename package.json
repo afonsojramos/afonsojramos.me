@@ -16,7 +16,7 @@
     "lint:fix": "oxlint --fix",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
-    "prepare": "husky"
+    "hooks:install": "hk install --mise"
   },
   "dependencies": {
     "@astrojs/cloudflare": "14.2.5",
@@ -38,7 +38,6 @@
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-solid": "^8.6.0",
     "hono": "^4.13.5",
-    "husky": "^9.1.7",
     "sharp": "^0.35.4",
     "solid-js": "^1.9.15",
     "tailwind-merge": "^3.6.0",
