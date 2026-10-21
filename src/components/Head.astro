@@ -394,7 +394,7 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
   function showTransitionTargets() {
     document.querySelectorAll("[data-astro-transition-scope]").forEach((target) => {
       const container = target.closest(".animate");
-      if (!container) return;
+      if (!container || target.style.viewTransitionName === "none") return;
       container.style.transition = "none";
       container.classList.add("show");
       window.getComputedStyle(container).opacity;
@@ -413,6 +413,30 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
       toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches, false);
     }
   }
+
+  // Every card title on the homepage and /blog shares a transition name with its post. Only
+  // the card for the post being opened or left keeps its name; unpaired titles would
+  // otherwise run their own grow or shrink animation.
+  function postPath(url) {
+    const path = url.pathname.replace(/\/$/, "");
+    return /^\/blog\/[^/]+$/.test(path) ? path : null;
+  }
+
+  function isolateCardTitle(doc, path) {
+    doc.querySelectorAll("a[href] [data-astro-transition-scope]").forEach((title) => {
+      const morphs = title.closest("a").getAttribute("href") === path;
+      title.style.viewTransitionName = morphs ? "" : "none";
+    });
+  }
+
+  let morphPath = null;
+  document.addEventListener("astro:before-preparation", (event) => {
+    morphPath = postPath(event.from) ?? postPath(event.to);
+    isolateCardTitle(document, morphPath);
+  });
+  document.addEventListener("astro:before-swap", (event) => {
+    isolateCardTitle(event.newDocument, morphPath);
+  });
 
   document.addEventListener("DOMContentLoaded", () => init());
   document.addEventListener("astro:after-swap", () => {
