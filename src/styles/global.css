@@ -148,15 +148,10 @@ blockquote {
   }
 
   article.post .table-of-contents {
-    @apply fixed top-32 hidden overflow-y-auto font-sans text-sm opacity-0 lg:block print:hidden;
+    @apply fixed top-32 hidden overflow-y-auto font-sans text-sm lg:block print:hidden;
     left: calc(50% + 22rem);
     width: min(14rem, calc(50vw - 23rem));
     max-height: calc(100vh - 10rem);
-    transition: opacity 200ms ease-out 700ms;
-  }
-
-  article.post.animate.show .table-of-contents {
-    @apply opacity-100;
   }
 
   article.post .table-of-contents ol {
@@ -269,6 +264,23 @@ html.theme-switching *::after {
   translate: none;
 }
 
+/* A translated post would become the containing block of its fixed table of contents, so the
+   post slides its other children in instead of itself. */
+article.post.animate {
+  translate: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  article.post.animate > :not(.table-of-contents) {
+    @apply translate-y-3 duration-700 ease-out;
+    transition-property: translate;
+  }
+
+  article.post.animate.show > :not(.table-of-contents) {
+    translate: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html:has(article.post .table-of-contents) {
     scroll-behavior: auto;
@@ -277,10 +289,6 @@ html.theme-switching *::after {
   .animate {
     @apply opacity-100 transition-none;
     translate: none;
-  }
-
-  article.post.animate .table-of-contents {
-    @apply opacity-100 transition-none;
   }
 }
 
