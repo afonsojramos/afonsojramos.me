@@ -253,6 +253,8 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
 
   // Decodes [data-scramble] elements left to right through random glyphs into the
   // data-scramble value on hover or focus, and back to the original text on leave.
+  // The element keeps its width until the original text is back, so a shorter
+  // alternate never leaves the pointer outside the trigger and restarts the animation.
   function initScramble() {
     const glyphs = "abcdefghijklmnopqrstuvwxyz/\\_-·*";
     document.querySelectorAll("[data-scramble]").forEach((element) => {
@@ -261,10 +263,18 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
       const trigger = element.closest("a") ?? element;
       let frame;
 
+      const settle = (target) => {
+        element.textContent = target;
+        if (target === text) element.style.minWidth = "";
+      };
+
       const run = (target) => {
         cancelAnimationFrame(frame);
+        if (target !== text && !element.style.minWidth) {
+          element.style.minWidth = `${element.offsetWidth}px`;
+        }
         if (prefersReducedMotion()) {
-          element.textContent = target;
+          settle(target);
           return;
         }
         const source = element.textContent;
@@ -283,7 +293,7 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
           if (progress < 1) {
             frame = requestAnimationFrame(tick);
           } else {
-            element.textContent = target;
+            settle(target);
           }
         };
         frame = requestAnimationFrame(tick);
