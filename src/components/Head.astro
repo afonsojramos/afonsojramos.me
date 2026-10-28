@@ -224,10 +224,10 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
 
   // Decodes [data-scramble] elements left to right through random glyphs into the
   // data-scramble value on mouse hover or keyboard focus, and back to the original text
-  // on leave. Touch has no hover, so on the page the trigger links to, each tap toggles
-  // between the two instead of navigating. The element keeps its width until the original
-  // text is back, so a shorter alternate never leaves the pointer outside the trigger and
-  // restarts the animation.
+  // on leave. Touch has no hover, so each tap toggles between the two instead. The toggle
+  // lasts for the browser tab's session; a tap that navigates elsewhere plays its toggle when
+  // the next page loads. The element keeps its width until the original text is back, so a
+  // shorter alternate never leaves the pointer outside the trigger and restarts the animation.
   function initScramble() {
     const glyphs = "abcdefghijklmnopqrstuvwxyz/\\_-·*";
     document.querySelectorAll("[data-scramble]").forEach((element) => {
@@ -236,7 +236,9 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
       const trigger = element.closest("a") ?? element;
       let frame;
       let pointerType = "";
-      let toggled = false;
+      const storageKey = `scramble:${alternate}`;
+      const pendingKey = `${storageKey}:pending`;
+      let toggled = sessionStorage.getItem(storageKey) === "on";
 
       const settle = (target) => {
         element.textContent = target;
@@ -279,6 +281,34 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
         if (!toggled) run(text);
       };
 
+      const showStored = () => {
+        cancelAnimationFrame(frame);
+        toggled = sessionStorage.getItem(storageKey) === "on";
+        if (toggled && !element.style.minWidth) {
+          element.style.minWidth = `${element.offsetWidth}px`;
+        }
+        settle(toggled ? alternate : text);
+      };
+
+      // The handoff expires so that a tap whose navigation was cancelled doesn't animate a
+      // later, unrelated page load.
+      const handoff = Number(sessionStorage.getItem(pendingKey));
+      sessionStorage.removeItem(pendingKey);
+      if (Date.now() - handoff < 5000) {
+        if (!toggled) {
+          element.style.minWidth = `${element.offsetWidth}px`;
+          element.textContent = alternate;
+        }
+        run(toggled ? alternate : text);
+      } else {
+        showStored();
+      }
+
+      // A page restored from the back/forward cache keeps the state it was left with.
+      window.addEventListener("pageshow", (event) => {
+        if (event.persisted) showStored();
+      });
+
       trigger.addEventListener("pointerdown", (event) => {
         pointerType = event.pointerType;
       });
@@ -299,10 +329,16 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
         // A keyboard activation has no click count.
         const touch = event.detail > 0 && (pointerType === "touch" || pointerType === "pen");
         pointerType = "";
-        if (!touch || trigger.pathname !== window.location.pathname) return;
-        event.preventDefault();
+        if (!touch) return;
         toggled = !toggled;
+        if (toggled) sessionStorage.setItem(storageKey, "on");
+        else sessionStorage.removeItem(storageKey);
         run(toggled ? alternate : text);
+        if (trigger.pathname === window.location.pathname) {
+          event.preventDefault();
+        } else {
+          sessionStorage.setItem(pendingKey, String(Date.now()));
+        }
       });
     });
   }
