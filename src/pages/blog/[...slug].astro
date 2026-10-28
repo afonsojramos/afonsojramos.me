@@ -2,7 +2,6 @@
 export const prerender = true;
 
 import { type CollectionEntry, getCollection, render } from "astro:content";
-import BackToPrev from "~/components/BackToPrev.astro";
 import Container from "~/components/Container.astro";
 import FormattedDate from "~/components/FormattedDate.astro";
 import ViewCount from "~/components/ViewCount.astro";
@@ -47,9 +46,6 @@ const olderUrl = olderPost ? `/blog/${olderPost.id}` : undefined;
   <Container>
     <div id="post-nav" data-newer={newerUrl} data-older={olderUrl} hidden></div>
     <div class="reading-progress print:hidden" aria-hidden="true"></div>
-    <div class="animate">
-      <BackToPrev href="/blog"> Back </BackToPrev>
-    </div>
     <div class="space-y-1 my-10">
       <div class="title-render animate flex items-center gap-1.5">
         <div class="font-base text-sm">

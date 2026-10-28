@@ -115,9 +115,6 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
     const backToTop = document.getElementById("back-to-top");
     backToTop?.addEventListener("click", scrollToTop, { signal });
 
-    const backToPrev = document.getElementById("back-to-prev");
-    backToPrev?.addEventListener("click", goBack, { signal });
-
     const lightThemeButton = document.getElementById("light-theme-button");
     lightThemeButton?.addEventListener("click", useLightTheme, { signal });
 
@@ -145,18 +142,6 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
 
     document.addEventListener("keydown", handleShortcut, { signal });
     document.addEventListener("scroll", onScroll, { passive: true, signal });
-  }
-
-  let siteNavigated = false;
-
-  function goBack(event) {
-    const cameFromSite =
-      siteNavigated ||
-      (document.referrer !== "" && new URL(document.referrer).origin === window.location.origin);
-    if (cameFromSite && window.history.length > 1) {
-      event.preventDefault();
-      window.history.back();
-    }
   }
 
   function useLightTheme() {
@@ -480,7 +465,6 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
 
   document.addEventListener("DOMContentLoaded", () => init());
   document.addEventListener("astro:after-swap", () => {
-    siteNavigated = true;
     showTransitionTargets();
     init();
   });

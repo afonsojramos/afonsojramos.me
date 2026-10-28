@@ -3,7 +3,6 @@ export const prerender = true;
 
 import { Image } from "astro:assets";
 import { type CollectionEntry, getCollection, render } from "astro:content";
-import BackToPrev from "~/components/BackToPrev.astro";
 import Container from "~/components/Container.astro";
 import FormattedDate from "~/components/FormattedDate.astro";
 import Link from "~/components/Link.astro";
@@ -32,9 +31,6 @@ const { Content } = await render(project);
   image={`/${project.collection}/${project.id}.png`}
 >
   <Container>
-    <div class="animate">
-      <BackToPrev href="/projects"> Back to projects </BackToPrev>
-    </div>
     <div class="space-y-1 my-10">
       <div class="title-render animate flex items-center gap-1.5">
         <div class="font-base text-sm">
