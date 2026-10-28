@@ -252,9 +252,11 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
   }
 
   // Decodes [data-scramble] elements left to right through random glyphs into the
-  // data-scramble value on hover or focus, and back to the original text on leave.
-  // The element keeps its width until the original text is back, so a shorter
-  // alternate never leaves the pointer outside the trigger and restarts the animation.
+  // data-scramble value on mouse hover or keyboard focus, and back to the original text
+  // on leave. Touch has no hover, so on the page the trigger links to, each tap toggles
+  // between the two instead of navigating. The element keeps its width until the original
+  // text is back, so a shorter alternate never leaves the pointer outside the trigger and
+  // restarts the animation.
   function initScramble() {
     const glyphs = "abcdefghijklmnopqrstuvwxyz/\\_-·*";
     document.querySelectorAll("[data-scramble]").forEach((element) => {
@@ -262,6 +264,8 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
       const alternate = element.dataset.scramble || text;
       const trigger = element.closest("a") ?? element;
       let frame;
+      let pointerType = "";
+      let toggled = false;
 
       const settle = (target) => {
         element.textContent = target;
@@ -299,10 +303,36 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
         frame = requestAnimationFrame(tick);
       };
 
-      trigger.addEventListener("mouseenter", () => run(alternate));
-      trigger.addEventListener("focus", () => run(alternate));
-      trigger.addEventListener("mouseleave", () => run(text));
-      trigger.addEventListener("blur", () => run(text));
+      const show = () => run(alternate);
+      const hide = () => {
+        if (!toggled) run(text);
+      };
+
+      trigger.addEventListener("pointerdown", (event) => {
+        pointerType = event.pointerType;
+      });
+      trigger.addEventListener("pointercancel", () => {
+        pointerType = "";
+      });
+      trigger.addEventListener("pointerenter", (event) => {
+        if (event.pointerType === "mouse") show();
+      });
+      trigger.addEventListener("pointerleave", (event) => {
+        if (event.pointerType === "mouse") hide();
+      });
+      trigger.addEventListener("focus", () => {
+        if (trigger.matches(":focus-visible")) show();
+      });
+      trigger.addEventListener("blur", hide);
+      trigger.addEventListener("click", (event) => {
+        // A keyboard activation has no click count.
+        const touch = event.detail > 0 && (pointerType === "touch" || pointerType === "pen");
+        pointerType = "";
+        if (!touch || trigger.pathname !== window.location.pathname) return;
+        event.preventDefault();
+        toggled = !toggled;
+        run(toggled ? alternate : text);
+      });
     });
   }
 
