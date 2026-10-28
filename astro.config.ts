@@ -56,25 +56,12 @@ export default defineConfig({
     environments: {
       client: {
         optimizeDeps: {
-          include: [
-            "blockrate",
-            "astro/virtual-modules/transitions.js",
-            "astro/virtual-modules/transitions-router.js",
-            "astro/virtual-modules/transitions-types.js",
-            "astro/virtual-modules/transitions-events.js",
-            "astro/virtual-modules/transitions-swap-functions.js",
-          ],
+          include: ["blockrate"],
         },
       },
       ssr: {
         optimizeDeps: {
-          include: [
-            "blockrate",
-            "hono",
-            "astro/app/manifest",
-            "astro/logger/json",
-            "astro/virtual-modules/transitions.js",
-          ],
+          include: ["blockrate", "hono", "astro/app/manifest", "astro/logger/json"],
         },
       },
     },

@@ -2,7 +2,6 @@
 import "../styles/global.css";
 import "@fontsource/dm-sans/400.css";
 import "@fontsource/dm-sans/600.css";
-import { ClientRouter } from "astro:transitions";
 import dmSans400 from "@fontsource/dm-sans/files/dm-sans-latin-400-normal.woff2";
 import dmSans600 from "@fontsource/dm-sans/files/dm-sans-latin-600-normal.woff2";
 import { SITE } from "~/consts";
@@ -83,19 +82,6 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
-
-<ClientRouter />
-
-<script>
-  import type { TransitionBeforeSwapEvent } from "astro:transitions/client";
-  document.addEventListener("astro:before-swap", (e) =>
-    [
-      ...(e as TransitionBeforeSwapEvent).newDocument.head.querySelectorAll(
-        'link[as="font"]'
-      ),
-    ].forEach((link) => link.remove())
-  );
-</script>
 
 <script is:inline>
   function init() {
@@ -414,19 +400,6 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
     });
   }
 
-  // Shows the .animate containers of view-transition elements immediately, so a morphing
-  // element lands on its final position instead of the container's entrance offset.
-  function showTransitionTargets() {
-    document.querySelectorAll("[data-astro-transition-scope]").forEach((target) => {
-      const container = target.closest(".animate");
-      if (!container || target.style.viewTransitionName === "none") return;
-      container.style.transition = "none";
-      container.classList.add("show");
-      window.getComputedStyle(container).opacity;
-      container.style.transition = "";
-    });
-  }
-
   function preloadTheme() {
     const userTheme = localStorage.theme;
 
@@ -439,35 +412,7 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
     }
   }
 
-  // Every card title on the homepage and /blog shares a transition name with its post. Only
-  // the card for the post being opened or left keeps its name; unpaired titles would
-  // otherwise run their own grow or shrink animation.
-  function postPath(url) {
-    const path = url.pathname.replace(/\/$/, "");
-    return /^\/blog\/[^/]+$/.test(path) ? path : null;
-  }
-
-  function isolateCardTitle(doc, path) {
-    doc.querySelectorAll("a[href] [data-astro-transition-scope]").forEach((title) => {
-      const morphs = title.closest("a").getAttribute("href") === path;
-      title.style.viewTransitionName = morphs ? "" : "none";
-    });
-  }
-
-  let morphPath = null;
-  document.addEventListener("astro:before-preparation", (event) => {
-    morphPath = postPath(event.from) ?? postPath(event.to);
-    isolateCardTitle(document, morphPath);
-  });
-  document.addEventListener("astro:before-swap", (event) => {
-    isolateCardTitle(event.newDocument, morphPath);
-  });
-
   document.addEventListener("DOMContentLoaded", () => init());
-  document.addEventListener("astro:after-swap", () => {
-    showTransitionTargets();
-    init();
-  });
   preloadTheme();
 
   const pageTitle = document.title;

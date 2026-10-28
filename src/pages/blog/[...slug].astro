@@ -59,8 +59,6 @@ const olderUrl = olderPost ? `/blog/${olderPost.id}` : undefined;
       </div>
       <div
         class="title-render text-2xl font-semibold text-black dark:text-white"
-        transition:name={`title-${post.collection}-${post.id}`}
-        style="view-transition-class: post-title"
       >
         {post.data.title}
       </div>
@@ -127,8 +125,8 @@ const olderUrl = olderPost ? `/blog/${olderPost.id}` : undefined;
       }
     };
 
-    document.addEventListener("astro:page-load", setupTableOfContents);
-    document.addEventListener("astro:page-load", setupHeadingAnchors);
+    setupTableOfContents();
+    setupHeadingAnchors();
     window.addEventListener(
       "scroll",
       () => {

@@ -17,11 +17,6 @@ const { slug } = Astro.props;
   // for 5min. Wrapper is rendered hidden; we reveal it only once we have a
   // non-zero count, so failed fetches and zero-view posts leave no orphan
   // separator.
-  //
-  // Runs on `astro:page-load` so the fetch fires on both initial load and
-  // ClientRouter (View Transitions) navigations — without this hook, inline
-  // scripts only execute on full reloads and the badge stays stuck on `…`
-  // when navigating between posts.
   const loadViewCounts = async () => {
     const els = document.querySelectorAll<HTMLElement>("[data-view-count]");
     await Promise.all(
@@ -44,5 +39,5 @@ const { slug } = Astro.props;
     );
   };
 
-  document.addEventListener("astro:page-load", loadViewCounts);
+  loadViewCounts();
 </script>
