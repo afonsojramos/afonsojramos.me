@@ -11,6 +11,9 @@ const { placement = "top" } = Astro.props;
   <span
     aria-hidden="true"
     class:list={[
+      // Touch screens never show the card, and its hidden box would still overflow the page,
+      // which makes mobile browsers widen the layout viewport and the fixed header with it.
+      "hidden [@media(hover:hover)]:block",
       "pointer-events-none absolute left-1/2 z-50 w-64 -translate-x-1/2 rounded-xl bg-white p-3 text-left font-sans text-sm font-normal whitespace-normal text-black/60 normal-case no-underline opacity-0 shadow-[0_8px_30px_rgb(0_0_0/0.10)] ring-1 ring-black/5 transition-all duration-200 ease-out dark:bg-stone-800 dark:text-white/75 dark:ring-white/10",
       placement === "top"
         ? "bottom-full mb-2 translate-y-1"
