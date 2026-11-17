@@ -174,6 +174,9 @@ export async function getFaviconUrl(pageUrl: string): Promise<string | null> {
       }
       candidates.sort((a, b) => a.score - b.score);
       for (const candidate of candidates) {
+        // Checked in priority order, stopping at the first reachable icon so
+        // lower-priority candidates are never requested.
+        // eslint-disable-next-line no-await-in-loop
         if (await isReachable(candidate.href)) return candidate.href;
       }
     }

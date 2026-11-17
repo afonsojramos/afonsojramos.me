@@ -59,6 +59,9 @@ let failed = 0;
 const localPaths = new Map<string, string>();
 
 const queue = [...uniqueUrls];
+// Each worker handles one image at a time on purpose: running 8 workers caps
+// concurrent downloads at 8.
+/* eslint-disable no-await-in-loop */
 const worker = async () => {
   for (let url = queue.pop(); url; url = queue.pop()) {
     const filename = filenameFor({ url, title: titlesByUrl.get(url) ?? "image" });
@@ -92,6 +95,7 @@ const worker = async () => {
     }
   }
 };
+/* eslint-enable no-await-in-loop */
 await Promise.all(Array.from({ length: 8 }, worker));
 
 let rewritten = source;
