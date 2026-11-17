@@ -2,6 +2,7 @@
 title: "muesly"
 description: "A local-first desktop app that captures, transcribes, and summarizes everything you say, entirely on your own machine. No cloud, no account."
 date: "2026-06-18"
+draft: true
 demoURL: "https://muesly.ai"
 tags: ["Rust", "Tauri", "Whisper", "Local-First", "Cross-Platform"]
 ---
