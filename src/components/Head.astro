@@ -101,14 +101,8 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
     const backToTop = document.getElementById("back-to-top");
     backToTop?.addEventListener("click", scrollToTop, { signal });
 
-    const lightThemeButton = document.getElementById("light-theme-button");
-    lightThemeButton?.addEventListener("click", useLightTheme, { signal });
-
-    const darkThemeButton = document.getElementById("dark-theme-button");
-    darkThemeButton?.addEventListener("click", useDarkTheme, { signal });
-
-    const systemThemeButton = document.getElementById("system-theme-button");
-    systemThemeButton?.addEventListener("click", useSystemTheme, { signal });
+    updateThemeButton();
+    document.getElementById("theme-button")?.addEventListener("click", cycleTheme, { signal });
 
     window
       .matchMedia("(prefers-color-scheme: dark)")
@@ -130,23 +124,29 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
     document.addEventListener("scroll", onScroll, { passive: true, signal });
   }
 
-  function useLightTheme() {
-    localStorage.setItem("theme", "light");
-    toggleTheme(false);
+  const nextThemePreference = { system: "light", light: "dark", dark: "system" };
+
+  function themePreference() {
+    const theme = localStorage.theme;
+    return theme === "light" || theme === "dark" ? theme : "system";
   }
 
-  function useDarkTheme() {
-    localStorage.setItem("theme", "dark");
-    toggleTheme(true);
+  function prefersDark(preference) {
+    return preference === "system"
+      ? window.matchMedia("(prefers-color-scheme: dark)").matches
+      : preference === "dark";
   }
 
-  function useSystemTheme() {
-    localStorage.setItem("theme", "system");
-    toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+  function updateThemeButton() {
+    const preference = themePreference();
+    const label = `${preference[0].toUpperCase()}${preference.slice(1)} theme. Switch to ${nextThemePreference[preference]} theme`;
+    // The title is both the tooltip and the accessible name; an identical
+    // aria-label would make screen readers announce it twice.
+    document.getElementById("theme-button")?.setAttribute("title", label);
   }
 
   function handleSystemThemeChange(event) {
-    if (localStorage.theme === "system") {
+    if (themePreference() === "system") {
       toggleTheme(event.matches);
     }
   }
@@ -381,23 +381,11 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
   }
 
   function cycleTheme() {
-    const currentTheme = localStorage.theme || "system";
-
-    switch (currentTheme) {
-      case "light":
-        localStorage.setItem("theme", "dark");
-        toggleTheme(true);
-        break;
-      case "dark":
-        localStorage.setItem("theme", "system");
-        toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
-        break;
-      case "system":
-      default:
-        localStorage.setItem("theme", "light");
-        toggleTheme(false);
-        break;
-    }
+    const preference = nextThemePreference[themePreference()];
+    localStorage.setItem("theme", preference);
+    document.documentElement.dataset.themePreference = preference;
+    updateThemeButton();
+    toggleTheme(prefersDark(preference));
   }
 
   let themeTransition;
@@ -437,15 +425,13 @@ const { title, description, image = "/nano.png", noindex = false } = Astro.props
   }
 
   function preloadTheme() {
-    const userTheme = localStorage.theme;
+    const preference = themePreference();
 
     // Synchronous on purpose: this runs before first paint to avoid a theme
-    // flash, and a view transition would defer the class flip past it.
-    if (userTheme === "light" || userTheme === "dark") {
-      toggleTheme(userTheme === "dark", false);
-    } else {
-      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches, false);
-    }
+    // flash, and a view transition would defer the class flip past it. The
+    // preference attribute also picks the theme button's icon before paint.
+    document.documentElement.dataset.themePreference = preference;
+    toggleTheme(prefersDark(preference), false);
   }
 
   document.addEventListener("DOMContentLoaded", () => init());

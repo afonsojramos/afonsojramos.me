@@ -245,6 +245,31 @@ html:has(article.post .table-of-contents) {
   }
 }
 
+/* The theme button stacks one icon per preference and shows the active one.
+   Without a preference attribute (before the theme script runs), it shows the
+   system icon, which matches the default. */
+.theme-icon {
+  grid-area: 1 / 1;
+  opacity: 0;
+  scale: 0.6;
+}
+
+html:not([data-theme-preference]) [data-theme-icon="system"],
+html[data-theme-preference="system"] [data-theme-icon="system"],
+html[data-theme-preference="light"] [data-theme-icon="light"],
+html[data-theme-preference="dark"] [data-theme-icon="dark"] {
+  opacity: 1;
+  scale: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .theme-icon {
+    transition-property: stroke, opacity, scale;
+    transition-duration: 300ms, 150ms, 150ms;
+    transition-timing-function: ease-in-out, ease-out, ease-out;
+  }
+}
+
 /* While the theme flips, per-element transitions are frozen so the view
    transition cross-fade is the only animation running. */
 html.theme-switching *,
