@@ -12,7 +12,7 @@ import {
 } from "solid-js";
 import type { ButtonProps } from "~/components/ui/Button";
 import { Button } from "~/components/ui/Button";
-import { cn } from "~/lib/utils";
+import { cn } from "cn";
 
 export type CarouselApi = UseEmblaCarouselType[1];
 
