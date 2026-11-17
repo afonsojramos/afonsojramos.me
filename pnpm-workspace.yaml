@@ -6,6 +6,12 @@ packageExtensions:
     dependencies:
       prismjs: "1.30.0"
 
+# @tailwindcss/typography 0.5.20 (latest) pins postcss-selector-parser 6.0.10,
+# which has a quadratic selector-parsing advisory fixed in 6.1.5. Remove this
+# once a typography release depends on >=6.1.5.
+overrides:
+  "@tailwindcss/typography>postcss-selector-parser": "^6.1.6"
+
 # pnpm 11 reads allowBuilds; onlyBuiltDependencies kept for older tooling.
 allowBuilds:
   esbuild: true

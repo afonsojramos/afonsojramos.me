@@ -1,28 +1,8 @@
-type HastNode = {
-  type: string;
-  tagName?: string;
-  properties?: Record<string, unknown>;
-  children?: HastNode[];
-  value?: string;
-};
+import type { MarkdownHeading } from "astro";
+import type { Element } from "hast";
+import { defineHastPlugin } from "satteri";
 
-type MarkdownHeading = {
-  depth: number;
-  slug: string;
-  text: string;
-};
-
-type HastContext = {
-  fileURL?: URL;
-  data: {
-    astro?: {
-      headings?: MarkdownHeading[];
-    };
-  };
-  insertBefore(node: HastNode, content: HastNode): void;
-};
-
-function tableOfContentsItem(heading: MarkdownHeading): HastNode {
+function tableOfContentsItem(heading: MarkdownHeading): Element {
   return {
     type: "element",
     tagName: "li",
@@ -43,11 +23,11 @@ function tableOfContentsItem(heading: MarkdownHeading): HastNode {
 export default function tableOfContentsPlugin() {
   let inserted = false;
 
-  return {
+  return defineHastPlugin({
     name: "blog-table-of-contents",
     element: {
       filter: ["h2"],
-      visit(node: HastNode, context: HastContext): void {
+      visit(node, context): void {
         if (inserted) return;
 
         const sourcePath = context.fileURL?.pathname.replaceAll("\\", "/");
@@ -77,5 +57,5 @@ export default function tableOfContentsPlugin() {
         inserted = true;
       },
     },
-  };
+  });
 }

@@ -1,16 +1,24 @@
-type MdastNode = {
-  type: string;
-  name?: string;
-  data?: Record<string, unknown>;
-  children?: MdastNode[];
-};
+import type { Properties } from "hast";
+import type { Blockquote, BlockContent, DefinitionContent } from "mdast";
+import { defineMdastPlugin } from "satteri";
+
+// Satteri renders `data.hName` and `data.hProperties` the way mdast-util-to-hast
+// does, but @types/mdast only declares them when that package's types load.
+declare module "mdast" {
+  interface Data {
+    hName?: string;
+    hProperties?: Properties;
+  }
+}
+
+type FlowContent = BlockContent | DefinitionContent;
 
 const calloutTypes = new Set(["note", "tip", "warning"]);
 
-function calloutTitle(type: string, children: MdastNode[]): MdastNode[] {
+function calloutTitle(type: string, children: FlowContent[]): FlowContent[] {
   const [firstChild, ...remainingChildren] = children;
 
-  if (firstChild?.data?.directiveLabel) {
+  if (firstChild?.type === "paragraph" && firstChild.data?.directiveLabel) {
     return [
       {
         ...firstChild,
@@ -30,17 +38,17 @@ function calloutTitle(type: string, children: MdastNode[]): MdastNode[] {
         hName: "div",
         hProperties: { className: ["callout-title"] },
       },
-      children: [{ type: "text", value: type[0].toUpperCase() + type.slice(1) } as MdastNode],
+      children: [{ type: "text", value: type[0].toUpperCase() + type.slice(1) }],
     },
     ...children,
   ];
 }
 
 export default function calloutsPlugin() {
-  return {
+  return defineMdastPlugin({
     name: "blog-callouts",
-    containerDirective(node: MdastNode): MdastNode | undefined {
-      if (!node.name || !calloutTypes.has(node.name)) return;
+    containerDirective(node): Blockquote | undefined {
+      if (!calloutTypes.has(node.name)) return;
 
       return {
         type: "blockquote",
@@ -51,8 +59,8 @@ export default function calloutsPlugin() {
             role: "note",
           },
         },
-        children: calloutTitle(node.name, node.children ?? []),
+        children: calloutTitle(node.name, node.children),
       };
     },
-  };
+  });
 }
