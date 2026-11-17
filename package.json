@@ -4,7 +4,6 @@
   "type": "module",
   "scripts": {
     "astro": "astro",
-    "contributions:update": "node scripts/update-contributions.ts",
     "db:migrate:local": "wrangler d1 migrations apply afonsojramos-me-views --local",
     "dev": "pnpm run db:migrate:local && astro dev",
     "dev:network": "pnpm run db:migrate:local && astro dev --host",
