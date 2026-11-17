@@ -27,7 +27,6 @@
     "@astrojs/solid-js": "7.1.6",
     "@fontsource/dm-sans": "^5.3.0",
     "@kobalte/core": "^0.13.14",
-    "@kobalte/tailwindcss": "^0.9.0",
     "@markdoc/markdoc": "^0.5.13",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.5",

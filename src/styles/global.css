@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @plugin "@tailwindcss/typography";
-@plugin "@kobalte/tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *, [data-kb-theme="dark"], [data-kb-theme="dark"] *));
 
