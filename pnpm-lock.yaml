@@ -226,11 +226,11 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       embla-carousel-autoplay:
-        specifier: ^8.6.0
-        version: 8.6.0(embla-carousel@8.6.0)
+        specifier: 9.0.0-rc04
+        version: 9.0.0-rc04(embla-carousel@9.0.0-rc04)
       embla-carousel-solid:
-        specifier: ^8.6.0
-        version: 8.6.0(solid-js@1.9.19)
+        specifier: 9.0.0-rc04
+        version: 9.0.0-rc04(solid-js@1.9.19)
       hono:
         specifier: ^4.13.18
         version: 4.13.18
@@ -2082,23 +2082,23 @@ packages:
   electron-to-chromium@1.5.401:
     resolution: {integrity: sha512-H6ViHN68nGYlChEvlIU67fn8O2/tpbWQPwck98yaJmh+08LSvHiydzDQ6oXNccLU3kNRVIRS9A4mA7CG+i6fLQ==}
 
-  embla-carousel-autoplay@8.6.0:
-    resolution: {integrity: sha512-OBu5G3nwaSXkZCo1A6LTaFMZ8EpkYbwIaH+bPqdBnDGQ2fh4+NbzjXjs2SktoPNKCtflfVMc75njaDHOYXcrsA==}
+  embla-carousel-autoplay@9.0.0-rc04:
+    resolution: {integrity: sha512-vPwfNzpkhvkBaSZD72Q9zLdfIxGTNa+jiCb0iS2AHAmzDH0q5DEpZp4cIDrBm3Q6f6TOv7y429OFcT26PdiQCg==}
     peerDependencies:
-      embla-carousel: 8.6.0
+      embla-carousel: 9.0.0-rc04
 
-  embla-carousel-reactive-utils@8.6.0:
-    resolution: {integrity: sha512-fMVUDUEx0/uIEDM0Mz3dHznDhfX+znCCDCeIophYb1QGVM7YThSWX+wz11zlYwWFOr74b4QLGg0hrGPJeG2s4A==}
+  embla-carousel-reactive-utils@9.0.0-rc04:
+    resolution: {integrity: sha512-38m/mPUs/VAqANCRlMzqz9mAY+vm4tOWHmqOu2cegO+Otm4PMZlt/yuZua8CH3z0kNFLS23hAkq7WAXNkYC1pA==}
     peerDependencies:
-      embla-carousel: 8.6.0
+      embla-carousel: 9.0.0-rc04
 
-  embla-carousel-solid@8.6.0:
-    resolution: {integrity: sha512-xQQjPZL+CQ4n2KemoeTu0BD9mk8tkVuSMOe/GEnzKM0lAoXY/akSYBNZ4dvJDE7TMeUCAuI6D9742TTLglGq/A==}
+  embla-carousel-solid@9.0.0-rc04:
+    resolution: {integrity: sha512-D2aYmEhPiBKHNxF6fnNLx/htNmWnhpoJUAP1FUPGW87V4oc3aL8b3NJ9WyuTpbvvlhJTyjJEbAZNKoSCBoqHiA==}
     peerDependencies:
       solid-js: ^1.0.0
 
-  embla-carousel@8.6.0:
-    resolution: {integrity: sha512-SjWyZBHJPbqxHOzckOfo8lHisEaJWmwd23XppYFYVh10bU66/Pn5tkVkbkCMZVdbUE5eTCI2nD8OyIP4Z+uwkA==}
+  embla-carousel@9.0.0-rc04:
+    resolution: {integrity: sha512-17JjAySlf/Sj0AawBmusMjap+SgGa+Yw0HpNCSnNs2v3Mj/wXNUdzpBAGv9uBizyYR/QcxG+pjXbHHg7xoE/iA==}
 
   enhanced-resolve@5.24.5:
     resolution: {integrity: sha512-L1l8TNvomm6UVW5B253AGxQagSQr+vGwhMlrrfRS2qmhx46AMpMVJKQYLvWYbysTMY8VoicOvzHzoHMbyzB+4A==}
@@ -4472,21 +4472,21 @@ snapshots:
 
   electron-to-chromium@1.5.401: {}
 
-  embla-carousel-autoplay@8.6.0(embla-carousel@8.6.0):
+  embla-carousel-autoplay@9.0.0-rc04(embla-carousel@9.0.0-rc04):
     dependencies:
-      embla-carousel: 8.6.0
+      embla-carousel: 9.0.0-rc04
 
-  embla-carousel-reactive-utils@8.6.0(embla-carousel@8.6.0):
+  embla-carousel-reactive-utils@9.0.0-rc04(embla-carousel@9.0.0-rc04):
     dependencies:
-      embla-carousel: 8.6.0
+      embla-carousel: 9.0.0-rc04
 
-  embla-carousel-solid@8.6.0(solid-js@1.9.19):
+  embla-carousel-solid@9.0.0-rc04(solid-js@1.9.19):
     dependencies:
-      embla-carousel: 8.6.0
-      embla-carousel-reactive-utils: 8.6.0(embla-carousel@8.6.0)
+      embla-carousel: 9.0.0-rc04
+      embla-carousel-reactive-utils: 9.0.0-rc04(embla-carousel@9.0.0-rc04)
       solid-js: 1.9.19
 
-  embla-carousel@8.6.0: {}
+  embla-carousel@9.0.0-rc04: {}
 
   enhanced-resolve@5.24.5:
     dependencies:

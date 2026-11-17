@@ -15,7 +15,12 @@ interface ConcertCarouselProps {
 
 const ConcertCarousel: Component<ConcertCarouselProps> = (props) => {
   return (
-    <Carousel plugins={[Autoplay({ delay: 5000 })]} opts={{ loop: true }}>
+    <Carousel
+      plugins={[Autoplay({ delay: 5000 })]}
+      opts={{ loop: true }}
+      // Autoplay 9 no longer starts on its own.
+      setApi={(api) => api()?.plugins().autoplay?.play()}
+    >
       <CarouselContent parentClass="rounded-lg">
         <For each={props.concerts}>
           {(concert) => (
